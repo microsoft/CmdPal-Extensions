@@ -4,7 +4,7 @@ The community gallery of extensions for [Microsoft Command Palette](https://gith
 
 ## How it works
 
-Each extension is represented by a folder under `extensions/` containing an `extension.json` metadata file and an icon. A CI pipeline aggregates all individual submissions into a single [`generated/extensions.json`](generated/extensions.json) file that the Command Palette app fetches at runtime to populate its extension gallery.
+Each extension is represented by a folder under `extensions/` containing an `extension.json` metadata file and an icon. A CI pipeline aggregates all individual submissions into a single [`extensions.json`](extensions.json) file at the repo root that the Command Palette app fetches at runtime to populate its extension gallery.
 
 ## For extension developers
 
@@ -15,7 +15,7 @@ Want to list your extension in the gallery? We'd love to have you! Check out the
 The Command Palette app fetches the gallery from:
 
 ```
-https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/generated/extensions.json
+https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions.json
 ```
 
 ## Repository structure
@@ -26,13 +26,10 @@ CmdPal-Extensions/
 │   └── <publisher>.<ext-id>/
 │       ├── extension.json       # Extension metadata
 │       └── icon.png             # Extension icon
-├── generated/
-│   └── extensions.json          # Auto-generated aggregate (do not edit)
-├── schemas/
-│   └── extension.schema.json    # JSON Schema for extension.json
-├── scripts/                     # CI/build scripts
-└── docs/
-    └── CONTRIBUTING.md          # Submission guide for developers
+├── extensions.json              # Auto-generated aggregate (do not edit)
+├── docs/
+│   └── CONTRIBUTING.md          # Submission guide for developers
+└── .github/                     # CI workflows, scripts, and schemas
 ```
 
 ## Contributing

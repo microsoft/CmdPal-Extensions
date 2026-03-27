@@ -24,16 +24,16 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install -r scripts/requirements.txt
+        run: pip install -r .github/scripts/requirements.txt
 
       - name: Generate extensions gallery
-        run: python scripts/generate.py
+        run: python .github/scripts/generate.py
 
       - name: Commit and push if changed
         run: |
-          git diff --quiet generated/extensions.json && exit 0
+          git diff --quiet extensions.json && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add generated/extensions.json
+          git add extensions.json
           git commit -m "chore: regenerate extensions gallery [skip ci]"
           git push

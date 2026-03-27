@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/extension.schema.json",
+  "$schema": "../../.github/schemas/extension.schema.json",
   "id": "microsoft.sample-extension",
   "name": "Sample Extension",
   "description": "A sample Command Palette extension to demonstrate the gallery submission format.",

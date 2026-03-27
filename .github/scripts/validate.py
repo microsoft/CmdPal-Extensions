@@ -38,9 +38,9 @@ except ImportError:
 # Constants
 # ---------------------------------------------------------------------------
 
-REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
+REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 EXTENSIONS_DIR = REPO_ROOT / "extensions"
-SCHEMA_PATH = REPO_ROOT / "schemas" / "extension.schema.json"
+SCHEMA_PATH = REPO_ROOT / ".github" / "schemas" / "extension.schema.json"
 
 VALID_CATEGORIES = {
     "Developer Tools",

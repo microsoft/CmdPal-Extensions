@@ -1,7 +1,7 @@
 {
-  "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/schemas/gallery.schema.json",
+  "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-03-27T11:35:12Z",
+  "generatedAt": "2026-03-27T12:59:39Z",
   "extensionCount": 1,
   "extensions": [
     {

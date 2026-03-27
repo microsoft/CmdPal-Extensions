@@ -4,7 +4,7 @@ Welcome! We're excited that you want to share your extension with the Command Pa
 
 ## Overview
 
-This repository is the **community gallery** for [Microsoft Command Palette](https://github.com/microsoft/PowerToys) extensions. Each extension is represented by a folder containing metadata and an icon. A CI pipeline aggregates all submissions into a single `generated/extensions.json` file that the Command Palette app fetches at runtime.
+This repository is the **community gallery** for [Microsoft Command Palette](https://github.com/microsoft/PowerToys) extensions. Each extension is represented by a folder containing metadata and an icon. A CI pipeline aggregates all submissions into a single `extensions.json` file at the repo root that the Command Palette app fetches at runtime.
 
 ## Prerequisites
 
@@ -60,7 +60,7 @@ Create an `extension.json` file inside your folder. Here is the full template wi
 
 ```json
 {
-  "$schema": "../../schemas/extension.schema.json",
+  "$schema": "../../.github/schemas/extension.schema.json",
   "id": "publisher.extension-id",
   "name": "My Extension",
   "description": "A short description of what the extension does (max 200 characters).",
@@ -82,7 +82,7 @@ Create an `extension.json` file inside your folder. Here is the full template wi
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| `$schema` | Optional | Path to the JSON schema. Enables editor autocompletion and validation. Use `"../../schemas/extension.schema.json"`. |
+| `$schema` | Optional | Path to the JSON schema. Enables editor autocompletion and validation. Use `"../../.github/schemas/extension.schema.json"`. |
 | `id` | **Required** | Unique identifier in `<publisher>.<extension-id>` format. **Must match your folder name exactly.** |
 | `name` | **Required** | Human-readable display name (max 100 characters). |
 | `description` | **Required** | Short description of the extension (max 200 characters). |
@@ -174,7 +174,7 @@ For editor autocompletion and inline validation, add the `$schema` property to t
 
 ```json
 {
-  "$schema": "../../schemas/extension.schema.json"
+  "$schema": "../../.github/schemas/extension.schema.json"
 }
 ```
 

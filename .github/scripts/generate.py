@@ -1,10 +1,10 @@
 """Generate the aggregate gallery JSON for CmdPal-Extensions.
 
 Scans extensions/*/extension.json, merges them into a single
-generated/extensions.json that the Command Palette app fetches at runtime.
+extensions.json at the repo root that the Command Palette app fetches at runtime.
 
 Usage:
-    python scripts/generate.py
+    python .github/scripts/generate.py
 """
 
 import glob
@@ -13,16 +13,15 @@ import os
 import sys
 from datetime import datetime, timezone
 
-REPO_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
+REPO_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
 EXTENSIONS_DIR = os.path.join(REPO_ROOT, "extensions")
-OUTPUT_DIR = os.path.join(REPO_ROOT, "generated")
-OUTPUT_FILE = os.path.join(OUTPUT_DIR, "extensions.json")
+OUTPUT_FILE = os.path.join(REPO_ROOT, "extensions.json")
 
 BASE_RAW_URL = (
     "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main"
 )
 GALLERY_SCHEMA_URL = (
-    f"{BASE_RAW_URL}/schemas/gallery.schema.json"
+    f"{BASE_RAW_URL}/.github/schemas/gallery.schema.json"
 )
 
 # Fields from extension.json that should not appear in the gallery output.
@@ -118,7 +117,6 @@ def generate_gallery() -> dict:
 
 def write_gallery(gallery: dict) -> None:
     """Write the gallery JSON to the output file."""
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8", newline="\n") as f:
         json.dump(gallery, f, indent=2, ensure_ascii=False)
         f.write("\n")
