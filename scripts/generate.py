@@ -1,0 +1,135 @@
+"""Generate the aggregate gallery JSON for CmdPal-Extensions.
+
+Scans extensions/*/extension.json, merges them into a single
+generated/extensions.json that the Command Palette app fetches at runtime.
+
+Usage:
+    python scripts/generate.py
+"""
+
+import glob
+import json
+import os
+import sys
+from datetime import datetime, timezone
+
+REPO_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
+EXTENSIONS_DIR = os.path.join(REPO_ROOT, "extensions")
+OUTPUT_DIR = os.path.join(REPO_ROOT, "generated")
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "extensions.json")
+
+BASE_RAW_URL = (
+    "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main"
+)
+GALLERY_SCHEMA_URL = (
+    f"{BASE_RAW_URL}/schemas/gallery.schema.json"
+)
+
+# Fields from extension.json that should not appear in the gallery output.
+FIELDS_TO_REMOVE = {"$schema", "icon"}
+
+
+def discover_extension_paths() -> list[str]:
+    """Return sorted paths to every extension.json under extensions/."""
+    pattern = os.path.join(EXTENSIONS_DIR, "*", "extension.json")
+    return sorted(glob.glob(pattern))
+
+
+def load_extension(path: str) -> dict | None:
+    """Load and validate a single extension.json.
+
+    Returns the parsed dict on success, or None if the file is invalid.
+    """
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+    except (OSError, json.JSONDecodeError) as exc:
+        print(f"WARNING: skipping {path} — {exc}", file=sys.stderr)
+        return None
+
+    # Minimal sanity check: must have an id and an icon field.
+    if "id" not in data:
+        print(f"WARNING: skipping {path} — missing 'id' field", file=sys.stderr)
+        return None
+    if "icon" not in data:
+        print(
+            f"WARNING: skipping {path} — missing 'icon' field", file=sys.stderr
+        )
+        return None
+
+    return data
+
+
+def build_icon_url(extension_id: str, icon_filename: str) -> str:
+    """Build the absolute raw GitHub URL for an extension's icon."""
+    return f"{BASE_RAW_URL}/extensions/{extension_id}/{icon_filename}"
+
+
+def transform_extension(data: dict) -> dict:
+    """Transform a raw extension.json dict into its gallery representation.
+
+    * Replaces the relative ``icon`` field with an absolute ``iconUrl``.
+    * Strips fields that should not appear in the gallery output.
+    """
+    entry = {}
+    icon_url = build_icon_url(data["id"], data["icon"])
+
+    for key, value in data.items():
+        if key in FIELDS_TO_REMOVE:
+            continue
+        entry[key] = value
+
+    entry["iconUrl"] = icon_url
+    return entry
+
+
+def generate_gallery() -> dict:
+    """Scan all extensions and return the complete gallery dict."""
+    paths = discover_extension_paths()
+    extensions: list[dict] = []
+    skipped = 0
+
+    for path in paths:
+        data = load_extension(path)
+        if data is None:
+            skipped += 1
+            continue
+        extensions.append(transform_extension(data))
+
+    # Sort alphabetically by id.
+    extensions.sort(key=lambda ext: ext["id"])
+
+    gallery = {
+        "$schema": GALLERY_SCHEMA_URL,
+        "version": "1.0",
+        "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "extensionCount": len(extensions),
+        "extensions": extensions,
+    }
+
+    if skipped:
+        print(
+            f"WARNING: {skipped} extension(s) skipped due to errors",
+            file=sys.stderr,
+        )
+
+    return gallery
+
+
+def write_gallery(gallery: dict) -> None:
+    """Write the gallery JSON to the output file."""
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(OUTPUT_FILE, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(gallery, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
+
+def main() -> None:
+    gallery = generate_gallery()
+    write_gallery(gallery)
+    count = gallery["extensionCount"]
+    print(f"Generated gallery with {count} extension{'s' if count != 1 else ''}")
+
+
+if __name__ == "__main__":
+    main()

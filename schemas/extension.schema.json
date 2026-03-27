@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/schemas/extension.schema.json",
+  "title": "Command Palette Extension",
+  "description": "Schema for a Command Palette extension submission.",
+  "type": "object",
+  "required": ["id", "name", "description", "publisher", "version", "category", "icon", "installSource"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to this schema file."
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique extension identifier in <publisher>.<name> format. Must match the folder name.",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*\\.[a-z0-9]+(-[a-z0-9]+)*$",
+      "examples": ["contoso.quick-notes", "microsoft.sample-extension"]
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable display name for the extension.",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "description": {
+      "type": "string",
+      "description": "Short description of the extension.",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "publisher": {
+      "type": "string",
+      "description": "Publisher display name.",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version string.",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.]+)?$",
+      "examples": ["1.0.0", "2.1.0-beta.1"]
+    },
+    "category": {
+      "type": "string",
+      "description": "Primary category for the extension.",
+      "enum": [
+        "Developer Tools",
+        "Productivity",
+        "Utilities",
+        "System",
+        "Media",
+        "Communication",
+        "Education",
+        "Entertainment",
+        "Security",
+        "Other"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "description": "Optional freeform tags for filtering. Maximum 5 tags.",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 30
+      },
+      "maxItems": 5,
+      "uniqueItems": true
+    },
+    "icon": {
+      "type": "string",
+      "description": "Filename of the icon in the same folder. Must be a .png or .svg file.",
+      "pattern": "^[\\w.-]+\\.(png|svg)$"
+    },
+    "installSource": {
+      "type": "object",
+      "description": "Where and how to install this extension.",
+      "required": ["type", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Installation source type.",
+          "enum": ["winget", "github", "store"]
+        },
+        "value": {
+          "type": "string",
+          "description": "Package identifier, GitHub repo URL, or Microsoft Store link.",
+          "minLength": 1
+        }
+      }
+    },
+    "homepage": {
+      "type": "string",
+      "description": "URL to the project homepage or repository.",
+      "format": "uri"
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX license identifier (e.g., MIT, Apache-2.0).",
+      "maxLength": 50
+    }
+  }
+}

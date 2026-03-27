@@ -410,6 +410,14 @@ FodyWeavers.xsd
 # Built Visual Studio Code Extensions
 *.vsix
 
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+*.egg-info/
+
 # Windows Installer files from build outputs
 *.cab
 *.msi

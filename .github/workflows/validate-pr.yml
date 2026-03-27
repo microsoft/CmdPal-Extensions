@@ -1,0 +1,36 @@
+name: Validate Extension Submission
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "extensions/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Get changed extension files
+        id: changed
+        run: |
+          FILES=$(git diff --name-only origin/main...HEAD -- 'extensions/')
+          echo "files<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$FILES" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Validate extension submission
+        if: steps.changed.outputs.files != ''
+        run: python scripts/validate.py ${{ steps.changed.outputs.files }}
