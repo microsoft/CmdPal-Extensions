@@ -1,37 +1,23 @@
 # Command Palette Extensions Gallery
 
-The community gallery of extensions for [Microsoft Command Palette](https://github.com/microsoft/PowerToys). This repository provides a curated list of extensions that users can discover and install directly from within Command Palette.
+[Command Palette](https://github.com/microsoft/PowerToys) is an extensible, quick-launch tool in Microsoft PowerToys that lets users search, run commands, and interact with extensions right from their desktop. This repository is the community gallery where developers can list their extensions so users can discover and install them directly from within Command Palette.
 
-## How it works
+## Submit your extension
 
-Each extension is represented by a folder under `extensions/` containing an `extension.json` metadata file and an icon. A CI pipeline aggregates all individual submissions into a single [`extensions.json`](extensions.json) file at the repo root that the Command Palette app fetches at runtime to populate its extension gallery.
+New to building extensions? Check out the [Extension Development docs](https://learn.microsoft.com/en-us/windows/powertoys/command-palette/extensibility-overview) to get started.
 
-## For extension developers
+Once your extension is ready, follow these steps to list it in the gallery:
 
-Want to list your extension in the gallery? We'd love to have you! Check out the **[Contributing Guide](docs/CONTRIBUTING.md)** for step-by-step instructions on how to submit your extension.
+1. **Fork** this repository
+2. **Create a folder** at `extensions/<your-name>/<extension-name>/` (lowercase, hyphens only)
+3. **Add an `extension.json`** with your extension metadata — see the [Contributing Guide](docs/CONTRIBUTING.md) for the full field reference and template
+4. **Add an icon** (PNG or SVG, max 100 KB, 256×256 recommended) in the same folder
+5. **Publish your extension** to at least one install source: [winget](https://learn.microsoft.com/en-us/windows/powertoys/command-palette/publish-extension), [Microsoft Store](https://learn.microsoft.com/en-us/windows/powertoys/command-palette/publish-extension), or a direct download URL (e.g. a [GitHub Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) page)
+6. **Open a pull request** targeting `main`
 
-## Gallery JSON endpoint
+CI will validate your submission automatically and the Command Palette team will review your PR. Once merged, your extension will show up in the Command Palette Extension Gallery.
 
-The Command Palette app fetches the gallery from:
-
-```
-https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions.json
-```
-
-## Repository structure
-
-```
-CmdPal-Extensions/
-├── extensions/                  # All extension submissions
-│   └── <author>/
-│       └── <extension-name>/
-│           ├── extension.json   # Extension metadata
-│           └── icon.png         # Extension icon
-├── extensions.json              # Auto-generated aggregate (do not edit)
-├── docs/
-│   └── CONTRIBUTING.md          # Submission guide for developers
-└── .github/                     # CI workflows, scripts, and schemas
-```
+See [`extensions/microsoft/sample-extension/`](extensions/microsoft/sample-extension/) for a complete example.
 
 ## Contributing
 
