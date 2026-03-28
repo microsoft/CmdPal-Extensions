@@ -1,6 +1,6 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
-  "id": "niels9001.teams-meeting-control",
+  "id": "nielslaute.teams-meeting-control",
   "title": "Teams Meeting Control for Command Palette",
   "description": "Control Microsoft Teams meetings from Command Palette. Mute, toggle camera, blur background, raise hand, send reactions, and leave calls.",
   "author": {
