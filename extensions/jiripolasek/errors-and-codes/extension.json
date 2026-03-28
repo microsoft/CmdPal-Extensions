@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "jiripolasek.errors-and-codes",
+  "title": "Errors and Codes for Command Palette",
+  "description": "Look up NTSTATUS, HRESULT, and Windows error codes with detailed explanations.",
+  "author": {
+    "name": "Jiri Polasek",
+    "url": "https://github.com/jiripolasek"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/jiripolasek/ErrorsAndCodesExtension",
+  "tags": [
+    "errors",
+    "debugging",
+    "developer-tools",
+    "windows"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P2NM9KVRD3G"
+    }
+  ]
+}
