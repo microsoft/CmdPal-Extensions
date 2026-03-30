@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "jiripolasek.dev-numbers",
+  "title": "Dev Numbers for Command Palette",
+  "description": "Convert and calculate numeric values across decimal, hex, octal, and binary formats.",
+  "author": {
+    "name": "Jiri Polasek",
+    "url": "https://github.com/jiripolasek"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/jiripolasek/DevNumbersExtension",
+  "tags": [
+    "numbers",
+    "converter",
+    "developer-tools",
+    "hex"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9PFN6H5D5XPN"
+    },
+    {
+      "type": "winget",
+      "id": "JiriPolasek.DevNumbersforCommandPalette"
+    }
+  ]
+}
