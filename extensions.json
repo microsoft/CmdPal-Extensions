@@ -1,9 +1,162 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-03-27T14:34:28Z",
-  "extensionCount": 1,
+  "generatedAt": "2026-03-30T09:03:53Z",
+  "extensionCount": 8,
   "extensions": [
+    {
+      "id": "jiripolasek.change-case",
+      "title": "Change Case for Command Palette",
+      "description": "Transform text case with camelCase, PascalCase, snake_case, kebab-case, UPPER, lower, title, and more.",
+      "author": {
+        "name": "Jiri Polasek",
+        "url": "https://github.com/jiripolasek"
+      },
+      "homepage": "https://github.com/jiripolasek/ChangeCaseExtension",
+      "tags": [
+        "text",
+        "case-converter",
+        "developer-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9PK6S30QBKVK"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/change-case/icon.png"
+    },
+    {
+      "id": "jiripolasek.dev-numbers",
+      "title": "Dev Numbers for Command Palette",
+      "description": "Convert and calculate numeric values across decimal, hex, octal, and binary formats.",
+      "author": {
+        "name": "Jiri Polasek",
+        "url": "https://github.com/jiripolasek"
+      },
+      "homepage": "https://github.com/jiripolasek/DevNumbersExtension",
+      "tags": [
+        "numbers",
+        "converter",
+        "developer-tools",
+        "hex"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9PFN6H5D5XPN"
+        },
+        {
+          "type": "winget",
+          "id": "JiriPolasek.DevNumbersforCommandPalette"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/dev-numbers/icon.png"
+    },
+    {
+      "id": "jiripolasek.errors-and-codes",
+      "title": "Errors and Codes for Command Palette",
+      "description": "Look up NTSTATUS, HRESULT, and Windows error codes with detailed explanations.",
+      "author": {
+        "name": "Jiri Polasek",
+        "url": "https://github.com/jiripolasek"
+      },
+      "homepage": "https://github.com/jiripolasek/ErrorsAndCodesExtension",
+      "tags": [
+        "errors",
+        "debugging",
+        "developer-tools",
+        "windows"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P2NM9KVRD3G"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/errors-and-codes/icon.png"
+    },
+    {
+      "id": "jiripolasek.media-controls",
+      "title": "Media Controls for Command Palette",
+      "description": "Control media playback and switch between apps playing audio or video directly from Command Palette.",
+      "author": {
+        "name": "Jiri Polasek",
+        "url": "https://github.com/jiripolasek"
+      },
+      "homepage": "https://github.com/jiripolasek/MediaControlsExtension",
+      "tags": [
+        "media",
+        "playback",
+        "audio",
+        "music"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9N3BQ81G19K7"
+        },
+        {
+          "type": "winget",
+          "id": "JiriPolasek.MediaControlsforCommandPalette"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/media-controls/icon.png"
+    },
+    {
+      "id": "jiripolasek.qr-codes",
+      "title": "QR Codes for Command Palette",
+      "description": "Generate, scan, and decode QR codes for URLs, text, email, phone numbers, and contacts.",
+      "author": {
+        "name": "Jiri Polasek",
+        "url": "https://github.com/jiripolasek"
+      },
+      "homepage": "https://github.com/jiripolasek/QRCodesExtension",
+      "tags": [
+        "qr-code",
+        "generator",
+        "scanner",
+        "utility"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NF4DFZKW6BS"
+        },
+        {
+          "type": "winget",
+          "id": "JiriPolasek.QRCodesforCommandPalette"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/qr-codes/icon.png"
+    },
+    {
+      "id": "jiripolasek.recent-files",
+      "title": "Recent Files for Command Palette",
+      "description": "Quickly access your most recently opened files directly from Command Palette.",
+      "author": {
+        "name": "Jiri Polasek",
+        "url": "https://github.com/jiripolasek"
+      },
+      "homepage": "https://github.com/jiripolasek/RecentFilesExtension",
+      "tags": [
+        "files",
+        "recent",
+        "productivity",
+        "quick-access"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NV6ZG7C7S9L"
+        },
+        {
+          "type": "winget",
+          "id": "JiriPolasek.RecentFilesforCommandPalette"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/recent-files/icon.png"
+    },
     {
       "id": "microsoft.sample-extension",
       "title": "Sample Extension",
@@ -25,6 +178,29 @@
         }
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/microsoft/sample-extension/icon.png"
+    },
+    {
+      "id": "nielslaute.teams-meeting-control",
+      "title": "Teams Meeting Control for Command Palette",
+      "description": "Control Microsoft Teams meetings from Command Palette. Mute, toggle camera, blur background, raise hand, send reactions, and leave calls.",
+      "author": {
+        "name": "Niels Laute",
+        "url": "https://github.com/niels9001"
+      },
+      "homepage": "https://github.com/niels9001/Teams-meeting-control-for-Command-Palette",
+      "tags": [
+        "teams",
+        "meetings",
+        "productivity",
+        "communication"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P3055LD9JVD"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/teams-meeting-control/icon.png"
     }
   ]
 }
