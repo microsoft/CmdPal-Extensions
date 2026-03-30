@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "nielslaute.teams-meeting-control",
+  "title": "Teams Meeting Control for Command Palette",
+  "description": "Control Microsoft Teams meetings from Command Palette. Mute, toggle camera, blur background, raise hand, send reactions, and leave calls.",
+  "author": {
+    "name": "Niels Laute",
+    "url": "https://github.com/niels9001"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/niels9001/Teams-meeting-control-for-Command-Palette",
+  "tags": ["teams", "meetings", "productivity", "communication"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P3055LD9JVD"
+    }
+  ]
+}
