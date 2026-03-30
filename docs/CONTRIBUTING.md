@@ -137,7 +137,9 @@ If the CI reports errors, review the logs, fix the issues, and push updated comm
 
 ### 8. Maintainer review and merge
 
-A maintainer will review your PR. Once approved and merged, your extension will appear in the gallery the next time the app refreshes its extension list.
+A maintainer will review your PR. Once approved and merged, the gallery generation workflow automatically runs and creates a follow-up PR to update `extensions.json`. After a maintainer merges that automated PR, your extension will appear in the Command Palette Extension Gallery.
+
+> **How it works under the hood:** When your PR merges, the `generate-gallery.yml` workflow regenerates `extensions.json` from all extension submissions and opens an automated PR on the `auto/update-gallery` branch. A maintainer merges that PR to complete the update. See [Architecture](ARCHITECTURE.md) for full details on the CI/CD pipeline.
 
 ## Updating an existing extension
 
