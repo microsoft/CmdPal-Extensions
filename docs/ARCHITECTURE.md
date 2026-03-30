@@ -20,8 +20,7 @@ CmdPal-Extensions/
 │   │   ├── validate.py                # Submission validation script
 │   │   └── requirements.txt           # Python dependencies
 │   ├── workflows/
-│   │   ├── validate-pr.yml            # CI: validates PRs
-│   │   └── generate-gallery.yml       # CI: regenerates extensions.json
+│   │   └── validate-pr.yml            # CI: validates PRs
 │   └── PULL_REQUEST_TEMPLATE.md
 └── docs/
     ├── CONTRIBUTING.md                # Contributor guide
@@ -45,19 +44,11 @@ Contributor opens PR
   Maintainer reviews & merges PR
          │
          ▼
-┌─────────────────────┐
-│ generate-gallery.yml│  Runs on: push → main (extensions/** changed)
-│ (gallery generation)│  Regenerates extensions.json from all extension.json files
-└────────┬────────────┘
+  Maintainer runs generate.py locally
+  (python .github/scripts/generate.py)
          │
          ▼
-┌─────────────────────┐
-│ Automated PR        │  Branch: auto/update-gallery
-│ (extensions.json)   │  Created by peter-evans/create-pull-request
-└────────┬────────────┘
-         │
-         ▼
-  Maintainer merges automated PR
+  Maintainer opens a PR with updated extensions.json
          │
          ▼
   extensions.json updated on main
@@ -84,22 +75,18 @@ Contributor opens PR
 - Tags are within limits (max 5 tags, each max 30 characters)
 - No duplicate IDs across the gallery
 
-### `generate-gallery.yml` — Generate Extension Gallery
+### Gallery generation (manual)
 
-**Trigger:** Pushes to `main` that modify files under `extensions/` (i.e., after a PR is merged).
+Gallery generation is a manual process performed by maintainers. After merging a contributor's PR that adds or updates extensions, a maintainer regenerates `extensions.json`:
 
-**What it does:**
-1. Checks out the repository
-2. Runs `generate.py` to regenerate `extensions.json`
-3. Opens a pull request with the updated `extensions.json` using [`peter-evans/create-pull-request`](https://github.com/peter-evans/create-pull-request)
+```bash
+pip install -r .github/scripts/requirements.txt
+python .github/scripts/generate.py
+```
 
-**Key behaviors:**
-- If `extensions.json` hasn't changed, no PR is created (built-in no-op)
-- If a PR from a previous run already exists on the `auto/update-gallery` branch, the action updates it in-place rather than creating a duplicate
-- The branch is automatically deleted after the PR is merged (`delete-branch: true`)
-- A maintainer must merge the automated PR manually
+The maintainer then opens a separate PR with the updated `extensions.json` and merges it.
 
-**Why a PR instead of direct push?** The repository has branch protection rules requiring all changes to go through a pull request. The workflow cannot push directly to `main`.
+> **Why manual?** The Microsoft GitHub org enforces read-only `GITHUB_TOKEN` permissions and disables automated PR creation at the org level. This prevents GitHub Actions workflows from creating PRs or pushing directly to protected branches.
 
 ## Scripts
 
