@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "jiripolasek.qr-codes",
+  "title": "QR Codes for Command Palette",
+  "description": "Generate, scan, and decode QR codes for URLs, text, email, phone numbers, and contacts.",
+  "author": {
+    "name": "Jiri Polasek",
+    "url": "https://github.com/jiripolasek"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/jiripolasek/QRCodesExtension",
+  "tags": [
+    "qr-code",
+    "generator",
+    "scanner",
+    "utility"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NF4DFZKW6BS"
+    },
+    {
+      "type": "winget",
+      "id": "JiriPolasek.QRCodesforCommandPalette"
+    }
+  ]
+}
