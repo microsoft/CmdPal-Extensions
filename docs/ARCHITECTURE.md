@@ -1,0 +1,133 @@
+# Architecture
+
+This document describes the internal architecture of the CmdPal-Extensions gallery repository — how submissions are validated, how the gallery JSON is generated, and how the CI/CD pipeline ties everything together.
+
+## Repository structure
+
+```
+CmdPal-Extensions/
+├── extensions/                        # Extension submissions
+│   └── <author>/
+│       └── <extension-name>/
+│           ├── extension.json         # Extension metadata
+│           └── icon.png               # Extension icon
+├── extensions.json                    # Generated gallery (do not edit manually)
+├── .github/
+│   ├── schemas/
+│   │   └── extension.schema.json      # JSON Schema for extension.json
+│   ├── scripts/
+│   │   ├── generate.py                # Gallery generation script
+│   │   ├── validate.py                # Submission validation script
+│   │   └── requirements.txt           # Python dependencies
+│   ├── workflows/
+│   │   ├── validate-pr.yml            # CI: validates PRs
+│   │   └── generate-gallery.yml       # CI: regenerates extensions.json
+│   └── PULL_REQUEST_TEMPLATE.md
+└── docs/
+    ├── CONTRIBUTING.md                # Contributor guide
+    └── ARCHITECTURE.md                # This file
+```
+
+## Data flow
+
+The end-to-end flow from submission to gallery update:
+
+```
+Contributor opens PR
+        │
+        ▼
+┌─────────────────────┐
+│  validate-pr.yml    │  Runs on: pull_request → main (extensions/** changed)
+│  (CI validation)    │  Checks schema, icon, id format, duplicates
+└────────┬────────────┘
+         │ ✅ passes
+         ▼
+  Maintainer reviews & merges PR
+         │
+         ▼
+┌─────────────────────┐
+│ generate-gallery.yml│  Runs on: push → main (extensions/** changed)
+│ (gallery generation)│  Regenerates extensions.json from all extension.json files
+└────────┬────────────┘
+         │
+         ▼
+┌─────────────────────┐
+│ Automated PR        │  Branch: auto/update-gallery
+│ (extensions.json)   │  Created by peter-evans/create-pull-request
+└────────┬────────────┘
+         │
+         ▼
+  Maintainer merges automated PR
+         │
+         ▼
+  extensions.json updated on main
+  (Command Palette app fetches this at runtime)
+```
+
+## GitHub Actions workflows
+
+### `validate-pr.yml` — Validate Extension Submission
+
+**Trigger:** Pull requests targeting `main` that modify files under `extensions/`.
+
+**What it does:**
+1. Checks out the repository with full history (`fetch-depth: 0`)
+2. Identifies which extension folders were changed using `git diff` against `origin/main`
+3. Runs `validate.py` on the changed files
+
+**Validation checks** (performed by `validate.py`):
+- `extension.json` exists and is valid JSON
+- Conforms to the JSON Schema (`.github/schemas/extension.schema.json`)
+- The `id` field matches the folder path (`author/extension-name` → `author.extension-name`)
+- The `id` format is valid (lowercase alphanumeric + hyphens, dot-separated)
+- Icon file exists, is PNG or SVG, and is under 100 KB
+- Tags are within limits (max 5 tags, each max 30 characters)
+- No duplicate IDs across the gallery
+
+### `generate-gallery.yml` — Generate Extension Gallery
+
+**Trigger:** Pushes to `main` that modify files under `extensions/` (i.e., after a PR is merged).
+
+**What it does:**
+1. Checks out the repository
+2. Runs `generate.py` to regenerate `extensions.json`
+3. Opens a pull request with the updated `extensions.json` using [`peter-evans/create-pull-request`](https://github.com/peter-evans/create-pull-request)
+
+**Key behaviors:**
+- If `extensions.json` hasn't changed, no PR is created (built-in no-op)
+- If a PR from a previous run already exists on the `auto/update-gallery` branch, the action updates it in-place rather than creating a duplicate
+- The branch is automatically deleted after the PR is merged (`delete-branch: true`)
+- A maintainer must merge the automated PR manually
+
+**Why a PR instead of direct push?** The repository has branch protection rules requiring all changes to go through a pull request. The workflow cannot push directly to `main`.
+
+## Scripts
+
+### `generate.py`
+
+Scans all `extensions/<author>/<extension-name>/extension.json` files, transforms each into a gallery entry, and writes the aggregate result to `extensions.json` at the repo root.
+
+Key transformations:
+- The relative `icon` field is replaced with an absolute `iconUrl` pointing to the raw GitHub URL
+- Fields like `$schema` and `icon` are stripped from the gallery output
+- Extensions are sorted alphabetically by `id`
+- A `generatedAt` timestamp and `extensionCount` are added to the gallery metadata
+
+### `validate.py`
+
+Validates extension submissions. Can be run in three modes:
+- **File list mode:** `python validate.py <file1> <file2> ...` — validates extensions touched by specific files (used by CI)
+- **Diff mode:** `python validate.py --diff` — auto-detects changes against `origin/main`
+- **Full mode:** `python validate.py` — validates all extensions in the gallery
+
+## Schema files
+
+### `extension.schema.json`
+
+JSON Schema (draft-07) defining the structure of individual `extension.json` files. Used by:
+- `validate.py` for CI validation
+- Editors (VS Code, etc.) for autocompletion and inline validation when contributors add `"$schema"` to their `extension.json`
+
+### `gallery.schema.json`
+
+Defined via URL in the generated `extensions.json`. Describes the shape of the aggregate gallery file that the Command Palette app consumes at runtime.
