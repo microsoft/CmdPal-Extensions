@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "jiripolasek.recent-files",
+  "title": "Recent Files for Command Palette",
+  "description": "Quickly access your most recently opened files directly from Command Palette.",
+  "author": {
+    "name": "Jiri Polasek",
+    "url": "https://github.com/jiripolasek"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/jiripolasek/RecentFilesExtension",
+  "tags": [
+    "files",
+    "recent",
+    "productivity",
+    "quick-access"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NV6ZG7C7S9L"
+    },
+    {
+      "type": "winget",
+      "id": "JiriPolasek.RecentFilesforCommandPalette"
+    }
+  ]
+}
