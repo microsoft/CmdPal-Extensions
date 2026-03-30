@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "jiripolasek.media-controls",
+  "title": "Media Controls for Command Palette",
+  "description": "Control media playback and switch between apps playing audio or video directly from Command Palette.",
+  "author": {
+    "name": "Jiri Polasek",
+    "url": "https://github.com/jiripolasek"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/jiripolasek/MediaControlsExtension",
+  "tags": [
+    "media",
+    "playback",
+    "audio",
+    "music"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9N3BQ81G19K7"
+    },
+    {
+      "type": "winget",
+      "id": "JiriPolasek.MediaControlsforCommandPalette"
+    }
+  ]
+}
