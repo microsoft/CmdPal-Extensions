@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "jiripolasek.change-case",
+  "title": "Change Case for Command Palette",
+  "description": "Transform text case with camelCase, PascalCase, snake_case, kebab-case, UPPER, lower, title, and more.",
+  "author": {
+    "name": "Jiri Polasek",
+    "url": "https://github.com/jiripolasek"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/jiripolasek/ChangeCaseExtension",
+  "tags": [
+    "text",
+    "case-converter",
+    "developer-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9PK6S30QBKVK"
+    }
+  ]
+}
