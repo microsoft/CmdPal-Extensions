@@ -1,0 +1,24 @@
+{
+  "tags": [
+    "emoji",
+    "unicode",
+    "symbols",
+    "characters"
+  ],
+  "id": "jiripolasek.symbols-and-emojis",
+  "title": "Symbols and Emojis for Command Palette",
+  "homepage": "https://apps.microsoft.com/detail/9NZ06M9CNV77",
+  "author": {
+    "url": "https://github.com/jiripolasek",
+    "name": "Jiri Polasek"
+  },
+  "description": "Search and insert Unicode symbols, emojis, and special characters with code points and details.",
+  "installSources": [
+    {
+      "id": "9NZ06M9CNV77",
+      "type": "msstore"
+    }
+  ],
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "icon": "icon.png"
+}
