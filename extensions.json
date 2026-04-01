@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-03-30T09:24:12Z",
-  "extensionCount": 8,
+  "generatedAt": "2026-04-01T13:40:15Z",
+  "extensionCount": 13,
   "extensions": [
     {
       "id": "jiripolasek.change-case",
@@ -158,6 +158,75 @@
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/recent-files/icon.png"
     },
     {
+      "tags": [
+        "emoji",
+        "unicode",
+        "symbols",
+        "characters"
+      ],
+      "id": "jiripolasek.symbols-and-emojis",
+      "title": "Symbols and Emojis for Command Palette",
+      "homepage": "https://apps.microsoft.com/detail/9NZ06M9CNV77",
+      "author": {
+        "url": "https://github.com/jiripolasek",
+        "name": "Jiri Polasek"
+      },
+      "description": "Search and insert Unicode symbols, emojis, and special characters with code points and details.",
+      "installSources": [
+        {
+          "id": "9NZ06M9CNV77",
+          "type": "msstore"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/symbols-and-emojis/icon.png"
+    },
+    {
+      "tags": [
+        "dark-mode",
+        "theme",
+        "appearance",
+        "utility"
+      ],
+      "id": "jiripolasek.toggle-dark-mode",
+      "title": "Toggle Dark Mode for Command Palette",
+      "homepage": "https://github.com/jiripolasek/ToggleDarkModeExtension",
+      "author": {
+        "url": "https://github.com/jiripolasek",
+        "name": "Jiri Polasek"
+      },
+      "description": "Quickly toggle Windows or application dark mode directly from Command Palette.",
+      "installSources": [
+        {
+          "id": "9MZSV48WJM71",
+          "type": "msstore"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/toggle-dark-mode/icon.png"
+    },
+    {
+      "tags": [
+        "converter",
+        "units",
+        "measurement",
+        "utility"
+      ],
+      "id": "jiripolasek.unit-converter",
+      "title": "Unit Converter for Command Palette",
+      "homepage": "https://apps.microsoft.com/detail/9N46RM40VR8D",
+      "author": {
+        "url": "https://github.com/jiripolasek",
+        "name": "Jiri Polasek"
+      },
+      "description": "Convert between common units of measurement like length, weight, time, volume, and area.",
+      "installSources": [
+        {
+          "id": "9N46RM40VR8D",
+          "type": "msstore"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/unit-converter/icon.png"
+    },
+    {
       "id": "microsoft.sample-extension",
       "title": "Sample Extension",
       "description": "A sample Command Palette extension to demonstrate the gallery submission format.",
@@ -178,6 +247,53 @@
         }
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/microsoft/sample-extension/icon.png"
+    },
+    {
+      "id": "nielslaute.event-viewer",
+      "title": "Event Viewer for Command Palette",
+      "description": "Browse and search Windows Event Logs directly from Command Palette — no need to open the full Event Viewer app.",
+      "author": {
+        "name": "Niels Laute",
+        "url": "https://github.com/niels9001"
+      },
+      "homepage": "https://github.com/niels9001/CmdPal-EventViewer",
+      "tags": [
+        "event-viewer",
+        "logs",
+        "windows",
+        "diagnostics",
+        "system-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P2JPD7XDB3C"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/event-viewer/icon.png"
+    },
+    {
+      "id": "nielslaute.git-repositories",
+      "title": "Git Repositories for Command Palette",
+      "description": "Discover and access local git repositories. Open repos in Explorer, VS Code, or Terminal with a single keystroke.",
+      "author": {
+        "name": "Niels Laute",
+        "url": "https://github.com/niels9001"
+      },
+      "homepage": "https://github.com/niels9001/CommandPalette-Git",
+      "tags": [
+        "git",
+        "repositories",
+        "developer-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9PMGKXL95TVT"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/git-repositories/icon.png"
     },
     {
       "id": "nielslaute.teams-meeting-control",

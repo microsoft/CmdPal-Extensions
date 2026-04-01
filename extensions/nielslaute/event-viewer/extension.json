@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "nielslaute.event-viewer",
+  "title": "Event Viewer for Command Palette",
+  "description": "Browse and search Windows Event Logs directly from Command Palette — no need to open the full Event Viewer app.",
+  "author": {
+    "name": "Niels Laute",
+    "url": "https://github.com/niels9001"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/niels9001/CmdPal-EventViewer",
+  "tags": ["event-viewer", "logs", "windows", "diagnostics", "system-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P2JPD7XDB3C"
+    }
+  ]
+}
