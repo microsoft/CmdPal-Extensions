@@ -1,0 +1,24 @@
+{
+  "tags": [
+    "dark-mode",
+    "theme",
+    "appearance",
+    "utility"
+  ],
+  "id": "jiripolasek.toggle-dark-mode",
+  "title": "Toggle Dark Mode for Command Palette",
+  "homepage": "https://github.com/jiripolasek/ToggleDarkModeExtension",
+  "author": {
+    "url": "https://github.com/jiripolasek",
+    "name": "Jiri Polasek"
+  },
+  "description": "Quickly toggle Windows or application dark mode directly from Command Palette.",
+  "installSources": [
+    {
+      "id": "9MZSV48WJM71",
+      "type": "msstore"
+    }
+  ],
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "icon": "icon.png"
+}

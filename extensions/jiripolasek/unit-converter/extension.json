@@ -1,0 +1,24 @@
+{
+  "tags": [
+    "converter",
+    "units",
+    "measurement",
+    "utility"
+  ],
+  "id": "jiripolasek.unit-converter",
+  "title": "Unit Converter for Command Palette",
+  "homepage": "https://apps.microsoft.com/detail/9N46RM40VR8D",
+  "author": {
+    "url": "https://github.com/jiripolasek",
+    "name": "Jiri Polasek"
+  },
+  "description": "Convert between common units of measurement like length, weight, time, volume, and area.",
+  "installSources": [
+    {
+      "id": "9N46RM40VR8D",
+      "type": "msstore"
+    }
+  ],
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "icon": "icon.png"
+}
