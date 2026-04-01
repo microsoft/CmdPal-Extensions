@@ -1,3 +1,6 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
 """Generate the aggregate gallery JSON for CmdPal-Extensions.
 
 Scans extensions/*/extension.json, merges them into a single

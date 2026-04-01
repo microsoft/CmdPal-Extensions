@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
 """Validate extension submissions for the CmdPal-Extensions gallery.
 
 Checks that every modified extension folder contains a well-formed
