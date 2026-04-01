@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "nielslaute.git-repositories",
+  "title": "Git Repositories for Command Palette",
+  "description": "Discover and access local git repositories. Open repos in Explorer, VS Code, or Terminal with a single keystroke.",
+  "author": {
+    "name": "Niels Laute",
+    "url": "https://github.com/niels9001"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/niels9001/CommandPalette-Git",
+  "tags": ["git", "repositories", "developer-tools", "productivity"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9PMGKXL95TVT"
+    }
+  ]
+}
