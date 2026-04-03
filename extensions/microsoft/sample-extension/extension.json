@@ -2,14 +2,19 @@
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "microsoft.sample-extension",
   "title": "Sample Extension",
-  "description": "A sample Command Palette extension to demonstrate the gallery submission format.",
+  "shortDescription": "A sample Command Palette extension to demonstrate the gallery submission format.",
+  "description": "A sample Command Palette extension to demonstrate the gallery submission format and serve as a starting point for new extension developers.",
   "author": {
     "name": "Microsoft",
     "url": "https://github.com/microsoft"
   },
   "icon": "icon.png",
   "homepage": "https://github.com/microsoft/CmdPal-Extensions",
-  "tags": ["sample", "demo", "template"],
+  "tags": [
+    "sample",
+    "demo",
+    "template"
+  ],
   "installSources": [
     {
       "type": "url",

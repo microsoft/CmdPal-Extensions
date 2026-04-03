@@ -4,7 +4,7 @@
   "title": "Command Palette Extension",
   "description": "Schema for a Command Palette extension submission.",
   "type": "object",
-  "required": ["id", "title", "description", "author", "icon", "installSources"],
+  "required": ["id", "title", "shortDescription", "description", "author", "icon", "installSources"],
   "additionalProperties": false,
   "properties": {
     "$schema": {
@@ -24,12 +24,18 @@
       "maxLength": 100,
       "examples": ["Media Controls for Command Palette", "Quick Notes", "Clipboard Manager"]
     },
-    "description": {
+    "shortDescription": {
       "type": "string",
-      "description": "Short description of the extension.",
+      "description": "Short one-line description of the extension (max 200 characters).",
       "minLength": 1,
       "maxLength": 200,
       "examples": ["Manage audio or video playback and switch between media apps directly from Command Palette."]
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description of the extension, typically sourced from the Store listing or README.",
+      "minLength": 1,
+      "maxLength": 3000
     },
     "author": {
       "type": "object",

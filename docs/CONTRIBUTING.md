@@ -62,7 +62,8 @@ Create an `extension.json` file inside your folder. Here is the full template wi
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "publisher.my-extension",
   "title": "My Extension",
-  "description": "A short description of what the extension does (max 200 characters).",
+  "shortDescription": "A short description of what the extension does (max 200 characters).",
+  "description": "A longer, detailed description of the extension. Typically sourced from the Store listing or project README.",
   "author": {
     "name": "Publisher Display Name",
     "url": "https://github.com/publisher"
@@ -86,7 +87,8 @@ Create an `extension.json` file inside your folder. Here is the full template wi
 | `$schema` | Optional | Path to the JSON schema. Enables editor autocompletion and validation. Use `"../../../.github/schemas/extension.schema.json"`. |
 | `id` | **Required** | Unique identifier in `author.extension-name` format (e.g., `jiripolasek.media-controls`). **Must match your folder path** (`author/extension-name`). |
 | `title` | **Required** | Human-readable display name (max 100 characters). |
-| `description` | **Required** | Short description of the extension (max 200 characters). |
+| `shortDescription` | **Required** | Short one-line description of the extension (max 200 characters). |
+| `description` | **Required** | Full description of the extension, typically sourced from the Store listing or README (max 3000 characters). |
 | `author` | **Required** | Object with `name` (required, max 100 characters) and `url` (optional). |
 | `tags` | Optional | Up to 5 freeform tags for filtering (each max 30 characters). |
 | `icon` | **Required** | Filename of the icon in the same folder (e.g., `icon.png`). |
