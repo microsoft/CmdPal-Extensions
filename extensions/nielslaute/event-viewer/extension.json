@@ -2,14 +2,21 @@
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "nielslaute.event-viewer",
   "title": "Event Viewer for Command Palette",
-  "description": "Browse and search Windows Event Logs directly from Command Palette — no need to open the full Event Viewer app.",
+  "shortDescription": "Browse and search Windows Event Logs directly from Command Palette — no need to open the full Event Viewer app.",
+  "description": "Browse and search Windows Event Logs directly from the Command Palette experience. Access all major Windows log categories including Application, Security, Setup, System, and Forwarded Events.\n\nFilter events by severity level—Critical, Error, Warning, Information, or Verbose. View events from configurable time ranges, search by message content or provider name, and see detailed event information including timestamp, provider, event ID, message, machine name, and user info.",
   "author": {
     "name": "Niels Laute",
     "url": "https://github.com/niels9001"
   },
   "icon": "icon.png",
   "homepage": "https://github.com/niels9001/CmdPal-EventViewer",
-  "tags": ["event-viewer", "logs", "windows", "diagnostics", "system-tools"],
+  "tags": [
+    "event-viewer",
+    "logs",
+    "windows",
+    "diagnostics",
+    "system-tools"
+  ],
   "installSources": [
     {
       "type": "msstore",
