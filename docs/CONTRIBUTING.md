@@ -138,7 +138,7 @@ extensions/<author>/<extension-name>/
 | Max count | 5 screenshots |
 | Ordering | Alphabetical by filename — prefix with numbers to control order (e.g., `01-`, `02-`) |
 
-Screenshots are automatically discovered by the pipeline and added to `extensions.json` as `screenshotUrls`. You do **not** need to reference them in `extension.json`.
+Screenshots are automatically discovered by the gallery generation process when maintainers regenerate the gallery and update `extensions.json` with `screenshotUrls`. You do **not** need to reference them in `extension.json`.
 
 ### 7. Open a pull request
 
