@@ -30,6 +30,9 @@ GALLERY_SCHEMA_URL = (
 # Fields from extension.json that should not appear in the gallery output.
 FIELDS_TO_REMOVE = {"$schema", "icon"}
 
+VALID_SCREENSHOT_EXTENSIONS = {".png", ".jpg", ".jpeg"}
+MAX_SCREENSHOTS = 5
+
 
 def discover_extension_paths() -> list[str]:
     """Return sorted paths to every extension.json under extensions/<author>/<ext>/."""
@@ -69,6 +72,33 @@ def build_icon_url(extension_id: str, icon_filename: str) -> str:
     return f"{BASE_RAW_URL}/extensions/{author}/{ext_name}/{icon_filename}"
 
 
+def discover_screenshots(extension_id: str) -> list[str]:
+    """Discover screenshot images in an extension's screenshots/ folder.
+
+    Returns a sorted list of absolute raw GitHub URLs for each valid image,
+    or an empty list if the screenshots folder does not exist.
+    """
+    author, ext_name = extension_id.split(".", 1)
+    screenshots_dir = os.path.join(EXTENSIONS_DIR, author, ext_name, "screenshots")
+
+    if not os.path.isdir(screenshots_dir):
+        return []
+
+    filenames = []
+    for name in sorted(os.listdir(screenshots_dir)):
+        full_path = os.path.join(screenshots_dir, name)
+        ext = os.path.splitext(name)[1].lower()
+        if os.path.isfile(full_path) and ext in VALID_SCREENSHOT_EXTENSIONS:
+            filenames.append(name)
+
+    filenames = filenames[:MAX_SCREENSHOTS]
+
+    return [
+        f"{BASE_RAW_URL}/extensions/{author}/{ext_name}/screenshots/{name}"
+        for name in filenames
+    ]
+
+
 def transform_extension(data: dict) -> dict:
     """Transform a raw extension.json dict into its gallery representation.
 
@@ -84,6 +114,11 @@ def transform_extension(data: dict) -> dict:
         entry[key] = value
 
     entry["iconUrl"] = icon_url
+
+    screenshot_urls = discover_screenshots(data["id"])
+    if screenshot_urls:
+        entry["screenshotUrls"] = screenshot_urls
+
     return entry
 
 

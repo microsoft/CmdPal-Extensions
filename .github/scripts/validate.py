@@ -52,6 +52,10 @@ MAX_TAG_LENGTH = 30
 MAX_ICON_SIZE_KB = 100
 VALID_ICON_EXTENSIONS = {".png", ".svg"}
 
+MAX_SCREENSHOTS = 5
+MAX_SCREENSHOT_SIZE_KB = 1024  # 1 MB
+VALID_SCREENSHOT_EXTENSIONS = {".png", ".jpg", ".jpeg"}
+
 # V2 id format: author.extension-name (e.g. "jiripolasek.media-controls")
 ID_PATTERN = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*\.[a-z0-9]+(-[a-z0-9]+)*$")
 
@@ -232,7 +236,7 @@ def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, p
                     f"exceeds {MAX_TAG_LENGTH} character limit ({len(tag)} chars)"
                 )
 
-    # 9. Duplicate ID check across the gallery
+    # 8. Duplicate ID check across the gallery
     if ext_id and ext_id in id_index:
         other = id_index[ext_id]
         other_display = f"{other.parent.name}/{other.name}"
@@ -240,6 +244,42 @@ def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, p
             f"{display_path}/extension.json: Duplicate id \"{ext_id}\" — "
             f"already used by {other_display}/"
         )
+
+    # 9. Screenshots validation (optional folder)
+    screenshots_dir = folder / "screenshots"
+    if screenshots_dir.is_dir():
+        screenshot_files = [
+            f for f in screenshots_dir.iterdir() if f.is_file()
+        ]
+
+        # Check for invalid file types
+        for sf in screenshot_files:
+            if sf.suffix.lower() not in VALID_SCREENSHOT_EXTENSIONS:
+                errors.append(
+                    f"{display_path}/screenshots/{sf.name}: Invalid file type "
+                    f"\"{sf.suffix}\". Screenshots must be .png, .jpg, or .jpeg"
+                )
+
+        valid_screenshots = [
+            f for f in screenshot_files
+            if f.suffix.lower() in VALID_SCREENSHOT_EXTENSIONS
+        ]
+
+        # Check max number of screenshots
+        if len(valid_screenshots) > MAX_SCREENSHOTS:
+            errors.append(
+                f"{display_path}/screenshots: Too many screenshots "
+                f"({len(valid_screenshots)}). Maximum is {MAX_SCREENSHOTS}."
+            )
+
+        # Check file sizes
+        for sf in valid_screenshots:
+            size_kb = sf.stat().st_size / 1024
+            if size_kb > MAX_SCREENSHOT_SIZE_KB:
+                errors.append(
+                    f"{display_path}/screenshots/{sf.name}: Screenshot is "
+                    f"{size_kb:.1f} KB, exceeds {MAX_SCREENSHOT_SIZE_KB} KB limit"
+                )
 
     return errors
 

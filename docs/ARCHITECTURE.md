@@ -10,7 +10,10 @@ CmdPal-Extensions/
 │   └── <author>/
 │       └── <extension-name>/
 │           ├── extension.json         # Extension metadata
-│           └── icon.png               # Extension icon
+│           ├── icon.png               # Extension icon
+│           └── screenshots/           # Optional extension screenshots
+│               ├── 01-main.png
+│               └── 02-settings.png
 ├── extensions.json                    # Generated gallery (do not edit manually)
 ├── .github/
 │   ├── schemas/
@@ -74,6 +77,7 @@ Contributor opens PR
 - Icon file exists, is PNG or SVG, and is under 100 KB
 - Tags are within limits (max 5 tags, each max 30 characters)
 - No duplicate IDs across the gallery
+- Screenshots (if present) are valid: max 5 files, PNG/JPEG only, max 1 MB each
 
 ### Gallery generation (manual)
 
@@ -96,6 +100,7 @@ Scans all `extensions/<author>/<extension-name>/extension.json` files, transform
 
 Key transformations:
 - The relative `icon` field is replaced with an absolute `iconUrl` pointing to the raw GitHub URL
+- Screenshots in the `screenshots/` folder are discovered and added as `screenshotUrls` (sorted alphabetically)
 - Fields like `$schema` and `icon` are stripped from the gallery output
 - Extensions are sorted alphabetically by `id`
 - A `generatedAt` timestamp and `extensionCount` are added to the gallery metadata
