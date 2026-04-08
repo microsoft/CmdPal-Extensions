@@ -236,7 +236,7 @@ def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, p
                     f"exceeds {MAX_TAG_LENGTH} character limit ({len(tag)} chars)"
                 )
 
-    # 9. Duplicate ID check across the gallery
+    # 8. Duplicate ID check across the gallery
     if ext_id and ext_id in id_index:
         other = id_index[ext_id]
         other_display = f"{other.parent.name}/{other.name}"
@@ -245,7 +245,7 @@ def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, p
             f"already used by {other_display}/"
         )
 
-    # 10. Screenshots validation (optional folder)
+    # 9. Screenshots validation (optional folder)
     screenshots_dir = folder / "screenshots"
     if screenshots_dir.is_dir():
         screenshot_files = [

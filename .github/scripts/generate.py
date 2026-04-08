@@ -31,6 +31,7 @@ GALLERY_SCHEMA_URL = (
 FIELDS_TO_REMOVE = {"$schema", "icon"}
 
 VALID_SCREENSHOT_EXTENSIONS = {".png", ".jpg", ".jpeg"}
+MAX_SCREENSHOTS = 5
 
 
 def discover_extension_paths() -> list[str]:
@@ -84,12 +85,13 @@ def discover_screenshots(extension_id: str) -> list[str]:
         return []
 
     filenames = []
-    for name in os.listdir(screenshots_dir):
+    for name in sorted(os.listdir(screenshots_dir)):
+        full_path = os.path.join(screenshots_dir, name)
         ext = os.path.splitext(name)[1].lower()
-        if ext in VALID_SCREENSHOT_EXTENSIONS:
+        if os.path.isfile(full_path) and ext in VALID_SCREENSHOT_EXTENSIONS:
             filenames.append(name)
 
-    filenames.sort()
+    filenames = filenames[:MAX_SCREENSHOTS]
 
     return [
         f"{BASE_RAW_URL}/extensions/{author}/{ext_name}/screenshots/{name}"
