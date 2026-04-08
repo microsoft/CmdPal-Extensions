@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-04-01T13:40:15Z",
-  "extensionCount": 13,
+  "generatedAt": "2026-04-08T18:01:13Z",
+  "extensionCount": 12,
   "extensions": [
     {
       "id": "jiripolasek.change-case",
@@ -236,29 +236,6 @@
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/unit-converter/icon.png"
     },
     {
-      "id": "microsoft.sample-extension",
-      "title": "Sample Extension",
-      "shortDescription": "A sample Command Palette extension to demonstrate the gallery submission format.",
-      "description": "A sample Command Palette extension to demonstrate the gallery submission format and serve as a starting point for new extension developers.",
-      "author": {
-        "name": "Microsoft",
-        "url": "https://github.com/microsoft"
-      },
-      "homepage": "https://github.com/microsoft/CmdPal-Extensions",
-      "tags": [
-        "sample",
-        "demo",
-        "template"
-      ],
-      "installSources": [
-        {
-          "type": "url",
-          "uri": "https://github.com/microsoft/CmdPal-Extensions/releases/latest"
-        }
-      ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/microsoft/sample-extension/icon.png"
-    },
-    {
       "id": "nielslaute.event-viewer",
       "title": "Event Viewer for Command Palette",
       "shortDescription": "Browse and search Windows Event Logs directly from Command Palette — no need to open the full Event Viewer app.",
@@ -281,7 +258,13 @@
           "id": "9P2JPD7XDB3C"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/event-viewer/icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/event-viewer/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/event-viewer/screenshots/screenshot1.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/event-viewer/screenshots/screenshot2.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/event-viewer/screenshots/screenshot3.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/event-viewer/screenshots/screenshot4.png"
+      ]
     },
     {
       "id": "nielslaute.git-repositories",

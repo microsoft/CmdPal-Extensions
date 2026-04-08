@@ -114,7 +114,33 @@ Place an icon file in your extension folder alongside `extension.json`.
 - **Recommended dimensions:** 256×256 pixels for PNG files
 - The filename must match the `icon` field in your `extension.json`
 
-### 6. Open a pull request
+### 6. Add screenshots (optional)
+
+To showcase your extension, add screenshots to a `screenshots/` folder inside your extension directory:
+
+```
+extensions/<author>/<extension-name>/
+├── extension.json
+├── icon.png
+└── screenshots/
+    ├── 01-main-view.png
+    ├── 02-settings.png
+    └── 03-search-results.jpg
+```
+
+**Screenshot rules:**
+
+| Rule | Detail |
+|------|--------|
+| Folder name | `screenshots/` inside your extension folder |
+| Formats | PNG (`.png`) or JPEG (`.jpg`, `.jpeg`) |
+| Max file size | 1 MB per screenshot |
+| Max count | 5 screenshots |
+| Ordering | Alphabetical by filename — prefix with numbers to control order (e.g., `01-`, `02-`) |
+
+Screenshots are automatically discovered by the pipeline and added to `extensions.json` as `screenshotUrls`. You do **not** need to reference them in `extension.json`.
+
+### 7. Open a pull request
 
 Push your branch to your fork and open a pull request targeting the `main` branch of this repository.
 
@@ -126,7 +152,7 @@ git push origin add-my-extension
 
 Then open a PR on GitHub.
 
-### 7. CI validation
+### 8. CI validation
 
 Our CI pipeline automatically validates your submission. It checks that:
 
@@ -137,7 +163,7 @@ Our CI pipeline automatically validates your submission. It checks that:
 
 If the CI reports errors, review the logs, fix the issues, and push updated commits to your PR branch.
 
-### 8. Maintainer review and merge
+### 9. Maintainer review and merge
 
 A maintainer will review your PR. Once approved and merged, a maintainer will regenerate the gallery and open a separate PR to update `extensions.json`. After that PR is merged, your extension will appear in the Command Palette Extension Gallery.
 
