@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
+  "title": "Command Palette Extensions Gallery",
+  "description": "Schema for the aggregated gallery JSON consumed by the Command Palette app.",
+  "type": "object",
+  "required": ["version", "generatedAt", "extensionCount", "extensions"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to this schema file."
+    },
+    "version": {
+      "type": "string",
+      "description": "Gallery format version.",
+      "examples": ["1.0"]
+    },
+    "generatedAt": {
+      "type": "string",
+      "description": "ISO 8601 UTC timestamp of when this file was generated.",
+      "format": "date-time",
+      "examples": ["2025-01-01T00:00:00Z"]
+    },
+    "extensionCount": {
+      "type": "integer",
+      "description": "Total number of extensions in this gallery.",
+      "minimum": 0
+    },
+    "extensions": {
+      "type": "array",
+      "description": "List of extensions in the gallery.",
+      "items": {
+        "$ref": "#/definitions/galleryEntry"
+      }
+    }
+  },
+  "definitions": {
+    "galleryEntry": {
+      "type": "object",
+      "description": "A single extension entry in the gallery.",
+      "required": ["id", "title", "shortDescription", "description", "author", "installSources", "iconUrl"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique extension identifier in author.extension-name format.",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*\\.[a-z0-9]+(-[a-z0-9]+)*$",
+          "examples": ["jiripolasek.media-controls", "microsoft.sample-extension"]
+        },
+        "title": {
+          "type": "string",
+          "description": "Human-readable display name for the extension.",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "shortDescription": {
+          "type": "string",
+          "description": "Short one-line description of the extension.",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "description": {
+          "type": "string",
+          "description": "Full description of the extension.",
+          "minLength": 1,
+          "maxLength": 3000
+        },
+        "author": {
+          "type": "object",
+          "description": "Extension author information.",
+          "required": ["name"],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Author display name.",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "url": {
+              "type": "string",
+              "description": "URL to the author's website or profile.",
+              "format": "uri"
+            }
+          }
+        },
+        "homepage": {
+          "type": "string",
+          "description": "URL to the project homepage or repository.",
+          "format": "uri"
+        },
+        "tags": {
+          "type": "array",
+          "description": "Optional freeform tags for filtering. Maximum 5 tags.",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 30
+          },
+          "maxItems": 5,
+          "uniqueItems": true
+        },
+        "installSources": {
+          "type": "array",
+          "description": "One or more installation sources for this extension.",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "description": "An installation source.",
+            "required": ["type"],
+            "oneOf": [
+              {
+                "properties": {
+                  "type": { "const": "winget" },
+                  "id": { "type": "string", "description": "Winget package identifier.", "minLength": 1 }
+                },
+                "required": ["type", "id"],
+                "additionalProperties": false
+              },
+              {
+                "properties": {
+                  "type": { "const": "msstore" },
+                  "id": { "type": "string", "description": "Microsoft Store product ID.", "minLength": 1 }
+                },
+                "required": ["type", "id"],
+                "additionalProperties": false
+              },
+              {
+                "properties": {
+                  "type": { "const": "url" },
+                  "uri": { "type": "string", "description": "Direct download or release page URL.", "format": "uri" }
+                },
+                "required": ["type", "uri"],
+                "additionalProperties": false
+              }
+            ]
+          }
+        },
+        "iconUrl": {
+          "type": "string",
+          "description": "Absolute URL to the extension icon on GitHub raw content.",
+          "format": "uri"
+        },
+        "screenshotUrls": {
+          "type": "array",
+          "description": "Optional list of absolute URLs to extension screenshots on GitHub raw content. Maximum 5 screenshots.",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "maxItems": 5,
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}
