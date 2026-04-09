@@ -30,7 +30,7 @@ GALLERY_SCHEMA_URL = (
 # Fields from extension.json that should not appear in the gallery output.
 FIELDS_TO_REMOVE = {"$schema", "icon"}
 
-VALID_SCREENSHOT_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif"}
+VALID_SCREENSHOT_EXTENSIONS = {".png", ".jpg", ".jpeg"}
 MAX_SCREENSHOTS = 5
 
 

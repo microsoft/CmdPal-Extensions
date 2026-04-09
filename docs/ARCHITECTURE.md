@@ -77,7 +77,7 @@ Contributor opens PR
 - Icon file exists, is PNG or SVG, and is under 100 KB
 - Tags are within limits (max 5 tags, each max 30 characters)
 - No duplicate IDs across the gallery
-- Screenshots (if present) are valid: max 5 files, PNG/JPEG/GIF only, max 1 MB each
+- Screenshots (if present) are valid: max 5 files, PNG/JPEG only, max 1 MB each
 
 ### Gallery generation (manual)
 

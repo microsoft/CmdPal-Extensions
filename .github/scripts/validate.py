@@ -54,7 +54,7 @@ VALID_ICON_EXTENSIONS = {".png", ".svg"}
 
 MAX_SCREENSHOTS = 5
 MAX_SCREENSHOT_SIZE_KB = 1024  # 1 MB
-VALID_SCREENSHOT_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif"}
+VALID_SCREENSHOT_EXTENSIONS = {".png", ".jpg", ".jpeg"}
 
 # V2 id format: author.extension-name (e.g. "jiripolasek.media-controls")
 ID_PATTERN = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*\.[a-z0-9]+(-[a-z0-9]+)*$")
@@ -257,7 +257,7 @@ def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, p
             if sf.suffix.lower() not in VALID_SCREENSHOT_EXTENSIONS:
                 errors.append(
                     f"{display_path}/screenshots/{sf.name}: Invalid file type "
-                    f"\"{sf.suffix}\". Screenshots must be .png, .jpg, .jpeg, or .gif"
+                    f"\"{sf.suffix}\". Screenshots must be .png, .jpg, or .jpeg"
                 )
 
         valid_screenshots = [
