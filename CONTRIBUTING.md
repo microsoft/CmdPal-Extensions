@@ -26,6 +26,21 @@ reference, icon requirements, and CI validation details, see the
 3. Add an `extension.json` and icon file
 4. Open a pull request targeting `main`
 
+## Content Ownership Requirements
+
+By submitting an extension listing (including icons, screenshots, or other media), you represent that:
+
+- You own the rights to all submitted materials, or
+- You have obtained all necessary permissions to use them
+
+Do not submit:
+
+- Third‑party logos or trademarks without authorization
+- Microsoft product logos
+- Branding that may imply official affiliation
+
+Submissions that violate copyright or trademark rights may be rejected or removed.
+
 ### Reporting issues
 
 Please search [existing issues](https://github.com/microsoft/CmdPal-Extensions/issues) before
