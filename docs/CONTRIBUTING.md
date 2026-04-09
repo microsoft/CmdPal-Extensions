@@ -133,7 +133,7 @@ extensions/<author>/<extension-name>/
 | Rule | Detail |
 |------|--------|
 | Folder name | `screenshots/` inside your extension folder |
-| Formats | PNG (`.png`) or JPEG (`.jpg`, `.jpeg`) |
+| Formats | PNG (`.png`), JPEG (`.jpg`, `.jpeg`), or GIF (`.gif`) |
 | Max file size | 1 MB per screenshot |
 | Max count | 5 screenshots |
 | Ordering | Alphabetical by filename — prefix with numbers to control order (e.g., `01-`, `02-`) |
