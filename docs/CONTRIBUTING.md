@@ -69,6 +69,7 @@ Create an `extension.json` file inside your folder. Here is the full template wi
     "url": "https://github.com/publisher"
   },
   "tags": ["tag1", "tag2"],
+  "categories": ["productivity", "utilities-and-tools"],
   "icon": "icon.png",
   "installSources": [
     {
@@ -91,6 +92,7 @@ Create an `extension.json` file inside your folder. Here is the full template wi
 | `description` | **Required** | Full description of the extension, typically sourced from the Store listing or README (max 3000 characters). |
 | `author` | **Required** | Object with `name` (required, max 100 characters) and `url` (optional). |
 | `tags` | Optional | Up to 5 freeform tags for filtering (each max 30 characters). |
+| `categories` | Optional | Up to 3 categories from a fixed list. See [Allowed categories](#allowed-categories) below. |
 | `icon` | **Required** | Filename of the icon in the same folder (e.g., `icon.png`). |
 | `installSources` | **Required** | Array of install source objects. Each has a `type` and a type-specific identifier. See below. |
 | `homepage` | Optional | URL to the project homepage or repository. |
@@ -104,6 +106,23 @@ Each object in the `installSources` array has a `type` and a type-specific field
 | `winget` | `id` | The winget package identifier | `"Publisher.PackageName"` |
 | `msstore` | `id` | Microsoft Store product ID | `"9n3bq81g19k7"` |
 | `url` | `uri` | Direct download or release page URL | `"https://github.com/publisher/extension/releases"` |
+
+#### Allowed categories
+
+Choose up to 3 categories from the following fixed list:
+
+| Category | Description |
+|----------|-------------|
+| `developer-tools` | Coding, debugging, developer utilities |
+| `education` | Learning, study aids |
+| `entertainment` | Streaming, media playback |
+| `music` | Listening, creating, performing music |
+| `news-and-weather` | News, forecasts |
+| `personalization` | Themes, wallpaper, appearance |
+| `photo-and-video` | Capture, editing, sharing |
+| `productivity` | Task management, workflow, note-taking |
+| `social` | Messaging, communication, collaboration |
+| `utilities-and-tools` | Calculators, converters, file managers |
 
 ### 5. Add an icon
 

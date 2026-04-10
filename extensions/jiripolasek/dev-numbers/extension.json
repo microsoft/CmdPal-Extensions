@@ -16,6 +16,10 @@
     "developer-tools",
     "hex"
   ],
+  "categories": [
+    "developer-tools",
+    "utilities-and-tools"
+  ],
   "installSources": [
     {
       "type": "msstore",

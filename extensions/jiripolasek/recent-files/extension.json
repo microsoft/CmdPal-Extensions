@@ -16,6 +16,10 @@
     "productivity",
     "quick-access"
   ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
   "installSources": [
     {
       "type": "msstore",

@@ -76,6 +76,7 @@ Contributor opens PR
 - The `id` format is valid (lowercase alphanumeric + hyphens, dot-separated)
 - Icon file exists, is PNG or SVG, and is under 100 KB
 - Tags are within limits (max 5 tags, each max 30 characters)
+- Categories (if present) are from the allowed list, max 3, no duplicates
 - No duplicate IDs across the gallery
 - Screenshots (if present) are valid: max 5 files, PNG/JPEG only, max 1 MB each
 
@@ -101,6 +102,7 @@ Scans all `extensions/<author>/<extension-name>/extension.json` files, transform
 Key transformations:
 - The relative `icon` field is replaced with an absolute `iconUrl` pointing to the raw GitHub URL
 - Screenshots in the `screenshots/` folder are discovered and added as `screenshotUrls` (sorted alphabetically)
+- An `addedAt` date is stamped on each extension — new extensions get today's date, existing extensions preserve their original date from the previous `extensions.json`
 - Fields like `$schema` and `icon` are stripped from the gallery output
 - Extensions are sorted alphabetically by `id`
 - A `generatedAt` timestamp and `extensionCount` are added to the gallery metadata

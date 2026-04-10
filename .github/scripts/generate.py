@@ -122,9 +122,30 @@ def transform_extension(data: dict) -> dict:
     return entry
 
 
+def load_existing_gallery() -> dict[str, str]:
+    """Load the existing extensions.json and return a mapping of id -> addedAt.
+
+    If the file does not exist or cannot be parsed, returns an empty dict.
+    """
+    if not os.path.isfile(OUTPUT_FILE):
+        return {}
+    try:
+        with open(OUTPUT_FILE, encoding="utf-8") as f:
+            gallery = json.load(f)
+        return {
+            ext["id"]: ext["addedAt"]
+            for ext in gallery.get("extensions", [])
+            if "addedAt" in ext
+        }
+    except (OSError, json.JSONDecodeError, KeyError):
+        return {}
+
+
 def generate_gallery() -> dict:
     """Scan all extensions and return the complete gallery dict."""
     paths = discover_extension_paths()
+    existing_added_at = load_existing_gallery()
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     extensions: list[dict] = []
     skipped = 0
 
@@ -133,7 +154,9 @@ def generate_gallery() -> dict:
         if data is None:
             skipped += 1
             continue
-        extensions.append(transform_extension(data))
+        entry = transform_extension(data)
+        entry["addedAt"] = existing_added_at.get(data["id"], today)
+        extensions.append(entry)
 
     # Sort alphabetically by id.
     extensions.sort(key=lambda ext: ext["id"])

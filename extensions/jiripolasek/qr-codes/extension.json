@@ -16,6 +16,10 @@
     "scanner",
     "utility"
   ],
+  "categories": [
+    "utilities-and-tools",
+    "productivity"
+  ],
   "installSources": [
     {
       "type": "msstore",

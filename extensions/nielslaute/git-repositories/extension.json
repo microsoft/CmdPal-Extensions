@@ -16,6 +16,10 @@
     "developer-tools",
     "productivity"
   ],
+  "categories": [
+    "developer-tools",
+    "productivity"
+  ],
   "installSources": [
     {
       "type": "msstore",

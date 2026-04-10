@@ -16,6 +16,10 @@
     "audio",
     "music"
   ],
+  "categories": [
+    "entertainment",
+    "music"
+  ],
   "installSources": [
     {
       "type": "msstore",

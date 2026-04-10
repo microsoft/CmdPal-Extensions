@@ -52,6 +52,20 @@ MAX_TAG_LENGTH = 30
 MAX_ICON_SIZE_KB = 100
 VALID_ICON_EXTENSIONS = {".png", ".svg"}
 
+MAX_CATEGORIES = 3
+VALID_CATEGORIES = {
+    "developer-tools",
+    "education",
+    "entertainment",
+    "music",
+    "news-and-weather",
+    "personalization",
+    "photo-and-video",
+    "productivity",
+    "social",
+    "utilities-and-tools",
+}
+
 MAX_SCREENSHOTS = 5
 MAX_SCREENSHOT_SIZE_KB = 1024  # 1 MB
 VALID_SCREENSHOT_EXTENSIONS = {".png", ".jpg", ".jpeg"}
@@ -245,7 +259,28 @@ def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, p
             f"already used by {other_display}/"
         )
 
-    # 9. Screenshots validation (optional folder)
+    # 9. Categories validation (when provided)
+    categories = data.get("categories", [])
+    if isinstance(categories, list):
+        if len(categories) > MAX_CATEGORIES:
+            errors.append(
+                f"{display_path}/extension.json: Too many categories ({len(categories)}). "
+                f"Maximum is {MAX_CATEGORIES}."
+            )
+        for i, cat in enumerate(categories):
+            if isinstance(cat, str) and cat not in VALID_CATEGORIES:
+                errors.append(
+                    f"{display_path}/extension.json: Category #{i + 1} \"{cat}\" "
+                    f"is not a valid category. "
+                    f"Allowed values: {', '.join(sorted(VALID_CATEGORIES))}"
+                )
+        if len(categories) != len(set(categories)):
+            errors.append(
+                f"{display_path}/extension.json: Duplicate categories found. "
+                f"Each category must be unique."
+            )
+
+    # 10. Screenshots validation (optional folder)
     screenshots_dir = folder / "screenshots"
     if screenshots_dir.is_dir():
         screenshot_files = [

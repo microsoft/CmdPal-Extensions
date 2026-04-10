@@ -16,6 +16,9 @@
     "measurement",
     "utility"
   ],
+  "categories": [
+    "utilities-and-tools"
+  ],
   "installSources": [
     {
       "id": "9N46RM40VR8D",

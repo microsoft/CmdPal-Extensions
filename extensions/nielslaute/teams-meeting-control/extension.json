@@ -16,6 +16,10 @@
     "productivity",
     "communication"
   ],
+  "categories": [
+    "social",
+    "productivity"
+  ],
   "installSources": [
     {
       "type": "msstore",

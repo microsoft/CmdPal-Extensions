@@ -17,6 +17,10 @@
     "diagnostics",
     "system-tools"
   ],
+  "categories": [
+    "developer-tools",
+    "utilities-and-tools"
+  ],
   "installSources": [
     {
       "type": "msstore",

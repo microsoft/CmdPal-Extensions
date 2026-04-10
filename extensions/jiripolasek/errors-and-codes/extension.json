@@ -16,6 +16,9 @@
     "developer-tools",
     "windows"
   ],
+  "categories": [
+    "developer-tools"
+  ],
   "installSources": [
     {
       "type": "msstore",

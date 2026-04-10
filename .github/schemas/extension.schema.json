@@ -82,6 +82,28 @@
       "uniqueItems": true,
       "examples": [["media", "playback", "audio"]]
     },
+    "categories": {
+      "type": "array",
+      "description": "Optional categories from a fixed list. Maximum 3 categories.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "developer-tools",
+          "education",
+          "entertainment",
+          "music",
+          "news-and-weather",
+          "personalization",
+          "photo-and-video",
+          "productivity",
+          "social",
+          "utilities-and-tools"
+        ]
+      },
+      "maxItems": 3,
+      "uniqueItems": true,
+      "examples": [["developer-tools", "productivity"]]
+    },
     "installSources": {
       "type": "array",
       "description": "One or more installation sources for this extension.",

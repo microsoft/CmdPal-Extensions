@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-04-08T20:48:09Z",
+  "generatedAt": "2026-04-10T10:56:52Z",
   "extensionCount": 12,
   "extensions": [
     {
@@ -19,13 +19,18 @@
         "case-converter",
         "developer-tools"
       ],
+      "categories": [
+        "developer-tools",
+        "utilities-and-tools"
+      ],
       "installSources": [
         {
           "type": "msstore",
           "id": "9PK6S30QBKVK"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/change-case/icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/change-case/icon.png",
+      "addedAt": "2026-04-10"
     },
     {
       "id": "jiripolasek.dev-numbers",
@@ -43,6 +48,10 @@
         "developer-tools",
         "hex"
       ],
+      "categories": [
+        "developer-tools",
+        "utilities-and-tools"
+      ],
       "installSources": [
         {
           "type": "msstore",
@@ -53,7 +62,8 @@
           "id": "JiriPolasek.DevNumbersforCommandPalette"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/dev-numbers/icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/dev-numbers/icon.png",
+      "addedAt": "2026-04-10"
     },
     {
       "id": "jiripolasek.errors-and-codes",
@@ -71,13 +81,17 @@
         "developer-tools",
         "windows"
       ],
+      "categories": [
+        "developer-tools"
+      ],
       "installSources": [
         {
           "type": "msstore",
           "id": "9P2NM9KVRD3G"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/errors-and-codes/icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/errors-and-codes/icon.png",
+      "addedAt": "2026-04-10"
     },
     {
       "id": "jiripolasek.media-controls",
@@ -95,6 +109,10 @@
         "audio",
         "music"
       ],
+      "categories": [
+        "entertainment",
+        "music"
+      ],
       "installSources": [
         {
           "type": "msstore",
@@ -105,7 +123,8 @@
           "id": "JiriPolasek.MediaControlsforCommandPalette"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/media-controls/icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/media-controls/icon.png",
+      "addedAt": "2026-04-10"
     },
     {
       "id": "jiripolasek.qr-codes",
@@ -123,6 +142,10 @@
         "scanner",
         "utility"
       ],
+      "categories": [
+        "utilities-and-tools",
+        "productivity"
+      ],
       "installSources": [
         {
           "type": "msstore",
@@ -133,7 +156,8 @@
           "id": "JiriPolasek.QRCodesforCommandPalette"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/qr-codes/icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/qr-codes/icon.png",
+      "addedAt": "2026-04-10"
     },
     {
       "id": "jiripolasek.recent-files",
@@ -151,6 +175,10 @@
         "productivity",
         "quick-access"
       ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
       "installSources": [
         {
           "type": "msstore",
@@ -161,7 +189,8 @@
           "id": "JiriPolasek.RecentFilesforCommandPalette"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/recent-files/icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/recent-files/icon.png",
+      "addedAt": "2026-04-10"
     },
     {
       "id": "jiripolasek.symbols-and-emojis",
@@ -179,13 +208,18 @@
         "symbols",
         "characters"
       ],
+      "categories": [
+        "utilities-and-tools",
+        "productivity"
+      ],
       "installSources": [
         {
           "id": "9NZ06M9CNV77",
           "type": "msstore"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/symbols-and-emojis/icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/symbols-and-emojis/icon.png",
+      "addedAt": "2026-04-10"
     },
     {
       "id": "jiripolasek.toggle-dark-mode",
@@ -203,13 +237,17 @@
         "appearance",
         "utility"
       ],
+      "categories": [
+        "personalization"
+      ],
       "installSources": [
         {
           "id": "9MZSV48WJM71",
           "type": "msstore"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/toggle-dark-mode/icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/toggle-dark-mode/icon.png",
+      "addedAt": "2026-04-10"
     },
     {
       "id": "jiripolasek.unit-converter",
@@ -227,13 +265,17 @@
         "measurement",
         "utility"
       ],
+      "categories": [
+        "utilities-and-tools"
+      ],
       "installSources": [
         {
           "id": "9N46RM40VR8D",
           "type": "msstore"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/unit-converter/icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/unit-converter/icon.png",
+      "addedAt": "2026-04-10"
     },
     {
       "id": "nielslaute.event-viewer",
@@ -252,6 +294,10 @@
         "diagnostics",
         "system-tools"
       ],
+      "categories": [
+        "developer-tools",
+        "utilities-and-tools"
+      ],
       "installSources": [
         {
           "type": "msstore",
@@ -264,7 +310,8 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/event-viewer/screenshots/screenshot2.png",
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/event-viewer/screenshots/screenshot3.png",
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/event-viewer/screenshots/screenshot4.png"
-      ]
+      ],
+      "addedAt": "2026-04-10"
     },
     {
       "id": "nielslaute.git-repositories",
@@ -282,13 +329,18 @@
         "developer-tools",
         "productivity"
       ],
+      "categories": [
+        "developer-tools",
+        "productivity"
+      ],
       "installSources": [
         {
           "type": "msstore",
           "id": "9PMGKXL95TVT"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/git-repositories/icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/git-repositories/icon.png",
+      "addedAt": "2026-04-10"
     },
     {
       "id": "nielslaute.teams-meeting-control",
@@ -306,13 +358,18 @@
         "productivity",
         "communication"
       ],
+      "categories": [
+        "social",
+        "productivity"
+      ],
       "installSources": [
         {
           "type": "msstore",
           "id": "9P3055LD9JVD"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/teams-meeting-control/icon.png"
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/teams-meeting-control/icon.png",
+      "addedAt": "2026-04-10"
     }
   ]
 }
