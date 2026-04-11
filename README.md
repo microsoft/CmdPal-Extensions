@@ -12,11 +12,13 @@
   <a href="https://learn.microsoft.com/windows/powertoys/command-palette/extensibility-overview">Create your own extension</a>
 </h3>
 
-🔍 **Discoverable by millions** — your extension shows up right inside Command Palette, where users are already looking
+🔍 **Discoverable by millions** — your extension shows up right inside Command Palette
 
 📦 **Host it your way** — publish through winget, the Microsoft Store, or your own download link — you stay in control
 
 🌍 **Open-source & community-driven** — join a growing ecosystem of developers extending Windows productivity
+
+<br/>
 
 ## 🛠️ Submit your extension
 
@@ -27,7 +29,7 @@ Once your extension is ready, follow these steps to list it in the gallery:
 1. **Fork** this repository
 2. **Create a folder** at `extensions/<your-name>/<extension-name>/` (lowercase, hyphens only)
 3. **Add an `extension.json`** with your extension metadata — see the [Contributing Guide](docs/CONTRIBUTING.md) for the full field reference and template
-4. **Add an icon** (PNG or SVG, max 100 KB, 256×256 recommended) in the same folder
+4. **Add an icon** in the same folder
 5. **Publish your extension** to at least one install source: [winget](https://learn.microsoft.com/windows/powertoys/command-palette/publish-extension), [Microsoft Store](https://learn.microsoft.com/windows/powertoys/command-palette/publish-extension), or a direct download URL (e.g. a [GitHub Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) page)
 6. **Open a pull request** targeting `main`
 
@@ -39,6 +41,8 @@ See [`extensions/microsoft/sample-extension/`](extensions/microsoft/sample-exten
   <img src="docs/images/details.png" alt="Extension details page" width="700" />
 </p>
 
+<br/>
+
 ## 🤝 Contributing
 
 This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit the [Microsoft CLA site](https://cla.opensource.microsoft.com).
@@ -46,6 +50,8 @@ This project welcomes contributions and suggestions. Most contributions require 
 When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+<br/>
 
 ## ⚖️ Trademarks
 
