@@ -26,6 +26,16 @@
 
 New to building Command Palette extensions? Check out the [Extension Development docs](https://learn.microsoft.com/windows/powertoys/command-palette/extensibility-overview) to get started.
 
+📦 **Host it your way** — publish through winget, the Microsoft Store, or your own download link — you stay in control
+
+🌍 **Open-source & community-driven** — join a growing ecosystem of developers extending Windows productivity
+
+<br/>
+
+## 🛠️ Submit your extension
+
+New to building Command Palette extensions? Check out the [Extension Development docs](https://learn.microsoft.com/windows/powertoys/command-palette/extensibility-overview) to get started.
+
 Once your extension is ready, add it to the gallery by opening a pull request with an `extension.json`, an icon, and at least one install source — winget, Microsoft Store, or a direct download URL. CI validates your submission automatically and the Command Palette team will review your PR.
 
 👉 **[Submit your extension guide](docs/CONTRIBUTING.md)** — full walkthrough, field reference, and a [sample extension](extensions/microsoft/sample-extension/) to get started.
