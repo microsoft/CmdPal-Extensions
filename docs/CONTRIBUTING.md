@@ -68,16 +68,16 @@ Create an `extension.json` file inside your folder. Here is the full template wi
     "name": "Publisher Display Name",
     "url": "https://github.com/publisher"
   },
+  "icon": "icon.png",
+  "homepage": "https://github.com/publisher/extension",
   "tags": ["tag1", "tag2"],
   "categories": ["productivity", "utilities-and-tools"],
-  "icon": "icon.png",
   "installSources": [
     {
       "type": "winget",
       "id": "Publisher.PackageName"
     }
-  ],
-  "homepage": "https://github.com/publisher/extension"
+  ]
 }
 ```
 
@@ -91,11 +91,12 @@ Create an `extension.json` file inside your folder. Here is the full template wi
 | `shortDescription` | **Required** | Short one-line description of the extension (max 200 characters). |
 | `description` | **Required** | Full description of the extension, typically sourced from the Store listing or README (max 3000 characters). |
 | `author` | **Required** | Object with `name` (required, max 100 characters) and `url` (optional). |
-| `tags` | Optional | Up to 5 freeform tags for filtering (each max 30 characters). |
-| `categories` | Optional | Up to 3 categories from a fixed list. See [Allowed categories](#allowed-categories) below. |
 | `icon` | **Required** | Filename of the icon in the same folder (e.g., `icon.png`). |
 | `installSources` | **Required** | Array of install source objects. Each has a `type` and a type-specific identifier. See below. |
 | `homepage` | Optional | URL to the project homepage or repository. |
+| `tags` | Optional | Up to 5 freeform tags for filtering (each max 30 characters). |
+| `categories` | Optional | Up to 3 categories from a fixed list. See [Allowed categories](#allowed-categories) below. |
+| `listed` | Optional | Whether the extension appears in the public gallery. Defaults to `true`. Set to `false` for sample or test extensions. |
 
 #### Install source types
 

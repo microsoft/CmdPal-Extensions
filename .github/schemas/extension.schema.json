@@ -70,6 +70,11 @@
       "format": "uri",
       "examples": ["https://github.com/jiripolasek/MediaControlsExtension"]
     },
+    "listed": {
+      "type": "boolean",
+      "description": "Whether this extension should appear in the public gallery. Defaults to true if omitted. Set to false for sample or test extensions.",
+      "default": true
+    },
     "tags": {
       "type": "array",
       "description": "Optional freeform tags for filtering. Maximum 5 tags.",

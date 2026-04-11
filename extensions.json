@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-04-10T10:56:52Z",
+  "generatedAt": "2026-04-11T09:31:27Z",
   "extensionCount": 12,
   "extensions": [
     {
@@ -302,6 +302,10 @@
         {
           "type": "msstore",
           "id": "9P2JPD7XDB3C"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/niels9001/CmdPal-EventViewer/releases"
         }
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/event-viewer/icon.png",

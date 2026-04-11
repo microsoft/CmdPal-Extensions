@@ -12,6 +12,8 @@
   <a href="https://learn.microsoft.com/windows/powertoys/command-palette/extensibility-overview">Create your own extension</a>
 </h3>
 
+<br/>
+
 🔍 **Discoverable by millions** — your extension shows up right inside Command Palette
 
 📦 **Host it your way** — publish through winget, the Microsoft Store, or your own download link — you stay in control
@@ -24,18 +26,9 @@
 
 New to building Command Palette extensions? Check out the [Extension Development docs](https://learn.microsoft.com/windows/powertoys/command-palette/extensibility-overview) to get started.
 
-Once your extension is ready, follow these steps to list it in the gallery:
+Once your extension is ready, add it to the gallery by opening a pull request with an `extension.json`, an icon, and at least one install source — winget, Microsoft Store, or a direct download URL. CI validates your submission automatically and the Command Palette team will review your PR.
 
-1. **Fork** this repository
-2. **Create a folder** at `extensions/<your-name>/<extension-name>/` (lowercase, hyphens only)
-3. **Add an `extension.json`** with your extension metadata — see the [Contributing Guide](docs/CONTRIBUTING.md) for the full field reference and template
-4. **Add an icon** in the same folder
-5. **Publish your extension** to at least one install source: [winget](https://learn.microsoft.com/windows/powertoys/command-palette/publish-extension), [Microsoft Store](https://learn.microsoft.com/windows/powertoys/command-palette/publish-extension), or a direct download URL (e.g. a [GitHub Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) page)
-6. **Open a pull request** targeting `main`
-
-CI will validate your submission automatically and the Command Palette team will review your PR. Once merged, your extension will show up in the Command Palette Extension Gallery.
-
-See [`extensions/microsoft/sample-extension/`](extensions/microsoft/sample-extension/) for a complete example.
+👉 **[Submit your extension guide](docs/CONTRIBUTING.md)** — full walkthrough, field reference, and a [sample extension](extensions/microsoft/sample-extension/) to get started.
 
 <p align="center">
   <img src="docs/images/details.png" alt="Extension details page" width="700" />

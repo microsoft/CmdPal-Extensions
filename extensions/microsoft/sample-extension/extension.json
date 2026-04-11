@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "microsoft.sample-extension",
+  "listed": false,
+  "title": "Sample Extension",
+  "shortDescription": "A sample extension to demonstrate the gallery submission format.",
+  "description": "A sample Command Palette extension to demonstrate the gallery submission format. Use this as a reference when creating your own extension submission.",
+  "author": {
+    "name": "Microsoft",
+    "url": "https://github.com/microsoft"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/microsoft/CmdPal-Extensions",
+  "tags": ["sample", "demo", "template"],
+  "categories": ["utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "Microsoft.PowerToys"
+    },
+    {
+      "type": "msstore",
+      "id": "XP89DCGQ3K6VLD"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/microsoft/CmdPal-Extensions/releases/latest"
+    }
+  ]
+}

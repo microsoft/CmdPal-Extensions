@@ -28,7 +28,7 @@ GALLERY_SCHEMA_URL = (
 )
 
 # Fields from extension.json that should not appear in the gallery output.
-FIELDS_TO_REMOVE = {"$schema", "icon"}
+FIELDS_TO_REMOVE = {"$schema", "icon", "listed"}
 
 VALID_SCREENSHOT_EXTENSIONS = {".png", ".jpg", ".jpeg"}
 MAX_SCREENSHOTS = 5
@@ -152,6 +152,9 @@ def generate_gallery() -> dict:
     for path in paths:
         data = load_extension(path)
         if data is None:
+            skipped += 1
+            continue
+        if not data.get("listed", True):
             skipped += 1
             continue
         entry = transform_extension(data)
