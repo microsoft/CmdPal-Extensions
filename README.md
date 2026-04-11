@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/images/gallery.png" alt="Extension Gallery in Command Palette" width="700" />
+</p>
+
 <h1 align="center">🎨 Command Palette Extensions Gallery</h1>
 <p align="center">
   The official community gallery for <a href="https://github.com/microsoft/PowerToys">Command Palette</a> extensions.
@@ -8,17 +12,9 @@
   <a href="https://learn.microsoft.com/windows/powertoys/command-palette/extensibility-overview">Create your own extension</a>
 </h3>
 
-<p align="center">
-  <img src="docs/images/gallery.png" alt="Extension Gallery in Command Palette" width="700" />
-</p>
+🔍 **Discoverable by millions** — your extension shows up right inside Command Palette, where users are already looking
 
-🚀 **Instant distribution** — your extension appears in the built-in Extension Gallery, no separate marketplace needed
-
-👀 **Built-in discoverability** — users browse, search, and install without ever leaving Command Palette
-
-📦 **Flexible packaging** — publish via winget, the Microsoft Store, or a simple download URL
-
-✅ **Automated validation** — CI checks your submission so you can ship with confidence
+📦 **Host it your way** — publish through winget, the Microsoft Store, or your own download link — you stay in control
 
 🌍 **Open-source & community-driven** — join a growing ecosystem of developers extending Windows productivity
 
