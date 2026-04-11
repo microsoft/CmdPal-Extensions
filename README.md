@@ -1,32 +1,30 @@
 <h1 align="center">🎨 Command Palette Extensions Gallery</h1>
 <p align="center">
-  <strong>Supercharge <a href="https://github.com/microsoft/PowerToys">Command Palette</a> with community-built extensions</strong> — and get yours in front of every PowerToys user on Windows.
+  The official community gallery for <a href="https://github.com/microsoft/PowerToys">Command Palette</a> extensions.
 </p>
 <h3 align="center">
-  <a href="#-submit-your-extension">Submit an Extension</a>
+  <a href="#-submit-your-extension">Submit an extension</a>
   <span> · </span>
-  <a href="https://learn.microsoft.com/windows/powertoys/command-palette/extensibility-overview">Extension Dev Docs</a>
-  <span> · </span>
-  <a href="docs/CONTRIBUTING.md">Contributing Guide</a>
-  <span> · </span>
-  <a href="https://github.com/microsoft/PowerToys">PowerToys</a>
+  <a href="https://learn.microsoft.com/windows/powertoys/command-palette/extensibility-overview">Create your own extension</a>
 </h3>
-
-This is the official gallery where extensions are discovered, installed, and updated right inside Command Palette.
-
-- 🚀 **Instant distribution** — your extension appears in the built-in Extension Gallery, no separate marketplace needed
-- 👀 **Built-in discoverability** — users browse, search, and install without ever leaving Command Palette
-- 📦 **Flexible packaging** — publish via winget, the Microsoft Store, or a simple download URL
-- ✅ **Automated validation** — CI checks your submission so you can ship with confidence
-- 🌍 **Open-source & community-driven** — join a growing ecosystem of developers extending Windows productivity
 
 <p align="center">
   <img src="docs/images/gallery.png" alt="Extension Gallery in Command Palette" width="700" />
 </p>
 
+🚀 **Instant distribution** — your extension appears in the built-in Extension Gallery, no separate marketplace needed
+
+👀 **Built-in discoverability** — users browse, search, and install without ever leaving Command Palette
+
+📦 **Flexible packaging** — publish via winget, the Microsoft Store, or a simple download URL
+
+✅ **Automated validation** — CI checks your submission so you can ship with confidence
+
+🌍 **Open-source & community-driven** — join a growing ecosystem of developers extending Windows productivity
+
 ## 🛠️ Submit your extension
 
-New to building extensions? Check out the [Extension Development docs](https://learn.microsoft.com/windows/powertoys/command-palette/extensibility-overview) to get started.
+New to building Command Palette extensions? Check out the [Extension Development docs](https://learn.microsoft.com/windows/powertoys/command-palette/extensibility-overview) to get started.
 
 Once your extension is ready, follow these steps to list it in the gallery:
 
