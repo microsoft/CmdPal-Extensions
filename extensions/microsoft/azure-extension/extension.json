@@ -1,0 +1,33 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "microsoft.azure-extension",
+  "title": "Azure Extension for Command Palette (Preview)",
+  "shortDescription": "Access Azure DevOps queries, pull requests, and pipelines directly from Command Palette.",
+  "description": "Integrate Azure DevOps directly into your Command Palette workflow. Access saved queries, search pull requests, monitor pipeline runs, and manage work items—all without leaving the Command Palette.\n\nSign in with your Azure DevOps credentials to instantly access your saved queries, pull request searches, and pipeline searches. View work item details, pull request statuses, and pipeline results at a glance.\n\nRequires PowerToys with Command Palette (version 0.90.0 or above), Windows 11, and an ARM64 or x64 processor.",
+  "author": {
+    "name": "Microsoft",
+    "url": "https://github.com/microsoft"
+  },
+  "icon": "icon.svg",
+  "homepage": "https://github.com/microsoft/CmdPalAzureExtension",
+  "tags": [
+    "azure",
+    "devops",
+    "pipelines",
+    "pull-requests"
+  ],
+  "categories": [
+    "developer-tools",
+    "productivity"
+  ],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "Microsoft.CmdPalAzureExtension"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/microsoft/CmdPalAzureExtension/releases"
+    }
+  ]
+}
