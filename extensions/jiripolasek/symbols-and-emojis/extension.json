@@ -3,10 +3,10 @@
   "id": "jiripolasek.symbols-and-emojis",
   "title": "Symbols and Emojis for Command Palette",
   "shortDescription": "Search and insert Unicode symbols, emojis, and special characters with code points and details.",
-  "description": "Search and insert Unicode symbols, emojis, and special characters directly from the Command Palette. Browse or search through a comprehensive library of characters with their code points and details.\n\nQuickly find the exact symbol you need—whether it’s a mathematical operator, currency sign, arrow, emoji, or any other Unicode character—and insert it into your workflow with a single action.",
+  "description": "Need to quickly find and use a symbol, emoji, or special character? This extension brings a full Unicode character explorer right into your Command Palette. Instantly search for any emoji, symbol, or Unicode character by name or category, view detailed character info, and copy it to your clipboard with a click.\n\nWhether you're a developer, designer, or power user, this tool saves time by providing code points, escape sequences, HTML entities, and LaTeX representations all in one place. No need to open a separate app or website\u2014everything is accessible right from your workspace.\n\nPerfect for coding, writing documentation, creating content, or simply spicing up your messages with emojis.",
   "author": {
-    "url": "https://github.com/jiripolasek",
-    "name": "Jiri Polasek"
+    "name": "Jiri Polasek",
+    "url": "https://github.com/jiripolasek"
   },
   "icon": "icon.png",
   "homepage": "https://apps.microsoft.com/detail/9NZ06M9CNV77",
@@ -22,8 +22,8 @@
   ],
   "installSources": [
     {
-      "id": "9NZ06M9CNV77",
-      "type": "msstore"
+      "type": "msstore",
+      "id": "9NZ06M9CNV77"
     }
   ]
 }

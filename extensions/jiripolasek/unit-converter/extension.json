@@ -3,10 +3,10 @@
   "id": "jiripolasek.unit-converter",
   "title": "Unit Converter for Command Palette",
   "shortDescription": "Convert between common units of measurement like length, weight, time, volume, and area.",
-  "description": "Convert between common units of measurement directly from the Command Palette. Supports a wide range of unit categories including length, weight, time, volume, area, temperature, speed, and more.\n\nSimply type a value and unit to see instant conversions across all related units. Fast, accurate, and always accessible without leaving your workflow.",
+  "description": "Stop switching between apps or browsing the web for simple conversions. With Unit Converter for Command Palette, you can instantly convert between common units of measurement—right within your workflow.\n\nEasily convert between length, weight, time, volume, area, temperature, speed, and more without interrupting your flow. Simply open the Command Palette, type your query (like \"10 km in miles\"), and get results in real-time.\n\nWhether you're a developer, student, or multitasker, this extension helps you stay focused by delivering fast and accurate unit conversions. Perfect for anyone needing quick conversions without clutter or distraction.",
   "author": {
-    "url": "https://github.com/jiripolasek",
-    "name": "Jiri Polasek"
+    "name": "Jiri Polasek",
+    "url": "https://github.com/jiripolasek"
   },
   "icon": "icon.png",
   "homepage": "https://apps.microsoft.com/detail/9N46RM40VR8D",
@@ -21,8 +21,8 @@
   ],
   "installSources": [
     {
-      "id": "9N46RM40VR8D",
-      "type": "msstore"
+      "type": "msstore",
+      "id": "9N46RM40VR8D"
     }
   ]
 }
