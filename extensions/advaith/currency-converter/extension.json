@@ -1,0 +1,34 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "advaith.currency-converter",
+  "title": "Currency Converter for Command Palette",
+  "shortDescription": "Convert real and crypto currencies.",
+  "description": "Need to convert currencies on the fly without breaking your workflow? Currency Converter for Command Palette is a fast, lightweight extension for the Windows Command Palette that lets you seamlessly translate between global fiat money and cryptocurrencies. Instead of opening a browser tab, simply pull up your command palette, type in your amount, and get instant, accurate results. Whether you are using natural language, currency symbols, or even doing quick inline math before a conversion, this tool handles it effortlessly.",
+  "author": {
+    "name": "Advaith A J",
+    "url": "https://github.com/advaith3600"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/Advaith3600/Command-Palette-Currency-Converter",
+  "tags": [
+    "currency",
+    "converter",
+    "crypto",
+    "currency-converter"
+  ],
+  "categories": ["productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "advaith.CurrencyConverterCommandPalette"
+    },
+    {
+      "type": "msstore",
+      "id": "9PC2T04G3V9C"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/Advaith3600/Command-Palette-Currency-Converter/releases"
+    }
+  ]
+}
