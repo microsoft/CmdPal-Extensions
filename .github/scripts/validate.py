@@ -298,8 +298,20 @@ def validate_winget_source(
     if not isinstance(versions, list) or not versions:
         return errors, warnings
 
+    def _version_key(version_name: str) -> tuple[tuple[int, int | str], ...]:
+        return tuple(
+            (0, int(part)) if part.isdigit() else (1, part.lower())
+            for part in re.split(r"(\d+)", version_name)
+            if part
+        )
+
     # Fetch the PackageName from the latest version's locale YAML.
-    latest_version = sorted(v["name"] for v in versions if "name" in v)[-1]
+    version_names = [
+        v["name"] for v in versions if isinstance(v, dict) and "name" in v
+    ]
+    if not version_names:
+        return errors, warnings
+    latest_version = max(version_names, key=_version_key)
     locale_file = f"{winget_id}.locale.en-US.yaml"
     default_file = f"{winget_id}.yaml"
 
