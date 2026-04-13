@@ -1,0 +1,39 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "tanchekwei.visual-studio-code",
+  "title": "Visual Studio / Code for Command Palette",
+  "shortDescription": "Launch Visual Studio solutions and Visual Studio Code (including Cursor, Windsurf, Antigravity) workspaces from a single, unified interface.",
+  "description": "A unified launcher for Visual Studio solutions and Visual Studio Code workspaces (including support for Cursor, Windsurf, and Google Antigravity).\n\nKey Features:\n- Unified Interface: Access all your projects from one place.\n- Deep Integration: Supports Local, WSL, SSH, and Dev Container workspaces.\n- Smart Launching: Automatically switches to existing windows for Visual Studio solutions.\n- Global Search: Injects top-matching workspaces directly into the Command Palette search.\n- Advanced Pinning: Keep your favorites accessible with 'Pin to Home' and 'Pin to Dock'.\n- Performance Optimized: Built with Native AOT for fast startup and low memory usage.\n- Contextual Actions: Quick access to 'Open as Administrator', 'Open in Terminal', 'Copy Path', and more.",
+  "author": {
+    "name": "Chek Wei Tan",
+    "url": "https://github.com/tanchekwei"
+  },
+  "icon": "icon.svg",
+  "homepage": "https://github.com/tanchekwei/VisualStudioCodeForCommandPalette",
+  "tags": [
+    "visual-studio",
+    "visual-studio-code",
+    "workspace",
+    "launcher",
+    "productivity"
+  ],
+  "categories": [
+    "developer-tools",
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9MVLFK6TR4D4"
+    },
+    {
+      "type": "winget",
+      "id": "15722UsefulApp.WorkspaceLauncherForVSCode"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/tanchekwei/VisualStudioCodeForCommandPalette/releases"
+    }
+  ]
+}
