@@ -221,6 +221,13 @@ def validate_msstore_source(
         )
         return errors, warnings
 
+    if not isinstance(data, dict):
+        warnings.append(
+            f"{display_path}: Microsoft Store API returned an unexpected JSON "
+            f"response type ({type(data).__name__}) while validating store ID "
+            f"\"{store_id}\". Skipping online validation."
+        )
+        return errors, warnings
     products = data.get("Products", [])
     if not products:
         errors.append(
