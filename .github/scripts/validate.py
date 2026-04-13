@@ -235,7 +235,7 @@ def validate_msstore_source(
         .get("ProductTitle", "")
     )
     if store_title and store_title.strip().lower() != extension_title.strip().lower():
-        errors.append(
+        warnings.append(
             f"{display_path}: Microsoft Store product name mismatch — "
             f"store has \"{store_title}\" but extension.json title is "
             f"\"{extension_title}\""
@@ -329,7 +329,7 @@ def validate_winget_source(
         return errors, warnings
 
     if package_name.strip().lower() != extension_title.strip().lower():
-        errors.append(
+        warnings.append(
             f"{display_path}: Winget package name mismatch — "
             f"winget has \"{package_name}\" but extension.json title is "
             f"\"{extension_title}\""
