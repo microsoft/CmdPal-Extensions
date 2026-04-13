@@ -521,6 +521,55 @@ def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, p
 # ---------------------------------------------------------------------------
 
 
+def _build_run_url() -> str | None:
+    """Build the GitHub Actions run URL from environment variables."""
+    server = os.environ.get("GITHUB_SERVER_URL")
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    run_id = os.environ.get("GITHUB_RUN_ID")
+    if server and repo and run_id:
+        return f"{server}/{repo}/actions/runs/{run_id}"
+    return None
+
+
+def _write_markdown_summary(
+    errors: List[str],
+    warnings: List[str],
+    validated_count: int,
+    path: str,
+    *,
+    append: bool = False,
+) -> None:
+    """Write a markdown summary of validation results."""
+    lines: List[str] = []
+
+    if errors:
+        lines.append("## ❌ Extension Validation Failed\n")
+    else:
+        lines.append("## ⚠️ Extension Validation Warnings\n")
+
+    if errors:
+        lines.append("### Errors\n")
+        for err in errors:
+            lines.append(f"- ❌ {err}")
+        lines.append("")
+
+    if warnings:
+        lines.append("### Warnings\n")
+        for warn in warnings:
+            lines.append(f"- ⚠️ {warn}")
+        lines.append("")
+
+    lines.append(f"*Validated {validated_count} extension(s)*\n")
+
+    run_url = _build_run_url()
+    if run_url:
+        lines.append(f"[View full pipeline log]({run_url})")
+
+    mode = "a" if append else "w"
+    with open(path, mode, encoding="utf-8", newline="\n") as f:
+        f.write("\n".join(lines) + "\n")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="Validate CmdPal extension submissions.",
@@ -540,6 +589,11 @@ def main() -> int:
         "--skip-network",
         action="store_true",
         help="Skip install-source validation that requires network access.",
+    )
+    parser.add_argument(
+        "--summary",
+        metavar="FILE",
+        help="Write a markdown summary of errors/warnings to FILE for PR commenting.",
     )
     args = parser.parse_args()
 
@@ -586,6 +640,20 @@ def main() -> int:
 
     # Summary
     print()
+
+    # Write markdown summary for CI (PR comments / step summary)
+    if total_errors or total_warnings:
+        if args.summary:
+            _write_markdown_summary(
+                total_errors, total_warnings, validated_count, args.summary
+            )
+        step_summary = os.environ.get("GITHUB_STEP_SUMMARY")
+        if step_summary:
+            _write_markdown_summary(
+                total_errors, total_warnings, validated_count,
+                step_summary, append=True,
+            )
+
     if total_errors:
         print(f"❌ {len(total_errors)} error(s) found across {validated_count} extension(s).")
         return 1
