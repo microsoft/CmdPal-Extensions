@@ -322,13 +322,14 @@ def validate_winget_source(
     locale_file = f"{winget_id}.locale.en-US.yaml"
     default_file = f"{winget_id}.yaml"
 
+    raw_headers = {"User-Agent": "CmdPal-Extensions-Validator/1.0"}
     package_name: str | None = None
     for filename in [locale_file, default_file]:
         raw_url = (
             f"{WINGET_PKGS_RAW_URL}/{manifest_path}/{latest_version}/{filename}"
         )
         try:
-            req = urllib.request.Request(raw_url, headers=gh_headers)
+            req = urllib.request.Request(raw_url, headers=raw_headers)
             with urllib.request.urlopen(req, timeout=NETWORK_TIMEOUT) as resp:
                 content = resp.read().decode("utf-8")
             for line in content.splitlines():
