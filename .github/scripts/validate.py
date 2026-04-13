@@ -76,7 +76,7 @@ VALID_SCREENSHOT_EXTENSIONS = {".png", ".jpg", ".jpeg"}
 ID_PATTERN = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*\.[a-z0-9]+(-[a-z0-9]+)*$")
 
 # Install source validation endpoints
-MSSTORE_API_URL = "https://displaycatalog.mp.microsoft.com/v7.0/products"
+MSSTORE_DETAIL_URL = "https://apps.microsoft.com/detail"
 WINGET_PKGS_API_URL = (
     "https://api.github.com/repos/microsoft/winget-pkgs/contents/manifests"
 )
@@ -188,17 +188,41 @@ def _github_api_headers() -> dict:
     return headers
 
 
-def _fetch_json(url: str, headers: dict | None = None) -> dict | list | None:
-    """Fetch JSON from a URL. Returns parsed JSON or *None* on network failure."""
-    hdrs = {"User-Agent": "CmdPal-Extensions-Validator/1.0"}
-    if headers:
-        hdrs.update(headers)
-    req = urllib.request.Request(url, headers=hdrs)
+
+def _fetch_store_page(store_id: str) -> tuple[int | None, str]:
+    """Fetch the Microsoft Store detail page for *store_id*.
+
+    Returns ``(status_code, html_body)``.  On network errors the status code
+    is ``None`` and the body is empty.
+    """
+    url = f"{MSSTORE_DETAIL_URL}/{store_id}"
+    req = urllib.request.Request(
+        url, headers={"User-Agent": "CmdPal-Extensions-Validator/1.0"}
+    )
     try:
         with urllib.request.urlopen(req, timeout=NETWORK_TIMEOUT) as resp:
-            return json.loads(resp.read())
-    except (urllib.error.URLError, OSError, json.JSONDecodeError):
-        return None
+            return resp.status, resp.read().decode("utf-8", errors="replace")
+    except urllib.error.HTTPError as exc:
+        return exc.code, ""
+    except (urllib.error.URLError, OSError):
+        return None, ""
+
+
+def _extract_og_title(html: str) -> str:
+    """Extract the product name from the ``og:title`` meta tag.
+
+    The ``og:title`` value follows the pattern:
+        ``Product Name - Free download and install on Windows | Microsoft Store``
+    """
+    match = re.search(
+        r'<meta\s+property="og:title"\s+content="([^"]+)"', html
+    )
+    if not match:
+        return ""
+    og = match.group(1)
+    # Strip the well-known suffix added by apps.microsoft.com
+    sep = og.find(" - ")
+    return og[:sep].strip() if sep != -1 else og.strip()
 
 
 def validate_msstore_source(
@@ -206,41 +230,39 @@ def validate_msstore_source(
 ) -> tuple[List[str], List[str]]:
     """Validate a Microsoft Store install source ID.
 
+    Uses the public apps.microsoft.com storefront to check whether the
+    product exists and, when possible, compares the listed title to the
+    extension.json title.
+
     Returns (errors, warnings).
     """
     errors: List[str] = []
     warnings: List[str] = []
 
-    url = f"{MSSTORE_API_URL}?bigIds={store_id}&market=US&languages=en-US"
-    data = _fetch_json(url)
+    status, html = _fetch_store_page(store_id)
 
-    if data is None:
+    if status is None:
         warnings.append(
-            f"{display_path}: Could not reach Microsoft Store API to validate "
+            f"{display_path}: Could not reach Microsoft Store to validate "
             f"store ID \"{store_id}\". Skipping online validation."
         )
         return errors, warnings
 
-    if not isinstance(data, dict):
-        warnings.append(
-            f"{display_path}: Microsoft Store API returned an unexpected JSON "
-            f"response type ({type(data).__name__}) while validating store ID "
-            f"\"{store_id}\". Skipping online validation."
-        )
-        return errors, warnings
-    products = data.get("Products", [])
-    if not products:
+    if status == 404:
         errors.append(
             f"{display_path}: Microsoft Store product ID \"{store_id}\" was not found. "
             f"Verify the ID is correct at https://apps.microsoft.com/detail/{store_id}"
         )
         return errors, warnings
 
-    store_title = (
-        products[0]
-        .get("LocalizedProperties", [{}])[0]
-        .get("ProductTitle", "")
-    )
+    if status != 200:
+        warnings.append(
+            f"{display_path}: Microsoft Store returned HTTP {status} while "
+            f"validating store ID \"{store_id}\". Skipping online validation."
+        )
+        return errors, warnings
+
+    store_title = _extract_og_title(html)
     if store_title and store_title.strip().lower() != extension_title.strip().lower():
         warnings.append(
             f"{display_path}: Microsoft Store product name mismatch — "
