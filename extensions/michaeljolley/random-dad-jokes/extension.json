@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "michaeljolley.random-dad-jokes",
+  "title": "Random Dad Jokes for Command Palette",
+  "shortDescription": "Smile or groan with a random dad joke delivered right in Command Palette.",
+  "description": "Laugh or groan at a random dad joke, delivered right to your Command Palette. A fun, lightweight extension that fetches a new dad joke on demand—perfect for a quick break or to share a chuckle with colleagues.\n\nJust open the Command Palette and get an instant dose of humor without leaving your workflow.",
+  "author": {
+    "name": "Michael Jolley",
+    "url": "https://github.com/michaeljolley"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/michaeljolley/CmdPalExtensions",
+  "tags": [
+    "jokes",
+    "dad-jokes",
+    "humor",
+    "fun"
+  ],
+  "categories": [
+    "entertainment"
+  ],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "MichaelJolley.RandomDadJokesForCmdPal"
+    }
+  ]
+}

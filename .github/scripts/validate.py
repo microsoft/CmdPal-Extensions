@@ -28,6 +28,8 @@ import pathlib
 import re
 import subprocess
 import sys
+import urllib.error
+import urllib.request
 from typing import List, Set
 
 try:
@@ -72,6 +74,16 @@ VALID_SCREENSHOT_EXTENSIONS = {".png", ".jpg", ".jpeg"}
 
 # V2 id format: author.extension-name (e.g. "jiripolasek.media-controls")
 ID_PATTERN = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*\.[a-z0-9]+(-[a-z0-9]+)*$")
+
+# Install source validation endpoints
+MSSTORE_DETAIL_URL = "https://apps.microsoft.com/detail"
+WINGET_PKGS_API_URL = (
+    "https://api.github.com/repos/microsoft/winget-pkgs/contents/manifests"
+)
+WINGET_PKGS_RAW_URL = (
+    "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests"
+)
+NETWORK_TIMEOUT = 15
 
 
 # ---------------------------------------------------------------------------
@@ -163,13 +175,220 @@ def build_id_index(exclude_folder: pathlib.Path | None = None) -> dict[str, path
 
 
 # ---------------------------------------------------------------------------
+# Install source validation (network-dependent)
+# ---------------------------------------------------------------------------
+
+
+def _github_api_headers() -> dict:
+    """Return headers for GitHub API requests, using GITHUB_TOKEN if available."""
+    headers = {"User-Agent": "CmdPal-Extensions-Validator/1.0"}
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        headers["Authorization"] = f"token {token}"
+    return headers
+
+
+
+def _fetch_store_page(store_id: str) -> tuple[int | None, str]:
+    """Fetch the Microsoft Store detail page for *store_id*.
+
+    Returns ``(status_code, html_body)``.  On network errors the status code
+    is ``None`` and the body is empty.
+    """
+    url = f"{MSSTORE_DETAIL_URL}/{store_id}"
+    req = urllib.request.Request(
+        url, headers={"User-Agent": "CmdPal-Extensions-Validator/1.0"}
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=NETWORK_TIMEOUT) as resp:
+            return resp.status, resp.read().decode("utf-8", errors="replace")
+    except urllib.error.HTTPError as exc:
+        return exc.code, ""
+    except (urllib.error.URLError, OSError):
+        return None, ""
+
+
+def _extract_og_title(html: str) -> str:
+    """Extract the product name from the ``og:title`` meta tag.
+
+    The ``og:title`` value follows the pattern:
+        ``Product Name - Free download and install on Windows | Microsoft Store``
+    """
+    match = re.search(
+        r'<meta\s+property="og:title"\s+content="([^"]+)"', html
+    )
+    if not match:
+        return ""
+    og = match.group(1)
+    # Strip the well-known suffix added by apps.microsoft.com
+    sep = og.find(" - ")
+    return og[:sep].strip() if sep != -1 else og.strip()
+
+
+def validate_msstore_source(
+    store_id: str, extension_title: str, display_path: str
+) -> tuple[List[str], List[str]]:
+    """Validate a Microsoft Store install source ID.
+
+    Uses the public apps.microsoft.com storefront to check whether the
+    product exists and, when possible, compares the listed title to the
+    extension.json title.
+
+    Returns (errors, warnings).
+    """
+    errors: List[str] = []
+    warnings: List[str] = []
+
+    status, html = _fetch_store_page(store_id)
+
+    if status is None:
+        warnings.append(
+            f"{display_path}: Could not reach Microsoft Store to validate "
+            f"store ID \"{store_id}\". Skipping online validation."
+        )
+        return errors, warnings
+
+    if status == 404:
+        errors.append(
+            f"{display_path}: Microsoft Store product ID \"{store_id}\" was not found. "
+            f"Verify the ID is correct at https://apps.microsoft.com/detail/{store_id}"
+        )
+        return errors, warnings
+
+    if status != 200:
+        warnings.append(
+            f"{display_path}: Microsoft Store returned HTTP {status} while "
+            f"validating store ID \"{store_id}\". Skipping online validation."
+        )
+        return errors, warnings
+
+    store_title = _extract_og_title(html)
+    if store_title and store_title.strip().lower() != extension_title.strip().lower():
+        warnings.append(
+            f"{display_path}: Microsoft Store product name mismatch — "
+            f"store has \"{store_title}\" but extension.json title is "
+            f"\"{extension_title}\""
+        )
+
+    return errors, warnings
+
+
+def validate_winget_source(
+    winget_id: str, extension_title: str, display_path: str
+) -> tuple[List[str], List[str]]:
+    """Validate a winget install source ID against microsoft/winget-pkgs.
+
+    Returns (errors, warnings).
+    """
+    errors: List[str] = []
+    warnings: List[str] = []
+
+    parts = winget_id.split(".")
+    if len(parts) < 2:
+        errors.append(
+            f"{display_path}: Winget ID \"{winget_id}\" is invalid — "
+            f"must contain at least one dot (e.g. Publisher.PackageName)"
+        )
+        return errors, warnings
+
+    first_letter = parts[0][0].lower()
+    manifest_path = "/".join([first_letter] + parts)
+    url = f"{WINGET_PKGS_API_URL}/{manifest_path}"
+    gh_headers = _github_api_headers()
+
+    try:
+        req = urllib.request.Request(url, headers=gh_headers)
+        with urllib.request.urlopen(req, timeout=NETWORK_TIMEOUT) as resp:
+            versions = json.loads(resp.read())
+    except urllib.error.HTTPError as exc:
+        if exc.code == 404:
+            errors.append(
+                f"{display_path}: Winget package \"{winget_id}\" was not found "
+                f"in microsoft/winget-pkgs. Verify the ID is correct."
+            )
+        elif exc.code == 403:
+            warnings.append(
+                f"{display_path}: GitHub API rate limit reached while validating "
+                f"\"{winget_id}\". Skipping online validation."
+            )
+        else:
+            warnings.append(
+                f"{display_path}: Could not reach winget-pkgs API to validate "
+                f"\"{winget_id}\" (HTTP {exc.code}). Skipping online validation."
+            )
+        return errors, warnings
+    except (urllib.error.URLError, OSError):
+        warnings.append(
+            f"{display_path}: Could not reach winget-pkgs API to validate "
+            f"\"{winget_id}\". Skipping online validation."
+        )
+        return errors, warnings
+
+    if not isinstance(versions, list) or not versions:
+        return errors, warnings
+
+    def _version_key(version_name: str) -> tuple[tuple[int, int | str], ...]:
+        return tuple(
+            (0, int(part)) if part.isdigit() else (1, part.lower())
+            for part in re.split(r"(\d+)", version_name)
+            if part
+        )
+
+    # Fetch the PackageName from the latest version's locale YAML.
+    version_names = [
+        v["name"] for v in versions if isinstance(v, dict) and "name" in v
+    ]
+    if not version_names:
+        return errors, warnings
+    latest_version = max(version_names, key=_version_key)
+    locale_file = f"{winget_id}.locale.en-US.yaml"
+    default_file = f"{winget_id}.yaml"
+
+    raw_headers = {"User-Agent": "CmdPal-Extensions-Validator/1.0"}
+    package_name: str | None = None
+    for filename in [locale_file, default_file]:
+        raw_url = (
+            f"{WINGET_PKGS_RAW_URL}/{manifest_path}/{latest_version}/{filename}"
+        )
+        try:
+            req = urllib.request.Request(raw_url, headers=raw_headers)
+            with urllib.request.urlopen(req, timeout=NETWORK_TIMEOUT) as resp:
+                content = resp.read().decode("utf-8")
+            for line in content.splitlines():
+                if line.startswith("PackageName:"):
+                    package_name = line.split(":", 1)[1].strip()
+                    break
+            if package_name:
+                break
+        except (urllib.error.URLError, OSError):
+            continue
+
+    if package_name is None:
+        warnings.append(
+            f"{display_path}: Could not retrieve package name for winget ID "
+            f"\"{winget_id}\". Skipping name validation."
+        )
+        return errors, warnings
+
+    if package_name.strip().lower() != extension_title.strip().lower():
+        warnings.append(
+            f"{display_path}: Winget package name mismatch — "
+            f"winget has \"{package_name}\" but extension.json title is "
+            f"\"{extension_title}\""
+        )
+
+    return errors, warnings
+
+
+# ---------------------------------------------------------------------------
 # Validation
 # ---------------------------------------------------------------------------
 
 
-def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, pathlib.Path]) -> List[str]:
-    """Validate a single extension folder. Returns a list of error strings."""
+def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, pathlib.Path], *, skip_network: bool = False) -> tuple[List[str], List[str]]:
+    """Validate a single extension folder. Returns (errors, warnings)."""
     errors: List[str] = []
+    warnings: List[str] = []
     folder_name = folder.name
     author_name = folder.parent.name
     display_path = f"{author_name}/{folder_name}"
@@ -178,7 +397,7 @@ def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, p
     # 1. extension.json must exist
     if not ext_json_path.exists():
         errors.append(f"{display_path}: Missing required file extension.json")
-        return errors  # nothing more to check
+        return errors, warnings  # nothing more to check
 
     # 2. Must be valid JSON
     try:
@@ -186,7 +405,7 @@ def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, p
             data = json.load(fh)
     except json.JSONDecodeError as exc:
         errors.append(f"{display_path}/extension.json: Invalid JSON – {exc}")
-        return errors
+        return errors, warnings
 
     # 3. JSON Schema validation
     try:
@@ -316,12 +535,81 @@ def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, p
                     f"{size_kb:.1f} KB, exceeds {MAX_SCREENSHOT_SIZE_KB} KB limit"
                 )
 
-    return errors
+    # 11. Install source validation (network-dependent)
+    # Skip for unlisted extensions which may use placeholder install source IDs.
+    if not skip_network and data.get("listed", True):
+        extension_title = data.get("title", "")
+        for source in data.get("installSources", []):
+            source_type = source.get("type", "")
+            source_id = source.get("id", "")
+            if source_type == "msstore" and source_id:
+                src_errors, src_warnings = validate_msstore_source(
+                    source_id, extension_title, display_path
+                )
+                errors.extend(src_errors)
+                warnings.extend(src_warnings)
+            elif source_type == "winget" and source_id:
+                src_errors, src_warnings = validate_winget_source(
+                    source_id, extension_title, display_path
+                )
+                errors.extend(src_errors)
+                warnings.extend(src_warnings)
+
+    return errors, warnings
 
 
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
+
+
+def _build_run_url() -> str | None:
+    """Build the GitHub Actions run URL from environment variables."""
+    server = os.environ.get("GITHUB_SERVER_URL")
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    run_id = os.environ.get("GITHUB_RUN_ID")
+    if server and repo and run_id:
+        return f"{server}/{repo}/actions/runs/{run_id}"
+    return None
+
+
+def _write_markdown_summary(
+    errors: List[str],
+    warnings: List[str],
+    validated_count: int,
+    path: str,
+    *,
+    append: bool = False,
+) -> None:
+    """Write a markdown summary of validation results."""
+    lines: List[str] = []
+
+    if errors:
+        lines.append("## ❌ Extension Validation Failed\n")
+    else:
+        lines.append("## ⚠️ Extension Validation Warnings\n")
+
+    if errors:
+        lines.append("### Errors\n")
+        for err in errors:
+            lines.append(f"- ❌ {err}")
+        lines.append("")
+
+    if warnings:
+        lines.append("### Warnings\n")
+        for warn in warnings:
+            lines.append(f"- ⚠️ {warn}")
+        lines.append("")
+
+    lines.append(f"*Validated {validated_count} extension(s)*\n")
+
+    run_url = _build_run_url()
+    if run_url:
+        lines.append(f"[View full pipeline log]({run_url})")
+
+    mode = "a" if append else "w"
+    with open(path, mode, encoding="utf-8", newline="\n") as f:
+        f.write("\n".join(lines) + "\n")
 
 
 def main() -> int:
@@ -338,6 +626,16 @@ def main() -> int:
         "--diff",
         action="store_true",
         help="Auto-detect changed files via git diff against origin/main.",
+    )
+    parser.add_argument(
+        "--skip-network",
+        action="store_true",
+        help="Skip install-source validation that requires network access.",
+    )
+    parser.add_argument(
+        "--summary",
+        metavar="FILE",
+        help="Write a markdown summary of errors/warnings to FILE for PR commenting.",
     )
     args = parser.parse_args()
 
@@ -360,6 +658,7 @@ def main() -> int:
     schema = load_schema()
 
     total_errors: List[str] = []
+    total_warnings: List[str] = []
     validated_count = 0
 
     for folder in sorted(folders):
@@ -367,7 +666,12 @@ def main() -> int:
         print(f"Validating {display}/ ...")
         # Build ID index excluding the current folder to detect duplicates elsewhere
         id_index = build_id_index(exclude_folder=folder)
-        errors = validate_extension(folder, schema, id_index)
+        errors, warnings = validate_extension(
+            folder, schema, id_index, skip_network=args.skip_network
+        )
+        for warn in warnings:
+            print(f"  ⚠️  {warn}")
+        total_warnings.extend(warnings)
         if errors:
             for err in errors:
                 print(f"  ❌ {err}")
@@ -378,11 +682,28 @@ def main() -> int:
 
     # Summary
     print()
+
+    # Write markdown summary for CI (PR comments / step summary)
+    if total_errors or total_warnings:
+        if args.summary:
+            _write_markdown_summary(
+                total_errors, total_warnings, validated_count, args.summary
+            )
+        step_summary = os.environ.get("GITHUB_STEP_SUMMARY")
+        if step_summary:
+            _write_markdown_summary(
+                total_errors, total_warnings, validated_count,
+                step_summary, append=True,
+            )
+
     if total_errors:
         print(f"❌ {len(total_errors)} error(s) found across {validated_count} extension(s).")
         return 1
     else:
-        print(f"✅ {validated_count} extension(s) validated successfully.")
+        msg = f"✅ {validated_count} extension(s) validated successfully."
+        if total_warnings:
+            msg += f" ({len(total_warnings)} warning(s))"
+        print(msg)
         return 0
 
 

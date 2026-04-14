@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "michaeljolley.random-facts",
+  "title": "Random Facts for Command Palette",
+  "shortDescription": "Learn a new random fact every day, right from Command Palette.",
+  "description": "Learn a random new fact every time you open Command Palette. A fun, bite-sized extension that delivers interesting and surprising facts on demand.\n\nPerfect for trivia enthusiasts, curious minds, or anyone who wants to pick up something new during a quick break—without ever leaving their workflow.",
+  "author": {
+    "name": "Michael Jolley",
+    "url": "https://github.com/michaeljolley"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/michaeljolley/CmdPalExtensions",
+  "tags": [
+    "facts",
+    "trivia",
+    "learning",
+    "fun"
+  ],
+  "categories": [
+    "entertainment",
+    "education"
+  ],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "MichaelJolley.RandomFactsForCmdPal"
+    }
+  ]
+}

@@ -1,9 +1,42 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-04-11T09:31:27Z",
-  "extensionCount": 12,
+  "generatedAt": "2026-04-12T21:02:49Z",
+  "extensionCount": 18,
   "extensions": [
+    {
+      "id": "baldbeardedbuilder.weather",
+      "title": "Weather for Command Palette",
+      "shortDescription": "Current conditions, hourly forecasts, and multi-day forecasts right from Command Palette.",
+      "description": "Bring your weather conditions and forecasts to your fingertips with the Weather extension for Command Palette.\n\nSearch locations or save your favorite to see current, hourly, or the 7-day weather forecast. View temperature, feels like, humidity, wind speed, and conditions for any location worldwide.\n\nWeather for Command Palette also integrates with Command Palette's dock feature, showing your current conditions and providing a quick overview window with a 3-hour and 3-day forecast.\n\nConfigurable units for temperature (Fahrenheit/Celsius), wind speed (mph/km/h), and adjustable update intervals. Weather data provided by Open-Meteo — free and no API key required.",
+      "author": {
+        "name": "Michael Jolley",
+        "url": "https://github.com/michaeljolley"
+      },
+      "homepage": "https://github.com/michaeljolley/WeatherExtension",
+      "tags": [
+        "weather",
+        "forecast",
+        "temperature",
+        "dock"
+      ],
+      "categories": [
+        "news-and-weather",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9N01D6BS9V98"
+        },
+        {
+          "type": "winget",
+          "id": "BaldBeardedBuilder.WeatherforCommandPalette"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/baldbeardedbuilder/weather/icon.png",
+      "addedAt": "2026-04-12"
+    },
     {
       "id": "jiripolasek.change-case",
       "title": "Change Case for Command Palette",
@@ -31,6 +64,39 @@
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/change-case/icon.png",
       "addedAt": "2026-04-10"
+    },
+    {
+      "id": "jiripolasek.colors",
+      "title": "Colors for Command Palette",
+      "shortDescription": "Visualize, convert, and manipulate colors instantly from Command Palette.",
+      "description": "Instant color visualization, conversion, and manipulation directly within the Command Palette. Effortlessly preview, transform, and work with colors—no need to leave your workflow.\n\nConvert between color formats including HEX, RGB, HSL, and more. Preview colors in real time as you type, pick colors from the screen, and copy values in your preferred format.\n\nPerfect for designers and developers who need quick access to color tools without switching applications.",
+      "author": {
+        "name": "Jiri Polasek",
+        "url": "https://github.com/jiripolasek"
+      },
+      "homepage": "https://github.com/jiripolasek/ColorsExtension",
+      "tags": [
+        "colors",
+        "hex",
+        "rgb",
+        "design"
+      ],
+      "categories": [
+        "developer-tools",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NDDQK5VVLNB"
+        },
+        {
+          "type": "winget",
+          "id": "JiriPolasek.ColorsforCommandPalette"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/colors/icon.svg",
+      "addedAt": "2026-04-12"
     },
     {
       "id": "jiripolasek.dev-numbers",
@@ -82,7 +148,8 @@
         "windows"
       ],
       "categories": [
-        "developer-tools"
+        "developer-tools",
+        "utilities-and-tools"
       ],
       "installSources": [
         {
@@ -196,10 +263,10 @@
       "id": "jiripolasek.symbols-and-emojis",
       "title": "Symbols and Emojis for Command Palette",
       "shortDescription": "Search and insert Unicode symbols, emojis, and special characters with code points and details.",
-      "description": "Search and insert Unicode symbols, emojis, and special characters directly from the Command Palette. Browse or search through a comprehensive library of characters with their code points and details.\n\nQuickly find the exact symbol you need—whether it’s a mathematical operator, currency sign, arrow, emoji, or any other Unicode character—and insert it into your workflow with a single action.",
+      "description": "Need to quickly find and use a symbol, emoji, or special character? This extension brings a full Unicode character explorer right into your Command Palette. Instantly search for any emoji, symbol, or Unicode character by name or category, view detailed character info, and copy it to your clipboard with a click.\n\nWhether you're a developer, designer, or power user, this tool saves time by providing code points, escape sequences, HTML entities, and LaTeX representations all in one place. No need to open a separate app or website—everything is accessible right from your workspace.\n\nPerfect for coding, writing documentation, creating content, or simply spicing up your messages with emojis.",
       "author": {
-        "url": "https://github.com/jiripolasek",
-        "name": "Jiri Polasek"
+        "name": "Jiri Polasek",
+        "url": "https://github.com/jiripolasek"
       },
       "homepage": "https://apps.microsoft.com/detail/9NZ06M9CNV77",
       "tags": [
@@ -214,8 +281,8 @@
       ],
       "installSources": [
         {
-          "id": "9NZ06M9CNV77",
-          "type": "msstore"
+          "type": "msstore",
+          "id": "9NZ06M9CNV77"
         }
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/symbols-and-emojis/icon.png",
@@ -227,8 +294,8 @@
       "shortDescription": "Quickly toggle Windows or application dark mode directly from Command Palette.",
       "description": "Toggle dark mode quickly from Command Palette. Switch between light and dark color modes for Windows or individual applications with a single command.\n\nSet color mode for the system and applications together or separately, and configure the default behavior to suit your needs. Perfect for quickly adapting your display to different lighting conditions or personal preferences.",
       "author": {
-        "url": "https://github.com/jiripolasek",
-        "name": "Jiri Polasek"
+        "name": "Jiri Polasek",
+        "url": "https://github.com/jiripolasek"
       },
       "homepage": "https://github.com/jiripolasek/ToggleDarkModeExtension",
       "tags": [
@@ -242,8 +309,8 @@
       ],
       "installSources": [
         {
-          "id": "9MZSV48WJM71",
-          "type": "msstore"
+          "type": "msstore",
+          "id": "9MZSV48WJM71"
         }
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/toggle-dark-mode/icon.png",
@@ -253,10 +320,10 @@
       "id": "jiripolasek.unit-converter",
       "title": "Unit Converter for Command Palette",
       "shortDescription": "Convert between common units of measurement like length, weight, time, volume, and area.",
-      "description": "Convert between common units of measurement directly from the Command Palette. Supports a wide range of unit categories including length, weight, time, volume, area, temperature, speed, and more.\n\nSimply type a value and unit to see instant conversions across all related units. Fast, accurate, and always accessible without leaving your workflow.",
+      "description": "Stop switching between apps or browsing the web for simple conversions. With Unit Converter for Command Palette, you can instantly convert between common units of measurement—right within your workflow.\n\nEasily convert between length, weight, time, volume, area, temperature, speed, and more without interrupting your flow. Simply open the Command Palette, type your query (like \"10 km in miles\"), and get results in real-time.\n\nWhether you're a developer, student, or multitasker, this extension helps you stay focused by delivering fast and accurate unit conversions. Perfect for anyone needing quick conversions without clutter or distraction.",
       "author": {
-        "url": "https://github.com/jiripolasek",
-        "name": "Jiri Polasek"
+        "name": "Jiri Polasek",
+        "url": "https://github.com/jiripolasek"
       },
       "homepage": "https://apps.microsoft.com/detail/9N46RM40VR8D",
       "tags": [
@@ -270,12 +337,135 @@
       ],
       "installSources": [
         {
-          "id": "9N46RM40VR8D",
-          "type": "msstore"
+          "type": "msstore",
+          "id": "9N46RM40VR8D"
         }
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/unit-converter/icon.png",
       "addedAt": "2026-04-10"
+    },
+    {
+      "id": "michaeljolley.random-dad-jokes",
+      "title": "Random Dad Jokes for Command Palette",
+      "shortDescription": "Smile or groan with a random dad joke delivered right in Command Palette.",
+      "description": "Laugh or groan at a random dad joke, delivered right to your Command Palette. A fun, lightweight extension that fetches a new dad joke on demand—perfect for a quick break or to share a chuckle with colleagues.\n\nJust open the Command Palette and get an instant dose of humor without leaving your workflow.",
+      "author": {
+        "name": "Michael Jolley",
+        "url": "https://github.com/michaeljolley"
+      },
+      "homepage": "https://github.com/michaeljolley/CmdPalExtensions",
+      "tags": [
+        "jokes",
+        "dad-jokes",
+        "humor",
+        "fun"
+      ],
+      "categories": [
+        "entertainment"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "MichaelJolley.RandomDadJokesForCmdPal"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/michaeljolley/random-dad-jokes/icon.png",
+      "addedAt": "2026-04-12"
+    },
+    {
+      "id": "michaeljolley.random-facts",
+      "title": "Random Facts for Command Palette",
+      "shortDescription": "Learn a new random fact every day, right from Command Palette.",
+      "description": "Learn a random new fact every time you open Command Palette. A fun, bite-sized extension that delivers interesting and surprising facts on demand.\n\nPerfect for trivia enthusiasts, curious minds, or anyone who wants to pick up something new during a quick break—without ever leaving their workflow.",
+      "author": {
+        "name": "Michael Jolley",
+        "url": "https://github.com/michaeljolley"
+      },
+      "homepage": "https://github.com/michaeljolley/CmdPalExtensions",
+      "tags": [
+        "facts",
+        "trivia",
+        "learning",
+        "fun"
+      ],
+      "categories": [
+        "entertainment",
+        "education"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "MichaelJolley.RandomFactsForCmdPal"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/michaeljolley/random-facts/icon.png",
+      "addedAt": "2026-04-12"
+    },
+    {
+      "id": "microsoft.azure-extension",
+      "title": "Azure Extension for Command Palette (Preview)",
+      "shortDescription": "Access Azure DevOps queries, pull requests, and pipelines directly from Command Palette.",
+      "description": "Integrate Azure DevOps directly into your Command Palette workflow. Access saved queries, search pull requests, monitor pipeline runs, and manage work items—all without leaving the Command Palette.\n\nSign in with your Azure DevOps credentials to instantly access your saved queries, pull request searches, and pipeline searches. View work item details, pull request statuses, and pipeline results at a glance.\n\nRequires PowerToys with Command Palette (version 0.90.0 or above), Windows 11, and an ARM64 or x64 processor.",
+      "author": {
+        "name": "Microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "homepage": "https://github.com/microsoft/CmdPalAzureExtension",
+      "tags": [
+        "azure",
+        "devops",
+        "pipelines",
+        "pull-requests"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "Microsoft.CmdPalAzureExtension"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/microsoft/CmdPalAzureExtension/releases"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/microsoft/azure-extension/icon.svg",
+      "addedAt": "2026-04-12"
+    },
+    {
+      "id": "microsoft.github-extension",
+      "title": "GitHub Extension for Command Palette (Preview)",
+      "shortDescription": "Access GitHub issues, pull requests, saved queries, and notifications from Command Palette.",
+      "description": "Bring GitHub into your Command Palette. Access your saved queries, assigned issues, created issues, pull requests, and mentions—all from a single, fast interface without switching to the browser.\n\nSign in via GitHub OAuth to get started. Once connected, your personalized commands appear automatically. Search, browse, and act on your GitHub work items directly from the Command Palette.\n\nRequires PowerToys with Command Palette and Windows 11.",
+      "author": {
+        "name": "Microsoft",
+        "url": "https://github.com/microsoft"
+      },
+      "homepage": "https://github.com/microsoft/CmdPalGitHubExtension",
+      "tags": [
+        "github",
+        "issues",
+        "pull-requests",
+        "developer-tools"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "Microsoft.CmdPalGitHubExtension"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/microsoft/CmdPalGitHubExtension/releases"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/microsoft/github-extension/icon.png",
+      "addedAt": "2026-04-12"
     },
     {
       "id": "nielslaute.event-viewer",

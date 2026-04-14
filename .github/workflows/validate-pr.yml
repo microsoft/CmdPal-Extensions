@@ -6,6 +6,9 @@ on:
     paths:
       - "extensions/**"
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -24,10 +27,12 @@ jobs:
         run: pip install -r .github/scripts/requirements.txt
 
       - name: Validate extension submission
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           FILES=$(git diff --name-only origin/main...HEAD -- 'extensions/')
           if [ -n "$FILES" ]; then
-            python .github/scripts/validate.py $FILES
+            python .github/scripts/validate.py $FILES --summary validation-summary.md
           else
             echo "No extension files changed."
           fi

@@ -5,8 +5,8 @@
   "shortDescription": "Quickly toggle Windows or application dark mode directly from Command Palette.",
   "description": "Toggle dark mode quickly from Command Palette. Switch between light and dark color modes for Windows or individual applications with a single command.\n\nSet color mode for the system and applications together or separately, and configure the default behavior to suit your needs. Perfect for quickly adapting your display to different lighting conditions or personal preferences.",
   "author": {
-    "url": "https://github.com/jiripolasek",
-    "name": "Jiri Polasek"
+    "name": "Jiri Polasek",
+    "url": "https://github.com/jiripolasek"
   },
   "icon": "icon.png",
   "homepage": "https://github.com/jiripolasek/ToggleDarkModeExtension",
@@ -21,8 +21,8 @@
   ],
   "installSources": [
     {
-      "id": "9MZSV48WJM71",
-      "type": "msstore"
+      "type": "msstore",
+      "id": "9MZSV48WJM71"
     }
   ]
 }
