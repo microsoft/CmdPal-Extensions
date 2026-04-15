@@ -1,9 +1,53 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-04-12T21:02:49Z",
-  "extensionCount": 18,
+  "generatedAt": "2026-04-15T12:13:22Z",
+  "extensionCount": 24,
   "extensions": [
+    {
+      "id": "advaith.currency-converter",
+      "title": "Currency Converter for Command Palette",
+      "shortDescription": "Convert real and crypto currencies.",
+      "description": "Need to convert currencies on the fly without breaking your workflow? Currency Converter for Command Palette is a fast, lightweight extension for the Windows Command Palette that lets you seamlessly translate between global fiat money and cryptocurrencies. Instead of opening a browser tab, simply pull up your command palette, type in your amount, and get instant, accurate results. Whether you are using natural language, currency symbols, or even doing quick inline math before a conversion, this tool handles it effortlessly.",
+      "author": {
+        "name": "Advaith A J",
+        "url": "https://github.com/advaith3600"
+      },
+      "homepage": "https://github.com/Advaith3600/Command-Palette-Currency-Converter",
+      "tags": [
+        "currency",
+        "converter",
+        "crypto",
+        "currency-converter"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "advaith.CurrencyConverterCommandPalette"
+        },
+        {
+          "type": "msstore",
+          "id": "9PC2T04G3V9C"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/Advaith3600/Command-Palette-Currency-Converter/releases"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/01-screenshot-demo.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/02-screenshot.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/03-screenshot.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/04-screenshot.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/05-screenshot.png"
+      ],
+      "addedAt": "2026-04-15"
+    },
     {
       "id": "baldbeardedbuilder.weather",
       "title": "Weather for Command Palette",
@@ -36,6 +80,88 @@
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/baldbeardedbuilder/weather/icon.png",
       "addedAt": "2026-04-12"
+    },
+    {
+      "id": "davidegiacometti.edge-favorites",
+      "title": "Edge Favorites",
+      "shortDescription": "Open Microsoft Edge favorites in Command Palette.",
+      "description": "Quickly open Microsoft Edge favorites, folders, and workspaces from the Command Palette while staying in your current workflow, using a smooth keyboard-first experience.\n\nSupports all release channels.",
+      "author": {
+        "name": "davidegiacometti",
+        "url": "https://github.com/davidegiacometti"
+      },
+      "homepage": "https://github.com/davidegiacometti/CmdPal-Extensions",
+      "tags": [
+        "microsoft",
+        "edge",
+        "browser",
+        "favorites",
+        "bookmarks"
+      ],
+      "categories": [
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "davidegiacometti.EdgeFavoritesForCmdPal"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/davidegiacometti/CmdPal-Extensions/releases"
+        },
+        {
+          "type": "msstore",
+          "id": "9NQWBR1DJ2PQ"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/edge-favorites/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/edge-favorites/screenshots/01-dark.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/edge-favorites/screenshots/02-settings.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/edge-favorites/screenshots/03-light.png"
+      ],
+      "addedAt": "2026-04-15"
+    },
+    {
+      "id": "davidegiacometti.visual-studio",
+      "title": "Visual Studio",
+      "shortDescription": "Open Visual Studio recents from Command Palette.",
+      "description": "Quickly open Visual Studio recents from the Command Palette while staying in your current workflow, using a smooth keyboard-first experience.\n\nSupports Visual Studio 2019, 2022, and 2026 across all editions and release channels.",
+      "author": {
+        "name": "davidegiacometti",
+        "url": "https://github.com/davidegiacometti"
+      },
+      "homepage": "https://github.com/davidegiacometti/CmdPal-Extensions",
+      "tags": [
+        "microsoft",
+        "visual-studio"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "davidegiacometti.VisualStudioForCmdPal"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/davidegiacometti/CmdPal-Extensions/releases"
+        },
+        {
+          "type": "msstore",
+          "id": "9P0P3JXP7M3G"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/visual-studio/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/visual-studio/screenshots/01-dark.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/visual-studio/screenshots/02-settings.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/visual-studio/screenshots/03-light.png"
+      ],
+      "addedAt": "2026-04-15"
     },
     {
       "id": "jiripolasek.change-case",
@@ -345,6 +471,43 @@
       "addedAt": "2026-04-10"
     },
     {
+      "id": "linycv.everythingcmdpal",
+      "title": "EverythingCmdPal",
+      "shortDescription": "Everything search extension for Command Palette.",
+      "description": "EverythingCommandPalette (ECP) is an extension for the program PowerToys Command Palette (CmdPal). ECP adds the ability to search the computer for files and folders using Everything inside CmdPal",
+      "author": {
+        "name": "Victor (Yu Chieh) Lin",
+        "url": "https://github.com/lin-ycv"
+      },
+      "homepage": "https://github.com/lin-ycv/EverythingCommandPalette",
+      "tags": [
+        "everything",
+        "search",
+        "ecp",
+        "files"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9N2DRHJ970D9"
+        },
+        {
+          "type": "winget",
+          "id": "lin-ycv.EverythingCmdPal"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/linycv/everythingcmdpal/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/linycv/everythingcmdpal/screenshots/01.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/linycv/everythingcmdpal/screenshots/02.png"
+      ],
+      "addedAt": "2026-04-15"
+    },
+    {
       "id": "michaeljolley.random-dad-jokes",
       "title": "Random Dad Jokes for Command Palette",
       "shortDescription": "Smile or groan with a random dad joke delivered right in Command Palette.",
@@ -468,6 +631,44 @@
       "addedAt": "2026-04-12"
     },
     {
+      "id": "nickknissen.tailscale-command-palette",
+      "title": "Tailscale Command Palette",
+      "shortDescription": "Browse your tailnet, view status, and run common Tailscale actions directly from Command Palette.",
+      "description": "Bring Tailscale into Command Palette so you can inspect your tailnet and run common actions without leaving your workflow. Browse all visible devices or just your own devices, view connection and local node status, quickly connect or disconnect Tailscale, and open the Tailscale Admin Console.\n\nThe extension also makes device details easy to work with by letting you copy Tailscale IPv4, IPv6, and MagicDNS values, while showing useful metadata such as online state, operating system, current device, exit node status, and SSH availability.\n\nRequires Windows 10 2004 or later, Microsoft PowerToys with Command Palette support, and Tailscale installed with the tailscale CLI available on PATH.",
+      "author": {
+        "name": "Nick Nissen",
+        "url": "https://github.com/nickknissen"
+      },
+      "homepage": "https://github.com/nickknissen/TailscaleCommandPalette",
+      "tags": [
+        "tailscale",
+        "networking",
+        "vpn",
+        "powertoys",
+        "devices"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "nickknissen.TailscaleCommandPalette"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/nickknissen/TailscaleCommandPalette/releases"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nickknissen/tailscale-command-palette/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nickknissen/tailscale-command-palette/screenshots/screenshot-01.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nickknissen/tailscale-command-palette/screenshots/screenshot-02.png"
+      ],
+      "addedAt": "2026-04-15"
+    },
+    {
       "id": "nielslaute.event-viewer",
       "title": "Event Viewer for Command Palette",
       "shortDescription": "Browse and search Windows Event Logs directly from Command Palette — no need to open the full Event Viewer app.",
@@ -564,6 +765,49 @@
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nielslaute/teams-meeting-control/icon.png",
       "addedAt": "2026-04-10"
+    },
+    {
+      "id": "tanchekwei.visual-studio-code",
+      "title": "Visual Studio / Code for Command Palette",
+      "shortDescription": "Launch Visual Studio solutions and Visual Studio Code (including Cursor, Windsurf, Antigravity) workspaces from a single, unified interface.",
+      "description": "A unified launcher for Visual Studio solutions and Visual Studio Code workspaces (including support for Cursor, Windsurf, and Google Antigravity).\n\nKey Features:\n- Unified Interface: Access all your projects from one place.\n- Deep Integration: Supports Local, WSL, SSH, and Dev Container workspaces.\n- Smart Launching: Automatically switches to existing windows for Visual Studio solutions.\n- Global Search: Injects top-matching workspaces directly into the Command Palette search.\n- Advanced Pinning: Keep your favorites accessible with 'Pin to Home' and 'Pin to Dock'.\n- Performance Optimized: Built with Native AOT for fast startup and low memory usage.\n- Contextual Actions: Quick access to 'Open as Administrator', 'Open in Terminal', 'Copy Path', and more.",
+      "author": {
+        "name": "Chek Wei Tan",
+        "url": "https://github.com/tanchekwei"
+      },
+      "homepage": "https://github.com/tanchekwei/VisualStudioCodeForCommandPalette",
+      "tags": [
+        "visual-studio",
+        "visual-studio-code",
+        "workspace",
+        "launcher",
+        "productivity"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9MVLFK6TR4D4"
+        },
+        {
+          "type": "winget",
+          "id": "15722UsefulApp.WorkspaceLauncherForVSCode"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/tanchekwei/VisualStudioCodeForCommandPalette/releases"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/visual-studio-code/icon.svg",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/visual-studio-code/screenshots/01-screenshot1.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/visual-studio-code/screenshots/02-screenshot2.png"
+      ],
+      "addedAt": "2026-04-15"
     }
   ]
 }
