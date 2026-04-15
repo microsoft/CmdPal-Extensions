@@ -1,0 +1,37 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "davidegiacometti.edge-favorites",
+  "title": "Edge Favorites",
+  "shortDescription": "Open Microsoft Edge favorites in Command Palette.",
+  "description": "Quickly open Microsoft Edge favorites, folders, and workspaces from the Command Palette while staying in your current workflow, using a smooth keyboard-first experience.\n\nSupports all release channels.",
+  "author": {
+    "name": "davidegiacometti",
+    "url": "https://github.com/davidegiacometti"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/davidegiacometti/CmdPal-Extensions",
+  "tags": [
+    "microsoft",
+    "edge",
+    "browser",
+    "favorites",
+    "bookmarks"
+  ],
+  "categories": [
+    "productivity"
+  ],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "davidegiacometti.EdgeFavoritesForCmdPal"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/davidegiacometti/CmdPal-Extensions/releases"
+    },
+    {
+      "type": "msstore",
+      "id": "9NQWBR1DJ2PQ"
+    }
+  ]
+}
