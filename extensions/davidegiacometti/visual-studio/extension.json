@@ -1,0 +1,35 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "davidegiacometti.visual-studio",
+  "title": "Visual Studio",
+  "shortDescription": "Open Visual Studio recents from Command Palette.",
+  "description": "Quickly open Visual Studio recents from the Command Palette while staying in your current workflow, using a smooth keyboard-first experience.\n\nSupports Visual Studio 2019, 2022, and 2026 across all editions and release channels.",
+  "author": {
+    "name": "davidegiacometti",
+    "url": "https://github.com/davidegiacometti"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/davidegiacometti/CmdPal-Extensions",
+  "tags": [
+    "microsoft",
+    "visual-studio"
+  ],
+  "categories": [
+    "developer-tools",
+    "productivity"
+  ],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "davidegiacometti.VisualStudioForCmdPal"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/davidegiacometti/CmdPal-Extensions/releases"
+    },
+    {
+      "type": "msstore",
+      "id": "9P0P3JXP7M3G"
+    }
+  ]
+}

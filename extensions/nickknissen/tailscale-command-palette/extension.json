@@ -1,0 +1,34 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "nickknissen.tailscale-command-palette",
+  "title": "Tailscale Command Palette",
+  "shortDescription": "Browse your tailnet, view status, and run common Tailscale actions directly from Command Palette.",
+  "description": "Bring Tailscale into Command Palette so you can inspect your tailnet and run common actions without leaving your workflow. Browse all visible devices or just your own devices, view connection and local node status, quickly connect or disconnect Tailscale, and open the Tailscale Admin Console.\n\nThe extension also makes device details easy to work with by letting you copy Tailscale IPv4, IPv6, and MagicDNS values, while showing useful metadata such as online state, operating system, current device, exit node status, and SSH availability.\n\nRequires Windows 10 2004 or later, Microsoft PowerToys with Command Palette support, and Tailscale installed with the tailscale CLI available on PATH.",
+  "author": {
+    "name": "Nick Nissen",
+    "url": "https://github.com/nickknissen"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/nickknissen/TailscaleCommandPalette",
+  "tags": [
+    "tailscale",
+    "networking",
+    "vpn",
+    "powertoys",
+    "devices"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "nickknissen.TailscaleCommandPalette"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/nickknissen/TailscaleCommandPalette/releases"
+    }
+  ]
+}

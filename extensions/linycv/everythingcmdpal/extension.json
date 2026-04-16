@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "linycv.everythingcmdpal",
+  "title": "EverythingCmdPal",
+  "shortDescription": "Everything search extension for Command Palette.",
+  "description": "EverythingCommandPalette (ECP) is an extension for the program PowerToys Command Palette (CmdPal). ECP adds the ability to search the computer for files and folders using Everything inside CmdPal",
+  "author": {
+    "name": "Victor (Yu Chieh) Lin",
+    "url": "https://github.com/lin-ycv"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/lin-ycv/EverythingCommandPalette",
+  "tags": ["everything", "search","ecp","files"],
+  "categories": ["productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9N2DRHJ970D9"
+    },
+    {
+      "type": "winget",
+      "id": "lin-ycv.EverythingCmdPal"
+    }
+  ]
+}
