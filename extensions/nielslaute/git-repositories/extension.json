@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "nielslaute.git-repositories",
-  "title": "Git Repositories for Command Palette",
+  "title": "Git Repositories",
   "shortDescription": "Discover and access local git repositories. Open repos in Explorer, VS Code, or Terminal with a single keystroke.",
   "description": "Discover your local git repositories and get quick access to open them in Explorer, VS Code, or Terminal. Recursively scans configured root directories to find all your repos.\n\nOpen repos in Windows Explorer, launch VS Code directly at the repository path, or open Windows Terminal at the repo directory. Copy paths to clipboard, filter by name or path in real-time, and pin your favorite repos to the Command Palette Dock for instant access. Theme-aware icons adapt to light and dark themes, and inline setup lets you configure scan paths directly from the extension.",
   "author": {

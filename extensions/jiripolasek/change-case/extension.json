@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "jiripolasek.change-case",
-  "title": "Change Case for Command Palette",
+  "title": "Change Case",
   "shortDescription": "Transform text case with camelCase, PascalCase, snake_case, kebab-case, UPPER, lower, title, and more.",
   "description": "Effortlessly transform text case without leaving the Command Palette. Instantly change the case of text from your clipboard or text entered directly into the Command Palette—no need to switch apps or use additional tools.\n\nChoose from a wide array of case transformations, including Capital Case, Title Case (Chicago style), UPPER CASE, lower case, Sentence case, rAndOm cAsE, sWAP cASE, and more. Developers will appreciate technical options like camelCase, CONSTANT_CASE, Header-Case, kebab-case, PascalCase, and snake_case.\n\nThe extension also remembers your last used transformations, making it quick and easy to access your most common actions without searching through menus.\n\nTake control over text formatting with separator transformations such as dot.case, path/case, and path\\case\\with\\backslash. Easily clean up your text by removing diacritics, special symbols, and duplicate spaces, tabs, or lines.",
   "author": {

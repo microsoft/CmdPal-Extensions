@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "jiripolasek.toggle-dark-mode",
-  "title": "Toggle Dark Mode for Command Palette",
+  "title": "Toggle Dark Mode",
   "shortDescription": "Quickly toggle Windows or application dark mode directly from Command Palette.",
   "description": "Toggle dark mode quickly from Command Palette. Switch between light and dark color modes for Windows or individual applications with a single command.\n\nSet color mode for the system and applications together or separately, and configure the default behavior to suit your needs. Perfect for quickly adapting your display to different lighting conditions or personal preferences.",
   "author": {

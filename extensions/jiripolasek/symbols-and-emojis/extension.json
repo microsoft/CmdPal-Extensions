@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "jiripolasek.symbols-and-emojis",
-  "title": "Symbols and Emojis for Command Palette",
+  "title": "Symbols and Emojis",
   "shortDescription": "Search and insert Unicode symbols, emojis, and special characters with code points and details.",
   "description": "Need to quickly find and use a symbol, emoji, or special character? This extension brings a full Unicode character explorer right into your Command Palette. Instantly search for any emoji, symbol, or Unicode character by name or category, view detailed character info, and copy it to your clipboard with a click.\n\nWhether you're a developer, designer, or power user, this tool saves time by providing code points, escape sequences, HTML entities, and LaTeX representations all in one place. No need to open a separate app or website\u2014everything is accessible right from your workspace.\n\nPerfect for coding, writing documentation, creating content, or simply spicing up your messages with emojis.",
   "author": {

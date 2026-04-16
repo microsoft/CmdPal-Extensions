@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "nielslaute.teams-meeting-control",
-  "title": "Teams Meeting Control for Command Palette",
+  "title": "Teams Meeting Control",
   "shortDescription": "Control Microsoft Teams meetings from Command Palette. Mute, toggle camera, blur background, raise hand, send reactions, and leave calls.",
   "description": "Control your Microsoft Teams meetings directly from the Command Palette. Mute, toggle camera, blur your background, send reactions, raise your hand, and leave calls—all without switching to the Teams window.\n\nAll controls appear as a grid in the Command Palette and as quick-action buttons in the Dock when pinned. Supports Like, Love, Applause, Laugh, and Wow reactions.\n\nThis extension communicates with Microsoft Teams via its local third-party device API, the same interface used by hardware devices like the Elgato Stream Deck to control Teams meetings. Only the new Microsoft Teams is supported.",
   "author": {

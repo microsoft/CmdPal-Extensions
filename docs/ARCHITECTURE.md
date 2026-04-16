@@ -74,7 +74,7 @@ Contributor opens PR
 - Conforms to the JSON Schema (`.github/schemas/extension.schema.json`)
 - The `id` field matches the folder path (`author/extension-name` → `author.extension-name`)
 - The `id` format is valid (lowercase alphanumeric + hyphens, dot-separated)
-- Icon file exists, is PNG or SVG, and is under 100 KB
+- Icon file exists, is PNG or JPEG, and is under 100 KB
 - Tags are within limits (max 5 tags, each max 30 characters)
 - Categories (if present) are from the allowed list, max 3, no duplicates
 - No duplicate IDs across the gallery

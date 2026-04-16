@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "jiripolasek.media-controls",
-  "title": "Media Controls for Command Palette",
+  "title": "Media Controls",
   "shortDescription": "Control media playback and switch between apps playing audio or video directly from Command Palette.",
   "description": "Take full control of your media playback without ever leaving your workflow. Manage audio and video seamlessly across your favorite apps—all from one convenient place. Instantly play, pause, skip tracks, or jump back, and easily switch between open media players.\n\nSupports popular applications including Apple Music, Spotify, foobar2000, VLC UWP, Media Player, Microsoft Edge, Google Chrome and other web browsers, Netflix, Disney+, HBO Max, SkyShowtime, Amazon Prime Video and other video players, YouTube, SoundCloud and other web players, and many more.\n\nWith intuitive commands for shuffle, loop, and quick player switching, it’s the perfect companion for anyone who juggles multiple media sources while working.",
   "author": {

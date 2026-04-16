@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "baldbeardedbuilder.weather",
-  "title": "Weather for Command Palette",
+  "title": "Weather",
   "shortDescription": "Current conditions, hourly forecasts, and multi-day forecasts right from Command Palette.",
   "description": "Bring your weather conditions and forecasts to your fingertips with the Weather extension for Command Palette.\n\nSearch locations or save your favorite to see current, hourly, or the 7-day weather forecast. View temperature, feels like, humidity, wind speed, and conditions for any location worldwide.\n\nWeather for Command Palette also integrates with Command Palette's dock feature, showing your current conditions and providing a quick overview window with a 3-hour and 3-day forecast.\n\nConfigurable units for temperature (Fahrenheit/Celsius), wind speed (mph/km/h), and adjustable update intervals. Weather data provided by Open-Meteo — free and no API key required.",
   "author": {

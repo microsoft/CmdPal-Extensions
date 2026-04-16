@@ -2,7 +2,7 @@
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "linycv.everythingcmdpal",
   "title": "EverythingCmdPal",
-  "shortDescription": "Everything search extension for Command Palette.",
+  "shortDescription": "Everything search extension.",
   "description": "EverythingCommandPalette (ECP) is an extension for the program PowerToys Command Palette (CmdPal). ECP adds the ability to search the computer for files and folders using Everything inside CmdPal",
   "author": {
     "name": "Victor (Yu Chieh) Lin",

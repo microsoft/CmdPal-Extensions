@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "microsoft.github-extension",
-  "title": "GitHub Extension for Command Palette (Preview)",
+  "title": "GitHub Extension (Preview)",
   "shortDescription": "Access GitHub issues, pull requests, saved queries, and notifications from Command Palette.",
   "description": "Bring GitHub into your Command Palette. Access your saved queries, assigned issues, created issues, pull requests, and mentions—all from a single, fast interface without switching to the browser.\n\nSign in via GitHub OAuth to get started. Once connected, your personalized commands appear automatically. Search, browse, and act on your GitHub work items directly from the Command Palette.\n\nRequires PowerToys with Command Palette and Windows 11.",
   "author": {

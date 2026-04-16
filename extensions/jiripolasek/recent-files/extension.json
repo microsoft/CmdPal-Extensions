@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "jiripolasek.recent-files",
-  "title": "Recent Files for Command Palette",
+  "title": "Recent Files",
   "shortDescription": "Quickly access your most recently opened files directly from Command Palette.",
   "description": "Provides quick access to recently opened files directly from the Command Palette. Browse your file history and reopen documents, projects, and other files without navigating through folders or searching your system.\n\nThe extension integrates with the Windows recent files list, giving you instant access to your most frequently used files right where you need them.",
   "author": {

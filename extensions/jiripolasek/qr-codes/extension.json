@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "jiripolasek.qr-codes",
-  "title": "QR Codes for Command Palette",
+  "title": "QR Codes",
   "shortDescription": "Generate, scan, and decode QR codes for URLs, text, email, phone numbers, and contacts.",
   "description": "Instantly create, scan, and manage QR codes right from the Command Palette—no need to open another app or website. Generate QR codes for URLs, text, and more with just a few keystrokes. Whether you’re sharing information with colleagues or quickly transferring data to your mobile device, it’s the fastest way to get it done.\n\nGenerate QR codes for a wide range of data types—including URLs, email addresses, phone numbers, and contact cards—and scan or decode QR codes directly from your screen or images in your clipboard. All generated QR codes are crisp, high-quality, and ready to use anywhere.\n\nIt’s fast, efficient, and works entirely offline for your privacy. Perfect for developers, IT pros, educators, or anyone who frequently needs to generate QR codes without breaking their workflow.",
   "author": {

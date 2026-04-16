@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "nielslaute.event-viewer",
-  "title": "Event Viewer for Command Palette",
+  "title": "Event Viewer",
   "shortDescription": "Browse and search Windows Event Logs directly from Command Palette — no need to open the full Event Viewer app.",
   "description": "Browse and search Windows Event Logs directly from the Command Palette experience. Access all major Windows log categories including Application, Security, Setup, System, and Forwarded Events.\n\nFilter events by severity level—Critical, Error, Warning, Information, or Verbose. View events from configurable time ranges, search by message content or provider name, and see detailed event information including timestamp, provider, event ID, message, machine name, and user info.",
   "author": {

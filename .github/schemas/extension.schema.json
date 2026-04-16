@@ -22,7 +22,7 @@
       "description": "Human-readable display name for the extension.",
       "minLength": 1,
       "maxLength": 100,
-      "examples": ["Media Controls for Command Palette", "Quick Notes", "Clipboard Manager"]
+      "examples": ["Media Controls", "Quick Notes", "Clipboard Manager"]
     },
     "shortDescription": {
       "type": "string",
@@ -60,9 +60,9 @@
     },
     "icon": {
       "type": "string",
-      "description": "Filename of the icon in the same folder. Must be a .png or .svg file.",
-      "pattern": "^[\\w.-]+\\.(png|svg)$",
-      "examples": ["icon.png", "icon.svg"]
+      "description": "Filename of the icon in the same folder. Must be a .png or .jpeg file.",
+      "pattern": "^[\\w.-]+\\.(png|jpe?g)$",
+      "examples": ["icon.png", "icon.jpeg"]
     },
     "homepage": {
       "type": "string",

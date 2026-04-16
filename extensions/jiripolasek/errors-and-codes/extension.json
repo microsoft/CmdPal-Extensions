@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "jiripolasek.errors-and-codes",
-  "title": "Errors and Codes for Command Palette",
+  "title": "Errors and Codes",
   "shortDescription": "Look up NTSTATUS, HRESULT, and Windows error codes with detailed explanations.",
   "description": "Instantly make sense of cryptic error codes! Quickly access clear, detailed explanations of NTSTATUS, HRESULT, and other common Microsoft and Windows error codes—right from the Command Palette.\n\nWhether you’re debugging, troubleshooting, or just curious, simply type or paste an error code in any format (hex, decimal, signed, or unsigned) and let the tool do the rest. The extension automatically detects the format and finds all relevant representations across a variety of Microsoft products.\n\nDrawing on authoritative sources like Winerror.h and Setupapi.h from Windows SDK 10.0.26100, this extension ensures you have the context you need, when you need it. While the database is extensive, it may not cover every possible error code.\n\nSpend less time searching, and more time solving problems—with error details just a keystroke away.",
   "author": {

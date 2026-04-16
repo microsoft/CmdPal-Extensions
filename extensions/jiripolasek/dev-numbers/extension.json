@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "jiripolasek.dev-numbers",
-  "title": "Dev Numbers for Command Palette",
+  "title": "Dev Numbers",
   "shortDescription": "Convert and calculate numeric values across decimal, hex, octal, and binary formats.",
   "description": "A powerful tool for converting and calculating numeric values across various number systems. Whether you’re a developer, engineer, or tech enthusiast, this extension simplifies numeric manipulation with seamless input recognition and smart format handling.\n\nDev Numbers supports conversions between decimal, hexadecimal, octal, and binary formats, and automatically detects numerous format styles, including those used in C, C++, C#, Visual Basic, and more. It even accommodates format suffixes and special characters for maximum flexibility.\n\nYou can also specify bit lengths for accurate truncation or representation of negative numbers, making it ideal for low-level development tasks. With Dev Numbers, working with complex numeric formats is easier, faster, and more intuitive.",
   "author": {

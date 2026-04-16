@@ -87,7 +87,7 @@ Create an `extension.json` file inside your folder. Here is the full template wi
 |-------|----------|-------------|
 | `$schema` | Optional | Path to the JSON schema. Enables editor autocompletion and validation. Use `"../../../.github/schemas/extension.schema.json"`. |
 | `id` | **Required** | Unique identifier in `author.extension-name` format (e.g., `jiripolasek.media-controls`). **Must match your folder path** (`author/extension-name`). |
-| `title` | **Required** | Human-readable display name (max 100 characters). |
+| `title` | **Required** | Human-readable display name (max 100 characters). **Do not** include "for Command Palette" — all extensions are for Command Palette, so the suffix is redundant. |
 | `shortDescription` | **Required** | Short one-line description of the extension (max 200 characters). |
 | `description` | **Required** | Full description of the extension, typically sourced from the Store listing or README (max 3000 characters). |
 | `author` | **Required** | Object with `name` (required, max 100 characters) and `url` (optional). |
@@ -129,7 +129,8 @@ Choose up to 3 categories from the following fixed list:
 
 Place an icon file in your extension folder alongside `extension.json`.
 
-- **Formats:** PNG (`.png`) or SVG (`.svg`)
+- **Formats:** PNG (`.png`) or JPEG (`.jpg`, `.jpeg`)
+- **SVG is not supported** — SVG icons may not render correctly in the gallery
 - **Max file size:** 100 KB
 - **Recommended dimensions:** 256×256 pixels for PNG files
 - The filename must match the `icon` field in your `extension.json`

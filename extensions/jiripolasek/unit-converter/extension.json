@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "jiripolasek.unit-converter",
-  "title": "Unit Converter for Command Palette",
+  "title": "Unit Converter",
   "shortDescription": "Convert between common units of measurement like length, weight, time, volume, and area.",
   "description": "Stop switching between apps or browsing the web for simple conversions. With Unit Converter for Command Palette, you can instantly convert between common units of measurement—right within your workflow.\n\nEasily convert between length, weight, time, volume, area, temperature, speed, and more without interrupting your flow. Simply open the Command Palette, type your query (like \"10 km in miles\"), and get results in real-time.\n\nWhether you're a developer, student, or multitasker, this extension helps you stay focused by delivering fast and accurate unit conversions. Perfect for anyone needing quick conversions without clutter or distraction.",
   "author": {

@@ -1,14 +1,14 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "jiripolasek.colors",
-  "title": "Colors for Command Palette",
+  "title": "Colors",
   "shortDescription": "Visualize, convert, and manipulate colors instantly from Command Palette.",
   "description": "Instant color visualization, conversion, and manipulation directly within the Command Palette. Effortlessly preview, transform, and work with colors—no need to leave your workflow.\n\nConvert between color formats including HEX, RGB, HSL, and more. Preview colors in real time as you type, pick colors from the screen, and copy values in your preferred format.\n\nPerfect for designers and developers who need quick access to color tools without switching applications.",
   "author": {
     "name": "Jiri Polasek",
     "url": "https://github.com/jiripolasek"
   },
-  "icon": "icon.svg",
+  "icon": "icon.png",
   "homepage": "https://github.com/jiripolasek/ColorsExtension",
   "tags": [
     "colors",

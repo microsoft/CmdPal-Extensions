@@ -52,7 +52,7 @@ SCHEMA_PATH = REPO_ROOT / ".github" / "schemas" / "extension.schema.json"
 MAX_TAGS = 5
 MAX_TAG_LENGTH = 30
 MAX_ICON_SIZE_KB = 100
-VALID_ICON_EXTENSIONS = {".png", ".svg"}
+VALID_ICON_EXTENSIONS = {".png", ".jpg", ".jpeg"}
 
 MAX_CATEGORIES = 3
 VALID_CATEGORIES = {
@@ -431,7 +431,7 @@ def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, p
             f"Must be author.extension-name format (e.g. \"jiripolasek.media-controls\")."
         )
 
-    # 6. Icon file must exist, be PNG/SVG, and ≤100 KB
+    # 6. Icon file must exist, be PNG/JPEG, and ≤100 KB
     icon_filename = data.get("icon", "")
     if icon_filename:
         icon_path = folder / icon_filename
@@ -444,7 +444,7 @@ def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, p
             suffix = icon_path.suffix.lower()
             if suffix not in VALID_ICON_EXTENSIONS:
                 errors.append(
-                    f"{display_path}/{icon_filename}: Icon must be .png or .svg "
+                    f"{display_path}/{icon_filename}: Icon must be .png or .jpeg "
                     f"(got \"{suffix}\")"
                 )
             size_kb = icon_path.stat().st_size / 1024
