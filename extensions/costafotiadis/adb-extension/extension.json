@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "costafotiadis.adb-extension",
+  "title": "ADB Extension",
+  "shortDescription": "Control connected Android devices directly from Command Palette — no terminal needed.",
+  "description": "ADB Extension for Command Palette brings Android Debug Bridge commands to your Windows Command Palette. Browse installed apps, install APKs, uninstall, launch, force-stop, clear data, grant/revoke permissions, launch deep links, take screenshots, toggle developer options, airplane mode, Wi-Fi, mobile data, and mark favourite apps for quick access.\n\nBuilt this because I kept alt-tabbing to a terminal for the same five ADB commands. Hope others find it useful too.\n\nRequires ADB installed and available in your PATH.",
+  "author": {
+    "name": "Costa Fotiadis",
+    "url": "https://github.com/CostaFot"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/CostaFot/AdbExtension",
+  "tags": ["adb", "android", "developer-tools", "adb-commands"],
+  "categories": ["developer-tools", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NHDX4XWCNGS"
+    }
+  ]
+}
