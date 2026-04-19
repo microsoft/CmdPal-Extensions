@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "lioqing.llm-extension",
-  "title": "LLM Extension for Command Palette",
+  "title": "LLM Extension",
   "shortDescription": "An extension for PowerToys Command Palette that allows you to chat with a large language model (LLM) directly.",
   "description": "Provides a direct user interface in PowerToys Command Palette to chat with large language models in remote or local servers.\n\nSupports APIs including Ollama, OpenAI (and any other compatible API, such as Docker Model Runner), Azure OpenAI, Google, Mistral.",
   "author": {
@@ -15,7 +15,7 @@
   "installSources": [
     {
       "type": "winget",
-      "id": "LioQing.LLMExtensionforCmdPal"
+      "id": "LioQing.LLMExtensionforCommandPalette"
     },
     {
       "type": "msstore",
