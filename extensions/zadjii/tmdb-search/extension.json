@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "zadjii.tmdb-search",
-  "title": "TMDB Search for Command Palette",
+  "title": "TMDB Search",
   "shortDescription": "Search for movies and find out which streaming services they are available on.",
   "description": "Search for movies right from the Command Palette, powered by The Movie Database (TMDB). Find any movie and discover which streaming services it's available on—so you can quickly figure out where to watch tonight.\n\nA handy tool for movie buffs and anyone who wants to skip the endless scrolling across streaming apps.",
   "author": {
