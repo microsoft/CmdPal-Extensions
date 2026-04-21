@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "zadjii.mastodon",
+  "title": "Mastodon for Command Palette",
+  "shortDescription": "View posts on Mastodon, browse your home timeline, and favorite posts from Command Palette.",
+  "description": "Browse Mastodon right from the Command Palette. View posts on mastodon.social, sign in to see your home timeline, and favorite posts—all without opening a browser.\n\nA lightweight way to stay connected with the fediverse while keeping focus on your work.",
+  "author": {
+    "name": "zadjii",
+    "url": "https://github.com/zadjii"
+  },
+  "icon": "icon.svg",
+  "homepage": "https://github.com/zadjii/CmdPalExtensions",
+  "tags": [
+    "mastodon",
+    "fediverse",
+    "social",
+    "timeline"
+  ],
+  "categories": [
+    "social"
+  ],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "zadjii.MastodonForCmdPal"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/zadjii/CmdPalExtensions/releases"
+    }
+  ]
+}
