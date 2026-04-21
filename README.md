@@ -1,3 +1,5 @@
+> Browse, submit, and publish extensions for [Microsoft Command Palette](https://github.com/microsoft/PowerToys) — the official community gallery.
+
 <p align="center">
   <img src="docs/images/gallery.png" alt="Extension Gallery in Command Palette" width="700" />
 </p>
@@ -7,12 +9,14 @@
   The official community gallery for <a href="https://github.com/microsoft/PowerToys">Command Palette</a> extensions.
 </p>
 <h3 align="center">
-  <a href="#-submit-your-extension">Submit an extension</a>
+  <a href="https://learn.microsoft.com/windows/powertoys/command-palette/extension-development">Create your own extension</a>
   <span> · </span>
-  <a href="https://learn.microsoft.com/windows/powertoys/command-palette/extensibility-overview">Create your own extension</a>
+  <a href="#-submit-your-extension">Submit an extension</a>
 </h3>
 
 <br/>
+
+This repo helps you get your extension in front of millions of Command Palette users. Submit your extension here and it will show up in the built-in gallery inside Command Palette, so users can browse, discover, and install it in a couple of clicks.
 
 🔍 **Discoverable by millions** — your extension shows up right inside Command Palette
 
@@ -22,23 +26,20 @@
 
 <br/>
 
-## 🛠️ Submit your extension
+## ⚡ How it works
 
-New to building Command Palette extensions? Check out the [Extension Development docs](https://learn.microsoft.com/windows/powertoys/command-palette/extensibility-overview) to get started.
-
-📦 **Host it your way** — publish through winget, the Microsoft Store, or your own download link — you stay in control
-
-🌍 **Open-source & community-driven** — join a growing ecosystem of developers extending Windows productivity
+1. **Build and publish your extension** — develop a Command Palette extension and ship it on the Microsoft Store, winget, or your own download URL.
+2. **Open a PR in this repo** — add a folder with your `extension.json` (and icon) pointing to your install source.
+3. **Get reviewed** — CI validates your submission automatically and the Command Palette team reviews the PR.
+4. **Ship to users** — once merged, your extension appears in the Command Palette gallery and users can install it directly from your chosen source.
 
 <br/>
 
 ## 🛠️ Submit your extension
 
-New to building Command Palette extensions? Check out the [Extension Development docs](https://learn.microsoft.com/windows/powertoys/command-palette/extensibility-overview) to get started.
+Just getting started? The [Introduction to Command Palette extension development](https://learn.microsoft.com/windows/powertoys/command-palette/extension-development) walks you through building your first extension from scratch.
 
-Once your extension is ready, add it to the gallery by opening a pull request with an `extension.json`, an icon, and at least one install source — winget, Microsoft Store, or a direct download URL. CI validates your submission automatically and the Command Palette team will review your PR.
-
-👉 **[Submit your extension guide](docs/CONTRIBUTING.md)** — full walkthrough, field reference, and a [sample extension](extensions/microsoft/sample-extension/) to get started.
+Already have one? Open a PR to add it to the gallery — the **[Submit your extension guide](docs/CONTRIBUTING.md)** covers every field you need, and the [sample extension](extensions/microsoft/sample-extension/) gives you a working template to copy from.
 
 <p align="center">
   <img src="docs/images/details.png" alt="Extension details page" width="700" />
