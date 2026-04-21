@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-04-15T12:13:22Z",
-  "extensionCount": 24,
+  "generatedAt": "2026-04-21T15:54:44Z",
+  "extensionCount": 35,
   "extensions": [
     {
       "id": "advaith.currency-converter",
@@ -80,6 +80,41 @@
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/baldbeardedbuilder/weather/icon.png",
       "addedAt": "2026-04-12"
+    },
+    {
+      "id": "costafotiadis.adb-extension",
+      "title": "ADB Extension",
+      "shortDescription": "Control connected Android devices directly from Command Palette",
+      "description": "ADB Extension brings Android Debug Bridge commands to your Command Palette. Browse installed apps, install APKs, uninstall, launch, force-stop, clear data, grant/revoke permissions, launch deep links, take screenshots, toggle developer options, airplane mode, Wi-Fi, mobile data, and mark favourite apps for quick access.\n\nBuilt this because I kept alt-tabbing to a terminal for the same five ADB commands. Hope others find it useful too.\n\nRequires ADB installed and available in your PATH.",
+      "author": {
+        "name": "Costa Fotiadis",
+        "url": "https://github.com/CostaFot"
+      },
+      "homepage": "https://github.com/CostaFot/AdbExtension",
+      "tags": [
+        "adb",
+        "android",
+        "developer-tools",
+        "adb-commands"
+      ],
+      "categories": [
+        "developer-tools",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NHDX4XWCNGS"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/costafotiadis/adb-extension/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/costafotiadis/adb-extension/screenshots/01-app-command-view.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/costafotiadis/adb-extension/screenshots/02-autocomplete-view.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/costafotiadis/adb-extension/screenshots/03-app-manager-view.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/costafotiadis/adb-extension/screenshots/04-settings.jpg"
+      ],
+      "addedAt": "2026-04-21"
     },
     {
       "id": "davidegiacometti.edge-favorites",
@@ -164,6 +199,63 @@
       "addedAt": "2026-04-15"
     },
     {
+      "id": "huoyan1231.tempcleanerforcmdpal",
+      "title": "Temp file cleaner",
+      "shortDescription": "Clean Temp files on one click",
+      "description": "Use cmdpal to clean %temp% folder in one click",
+      "author": {
+        "name": "huoyan1231",
+        "url": "https://github.com/huoyan1231"
+      },
+      "homepage": "https://github.com/huoyan1231/CmdpalTempCleaner",
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NF4KWM349XX"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/huoyan1231/tempcleanerforcmdpal/icon.png",
+      "addedAt": "2026-04-21"
+    },
+    {
+      "id": "jdalley.toggle-hdr",
+      "title": "Toggle HDR",
+      "shortDescription": "Toggle HDR on/off for a single display at a time.",
+      "description": "Enables you to toggle Windows HDR for one of the displays attached to your machine at a time. Primarily avoiding the global Windows shortcut Win + Alt + B, which toggles HDR for all monitors at once.\n\nIt was written to solve the problem of wanting to enable HDR for a game on a main display, while not having blown-out HDR elements displaying on other displays running other applications.",
+      "author": {
+        "name": "Jeff Dalley",
+        "url": "https://github.com/jdalley"
+      },
+      "homepage": "https://github.com/jdalley/command-palette-toggle-hdr",
+      "tags": [
+        "hdr",
+        "toggle"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9pl3dp61zjtn"
+        },
+        {
+          "type": "winget",
+          "id": "jdalley.ToggleHDRforCommandPalette"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jdalley/toggle-hdr/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jdalley/toggle-hdr/screenshots/01-example.png"
+      ],
+      "addedAt": "2026-04-21"
+    },
+    {
       "id": "jiripolasek.change-case",
       "title": "Change Case",
       "shortDescription": "Transform text case with camelCase, PascalCase, snake_case, kebab-case, UPPER, lower, title, and more.",
@@ -221,7 +313,7 @@
           "id": "JiriPolasek.ColorsforCommandPalette"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/colors/icon.svg",
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jiripolasek/colors/icon.png",
       "addedAt": "2026-04-12"
     },
     {
@@ -508,6 +600,47 @@
       "addedAt": "2026-04-15"
     },
     {
+      "id": "lioqing.llm-extension",
+      "title": "LLM Extension",
+      "shortDescription": "An extension for PowerToys Command Palette that allows you to chat with a large language model (LLM) directly.",
+      "description": "Provides a direct user interface in PowerToys Command Palette to chat with large language models in remote or local servers.\n\nSupports APIs including Ollama, OpenAI (and any other compatible API, such as Docker Model Runner), Azure OpenAI, Google, Mistral.",
+      "author": {
+        "name": "Lio Qing",
+        "url": "https://github.com/LioQing"
+      },
+      "homepage": "https://lioqing.com/llm-extension-for-cmd-pal",
+      "tags": [
+        "large-language-models",
+        "llm"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "LioQing.LLMExtensionforCommandPalette"
+        },
+        {
+          "type": "msstore",
+          "id": "9npk6ksdlc81"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/LioQing/llm-extension-for-cmd-pal/releases"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/lioqing/llm-extension/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/lioqing/llm-extension/screenshots/01-main-command.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/lioqing/llm-extension/screenshots/02-message-history.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/lioqing/llm-extension/screenshots/03-message-details.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/lioqing/llm-extension/screenshots/04-config-commands.png"
+      ],
+      "addedAt": "2026-04-21"
+    },
+    {
       "id": "michaeljolley.random-dad-jokes",
       "title": "Random Dad Jokes",
       "shortDescription": "Smile or groan with a random dad joke delivered right in Command Palette.",
@@ -594,7 +727,7 @@
           "uri": "https://github.com/microsoft/CmdPalAzureExtension/releases"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/microsoft/azure-extension/icon.svg",
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/microsoft/azure-extension/icon.png",
       "addedAt": "2026-04-12"
     },
     {
@@ -802,12 +935,239 @@
           "uri": "https://github.com/tanchekwei/VisualStudioCodeForCommandPalette/releases"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/visual-studio-code/icon.svg",
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/visual-studio-code/icon.png",
       "screenshotUrls": [
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/visual-studio-code/screenshots/01-screenshot1.png",
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/visual-studio-code/screenshots/02-screenshot2.png"
       ],
       "addedAt": "2026-04-15"
+    },
+    {
+      "id": "zadjii.hacker-news",
+      "title": "Hacker News",
+      "shortDescription": "View top posts on Hacker News directly from Command Palette.",
+      "description": "Stay on top of the latest tech news without leaving your workflow. Browse the top posts on Hacker News right from the Command Palette.\n\nQuickly scan headlines, see scores and comment counts, and open interesting articles—all from a fast, keyboard-driven interface.",
+      "author": {
+        "name": "zadjii",
+        "url": "https://github.com/zadjii"
+      },
+      "homepage": "https://github.com/zadjii/CmdPalExtensions",
+      "tags": [
+        "hacker-news",
+        "news",
+        "tech",
+        "reading"
+      ],
+      "categories": [
+        "news-and-weather"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "zadjii.HackerNewsforCommandPalette"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/zadjii/CmdPalExtensions/releases"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/zadjii/hacker-news/icon.png",
+      "addedAt": "2026-04-21"
+    },
+    {
+      "id": "zadjii.mastodon",
+      "title": "Mastodon",
+      "shortDescription": "View posts on Mastodon, browse your home timeline, and favorite posts from Command Palette.",
+      "description": "Browse Mastodon right from the Command Palette. View posts on mastodon.social, sign in to see your home timeline, and favorite posts—all without opening a browser.\n\nA lightweight way to stay connected with the fediverse while keeping focus on your work.",
+      "author": {
+        "name": "zadjii",
+        "url": "https://github.com/zadjii"
+      },
+      "homepage": "https://github.com/zadjii/CmdPalExtensions",
+      "tags": [
+        "mastodon",
+        "fediverse",
+        "social",
+        "timeline"
+      ],
+      "categories": [
+        "social"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "zadjii.MastodonForCmdPal"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/zadjii/CmdPalExtensions/releases"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/zadjii/mastodon/icon.svg",
+      "addedAt": "2026-04-21"
+    },
+    {
+      "id": "zadjii.obsidian-notes",
+      "title": "Obsidian Notes",
+      "shortDescription": "Search your Obsidian vault notes, view them in the palette, and make quick edits.",
+      "description": "Access your Obsidian notes directly from the Command Palette. Search through your vault, preview note contents right in the palette, and make quick edits—all without switching to the Obsidian app.\n\nPerfect for quickly referencing notes, jotting down ideas, or finding information across your knowledge base while staying in your current workflow.",
+      "author": {
+        "name": "zadjii",
+        "url": "https://github.com/zadjii"
+      },
+      "homepage": "https://github.com/zadjii/CmdPalExtensions",
+      "tags": [
+        "obsidian",
+        "notes",
+        "knowledge-base",
+        "markdown"
+      ],
+      "categories": [
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "zadjii.ObsidianNotesExtension"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/zadjii/CmdPalExtensions/releases"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/zadjii/obsidian-notes/icon.png",
+      "addedAt": "2026-04-21"
+    },
+    {
+      "id": "zadjii.segoe-icons",
+      "title": "Segoe Icons",
+      "shortDescription": "Search and browse the full list of Segoe Fluent icons from Command Palette.",
+      "description": "Quickly search and browse the complete collection of Segoe Fluent icons right from the Command Palette. Find the exact icon you need by name or keyword, view icon glyphs, and copy icon details for use in your projects.\n\nAn essential tool for developers and designers working with Windows UI who need fast access to the Segoe Fluent icon library.",
+      "author": {
+        "name": "zadjii",
+        "url": "https://github.com/zadjii"
+      },
+      "homepage": "https://github.com/zadjii/CmdPalExtensions",
+      "tags": [
+        "icons",
+        "segoe-fluent",
+        "design",
+        "developer-tools"
+      ],
+      "categories": [
+        "developer-tools",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "zadjii.SegoeIcons"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/zadjii/CmdPalExtensions/releases"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/zadjii/segoe-icons/icon.png",
+      "addedAt": "2026-04-21"
+    },
+    {
+      "id": "zadjii.spongebot",
+      "title": "SpongeBot",
+      "shortDescription": "Convert text to mocking SpongeBob case (aLtErNaTiNg CaSe) from Command Palette.",
+      "description": "Transform any text into the iconic mocking SpongeBob meme format with alternating case (lIkE tHiS). Just type or paste your text and get instant SpongeBob-style output, ready to copy and share.\n\nA fun, lighthearted extension for when you need to add some humor to your messages.",
+      "author": {
+        "name": "zadjii",
+        "url": "https://github.com/zadjii"
+      },
+      "homepage": "https://github.com/zadjii/CmdPalExtensions",
+      "tags": [
+        "spongebob",
+        "meme",
+        "text",
+        "fun"
+      ],
+      "categories": [
+        "entertainment",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "zadjii.SpongeBotForCommandPalette"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/zadjii/CmdPalExtensions/releases"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/zadjii/spongebot/icon.png",
+      "addedAt": "2026-04-21"
+    },
+    {
+      "id": "zadjii.tmdb-search",
+      "title": "TMDB Search",
+      "shortDescription": "Search for movies and find out which streaming services they are available on.",
+      "description": "Search for movies right from the Command Palette, powered by The Movie Database (TMDB). Find any movie and discover which streaming services it's available on—so you can quickly figure out where to watch tonight.\n\nA handy tool for movie buffs and anyone who wants to skip the endless scrolling across streaming apps.",
+      "author": {
+        "name": "zadjii",
+        "url": "https://github.com/zadjii"
+      },
+      "homepage": "https://github.com/zadjii/CmdPalExtensions",
+      "tags": [
+        "movies",
+        "tmdb",
+        "streaming",
+        "search"
+      ],
+      "categories": [
+        "entertainment"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "zadjii.TMDBSearch"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/zadjii/CmdPalExtensions/releases"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/zadjii/tmdb-search/icon.png",
+      "addedAt": "2026-04-21"
+    },
+    {
+      "id": "zadjii.virtual-desktops",
+      "title": "Virtual Desktops",
+      "shortDescription": "Quickly switch between Windows virtual desktops from Command Palette.",
+      "description": "Provides quick access for switching virtual desktops using the Command Palette. This extension can be pinned to the dock for a quick virtual desktop switcher, letting you jump between desktops without leaving the keyboard.",
+      "author": {
+        "name": "zadjii",
+        "url": "https://github.com/zadjii"
+      },
+      "homepage": "https://github.com/zadjii/CmdPalVirtualDesktops",
+      "tags": [
+        "virtual-desktops",
+        "windows",
+        "productivity",
+        "switcher"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P3K7XKKTRG4"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/zadjii/virtual-desktops/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/zadjii/virtual-desktops/screenshots/01-switcher.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/zadjii/virtual-desktops/screenshots/02-dock.png"
+      ],
+      "addedAt": "2026-04-21"
     }
   ]
 }
