@@ -3,7 +3,7 @@
   "id": "huoyan1231.TempCleanerforCmdPal",
   "title": "Temp file cleaner",
   "shortDescription": "Clean Temp files on one click",
-  "description": "Use cmdpal to clean %temp% folder on one click",
+  "description": "Use cmdpal to clean %temp% folder in one click",
   "author": {
     "name": "huoyan1231",
     "url": "https://github.com/huoyan1231"
