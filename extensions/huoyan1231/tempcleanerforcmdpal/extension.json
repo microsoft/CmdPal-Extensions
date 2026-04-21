@@ -1,6 +1,6 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
-  "id": "huoyan1231.TempCleanerforCmdPal",
+  "id": "huoyan1231.tempcleanerforcmdpal",
   "title": "Temp file cleaner",
   "shortDescription": "Clean Temp files on one click",
   "description": "Use cmdpal to clean %temp% folder in one click",
