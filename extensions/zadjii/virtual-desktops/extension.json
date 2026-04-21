@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "zadjii.virtual-desktops",
+  "title": "Virtual Desktops",
+  "shortDescription": "Quickly switch between Windows virtual desktops from Command Palette.",
+  "description": "Provides quick access for switching virtual desktops using the Command Palette. This extension can be pinned to the dock for a quick virtual desktop switcher, letting you jump between desktops without leaving the keyboard.",
+  "author": {
+    "name": "zadjii",
+    "url": "https://github.com/zadjii"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/zadjii/CmdPalVirtualDesktops",
+  "tags": [
+    "virtual-desktops",
+    "windows",
+    "productivity",
+    "switcher"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P3K7XKKTRG4"
+    }
+  ]
+}

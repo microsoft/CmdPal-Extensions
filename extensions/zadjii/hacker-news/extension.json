@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "zadjii.hacker-news",
-  "title": "Hacker News for Command Palette",
+  "title": "Hacker News",
   "shortDescription": "View top posts on Hacker News directly from Command Palette.",
   "description": "Stay on top of the latest tech news without leaving your workflow. Browse the top posts on Hacker News right from the Command Palette.\n\nQuickly scan headlines, see scores and comment counts, and open interesting articles—all from a fast, keyboard-driven interface.",
   "author": {

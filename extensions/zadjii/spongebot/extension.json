@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "zadjii.spongebot",
-  "title": "SpongeBot for Command Palette",
+  "title": "SpongeBot",
   "shortDescription": "Convert text to mocking SpongeBob case (aLtErNaTiNg CaSe) from Command Palette.",
   "description": "Transform any text into the iconic mocking SpongeBob meme format with alternating case (lIkE tHiS). Just type or paste your text and get instant SpongeBob-style output, ready to copy and share.\n\nA fun, lighthearted extension for when you need to add some humor to your messages.",
   "author": {

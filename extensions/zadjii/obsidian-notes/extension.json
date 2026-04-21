@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "zadjii.obsidian-notes",
-  "title": "Obsidian Notes for Command Palette",
+  "title": "Obsidian Notes",
   "shortDescription": "Search your Obsidian vault notes, view them in the palette, and make quick edits.",
   "description": "Access your Obsidian notes directly from the Command Palette. Search through your vault, preview note contents right in the palette, and make quick edits—all without switching to the Obsidian app.\n\nPerfect for quickly referencing notes, jotting down ideas, or finding information across your knowledge base while staying in your current workflow.",
   "author": {
