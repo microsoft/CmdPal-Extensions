@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "jdalley.toggle-hdr",
+  "title": "Toggle HDR",
+  "shortDescription": "Toggle HDR on/off for a single display at a time.",
+  "description": "Enables you to toggle Windows HDR for one of the displays attached to your machine at a time. Primarily avoiding the global Windows shortcut Win + Alt + B, which toggles HDR for all monitors at once.\n\nIt was written to solve the problem of wanting to enable HDR for a game on a main display, while not having blown-out HDR elements displaying on other displays running other applications.",
+  "author": {
+    "name": "Jeff Dalley",
+    "url": "https://github.com/jdalley"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/jdalley/command-palette-toggle-hdr",
+  "tags": [
+    "hdr",
+    "toggle"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9pl3dp61zjtn"
+    },
+    {
+      "type": "winget",
+      "id": "jdalley.ToggleHDRforCommandPalette"
+    }
+  ]
+}
