@@ -1,0 +1,33 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "zadjii.segoe-icons",
+  "title": "Segoe Icons for Command Palette",
+  "shortDescription": "Search and browse the full list of Segoe Fluent icons from Command Palette.",
+  "description": "Quickly search and browse the complete collection of Segoe Fluent icons right from the Command Palette. Find the exact icon you need by name or keyword, view icon glyphs, and copy icon details for use in your projects.\n\nAn essential tool for developers and designers working with Windows UI who need fast access to the Segoe Fluent icon library.",
+  "author": {
+    "name": "zadjii",
+    "url": "https://github.com/zadjii"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/zadjii/CmdPalExtensions",
+  "tags": [
+    "icons",
+    "segoe-fluent",
+    "design",
+    "developer-tools"
+  ],
+  "categories": [
+    "developer-tools",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "zadjii.SegoeIcons"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/zadjii/CmdPalExtensions/releases"
+    }
+  ]
+}

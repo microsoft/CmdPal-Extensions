@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "huoyan1231.tempcleanerforcmdpal",
+  "title": "Temp file cleaner",
+  "shortDescription": "Clean Temp files on one click",
+  "description": "Use cmdpal to clean %temp% folder in one click",
+  "author": {
+    "name": "huoyan1231",
+    "url": "https://github.com/huoyan1231"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/huoyan1231/CmdpalTempCleaner",
+  "categories": ["productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NF4KWM349XX"
+    }
+  ]
+}
