@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "joadoumie.nba-command-palette",
+  "title": "NBA",
+  "shortDescription": "Real-time NBA scores, schedules, rosters, and stats right in your Command Palette.",
+  "description": "Bring the NBA into your Windows Command Palette. Browse upcoming games for the week with live scores, team records, and game status indicators. View statistical leaders for any matchup — season PPG, RPG, and APG for upcoming games, or per-game leaders for live and completed matchups. Explore full team rosters with player bios, jersey numbers, physical stats, injury status, and direct links to ESPN pages for player stats, game logs, news, and splits. Smart fuzzy search lets you filter by team name instantly — type \"lakers\" or \"warriors\" and find what you need without leaving your workflow. Game data and stats courtesy of ESPN.",
+  "author": {
+    "name": "joadoumie",
+    "url": "https://github.com/joadoumie"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/joadoumie/NBACmdPalExtension",
+  "tags": ["nba", "basketball", "sports", "scores", "espn"],
+  "categories": ["entertainment", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P7XVWKZS7S2"
+    }
+  ]
+}
