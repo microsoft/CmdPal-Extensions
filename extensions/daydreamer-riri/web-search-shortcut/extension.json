@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "daydreamer-riri.web-search-shortcut",
+  "title": "Web Search Shortcut",
+  "shortDescription": "Quickly select a specific search engine to perform searches via keyword prefixes.",
+  "description": "Web Search Shortcut is a PowerToys Command Palette extension for quickly selecting a specific search engine to perform searches via keyword prefixes.\n\nYou can configure multiple search engines, each with a custom keyword, URL template, icon, and search suggestion provider. Supports Google, Bing, DuckDuckGo, YouTube, Wikipedia, npm, CanIUse, and more.\n\nInstall via winget or the Microsoft Store, then open Command Palette to start searching with your configured shortcuts.",
+  "author": {
+    "name": "Riri",
+    "url": "https://github.com/Daydreamer-riri"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/Daydreamer-riri/CmdPal-WebSearchShortcut",
+  "tags": ["search", "web", "browser", "shortcut", "keyword"],
+  "categories": ["productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "Riri.WebSearchShortcut"
+    },
+    {
+      "type": "msstore",
+      "id": "9p9hchbgbrf4"
+    }
+  ]
+}
