@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "xisage.godot-engine",
+  "listed": true,
+  "title": "Godot Engine",
+  "shortDescription": "A Windows Command Palette extension that allows you to quickly open and run your Godot Engine projects directly from the Windows Command Palette.",
+  "description": "The Godot Engine for Command Palette extension integrates the Godot Engine development workflow directly into the Windows Command Palette. It allows developers to bypass the standard Godot Project Manager by surfacing a searchable list of projects that can be launched into the editor or executed directly.",
+  "author": {
+    "name": "xiSage",
+    "url": "https://xisage.com"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/xiSage/CmdPal-Extensions",
+  "tags": ["godot-engine", "godot"],
+  "categories": ["developer-tools", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P401R7MT3S1"
+    }
+  ]
+}
