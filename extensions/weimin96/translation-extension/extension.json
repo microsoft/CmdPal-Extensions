@@ -1,9 +1,9 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "weimin96.translation-extension",
-  "title": "TranslationExtension",
-  "shortDescription": "在 PowerToys Command Palette 中快速完成中英文互译。",
-  "description": "TranslationExtension 是面向 PowerToys Command Palette 的快速翻译扩展，适合在 Windows 工作流中直接完成文本翻译。它支持中英文自动识别与互译，提供统一设置页面管理服务商凭证，并支持百度翻译、DeepSeek、智谱 AI、MiniMax 等翻译服务。",
+  "title": "Translation",
+  "shortDescription": "Quickly translate between Chinese and English in PowerToys Command Palette.",
+  "description": "Translation is a PowerToys Command Palette extension for fast text translation in Windows workflows. It automatically detects Chinese and English text, supports bidirectional translation, provides a unified settings page for provider credentials, and works with translation providers including Baidu Translate, DeepSeek, Zhipu AI, and MiniMax.",
   "author": {
     "name": "weimin96",
     "url": "https://github.com/weimin96"
