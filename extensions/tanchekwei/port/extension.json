@@ -1,0 +1,38 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "tanchekwei.port",
+  "title": "Port",
+  "shortDescription": "List TCP/UDP network connections.",
+  "description": "Features:\n- Port Monitoring: Lists all active TCP and UDP connections (IPv4 and IPv6).\n- Intelligent Polling: Automatically refreshes when visible and pauses when hidden to reduce resource usage.\n- Process Correlation: Maps each connection to its owning process, including name and file path.\n- Hybrid Search: Supports fuzzy search for process names and precise matching for IP addresses and ports.\n- Customizable Filters: Configure which fields are included in search (Process Name, Local/Remote Address, Local/Remote Port).",
+  "author": {
+    "name": "Chek Wei Tan",
+    "url": "https://github.com/tanchekwei"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/tanchekwei/PortForCommandPalette",
+  "tags": [
+    "port",
+    "network",
+    "monitoring",
+    "productivity"
+  ],
+  "categories": [
+    "developer-tools",
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NC8CK4LGB0W"
+    },
+    {
+      "type": "winget",
+      "id": "15722UsefulApp.PortForCommandPalette"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/tanchekwei/PortForCommandPalette/"
+    }
+  ]
+}

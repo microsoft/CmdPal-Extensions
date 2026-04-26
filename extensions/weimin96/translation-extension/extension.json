@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "weimin96.translation-extension",
+  "title": "Translation",
+  "shortDescription": "Quickly translate between Chinese and English in PowerToys Command Palette.",
+  "description": "Translation is a PowerToys Command Palette extension for fast text translation in Windows workflows. It automatically detects Chinese and English text, supports bidirectional translation, provides a unified settings page for provider credentials, and works with translation providers including Baidu Translate, DeepSeek, Zhipu AI, and MiniMax.",
+  "author": {
+    "name": "weimin96",
+    "url": "https://github.com/weimin96"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/weimin96/CmdPal-TranslationExtension",
+  "tags": [
+    "translation",
+    "chinese",
+    "ai",
+    "productivity",
+    "windows"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "url",
+      "uri": "https://github.com/weimin96/CmdPal-TranslationExtension/releases/latest"
+    }
+  ]
+}
