@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "ruslanlap.definition",
-  "title": "Definition for Command Palette",
+  "title": "Definition",
   "shortDescription": "Look up definitions, phonetics, synonyms, antonyms, and usage examples directly from Command Palette.",
   "description": "Definition gives you instant access to word definitions, phonetics, synonyms, antonyms, and usage examples without leaving your keyboard. Type any word in Command Palette and browse definitions grouped by part of speech, pronunciation details, related words, and examples. Results can be copied directly, and Wiktionary integration is available from the context menu.\n\nThe extension supports English, French, Chinese, and Ukrainian, with smart script detection, configurable result options, debounced search, and in-memory caching for fast repeated lookups. An internet connection is required for API-based dictionary lookups.",
   "author": {
