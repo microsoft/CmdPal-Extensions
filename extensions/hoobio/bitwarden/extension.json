@@ -1,0 +1,34 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "hoobio.bitwarden",
+  "title": "Bitwarden",
+  "shortDescription": "Instant search and copy of credentials, TOTP codes, and notes from your Bitwarden vault, directly from the Command Palette.",
+  "description": "A free, open-source extension that brings your Bitwarden vault into the Command Palette for instant, keyboard-driven access. Built as an alternative to 1Password Quick Access.\n\nFeatures:\n\n- Vault search with fallback suggestions across all item types\n- Secure clipboard: passwords excluded from clipboard history and auto-cleared on a configurable timer\n- Smart sorting: recently used, favorites, and context-matched items float to the top\n- TOTP display with live codes and countdown timers (including Steam Guard)\n- Search filters using prefix syntax like is:fav, folder:Work, has:totp, url:github\n- Watchtower tags: visual warnings for weak, old, or reused passwords\n- Context awareness: detects open apps and browser tabs to surface relevant items\n- Custom field copy, SSH quick-connect, and manual vault sync\n\nRequires the Bitwarden CLI (bw) on your PATH.",
+  "author": {
+    "name": "Hoobi",
+    "url": "https://github.com/hoobio"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/hoobio/command-palette-bitwarden",
+  "tags": [
+    "bitwarden",
+    "password",
+    "vault",
+    "totp",
+    "credentials"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P5KS8T80MV3"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/hoobio/command-palette-bitwarden/releases/latest"
+    }
+  ]
+}
