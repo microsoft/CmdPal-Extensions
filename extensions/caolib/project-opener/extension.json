@@ -3,7 +3,7 @@
   "id": "caolib.project-opener",
   "title": "Project Opener",
   "shortDescription": "a project opener",
-  "description": "An extension that can search and open all local vscode and its derivative editors (trae, cursor, etc.)",
+  "description": "An extension that can search for and open local Visual Studio Code (VS Code) installations and derivative editors (Trae, Cursor, etc.).",
   "author": {
     "name": "caolib",
     "url": "https://github.com/caolib"
