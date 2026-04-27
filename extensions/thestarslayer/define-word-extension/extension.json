@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "thestarslayer.define-word-extension",
+  "title": "Define Word Extension",
+  "shortDescription": "Type a word to get its definition",
+  "description": "A Command Palette (PowerToys) extension that provides on-the-fly definitions!\nIt uses dictionaryapi.dev's free API to retrieve definitions for the word, and display as list items for each definition of the word along with its part of speech.\nFor longer definitions, you can view the details pane of the list item by clicking `Ctrl` + `Enter`",
+  "author": {
+    "name": "Lalith Sri Sai Manda",
+    "url": "https://github.com/TheStarSlayer"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/TheStarSlayer/Define-Word-Extension",
+  "tags": [
+    "definitions",
+    "dictionary",
+    "words",
+    "meaning",
+    "vocabulary"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools",
+    "education"
+  ],
+  "installSources": [
+    {
+      "type": "url",
+      "uri": "https://github.com/TheStarSlayer/Define-Word-Extension/releases"
+    }
+  ]
+}
