@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "daydreamer-riri.qrcode",
+  "title": "QR Code",
+  "shortDescription": "Generate QR codes quickly and easily with support for dynamic placeholders like IP addresses, date, and time.",
+  "description": "QR Code is a PowerToys Command Palette extension for generating QR codes quickly and easily.\n\nYou can use placeholders in your input and they will be expanded in the generated QR code and details view:\n- {ip_local}: local LAN IPv4 address\n- {ip_public}: public IPv4 address (best-effort)\n- {ip}: alias for {ip_local}\n- {date}: current date (locale format)\n- {time}: current time (locale format)\n\nThe extension keeps a history of your generated QR codes for quick access and reuse. Install via winget or the Microsoft Store, then open Command Palette to start generating QR codes.",
+  "author": {
+    "name": "Riri",
+    "url": "https://github.com/Daydreamer-riri"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/Daydreamer-riri/QRCode-CmdPal",
+  "tags": ["qrcode", "qr", "generator", "utilities", "productivity"],
+  "categories": ["productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "Riri.QRCodeforCmdPal"
+    },
+    {
+      "type": "msstore",
+      "id": "9PPGQ6TB8DMT"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/Daydreamer-riri/QRCode-CmdPal/releases"
+    }
+  ]
+}
