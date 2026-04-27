@@ -11,7 +11,11 @@
   "icon": "icon.png",
   "homepage": "https://github.com/licon4812/Aria2CmdExtension",
   "tags": [
-    "aria2"
+    "aria2",
+    "downloads",
+    "http",
+    "https",
+    "ftp"
   ],
   "categories": ["utilities-and-tools"],
   "installSources": [
