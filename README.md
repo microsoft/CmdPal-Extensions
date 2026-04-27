@@ -1,5 +1,3 @@
-> Browse, submit, and publish extensions for [Microsoft Command Palette](https://github.com/microsoft/PowerToys) — the official community gallery.
-
 <p align="center">
   <img src="docs/images/gallery.png" alt="Extension Gallery in Command Palette" width="700" />
 </p>
