@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "caolib.project-opener",
+  "title": "Project Opener",
+  "shortDescription": "A project opener.",
+  "description": "An extension that can search for and open local Visual Studio Code (VS Code) installations and derivative editors (Trae, Cursor, etc.).",
+  "author": {
+    "name": "caolib",
+    "url": "https://github.com/caolib"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/caolib/ProjectOpenerExtension",
+  "tags": [
+    "project",
+    "vscode",
+    "editor"
+  ],
+  "categories": [
+    "developer-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NG967HCNH55"
+    }
+  ]
+}

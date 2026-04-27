@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "poychang.translator",
+  "title": "Translator",
+  "shortDescription": "Translate text directly from the Command Palette.",
+  "description": "Translator is a translation extension for the Windows Command Palette. It brings the text translation process directly into the Command Palette, allowing you to input text, switch translation sources, and copy results all within the same interface. This extension supports multiple translation sources, including Google Translate and Microsoft Translator, providing users with a variety of options for their translation needs. With its seamless integration into the Command Palette, it enhances productivity and streamlines the translation workflow.",
+  "author": {
+    "name": "Poy Chang",
+    "url": "https://github.com/poychang"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/poychang/CmdPalTranslator",
+  "tags": [
+    "translation",
+    "productivity"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NSHZ9B3KJFW"
+    }
+  ]
+}
