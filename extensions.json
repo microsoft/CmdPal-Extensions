@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-04-21T15:54:44Z",
-  "extensionCount": 35,
+  "generatedAt": "2026-04-27T19:12:52Z",
+  "extensionCount": 48,
   "extensions": [
     {
       "id": "advaith.currency-converter",
@@ -49,6 +49,37 @@
       "addedAt": "2026-04-15"
     },
     {
+      "id": "atkaksoy501.portpilot",
+      "title": "PortPilot",
+      "shortDescription": "Find and free dev server ports directly from PowerToys Command Palette.",
+      "description": "PortPilot helps developers quickly find and free busy dev server ports from inside PowerToys Command Palette. It scans TCP listening ports in the common 3000-10000 development range, shows the owning process name and PID, supports fuzzy search, and asks for confirmation before terminating a process. You can also pin PortPilot to the Command Palette dock for one-click access.",
+      "author": {
+        "name": "Atakan Aksoy",
+        "url": "https://github.com/atkaksoy501"
+      },
+      "homepage": "https://github.com/atkaksoy501/PortPilot",
+      "tags": [
+        "ports",
+        "processes",
+        "powertoys",
+        "windows",
+        "developer"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "url",
+          "uri": "https://github.com/atkaksoy501/PortPilot/releases/latest"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/atkaksoy501/portpilot/icon.png",
+      "addedAt": "2026-04-27"
+    },
+    {
       "id": "baldbeardedbuilder.weather",
       "title": "Weather",
       "shortDescription": "Current conditions, hourly forecasts, and multi-day forecasts right from Command Palette.",
@@ -80,6 +111,36 @@
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/baldbeardedbuilder/weather/icon.png",
       "addedAt": "2026-04-12"
+    },
+    {
+      "id": "caolib.project-opener",
+      "title": "Project Opener",
+      "shortDescription": "A project opener.",
+      "description": "An extension that can search for and open local Visual Studio Code (VS Code) installations and derivative editors (Trae, Cursor, etc.).",
+      "author": {
+        "name": "caolib",
+        "url": "https://github.com/caolib"
+      },
+      "homepage": "https://github.com/caolib/ProjectOpenerExtension",
+      "tags": [
+        "project",
+        "vscode",
+        "editor"
+      ],
+      "categories": [
+        "developer-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NG967HCNH55"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/caolib/project-opener/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/caolib/project-opener/screenshots/01-main-view.png"
+      ],
+      "addedAt": "2026-04-27"
     },
     {
       "id": "costafotiadis.adb-extension",
@@ -199,6 +260,161 @@
       "addedAt": "2026-04-15"
     },
     {
+      "id": "daydreamer-riri.qrcode",
+      "title": "QR Code",
+      "shortDescription": "Generate QR codes quickly and easily with support for dynamic placeholders like IP addresses, date, and time.",
+      "description": "QR Code is a PowerToys Command Palette extension for generating QR codes quickly and easily.\n\nYou can use placeholders in your input and they will be expanded in the generated QR code and details view:\n- {ip_local}: local LAN IPv4 address\n- {ip_public}: public IPv4 address (best-effort)\n- {ip}: alias for {ip_local}\n- {date}: current date (locale format)\n- {time}: current time (locale format)\n\nThe extension keeps a history of your generated QR codes for quick access and reuse. Install via winget or the Microsoft Store, then open Command Palette to start generating QR codes.",
+      "author": {
+        "name": "Riri",
+        "url": "https://github.com/Daydreamer-riri"
+      },
+      "homepage": "https://github.com/Daydreamer-riri/QRCode-CmdPal",
+      "tags": [
+        "qrcode",
+        "qr",
+        "generator",
+        "utilities",
+        "productivity"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "Riri.QRCodeforCmdPal"
+        },
+        {
+          "type": "msstore",
+          "id": "9PPGQ6TB8DMT"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/Daydreamer-riri/QRCode-CmdPal/releases"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/daydreamer-riri/qrcode/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/daydreamer-riri/qrcode/screenshots/01-main-view.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/daydreamer-riri/qrcode/screenshots/02-detail-view.png"
+      ],
+      "addedAt": "2026-04-27"
+    },
+    {
+      "id": "daydreamer-riri.web-search-shortcut",
+      "title": "Web Search Shortcut",
+      "shortDescription": "Quickly select a specific search engine to perform searches via keyword prefixes.",
+      "description": "Web Search Shortcut is a PowerToys Command Palette extension for quickly selecting a specific search engine to perform searches via keyword prefixes.\n\nYou can configure multiple search engines, each with a custom keyword, URL template, icon, and search suggestion provider. Supports Google, Bing, DuckDuckGo, YouTube, Wikipedia, npm, CanIUse, and more.\n\nInstall via winget or the Microsoft Store, then open Command Palette to start searching with your configured shortcuts.",
+      "author": {
+        "name": "Riri",
+        "url": "https://github.com/Daydreamer-riri"
+      },
+      "homepage": "https://github.com/Daydreamer-riri/CmdPal-WebSearchShortcut",
+      "tags": [
+        "search",
+        "web",
+        "browser",
+        "shortcut",
+        "keyword"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "Riri.WebSearchShortcut"
+        },
+        {
+          "type": "msstore",
+          "id": "9p9hchbgbrf4"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/daydreamer-riri/web-search-shortcut/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/daydreamer-riri/web-search-shortcut/screenshots/01-cmdpal-add.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/daydreamer-riri/web-search-shortcut/screenshots/02-cmdpal-add-suggestions.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/daydreamer-riri/web-search-shortcut/screenshots/03-search-1.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/daydreamer-riri/web-search-shortcut/screenshots/04-search-2.png"
+      ],
+      "addedAt": "2026-04-27"
+    },
+    {
+      "id": "determ1ne.scripter",
+      "title": "Scripter",
+      "shortDescription": "Scripter integrates with the Windows Command Palette to let you conveniently run scripts from Command Palette.",
+      "description": "Scripter integrates with the Windows Command Palette to let you conveniently run scripts from Command Palette. This is an open source project, you can find the documents and source code at https://github.com/determ1ne/CmdPalScripter .",
+      "author": {
+        "name": "Azuk",
+        "url": "https://github.com/determ1ne"
+      },
+      "homepage": "https://github.com/determ1ne/CmdPalScripter",
+      "tags": [
+        "scripting",
+        "developer"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9PN3KMW042J3"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/determ1ne/CmdPalScripter/releases/latest"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/determ1ne/scripter/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/determ1ne/scripter/screenshots/01-main-view.png"
+      ],
+      "addedAt": "2026-04-27"
+    },
+    {
+      "id": "hoobio.bitwarden",
+      "title": "Bitwarden",
+      "shortDescription": "Instant search and copy of credentials, TOTP codes, and notes from your Bitwarden vault, directly from the Command Palette.",
+      "description": "A free, open-source extension that brings your Bitwarden vault into the Command Palette for instant, keyboard-driven access. Built as an alternative to 1Password Quick Access.\n\nFeatures:\n\n- Vault search with fallback suggestions across all item types\n- Secure clipboard: passwords excluded from clipboard history and auto-cleared on a configurable timer\n- Smart sorting: recently used, favorites, and context-matched items float to the top\n- TOTP display with live codes and countdown timers (including Steam Guard)\n- Search filters using prefix syntax like is:fav, folder:Work, has:totp, url:github\n- Watchtower tags: visual warnings for weak, old, or reused passwords\n- Context awareness: detects open apps and browser tabs to surface relevant items\n- Custom field copy, SSH quick-connect, and manual vault sync\n\nRequires the Bitwarden CLI (bw) on your PATH.",
+      "author": {
+        "name": "Hoobi",
+        "url": "https://github.com/hoobio"
+      },
+      "homepage": "https://github.com/hoobio/command-palette-bitwarden",
+      "tags": [
+        "bitwarden",
+        "password",
+        "vault",
+        "totp",
+        "credentials"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P5KS8T80MV3"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/hoobio/command-palette-bitwarden/releases/latest"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/hoobio/bitwarden/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/hoobio/bitwarden/screenshots/01-preview.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/hoobio/bitwarden/screenshots/02-login.png"
+      ],
+      "addedAt": "2026-04-27"
+    },
+    {
       "id": "huoyan1231.tempcleanerforcmdpal",
       "title": "Temp file cleaner",
       "shortDescription": "Clean Temp files on one click",
@@ -220,6 +436,38 @@
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/huoyan1231/tempcleanerforcmdpal/icon.png",
       "addedAt": "2026-04-21"
+    },
+    {
+      "id": "illustar0.sourceswitch",
+      "title": "SourceSwitch",
+      "shortDescription": "Switch Monitor Inputs (HDMI/DP, etc.) via Command Palette.",
+      "description": "Switch Monitor Inputs (HDMI/DP, etc.) via Command Palette.",
+      "author": {
+        "name": "Illustar0",
+        "url": "https://github.com/Illustar0"
+      },
+      "homepage": "https://github.com/Illustar0/SourceSwitch.Extension.Palette",
+      "categories": [
+        "utilities-and-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9MWGJ4GFR31B"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/Illustar0/SourceSwitch.Extension.Palette/releases/latest"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/illustar0/sourceswitch/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/illustar0/sourceswitch/screenshots/01-main-view.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/illustar0/sourceswitch/screenshots/02-settings.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/illustar0/sourceswitch/screenshots/03-search-results.png"
+      ],
+      "addedAt": "2026-04-27"
     },
     {
       "id": "jdalley.toggle-hdr",
@@ -563,6 +811,40 @@
       "addedAt": "2026-04-10"
     },
     {
+      "id": "joadoumie.nba-command-palette",
+      "title": "NBA",
+      "shortDescription": "Real-time NBA scores, schedules, rosters, and stats right in your Command Palette.",
+      "description": "Bring the NBA into your Windows Command Palette. Browse upcoming games for the week with live scores, team records, and game status indicators. View statistical leaders for any matchup — season PPG, RPG, and APG for upcoming games, or per-game leaders for live and completed matchups. Explore full team rosters with player bios, jersey numbers, physical stats, injury status, and direct links to ESPN pages for player stats, game logs, news, and splits. Smart fuzzy search lets you filter by team name instantly — type \"lakers\" or \"warriors\" and find what you need without leaving your workflow. Game data and stats courtesy of ESPN.",
+      "author": {
+        "name": "joadoumie",
+        "url": "https://github.com/joadoumie"
+      },
+      "homepage": "https://github.com/joadoumie/NBACmdPalExtension",
+      "tags": [
+        "nba",
+        "basketball",
+        "sports",
+        "scores",
+        "espn"
+      ],
+      "categories": [
+        "entertainment",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P7XVWKZS7S2"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/joadoumie/nba-command-palette/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/joadoumie/nba-command-palette/screenshots/01-upcoming-games.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/joadoumie/nba-command-palette/screenshots/02-team-roster.png"
+      ],
+      "addedAt": "2026-04-27"
+    },
+    {
       "id": "linycv.everythingcmdpal",
       "title": "EverythingCmdPal",
       "shortDescription": "Everything search extension.",
@@ -900,6 +1182,119 @@
       "addedAt": "2026-04-10"
     },
     {
+      "id": "poychang.translator",
+      "title": "Translator",
+      "shortDescription": "Translate text directly from the Command Palette.",
+      "description": "Translator is a translation extension for the Windows Command Palette. It brings the text translation process directly into the Command Palette, allowing you to input text, switch translation sources, and copy results all within the same interface. This extension supports multiple translation sources, including Google Translate and Microsoft Translator, providing users with a variety of options for their translation needs. With its seamless integration into the Command Palette, it enhances productivity and streamlines the translation workflow.",
+      "author": {
+        "name": "Poy Chang",
+        "url": "https://github.com/poychang"
+      },
+      "homepage": "https://github.com/poychang/CmdPalTranslator",
+      "tags": [
+        "translation",
+        "productivity"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NSHZ9B3KJFW"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/poychang/translator/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/poychang/translator/screenshots/01-main-view.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/poychang/translator/screenshots/02-results.png"
+      ],
+      "addedAt": "2026-04-27"
+    },
+    {
+      "id": "ruslanlap.definition",
+      "title": "Definition",
+      "shortDescription": "Look up definitions, phonetics, synonyms, antonyms, and usage examples directly from Command Palette.",
+      "description": "Definition gives you instant access to word definitions, phonetics, synonyms, antonyms, and usage examples without leaving your keyboard. Type any word in Command Palette and browse definitions grouped by part of speech, pronunciation details, related words, and examples. Results can be copied directly, and Wiktionary integration is available from the context menu.\n\nThe extension supports English, French, Chinese, and Ukrainian, with smart script detection, configurable result options, debounced search, and in-memory caching for fast repeated lookups. An internet connection is required for API-based dictionary lookups.",
+      "author": {
+        "name": "ruslanlap",
+        "url": "https://github.com/ruslanlap"
+      },
+      "homepage": "https://github.com/ruslanlap/CmdPal-Definition",
+      "tags": [
+        "dictionary",
+        "definition",
+        "vocabulary",
+        "thesaurus",
+        "lookup"
+      ],
+      "categories": [
+        "education",
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NMJ8S70L69M"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/ruslanlap/CmdPal-Definition/releases/latest"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/ruslanlap/definition/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/ruslanlap/definition/screenshots/01-definition-lookup.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/ruslanlap/definition/screenshots/02-results.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/ruslanlap/definition/screenshots/03-parts-of-speech.png"
+      ],
+      "addedAt": "2026-04-27"
+    },
+    {
+      "id": "tanchekwei.port",
+      "title": "Port",
+      "shortDescription": "List TCP/UDP network connections.",
+      "description": "Features:\n- Port Monitoring: Lists all active TCP and UDP connections (IPv4 and IPv6).\n- Intelligent Polling: Automatically refreshes when visible and pauses when hidden to reduce resource usage.\n- Process Correlation: Maps each connection to its owning process, including name and file path.\n- Hybrid Search: Supports fuzzy search for process names and precise matching for IP addresses and ports.\n- Customizable Filters: Configure which fields are included in search (Process Name, Local/Remote Address, Local/Remote Port).",
+      "author": {
+        "name": "Chek Wei Tan",
+        "url": "https://github.com/tanchekwei"
+      },
+      "homepage": "https://github.com/tanchekwei/PortForCommandPalette",
+      "tags": [
+        "port",
+        "network",
+        "monitoring",
+        "productivity"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NC8CK4LGB0W"
+        },
+        {
+          "type": "winget",
+          "id": "15722UsefulApp.PortForCommandPalette"
+        },
+        {
+          "type": "url",
+          "uri": "https://github.com/tanchekwei/PortForCommandPalette/"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/port/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/port/screenshots/01-screenshot1.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/port/screenshots/02-screenshot2.png"
+      ],
+      "addedAt": "2026-04-27"
+    },
+    {
       "id": "tanchekwei.visual-studio-code",
       "title": "Visual Studio / Code",
       "shortDescription": "Launch Visual Studio solutions and Visual Studio Code (including Cursor, Windsurf, Antigravity) workspaces from a single, unified interface.",
@@ -941,6 +1336,70 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/visual-studio-code/screenshots/02-screenshot2.png"
       ],
       "addedAt": "2026-04-15"
+    },
+    {
+      "id": "weimin96.translation-extension",
+      "title": "Translation",
+      "shortDescription": "Quickly translate between Chinese and English in PowerToys Command Palette.",
+      "description": "Translation is a PowerToys Command Palette extension for fast text translation in Windows workflows. It automatically detects Chinese and English text, supports bidirectional translation, provides a unified settings page for provider credentials, and works with translation providers including Baidu Translate, DeepSeek, Zhipu AI, and MiniMax.",
+      "author": {
+        "name": "weimin96",
+        "url": "https://github.com/weimin96"
+      },
+      "homepage": "https://github.com/weimin96/CmdPal-TranslationExtension",
+      "tags": [
+        "translation",
+        "chinese",
+        "ai",
+        "productivity",
+        "windows"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "url",
+          "uri": "https://github.com/weimin96/CmdPal-TranslationExtension/releases/latest"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/weimin96/translation-extension/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/weimin96/translation-extension/screenshots/01-zh-to-en.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/weimin96/translation-extension/screenshots/02-en-to-zh.png"
+      ],
+      "addedAt": "2026-04-27"
+    },
+    {
+      "id": "xisage.godot-engine",
+      "title": "Godot Engine",
+      "shortDescription": "A Windows Command Palette extension that allows you to quickly open and run your Godot Engine projects directly from the Windows Command Palette.",
+      "description": "The Godot Engine for Command Palette extension integrates the Godot Engine development workflow directly into the Windows Command Palette. It allows developers to bypass the standard Godot Project Manager by surfacing a searchable list of projects that can be launched into the editor or executed directly.",
+      "author": {
+        "name": "xiSage",
+        "url": "https://xisage.com"
+      },
+      "homepage": "https://github.com/xiSage/CmdPal-Extensions",
+      "tags": [
+        "godot-engine",
+        "godot"
+      ],
+      "categories": [
+        "developer-tools",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P401R7MT3S1"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/xisage/godot-engine/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/xisage/godot-engine/screenshots/01-screenshot.png"
+      ],
+      "addedAt": "2026-04-27"
     },
     {
       "id": "zadjii.hacker-news",
