@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "determ1ne.scripter",
+  "title": "Scripter",
+  "shortDescription": "Scripter integrates with the Windows Command Palette to let you conveniently run scripts from Command Palette.",
+  "description": "Scripter integrates with the Windows Command Palette to let you conveniently run scripts from Command Palette. This is an open source project, you can find the documents and source code at https://github.com/determ1ne/CmdPalScripter .",
+  "author": {
+    "name": "Azuk",
+    "url": "https://github.com/determ1ne"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/determ1ne/CmdPalScripter",
+  "tags": ["scripting", "developer"],
+  "categories": ["developer-tools", "productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9PN3KMW042J3"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/determ1ne/CmdPalScripter/releases/latest"
+    }
+  ]
+}
