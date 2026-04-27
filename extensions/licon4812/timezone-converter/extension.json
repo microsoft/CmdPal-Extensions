@@ -1,7 +1,7 @@
 {
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "licon4812.timezone-converter",
-  "title": "Time Zone Converter for Command Palette",
+  "title": "Time Zone Converter",
   "shortDescription": "Convert time between different time zones quickly.",
   "description": "Time Zone Converter CmdPalExtension is an extension for the PowerToys Command Palette that allows users to convert time between different time zones quickly.",
   "author": {
