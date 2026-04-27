@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "kusutori.bitwarden-for-command-palette",
+  "title": "Bitwarden For Command Palette",
+  "shortDescription": "Integrates your Bitwarden vault into Windows PowerToys. Search, access, and manage credentials directly from the Command Palette.",
+  "description": "Bitwarden For Command Palette integrates with the Windows Command Palette to bring your password vault directly into your workflow. It allows you to search logins, cards, and identities, copy TOTP codes with live countdowns, and manage vault items (CRUD) with lightning speed. Supports Windows Hello (via bw-bio) and custom CLI configurations.",
+  "author": {
+    "name": "kusutori",
+    "url": "https://github.com/kusutori"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/kusutori/BitwardenForCommandPalette",
+  "tags": ["bitwarden", "powertoys","bitwarden-cli","command-palette"],
+  "categories": ["productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "url",
+      "id": "https://github.com/kusutori/BitwardenForCommandPalette/releases/latest"
+    }
+  ]
+}
