@@ -1,0 +1,35 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "ruslanlap.definition",
+  "title": "Definition",
+  "shortDescription": "Look up definitions, phonetics, synonyms, antonyms, and usage examples directly from Command Palette.",
+  "description": "Definition gives you instant access to word definitions, phonetics, synonyms, antonyms, and usage examples without leaving your keyboard. Type any word in Command Palette and browse definitions grouped by part of speech, pronunciation details, related words, and examples. Results can be copied directly, and Wiktionary integration is available from the context menu.\n\nThe extension supports English, French, Chinese, and Ukrainian, with smart script detection, configurable result options, debounced search, and in-memory caching for fast repeated lookups. An internet connection is required for API-based dictionary lookups.",
+  "author": {
+    "name": "ruslanlap",
+    "url": "https://github.com/ruslanlap"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/ruslanlap/CmdPal-Definition",
+  "tags": [
+    "dictionary",
+    "definition",
+    "vocabulary",
+    "thesaurus",
+    "lookup"
+  ],
+  "categories": [
+    "education",
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NMJ8S70L69M"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/ruslanlap/CmdPal-Definition/releases/latest"
+    }
+  ]
+}
