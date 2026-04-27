@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "illustar0.sourceswitch",
+  "title": "SourceSwitch",
+  "shortDescription": "Switch Monitor Inputs (HDMI/DP, etc.) via Command Palette.",
+  "description": "Switch Monitor Inputs (HDMI/DP, etc.) via Command Palette.",
+  "author": {
+    "name": "Illustar0",
+    "url": "https://github.com/Illustar0"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/Illustar0/SourceSwitch.Extension.Palette",
+  "categories": ["utilities-and-tools", "productivity"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9MWGJ4GFR31B"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/Illustar0/SourceSwitch.Extension.Palette/releases/latest"
+    }
+  ]
+}

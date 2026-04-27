@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "atkaksoy501.portpilot",
+  "title": "PortPilot",
+  "shortDescription": "Find and free dev server ports directly from PowerToys Command Palette.",
+  "description": "PortPilot helps developers quickly find and free busy dev server ports from inside PowerToys Command Palette. It scans TCP listening ports in the common 3000-10000 development range, shows the owning process name and PID, supports fuzzy search, and asks for confirmation before terminating a process. You can also pin PortPilot to the Command Palette dock for one-click access.",
+  "author": {
+    "name": "Atakan Aksoy",
+    "url": "https://github.com/atkaksoy501"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/atkaksoy501/PortPilot",
+  "tags": ["ports", "processes", "powertoys", "windows", "developer"],
+  "categories": ["developer-tools", "productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "url",
+      "uri": "https://github.com/atkaksoy501/PortPilot/releases/latest"
+    }
+  ]
+}
