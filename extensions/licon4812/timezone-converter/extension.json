@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "licon4812.timezone-converter",
+  "title": "Time Zone Converter",
+  "shortDescription": "Convert time between different time zones quickly.",
+  "description": "Time Zone Converter CmdPalExtension is an extension for the PowerToys Command Palette that allows users to convert time between different time zones quickly.",
+  "author": {
+    "name": "licon4812",
+    "url": "https://github.com/licon4812"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/licon4812/TimezoneConvertorCmdPalExtension",
+  "tags": [
+    "time zone",
+    "converter",
+    "utc",
+    "gmt",
+    "time"
+  ],
+  "categories": ["utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P4TC0QM648H"
+    }
+  ]
+}

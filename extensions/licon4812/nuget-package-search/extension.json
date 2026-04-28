@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "licon4812.nuget-package-search",
+  "title": "NuGet Package Search",
+  "shortDescription": "Search for NuGet packages via a UI.",
+  "description": "NuGetPackageSearchExtension is an extension for the PowerToys Command Palette that enables searching for NuGet packages via a UI and provides the ability to copy the package reference, dotnet command, and NuGet package console command.",
+  "author": {
+    "name": "licon4812",
+    "url": "https://github.com/licon4812"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/licon4812/NuGetPackageSearchCmdPalExtension",
+  "tags": [
+    "nuget",
+    "packages",
+    "NuGet Package Manager",
+    "dotnet tools",
+    "dotnet templates"
+  ],
+  "categories": ["utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9N4PJSLKJ4ST"
+    }
+  ]
+}
