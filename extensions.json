@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-04-27T19:12:52Z",
-  "extensionCount": 48,
+  "generatedAt": "2026-04-28T14:39:06Z",
+  "extensionCount": 53,
   "extensions": [
     {
       "id": "advaith.currency-converter",
@@ -375,6 +375,40 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/determ1ne/scripter/screenshots/01-main-view.png"
       ],
       "addedAt": "2026-04-27"
+    },
+    {
+      "id": "dlnilsson.cmdpal-yubico-oath-otp",
+      "title": "YubiKey OATH OTP",
+      "shortDescription": "Display TOTP codes from OATH accounts stored on your YubiKey in PowerToys Command Palette.",
+      "description": "YubiKey OATH OTP integrates YubiKey hardware-based TOTP codes directly into the PowerToys Command Palette.\n\nFeatures:\n- Lists all OATH/TOTP accounts stored on your connected YubiKey\n- Generates current one-time passwords via the ykman CLI\n- Click any account to instantly copy the code to clipboard\n- Smart 10-second caching for minimal latency\n- Configurable ykman path and device ID for multi-key setups\n\nRequirements:\n- YubiKey hardware with OATH credentials configured\n- YubiKey Manager CLI (ykman) installed and in PATH (or path configured in settings)",
+      "author": {
+        "name": "Daniel Nilsson",
+        "url": "https://github.com/dlnilsson"
+      },
+      "homepage": "https://github.com/dlnilsson/cmdpal.yubicoOauthOTP",
+      "tags": [
+        "yubikey",
+        "otp",
+        "totp",
+        "2fa",
+        "security"
+      ],
+      "categories": [
+        "developer-tools",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "url",
+          "uri": "https://github.com/dlnilsson/cmdpal.yubicoOauthOTP/releases/latest"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/dlnilsson/cmdpal-yubico-oath-otp/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/dlnilsson/cmdpal-yubico-oath-otp/screenshots/01-list.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/dlnilsson/cmdpal-yubico-oath-otp/screenshots/02-settings.png"
+      ],
+      "addedAt": "2026-04-28"
     },
     {
       "id": "hoobio.bitwarden",
@@ -843,6 +877,128 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/joadoumie/nba-command-palette/screenshots/02-team-roster.png"
       ],
       "addedAt": "2026-04-27"
+    },
+    {
+      "id": "kusutori.bitwarden-for-command-palette",
+      "title": "Bitwarden",
+      "shortDescription": "Integrates your Bitwarden vault into Windows PowerToys. Search, access, and manage credentials directly from the Command Palette.",
+      "description": "Bitwarden For Command Palette integrates with the Windows Command Palette to bring your password vault directly into your workflow. It allows you to search logins, cards, and identities, copy TOTP codes with live countdowns, and manage vault items (CRUD) with lightning speed. Supports Windows Hello (via bw-bio) and custom CLI configurations.",
+      "author": {
+        "name": "kusutori",
+        "url": "https://github.com/kusutori"
+      },
+      "homepage": "https://github.com/kusutori/BitwardenForCommandPalette",
+      "tags": [
+        "bitwarden",
+        "powertoys",
+        "bitwarden-cli",
+        "command-palette"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "url",
+          "uri": "https://github.com/kusutori/BitwardenForCommandPalette/releases/latest"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/kusutori/bitwarden-for-command-palette/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/kusutori/bitwarden-for-command-palette/screenshots/01-login.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/kusutori/bitwarden-for-command-palette/screenshots/02-main.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/kusutori/bitwarden-for-command-palette/screenshots/03-generate.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/kusutori/bitwarden-for-command-palette/screenshots/04-settings.png"
+      ],
+      "addedAt": "2026-04-28"
+    },
+    {
+      "id": "licon4812.aria2-extension",
+      "title": "Aria2 Extension",
+      "shortDescription": "Use Aria2 for efficient downloads.",
+      "description": "Aria2 Extension for Command Palette is an extension for the PowerToys Command Palette that enables using Aria2, a lightweight multi-protocol and multi-source command-line download utility.",
+      "author": {
+        "name": "licon4812",
+        "url": "https://github.com/licon4812"
+      },
+      "homepage": "https://github.com/licon4812/Aria2CmdExtension",
+      "tags": [
+        "aria2",
+        "downloads",
+        "http",
+        "https",
+        "ftp"
+      ],
+      "categories": [
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9N6X66R95K6T"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/licon4812/aria2-extension/icon.png",
+      "addedAt": "2026-04-28"
+    },
+    {
+      "id": "licon4812.nuget-package-search",
+      "title": "NuGet Package Search",
+      "shortDescription": "Search for NuGet packages via a UI.",
+      "description": "NuGetPackageSearchExtension is an extension for the PowerToys Command Palette that enables searching for NuGet packages via a UI and provides the ability to copy the package reference, dotnet command, and NuGet package console command.",
+      "author": {
+        "name": "licon4812",
+        "url": "https://github.com/licon4812"
+      },
+      "homepage": "https://github.com/licon4812/NuGetPackageSearchCmdPalExtension",
+      "tags": [
+        "nuget",
+        "packages",
+        "NuGet Package Manager",
+        "dotnet tools",
+        "dotnet templates"
+      ],
+      "categories": [
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9N4PJSLKJ4ST"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/licon4812/nuget-package-search/icon.png",
+      "addedAt": "2026-04-28"
+    },
+    {
+      "id": "licon4812.timezone-converter",
+      "title": "Time Zone Converter",
+      "shortDescription": "Convert time between different time zones quickly.",
+      "description": "Time Zone Converter CmdPalExtension is an extension for the PowerToys Command Palette that allows users to convert time between different time zones quickly.",
+      "author": {
+        "name": "licon4812",
+        "url": "https://github.com/licon4812"
+      },
+      "homepage": "https://github.com/licon4812/TimezoneConvertorCmdPalExtension",
+      "tags": [
+        "time zone",
+        "converter",
+        "utc",
+        "gmt",
+        "time"
+      ],
+      "categories": [
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P4TC0QM648H"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/licon4812/timezone-converter/icon.png",
+      "addedAt": "2026-04-28"
     },
     {
       "id": "linycv.everythingcmdpal",
@@ -1462,7 +1618,7 @@
           "uri": "https://github.com/zadjii/CmdPalExtensions/releases"
         }
       ],
-      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/zadjii/mastodon/icon.svg",
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/zadjii/mastodon/icon.png",
       "addedAt": "2026-04-21"
     },
     {
