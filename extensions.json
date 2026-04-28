@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-04-28T14:39:06Z",
-  "extensionCount": 53,
+  "generatedAt": "2026-04-28T14:40:43Z",
+  "extensionCount": 54,
   "extensions": [
     {
       "id": "advaith.currency-converter",
@@ -1492,6 +1492,44 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/visual-studio-code/screenshots/02-screenshot2.png"
       ],
       "addedAt": "2026-04-15"
+    },
+    {
+      "id": "thestarslayer.define-word-extension",
+      "title": "Define Word",
+      "shortDescription": "Type a word to get its definition",
+      "description": "A Command Palette (PowerToys) extension that provides on-the-fly definitions!\nIt uses dictionaryapi.dev's free API to retrieve definitions for the word, and display as list items for each definition of the word along with its part of speech.\nFor longer definitions, you can view the details pane of the list item by clicking `Ctrl` + `Enter`",
+      "author": {
+        "name": "Lalith Sri Sai Manda",
+        "url": "https://github.com/TheStarSlayer"
+      },
+      "homepage": "https://github.com/TheStarSlayer/Define-Word-Extension",
+      "tags": [
+        "definitions",
+        "dictionary",
+        "words",
+        "meaning",
+        "vocabulary"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools",
+        "education"
+      ],
+      "installSources": [
+        {
+          "type": "url",
+          "uri": "https://github.com/TheStarSlayer/Define-Word-Extension/releases"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/thestarslayer/define-word-extension/icon.jpeg",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/thestarslayer/define-word-extension/screenshots/01-entry.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/thestarslayer/define-word-extension/screenshots/02-loading.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/thestarslayer/define-word-extension/screenshots/03-no def found.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/thestarslayer/define-word-extension/screenshots/04-list results.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/thestarslayer/define-word-extension/screenshots/05-full results.png"
+      ],
+      "addedAt": "2026-04-28"
     },
     {
       "id": "weimin96.translation-extension",
