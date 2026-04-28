@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "licon4812.aria2-extension",
+  "title": "Aria2 Extension",
+  "shortDescription": "Use Aria2 for efficient downloads.",
+  "description": "Aria2 Extension for Command Palette is an extension for the PowerToys Command Palette that enables using Aria2, a lightweight multi-protocol and multi-source command-line download utility.",
+  "author": {
+    "name": "licon4812",
+    "url": "https://github.com/licon4812"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/licon4812/Aria2CmdExtension",
+  "tags": [
+    "aria2",
+    "downloads",
+    "http",
+    "https",
+    "ftp"
+  ],
+  "categories": ["utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9N6X66R95K6T"
+    }
+  ]
+}
