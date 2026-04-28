@@ -15,7 +15,7 @@
   "installSources": [
     {
       "type": "url",
-      "id": "https://github.com/kusutori/BitwardenForCommandPalette/releases/latest"
+      "uri": "https://github.com/kusutori/BitwardenForCommandPalette/releases/latest"
     }
   ]
 }
