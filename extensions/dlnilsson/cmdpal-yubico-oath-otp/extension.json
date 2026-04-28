@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "dlnilsson.cmdpal-yubico-oath-otp",
+  "title": "YubiKey OATH OTP",
+  "shortDescription": "Display TOTP codes from OATH accounts stored on your YubiKey in PowerToys Command Palette.",
+  "description": "YubiKey OATH OTP integrates YubiKey hardware-based TOTP codes directly into the PowerToys Command Palette.\n\nFeatures:\n- Lists all OATH/TOTP accounts stored on your connected YubiKey\n- Generates current one-time passwords via the ykman CLI\n- Click any account to instantly copy the code to clipboard\n- Smart 10-second caching for minimal latency\n- Configurable ykman path and device ID for multi-key setups\n\nRequirements:\n- YubiKey hardware with OATH credentials configured\n- YubiKey Manager CLI (ykman) installed and in PATH (or path configured in settings)",
+  "author": {
+    "name": "Daniel Nilsson",
+    "url": "https://github.com/dlnilsson"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/dlnilsson/cmdpal.yubicoOauthOTP",
+  "tags": [
+    "yubikey",
+    "otp",
+    "totp",
+    "2fa",
+    "security"
+  ],
+  "categories": [
+    "developer-tools",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "url",
+      "uri": "https://github.com/dlnilsson/cmdpal.yubicoOauthOTP/releases/latest"
+    }
+  ]
+}
