@@ -1,0 +1,34 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "nickknissen.tableplus-command-palette",
+  "title": "TablePlus",
+  "shortDescription": "Browse and launch your TablePlus database connections directly from Command Palette.",
+  "description": "Surface your TablePlus database connections inside Command Palette so you can jump straight into a database without opening the TablePlus app first. Connections are grouped by their TablePlus connection group and tagged by environment (Local / Staging / Production) and driver (PostgreSQL, MySQL, SQLite, and others) so the right one is easy to spot.\n\nSelecting a connection opens it in TablePlus via the tableplus:// URI handler. The extension reads connections from the local TablePlus data files, so there is no extra configuration — install it and your saved connections show up immediately.\n\nRequires Windows 10 2004 or later, Microsoft PowerToys with Command Palette support, and TablePlus installed.",
+  "author": {
+    "name": "Nick Nissen",
+    "url": "https://github.com/nickknissen"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/nickknissen/TablePlusCommandPalette",
+  "tags": [
+    "tableplus",
+    "database",
+    "sql",
+    "postgres",
+    "mysql"
+  ],
+  "categories": [
+    "developer-tools",
+    "productivity"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P4L93228V63"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/nickknissen/TablePlusCommandPalette/releases"
+    }
+  ]
+}
