@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "bdbai.base64-converter",
+  "title": "Base64 Converter",
+  "shortDescription": "A Command Palette extension for quick conversion to/from Base64 encoded text.",
+  "description": "A lightweight extension for Microsoft Command Palette that lets you quickly encode and decode text using Base64—right as you type. Simply enter any string into the search box and instantly see its Base64 or URL-safe Base64 equivalent, making it perfect for developers, testers, and anyone working with encoded data.\nDesigned for speed and simplicity, this extension integrates seamlessly into your workflow, eliminating the need for external tools or manual conversions.",
+  "author": {
+    "name": "bdbai",
+    "url": "https://github.com/bdbai"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/bdbai/Base64ConverterExtension",
+  "tags": ["base64", "jwt"],
+  "categories": ["utilities-and-tools", "developer-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9nj54mwrrn30"
+    },
+    {
+        "type": "url",
+        "uri": "https://github.com/bdbai/Base64ConverterExtension/releases/tag/v0.0.1.0"
+    }
+  ]
+}
