@@ -1,0 +1,29 @@
+{
+    "$schema": "../../../.github/schemas/extension.schema.json",
+    "id": "othmanamor.xrate",
+    "title": "xRate",
+    "shortDescription": "Fast, open-source real-time currency converter.",
+    "description": "xRate integrates with the Windows Command Palette to provide real-time currency exchange rates. Perform instant conversions between 160+ currencies directly from your workflow.",
+    "author": {
+        "name": "Othman AMOR",
+        "url": "https://github.com/Hotman75"
+    },
+    "icon": "icon.png",
+    "homepage": "https://github.com/Hotman75/xRate",
+    "tags": [
+        "currency",
+        "converter",
+        "finance",
+        "exchange"
+    ],
+    "categories": [
+        "productivity",
+        "utilities-and-tools"
+    ],
+    "installSources": [
+        {
+            "type": "msstore",
+            "id": "9pfkdjxlfwsh"
+        }
+    ]
+}
