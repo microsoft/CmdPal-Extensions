@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "maoyeedy.cmdpal-unity-extension",
+  "title": "Unity Project Launcher",
+  "shortDescription": "Open and launch Unity Hub recent projects from Command Palette.",
+  "description": "A Command Palette extension for browsing Unity Hub recent projects and launching the Unity Editor directly. It reads the Unity Hub projects list and helps you reopen projects quickly from PowerToys Command Palette.",
+  "author": {
+    "name": "Maoyeedy",
+    "url": "https://github.com/maoyeedy"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/maoyeedy/CommandPaletteUnity",
+  "tags": ["unity", "projects", "launcher"],
+  "categories": ["developer-tools", "productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "url",
+      "uri": "https://github.com/maoyeedy/CommandPaletteUnity/releases"
+    }
+  ]
+}
