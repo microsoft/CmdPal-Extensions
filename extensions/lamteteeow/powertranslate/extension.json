@@ -1,0 +1,29 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/refs/heads/main/.github/schemas/extension.schema.json",
+    "id": "lamteteeow.powertranslate",
+    "title": "Power Translate",
+    "shortDescription": "Translate text instantly using DeepL in Command Palette",
+    "description": "A lightweight translation extension for Microsoft PowerToys Command Palette. Translates text between 30+ language pairs using DeepL's neural translation engine. Features auto-detect source language, clipboard integration, and encrypted API key storage.",
+    "author": {
+        "name": "lamteteeow",
+        "url": "https://github.com/lamteteeow"
+    },
+    "icon": "icon.png",
+    "homepage": "https://github.com/lamteteeow/PowerTranslate",
+    "tags": ["translation", "deepl", "productivity", "language", "powertoys"],
+    "categories": ["productivity", "utilities-and-tools"],
+    "installSources": [
+        {
+            "type": "winget",
+            "id": "lamteteeow.PowerTranslate"
+        },
+        {
+            "type": "msstore",
+            "id": "9PD2C31NX7Z8"
+        },
+        {
+            "type": "url",
+            "uri": "https://github.com/lamteteeow/PowerTranslate/releases/latest"
+        }
+    ]
+}
