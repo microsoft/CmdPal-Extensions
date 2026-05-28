@@ -14,8 +14,8 @@
   "categories": ["developer-tools", "productivity", "utilities-and-tools"],
   "installSources": [
     {
-      "type": "url",
-      "uri": "https://github.com/maoyeedy/CommandPaletteUnity/releases"
+      "type": "msstore",
+      "id": "9NVSJZ72LTZ3"
     }
   ]
 }
