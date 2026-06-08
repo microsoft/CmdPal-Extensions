@@ -30,10 +30,6 @@
     {
       "type": "winget",
       "id": "15722UsefulApp.WorkspaceLauncherForVSCode"
-    },
-    {
-      "type": "url",
-      "uri": "https://github.com/tanchekwei/VisualStudioCodeForCommandPalette/releases"
     }
   ]
 }

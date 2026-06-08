@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "fefedu973.universal-search-suggestions",
+  "title": "Universal Search Suggestions",
+  "shortDescription": "Browser-like web search suggestions, URL detection, local browser results, favicons, and rich details in Command Palette.",
+  "description": "Universal Search Suggestions brings browser-like search behavior to PowerToys Command Palette. It shows immediate direct search and URL actions, autocomplete from Google, Bing, DuckDuckGo, Brave and optional providers such as Yahoo, Ecosia, Qwant, Swisscows and Google Toolbar XML, Google rich suggestions, Google Omnibox answers such as calculator and short factual answers when exposed by the suggest endpoint, cached site favicons, and optional local browser bookmarks/history from Chrome, Edge, Brave or Firefox. Suggestions can still open through the user's preferred search engine or custom URL template. Optional beta detail enrichment can append Markdown from free web answer sources or a user-configured AI endpoint without blocking suggestion loading.",
+  "author": {
+    "name": "Fefe_du_973",
+    "url": "https://github.com/Fefedu973"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/Fefedu973/UniversalSearchSuggestions",
+  "tags": [
+    "search",
+    "browser",
+    "autocomplete",
+    "google",
+    "powertoys"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9nccznpqb9s6"
+    }
+  ]
+}

@@ -21,10 +21,6 @@
     {
       "type": "msstore",
       "id": "XP89DCGQ3K6VLD"
-    },
-    {
-      "type": "url",
-      "uri": "https://github.com/microsoft/CmdPal-Extensions/releases/latest"
     }
   ]
 }

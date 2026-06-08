@@ -24,10 +24,6 @@
     {
       "type": "winget",
       "id": "Microsoft.CmdPalGitHubExtension"
-    },
-    {
-      "type": "url",
-      "uri": "https://github.com/microsoft/CmdPalGitHubExtension/releases"
     }
   ]
 }

@@ -24,10 +24,6 @@
     {
       "type": "winget",
       "id": "Microsoft.CmdPalAzureExtension"
-    },
-    {
-      "type": "url",
-      "uri": "https://github.com/microsoft/CmdPalAzureExtension/releases"
     }
   ]
 }

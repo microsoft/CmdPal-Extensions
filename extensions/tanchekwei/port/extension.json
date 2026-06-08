@@ -29,10 +29,6 @@
     {
       "type": "winget",
       "id": "15722UsefulApp.PortForCommandPalette"
-    },
-    {
-      "type": "url",
-      "uri": "https://github.com/tanchekwei/PortForCommandPalette/"
     }
   ]
 }

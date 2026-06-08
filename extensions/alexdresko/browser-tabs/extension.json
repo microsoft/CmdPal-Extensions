@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "alexdresko.browser-tabs",
+  "title": "Browser Tabs",
+  "shortDescription": "Search and switch to open Chrome and Edge tabs from Windows Command Palette.",
+  "description": "Browser Tabs integrates with Windows Command Palette to make open browser tabs searchable from one launcher. It discovers open Chrome and Microsoft Edge tabs on your Windows desktop, shows matching tabs in Command Palette, and switches directly to the selected tab.\n\nThis extension requires Microsoft PowerToys Command Palette to be installed and enabled. Browser tab discovery runs locally on your device using Windows UI Automation. Browser Tabs does not send your browser tab data to a remote service.",
+  "author": {
+    "name": "Alex Dresko",
+    "url": "https://github.com/alexdresko/wcp-browsertabs"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/alexdresko/wcp-browsertabs",
+  "tags": [
+    "browser-tabs",
+    "chrome",
+    "edge",
+    "productivity",
+    "tabs"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9N7BMMLTGFWX"
+    }
+  ]
+}

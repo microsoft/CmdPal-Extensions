@@ -24,10 +24,6 @@
     {
       "type": "winget",
       "id": "zadjii.SpongeBotForCommandPalette"
-    },
-    {
-      "type": "url",
-      "uri": "https://github.com/zadjii/CmdPalExtensions/releases"
     }
   ]
 }

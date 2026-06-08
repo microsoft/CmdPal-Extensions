@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "8lwxpg.process-killer",
+  "title": "Process Killer",
+  "shortDescription": "Killing processes with process name or port number",
+  "description": "View process details like process name, command line, memory, path, window title. With ability to terminate the process",
+  "author": {
+    "name": "8LWXpg",
+    "url": "https://github.com/8LWXpg"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/8LWXpg/CmdPal-ProcessKiller",
+  "tags": ["process", "program", "system-utilities", "taskkill", "task-manager"],
+  "categories": ["developer-tools", "utilities-and-tools", "productivity"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9PNHK9LDHMHS"
+    }
+  ],
+  "listed": true
+}

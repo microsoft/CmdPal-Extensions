@@ -133,14 +133,6 @@
             },
             "required": ["type", "id"],
             "additionalProperties": false
-          },
-          {
-            "properties": {
-              "type": { "const": "url" },
-              "uri": { "type": "string", "description": "Direct download or release page URL.", "format": "uri", "examples": ["https://github.com/jiripolasek/MediaControlsExtension/releases"] }
-            },
-            "required": ["type", "uri"],
-            "additionalProperties": false
           }
         ]
       }

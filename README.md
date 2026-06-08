@@ -18,7 +18,7 @@ This repo helps you get your extension in front of millions of Command Palette u
 
 🔍 **Discoverable by millions** — your extension shows up right inside Command Palette
 
-📦 **Host it your way** — publish through winget, the Microsoft Store, or your own download link — you stay in control
+📦 **Host it your way** — publish through winget or the Microsoft Store — you stay in control
 
 🌍 **Open-source & community-driven** — join a growing ecosystem of developers extending Windows productivity
 
@@ -26,7 +26,7 @@ This repo helps you get your extension in front of millions of Command Palette u
 
 ## ⚡ How it works
 
-1. **Build and publish your extension** — develop a Command Palette extension and ship it on the Microsoft Store, winget, or your own download URL.
+1. **Build and publish your extension** — develop a Command Palette extension and ship it on the Microsoft Store or winget.
 2. **Open a PR in this repo** — add a folder with your `extension.json` (and icon) pointing to your install source.
 3. **Get reviewed** — CI validates your submission automatically and the Command Palette team reviews the PR.
 4. **Ship to users** — once merged, your extension appears in the Command Palette gallery and users can install it directly from your chosen source.

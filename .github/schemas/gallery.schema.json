@@ -146,14 +146,6 @@
                 },
                 "required": ["type", "id"],
                 "additionalProperties": false
-              },
-              {
-                "properties": {
-                  "type": { "const": "url" },
-                  "uri": { "type": "string", "description": "Direct download or release page URL.", "format": "uri" }
-                },
-                "required": ["type", "uri"],
-                "additionalProperties": false
               }
             ]
           }

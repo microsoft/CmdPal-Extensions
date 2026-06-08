@@ -23,10 +23,6 @@
     {
       "type": "winget",
       "id": "zadjii.HackerNewsforCommandPalette"
-    },
-    {
-      "type": "url",
-      "uri": "https://github.com/zadjii/CmdPalExtensions/releases"
     }
   ]
 }

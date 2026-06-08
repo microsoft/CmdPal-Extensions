@@ -23,12 +23,12 @@
   ],
   "installSources": [
     {
-      "type": "winget",
-      "id": "nickknissen.TailscaleCommandPalette"
+      "type": "msstore",
+      "id": "9N5NWRQ9FBLM"
     },
     {
-      "type": "url",
-      "uri": "https://github.com/nickknissen/TailscaleCommandPalette/releases"
+      "type": "winget",
+      "id": "nickknissen.TailscaleCommandPalette"
     }
   ]
 }

@@ -15,7 +15,6 @@ Before you begin, make sure you have:
 - Your extension **already published** on one of the supported install sources:
   - [winget](https://github.com/microsoft/winget-pkgs) (Windows Package Manager)
   - [Microsoft Store](https://apps.microsoft.com/)
-  - Direct download or release page URL
 
 ## Step-by-step submission guide
 
@@ -106,7 +105,6 @@ Each object in the `installSources` array has a `type` and a type-specific field
 |------|-------|-------------|---------|
 | `winget` | `id` | The winget package identifier | `"Publisher.PackageName"` |
 | `msstore` | `id` | Microsoft Store product ID | `"9n3bq81g19k7"` |
-| `url` | `uri` | Direct download or release page URL | `"https://github.com/publisher/extension/releases"` |
 
 #### Allowed categories
 

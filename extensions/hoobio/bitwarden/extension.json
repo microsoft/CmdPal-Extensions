@@ -25,10 +25,6 @@
     {
       "type": "msstore",
       "id": "9P5KS8T80MV3"
-    },
-    {
-      "type": "url",
-      "uri": "https://github.com/hoobio/command-palette-bitwarden/releases/latest"
     }
   ]
 }

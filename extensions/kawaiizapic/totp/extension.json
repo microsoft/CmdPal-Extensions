@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "kawaiizapic.totp",
+  "title": "TOTP",
+  "shortDescription": "Copy your two-factor verification code.",
+  "description": "TOTP adds the ability to copy your two-factor verification code to the clipboard, scan the QR code on screen to add a new authenticator.",
+  "author": {
+    "name": "KawaiiZapic",
+    "url": "https://github.com/KawaiiZapic"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/KawaiiZapic/PowertoysRunTOTP",
+  "tags": ["totp"],
+  "categories": ["utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9pf3p6n44b2p"
+    }
+  ]
+}

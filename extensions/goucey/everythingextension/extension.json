@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "goucey.everythingextension",
+  "title": "EverythingExt",
+  "shortDescription": "Everything seach extension.",
+  "description": "An extension that enables Everything search in the Command Palette. Everything is a fast file search tool that helps users efficiently look up files and folders on your computer.",
+  "author": {
+    "name": "Goucey",
+    "url": "https://github.com/goucey"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/goucey/EverythingExtension",
+  "tags": [
+    "everything",
+    "search",
+    "files"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9PND4PGFP6KM"
+    }
+  ]
+}

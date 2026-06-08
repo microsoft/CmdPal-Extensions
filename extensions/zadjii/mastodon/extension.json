@@ -8,7 +8,7 @@
     "name": "zadjii",
     "url": "https://github.com/zadjii"
   },
-  "icon": "icon.svg",
+  "icon": "icon.png",
   "homepage": "https://github.com/zadjii/CmdPalExtensions",
   "tags": [
     "mastodon",
@@ -23,10 +23,6 @@
     {
       "type": "winget",
       "id": "zadjii.MastodonForCmdPal"
-    },
-    {
-      "type": "url",
-      "uri": "https://github.com/zadjii/CmdPalExtensions/releases"
     }
   ]
 }

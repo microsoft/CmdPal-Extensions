@@ -20,10 +20,6 @@
     {
       "type": "msstore",
       "id": "9npk6ksdlc81"
-    },
-    {
-      "type": "url",
-      "uri": "https://github.com/LioQing/llm-extension-for-cmd-pal/releases"
     }
   ]
 }
