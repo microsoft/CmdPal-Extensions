@@ -10,7 +10,7 @@
     "url": "https://xisage.com"
   },
   "icon": "icon.png",
-  "homepage": "https://github.com/xiSage/CmdPal-Extensions",
+  "homepage": "https://github.com/xiSage/GodotEngineForCommandPalette",
   "tags": ["godot-engine", "godot"],
   "categories": ["developer-tools", "utilities-and-tools"],
   "installSources": [
