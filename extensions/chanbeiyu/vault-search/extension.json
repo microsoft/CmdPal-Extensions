@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "chanbeiyu.vault-search",
+  "title": "Vault Search",
+  "shortDescription": "Search the contents of text files or markdown files",
+  "description": "Search markdown or text files, file contents, and tags in an Obsidian vault or folder",
+  "author": {
+    "name": "chanbeiyu",
+    "url": "https://github.com/chanbeiyu"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/chanbeiyu/CmdPal",
+  "tags": ["search", "obsidian", "folder", "markdown", "text"],
+  "categories": ["productivity", "education", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9N4SD9ZD7PDW"
+    }
+  ],
+  "listed": true
+}
