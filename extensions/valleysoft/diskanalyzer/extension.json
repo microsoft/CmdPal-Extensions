@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "valleysoft.diskanalyzer",
+  "title": "ValleySoft Disk Analyzer",
+  "shortDescription": "Lightning-fast, beautifully designed disk space analysis tool for Windows.",
+  "description": "Analyze your disk space usage instantly and reclaim valuable storage space! The single Microsoft Store installation includes both a full Standalone UI App and a native Command Palette Extension.\n\nWhether you prefer a beautiful, dedicated window or lightning-fast access right from your keyboard, Disk Analyzer instantly scans your local drives and presents a clean, interactive breakdown of your largest files and heaviest folders.",
+  "author": {
+    "name": "ValleySoft",
+    "url": "https://github.com/valley-soft"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/valley-soft/powertoys-diskanalyzer",
+  "tags": ["disk", "analyzer", "storage", "space", "treesize"],
+  "categories": ["utilities-and-tools", "productivity"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NF073KLTVWN"
+    }
+  ]
+}
