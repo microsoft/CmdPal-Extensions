@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "denniezorg.game-library-dock",
+  "title": "Game Library Dock",
+  "shortDescription": "Game Library Dock brings your local Steam library and online friends to the PowerToys Command Palette Dock.",
+  "description": "Browse installed games alphabetically, search by title, view local cover artwork and recent-play information, and launch games directly through Steam. Add the online friends band to see who is available or currently playing, then select a friend to open a Steam chat.",
+  "author": {
+    "name": "DennieZorg",
+    "url": "https://github.com/ScymicX"
+  },
+  "icon": "icon.png",
+  "tags": [
+    "gaming",
+    "friends",
+    "steam",
+    "launcher",
+    "dock"
+  ],
+  "categories": [
+    "entertainment",
+    "social"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9MX24LVV6P2D"
+    }
+  ]
+}
