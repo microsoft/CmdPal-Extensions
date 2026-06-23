@@ -16,6 +16,10 @@
     {
       "type": "msstore",
       "id": "9PNHK9LDHMHS"
+    },
+    {
+      "type": "winget",
+      "id": "8LWXpg.ProcessKillerforCommandPalette"
     }
   ],
   "listed": true
