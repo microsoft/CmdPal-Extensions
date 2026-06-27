@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "costafotiadis.markets-extension",
+  "title": "Markets Extension",
+  "shortDescription": "Stocks, crypto, and currencies inside PowerToys Command Palette — watchlist, favorites, and portfolio, using your own market-data key.",
+  "description": "Track stocks, cryptocurrencies, and currencies right inside Microsoft PowerToys Command Palette — no separate app, no browser tab.\n\n• Search symbols and view quotes and price charts\n• Build a watchlist and mark favorites\n• Track a portfolio you enter yourself, with multi-currency totals and daily change\n• Pin favorites and your portfolio to the Command Palette dock\n• Demo mode lets you explore with sample data, fully offline\n• No accounts, no telemetry — it runs entirely on your machine\n\nConnect the app using your own market-data API key from Twelve Data or Finnhub; currency reference rates need no key. Your keys and data stay on your device — the app has no servers and sends each key only to the provider it belongs to.\n\nIndependent project. Markets Extension is an open-source, independent extension. It is not affiliated with, endorsed by, or sponsored by Microsoft, Finnhub, Twelve Data, or any exchange or data provider. Company names, ticker symbols, and logos are the property of their respective owners.\n\nDisclaimer. Market data is supplied by third parties and may be delayed or inaccurate. This app is provided for informational purposes only and is not financial, investment, tax, or trading advice, and is not a recommendation to buy or sell any asset. You are solely responsible for your own decisions; always do your own research.",
+  "author": {
+    "name": "Costa Fotiadis",
+    "url": "https://github.com/CostaFot"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/CostaFot/MarketExtension",
+  "tags": ["stocks", "crypto", "forex", "markets", "finance"],
+  "categories": ["productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9MV7M639533Q"
+    },
+    {
+      "type": "winget",
+      "id": "CostaFotiadis.MarketsExtensionForCmdPalette"
+    }
+  ]
+}
