@@ -1,0 +1,30 @@
+{
+    "$schema": "../../../.github/schemas/extension.schema.json",
+    "id": "phireforge.paletteshell",
+    "title": "PaletteShell",
+    "shortDescription": "Run your PowerShell scripts straight from the Windows Command Palette.",
+    "description": "PaletteShell turns a folder of PowerShell scripts into searchable, runnable commands inside the Windows Command Palette. Drop your own .ps1 files in and they show up automatically — transform clipboard text, generate GUIDs, format JSON, and automate daily workflows without leaving your keyboard. Scripts with parameters get an auto-generated input form, and rich PowerShell attributes let you add icons, groups, timeouts, admin elevation, confirmation prompts, and output modes (clipboard, toast, Markdown, file, or a searchable live-provider list). Ships with ready-to-use sample scripts and a growing community script library.",
+    "author": {
+        "name": "phireForge",
+        "url": "https://github.com/phireForge"
+    },
+    "icon": "icon.png",
+    "homepage": "https://github.com/paletteShell/PaletteShellExtension",
+    "tags": [
+        "scripts",
+        "automation",
+        "workflow",
+        "tools",
+        "powershell"
+    ],
+    "categories": [
+        "productivity",
+        "utilities-and-tools"
+    ],
+    "installSources": [
+        {
+            "type": "msstore",
+            "id": "9p0s8ghvwz4v"
+        }
+    ]
+}
