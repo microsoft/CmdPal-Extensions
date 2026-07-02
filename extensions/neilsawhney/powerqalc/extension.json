@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "neilsawhney.powerqalc",
+  "title": "PowerQalc",
+  "shortDescription": "Mixed-unit math, built-in physical constants, and full Qalculate power — right in Command Palette.",
+  "description": "PowerQalc brings the Qalculate engine to your Command Palette workflow. Type expressions as you search and get live results — then copy the answer with Enter or save it to history with Ctrl+Enter.\n\nMixed-unit math: Do real arithmetic with incompatible units in one expression — 5 miles + 10 km, 10 mph * 2 hours, (5 ft + 8 in) to cm — then convert when you want. Most calculators make you convert everything first.\n\nBuilt-in constants: Hundreds of physical, chemical, and mathematical constants — use them by name with automatic units. Examples: FineStructure, planck to eV s, proton_mass to MeV/c^2, PlanckLength to nm, k_B to J/K, SpeedOfLight to mph.\n\nSession memory: ans() reuses the previous result; variables persist for the session. Solve equations like 10 mph * x = 20 mi to min.\n\nMore: algebra, calculus, currency, dates, trigonometry, percentages (240 * 15%), and simple conversions like 100 miles to km.\n\nHow it works: Open PowerQalc from Command Palette, type an expression, and results update live. Recent calculations appear when the search box is empty. Usage and help is seeded once in history.\n\nRequirements: Windows 10/11 with PowerToys and Command Palette enabled. Includes the Qalculate CLI (qalc) — no separate install needed.",
+  "author": {
+    "name": "Neil Sawhney",
+    "url": "https://github.com/Neil-Sawhney"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/Neil-Sawhney/PowerQalc",
+  "tags": [
+    "calculator",
+    "math",
+    "science",
+    "units"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9MZR396NKKGW"
+    }
+  ]
+}
