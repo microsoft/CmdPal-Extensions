@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "qqshi13.quick-notes",
+  "title": "Quick Notes",
+  "shortDescription": "Quickly create, open, and manage markdown notes",
+  "description": "A Command Palette extension for quickly creating, opening, and managing markdown notes. Features templates, recent notes, pinned notes, and customizable editor support.",
+  "author": {
+    "name": "QQSHI13",
+    "url": "https://github.com/QQSHI13"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/QQSHI13/quick-notes",
+  "tags": ["notes", "markdown", "productivity", "command-palette"],
+  "categories": ["productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P8M54K17J8L"
+    }
+  ],
+  "listed": true
+}
