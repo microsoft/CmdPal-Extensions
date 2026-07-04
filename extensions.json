@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-06-25T16:04:11Z",
-  "extensionCount": 63,
+  "generatedAt": "2026-07-03T07:49:40Z",
+  "extensionCount": 68,
   "extensions": [
     {
       "id": "8lwxpg.process-killer",
@@ -661,6 +661,38 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/illustar0/sourceswitch/screenshots/03-search-results.png"
       ],
       "addedAt": "2026-04-27"
+    },
+    {
+      "id": "jantezner.audio-status",
+      "title": "Audio Status",
+      "shortDescription": "View and switch Windows audio input and output devices from Command Palette.",
+      "description": "Audio Status adds quick access to Windows audio input and output device status and switching directly inside Command Palette. It shows the current output and input devices, lists active playback and recording endpoints, and lets you switch defaults without opening Windows sound settings.",
+      "author": {
+        "name": "Jan Tezner",
+        "url": "https://github.com/hansek"
+      },
+      "homepage": "https://github.com/hansek/AudioStatusExtension",
+      "tags": [
+        "audio",
+        "sound",
+        "devices",
+        "windows"
+      ],
+      "categories": [
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NRHJDKHMQQS"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/01-dock-status.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/02-device-picker.png"
+      ],
+      "addedAt": "2026-07-03"
     },
     {
       "id": "jdalley.toggle-hdr",
@@ -1413,6 +1445,71 @@
       "addedAt": "2026-04-12"
     },
     {
+      "id": "n0i0c0k.powertranslator",
+      "title": "PowerTranslator",
+      "shortDescription": "Translate text quickly from Command Palette.",
+      "description": "PowerTranslator is a translation extension for PowerToys Command Palette. It supports quick text translation, clipboard translation, selectable target languages, search suggestions, translation history, Chinese and English text-to-speech, and optional second-language results.",
+      "author": {
+        "name": "N0I0C0K",
+        "url": "https://github.com/N0I0C0K"
+      },
+      "homepage": "https://github.com/N0I0C0K/PowerTranslator",
+      "tags": [
+        "translation",
+        "language",
+        "cmdpal",
+        "powertoys",
+        "productivity"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NWN01SZ6KNK"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/n0i0c0k/powertranslator/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/n0i0c0k/powertranslator/screenshots/01-translation.png"
+      ],
+      "addedAt": "2026-07-03"
+    },
+    {
+      "id": "neilsawhney.powerqalc",
+      "title": "PowerQalc",
+      "shortDescription": "Mixed-unit math, built-in physical constants, and full Qalculate power — right in Command Palette.",
+      "description": "PowerQalc brings the Qalculate engine to your Command Palette workflow. Type expressions as you search and get live results — then copy the answer with Enter or save it to history with Ctrl+Enter.\n\nMixed-unit math: Do real arithmetic with incompatible units in one expression — 5 miles + 10 km, 10 mph * 2 hours, (5 ft + 8 in) to cm — then convert when you want. Most calculators make you convert everything first.\n\nBuilt-in constants: Hundreds of physical, chemical, and mathematical constants — use them by name with automatic units. Examples: FineStructure, planck to eV s, proton_mass to MeV/c^2, PlanckLength to nm, k_B to J/K, SpeedOfLight to mph.\n\nSession memory: ans() reuses the previous result; variables persist for the session. Solve equations like 10 mph * x = 20 mi to min.\n\nMore: algebra, calculus, currency, dates, trigonometry, percentages (240 * 15%), and simple conversions like 100 miles to km.\n\nHow it works: Open PowerQalc from Command Palette, type an expression, and results update live. Recent calculations appear when the search box is empty. Usage and help is seeded once in history.\n\nRequirements: Windows 10/11 with PowerToys and Command Palette enabled. Includes the Qalculate CLI (qalc) — no separate install needed.",
+      "author": {
+        "name": "Neil Sawhney",
+        "url": "https://github.com/Neil-Sawhney"
+      },
+      "homepage": "https://github.com/Neil-Sawhney/PowerQalc",
+      "tags": [
+        "calculator",
+        "math",
+        "science",
+        "units"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9MZR396NKKGW"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/neilsawhney/powerqalc/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/neilsawhney/powerqalc/screenshots/01-main-view.png"
+      ],
+      "addedAt": "2026-07-03"
+    },
+    {
       "id": "nickknissen.tableplus-command-palette",
       "title": "TablePlus",
       "shortDescription": "Browse and launch your TablePlus database connections directly from Command Palette.",
@@ -1612,6 +1709,39 @@
       "addedAt": "2026-05-10"
     },
     {
+      "id": "phireforge.paletteshell",
+      "title": "PaletteShell",
+      "shortDescription": "Run your PowerShell scripts straight from the Windows Command Palette.",
+      "description": "PaletteShell turns a folder of PowerShell scripts into searchable, runnable commands inside the Windows Command Palette. Drop your own .ps1 files in and they show up automatically — transform clipboard text, generate GUIDs, format JSON, and automate daily workflows without leaving your keyboard. Scripts with parameters get an auto-generated input form, and rich PowerShell attributes let you add icons, groups, timeouts, admin elevation, confirmation prompts, and output modes (clipboard, toast, Markdown, file, or a searchable live-provider list). Ships with ready-to-use sample scripts and a growing community script library.",
+      "author": {
+        "name": "phireForge",
+        "url": "https://github.com/phireForge"
+      },
+      "homepage": "https://github.com/paletteShell/PaletteShellExtension",
+      "tags": [
+        "scripts",
+        "automation",
+        "workflow",
+        "tools",
+        "powershell"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9p0s8ghvwz4v"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/phireforge/paletteshell/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/phireforge/paletteshell/screenshots/01-main.png"
+      ],
+      "addedAt": "2026-07-03"
+    },
+    {
       "id": "poychang.translator",
       "title": "Translator",
       "shortDescription": "Translate text directly from the Command Palette.",
@@ -1643,6 +1773,40 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/poychang/translator/screenshots/04-extension-setting.png"
       ],
       "addedAt": "2026-04-27"
+    },
+    {
+      "id": "qqshi13.quick-notes",
+      "title": "Quick Notes",
+      "shortDescription": "Quickly create, open, and manage markdown notes",
+      "description": "A Command Palette extension for quickly creating, opening, and managing markdown notes. Features templates, recent notes, pinned notes, and customizable editor support.",
+      "author": {
+        "name": "QQSHI13",
+        "url": "https://github.com/QQSHI13"
+      },
+      "homepage": "https://github.com/QQSHI13/quick-notes",
+      "tags": [
+        "notes",
+        "markdown",
+        "productivity",
+        "command-palette"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P8M54K17J8L"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/qqshi13/quick-notes/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/qqshi13/quick-notes/screenshots/01-main.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/qqshi13/quick-notes/screenshots/02-notes.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/qqshi13/quick-notes/screenshots/03-recent.png"
+      ],
+      "addedAt": "2026-07-03"
     },
     {
       "id": "ruslanlap.definition",
