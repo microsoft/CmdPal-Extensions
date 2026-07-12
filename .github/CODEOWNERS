@@ -5,14 +5,16 @@
 # are automatically requested for review, and the branch protection ruleset
 # requires a code-owner approval before such changes can merge.
 #
-# NOTE: The generated gallery file at the repo root, extensions.json, is
-# intentionally NOT assigned an owner. This lets the scheduled "Regenerate
-# Gallery" workflow update it automatically without a human code-owner review.
-# Contributor-authored content under /extensions/ IS owned below, so extension
-# submissions still require a moderator's approval.
+# The generated gallery file (extensions.json) is owned as well: the
+# regeneration automation opens a PR authored by a maintainer, and a
+# DIFFERENT code owner must review it before it merges (the author cannot
+# approve their own PR).
 
 # Extension submissions from contributors.
 /extensions/ @niels9001 @michaeljolley @zadjii-msft @chatasweetie @crutkas @dhowett
+
+# Generated gallery file, produced by .github/scripts/generate.py.
+/extensions.json @niels9001 @michaeljolley @zadjii-msft @chatasweetie @crutkas @dhowett
 
 # Repository automation: workflows, generation/validation scripts, schemas,
 # and this CODEOWNERS file itself.
