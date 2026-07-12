@@ -12,8 +12,8 @@
 # submissions still require a moderator's approval.
 
 # Extension submissions from contributors.
-/extensions/ @michaeljolley @zadjii-msft @chatasweetie @crutkas @dhowett
+/extensions/ @niels9001 @michaeljolley @zadjii-msft @chatasweetie @crutkas @dhowett
 
 # Repository automation: workflows, generation/validation scripts, schemas,
 # and this CODEOWNERS file itself.
-/.github/ @michaeljolley @zadjii-msft @chatasweetie @crutkas @dhowett
+/.github/ @niels9001 @michaeljolley @zadjii-msft @chatasweetie @crutkas @dhowett
