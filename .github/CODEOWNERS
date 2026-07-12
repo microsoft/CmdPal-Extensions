@@ -1,0 +1,19 @@
+# Code owners for CmdPal-Extensions.
+#
+# Each line is a file pattern followed by one or more owners. The last
+# matching pattern for a changed file takes precedence. Owners listed here
+# are automatically requested for review, and the branch protection ruleset
+# requires a code-owner approval before such changes can merge.
+#
+# NOTE: The generated gallery file at the repo root, extensions.json, is
+# intentionally NOT assigned an owner. This lets the scheduled "Regenerate
+# Gallery" workflow update it automatically without a human code-owner review.
+# Contributor-authored content under /extensions/ IS owned below, so extension
+# submissions still require a moderator's approval.
+
+# Extension submissions from contributors.
+/extensions/ @michaeljolley @zadjii-msft @chatasweetie @crutkas @dhowett
+
+# Repository automation: workflows, generation/validation scripts, schemas,
+# and this CODEOWNERS file itself.
+/.github/ @michaeljolley @zadjii-msft @chatasweetie @crutkas @dhowett
