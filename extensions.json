@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-07-03T07:49:40Z",
-  "extensionCount": 68,
+  "generatedAt": "2026-07-13T12:30:48Z",
+  "extensionCount": 69,
   "extensions": [
     {
       "id": "8lwxpg.process-killer",
@@ -1957,6 +1957,47 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/thestarslayer/define-word-extension/screenshots/04-no def found.png"
       ],
       "addedAt": "2026-06-08"
+    },
+    {
+      "id": "tonythethompson.quickshell",
+      "title": "Quick Shell",
+      "shortDescription": "Save project folders, discover local git repos, and open them in any terminal from Command Palette.",
+      "description": "Quick Shell saves folders you open often and launches them from Command Palette in the terminal you already use.\n\n- Discover local git repositories and add them as workspaces\n- Save workspaces with optional home keywords for root-palette search\n- Every Windows Terminal and Intelligent Terminal profile on your PC, plus WSL and classic shells\n- Optional companion app and dev-server command on open\n- Create, edit, favorite, duplicate, import, and export workspaces inside Command Palette\n- Undo and redo edits; open elevated when needed\n\nAfter installing from the Microsoft Store or WinGet, open Command Palette and run \"Reload Command Palette Extension\", then search for Quick Shell.",
+      "author": {
+        "name": "Tony Thompson",
+        "url": "https://github.com/tonythethompson"
+      },
+      "homepage": "https://github.com/tonythethompson/QuickShell",
+      "tags": [
+        "terminal",
+        "developer-tools",
+        "productivity",
+        "workspace",
+        "powershell",
+        "git"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9PC8S6LNRT3R"
+        },
+        {
+          "type": "winget",
+          "id": "tonythethompson.QuickShell"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tonythethompson/quickshell/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tonythethompson/quickshell/screenshots/01-list-context-menu.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tonythethompson/quickshell/screenshots/02-edit-shortcut.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tonythethompson/quickshell/screenshots/03-settings.png"
+      ],
+      "addedAt": "2026-07-13"
     },
     {
       "id": "valleysoft.diskanalyzer",
