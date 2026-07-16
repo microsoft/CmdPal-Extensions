@@ -1,0 +1,34 @@
+{
+    "$schema": "../../../.github/schemas/extension.schema.json",
+    "id": "jrscott812.power",
+    "title": "Power",
+    "shortDescription": "Switch Windows power modes and power plans from Command Palette.",
+    "description": "A Command Palette extension for switching Windows power modes (Best efficiency, Balanced, Best performance) and power plans (Power saver, Balanced, High performance, Ultimate performance, and custom plans). Includes dock bands for quick changes and fallback search for power, mode, and plan terms.",
+    "author": {
+        "name": "jrscott812",
+        "url": "https://github.com/JRScott812"
+    },
+    "icon": "icon.png",
+    "homepage": "https://github.com/JRScott812/CmdPal.Ext.Power",
+    "tags": [
+        "power",
+        "power plan",
+        "power settings",
+        "power made",
+        "power management"
+    ],
+    "categories": [
+        "utilities-and-tools",
+        "productivity"
+    ],
+    "installSources": [
+        {
+            "type": "msstore",
+            "id": "9P5805PFVS3G"
+        },
+        {
+            "type": "winget",
+            "id": "JakeScott.Power"
+        }
+    ]
+}
