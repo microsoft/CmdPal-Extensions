@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-07-15T07:02:26Z",
-  "extensionCount": 69,
+  "generatedAt": "2026-07-16T07:02:43Z",
+  "extensionCount": 70,
   "extensions": [
     {
       "id": "8lwxpg.process-killer",
@@ -438,6 +438,42 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/daydreamer-riri/web-search-shortcut/screenshots/04-search-2.png"
       ],
       "addedAt": "2026-04-27"
+    },
+    {
+      "id": "dbsgg.redmine",
+      "title": "Redmine",
+      "shortDescription": "Work with Redmine from the Command Palette — open issues by number, copy rich links, browse comments, run saved queries, and make quick edits.",
+      "description": "Redmine for Command Palette is an unofficial extension that brings your Redmine issues into the PowerToys Command Palette, so you can act on tickets without switching to the browser.\n\nType an issue number to jump straight to its description and comments. Recently viewed tickets stay one keystroke away in the history, and your favorite Redmine filters become saved queries — each listed with its issue count and ready to pin as a top-level command. Status changes and comments are handled right in the palette; anything more detailed opens in the browser with Ctrl+Enter.\n\nThe extension is designed to be gentle on your server (batched requests and caching) and careful with your credentials: the API key is stored only in the Windows Credential Manager (DPAPI-encrypted, per user) and is never written to disk in plain text. The UI is available in English and Japanese, following the Windows display language.\n\nRequirements:\n- Microsoft PowerToys with the Command Palette feature enabled.\n- A Redmine server with the REST API enabled. An API access key is optional: public servers can be browsed read-only without one; a key is needed for private projects and for status changes / comments.\n\n\"Redmine\" is a trademark of its respective owner. This is an independent, unofficial extension.",
+      "author": {
+        "name": "dbsgg",
+        "url": "https://github.com/dbsgg"
+      },
+      "homepage": "https://github.com/dbsgg/RedmineExtension",
+      "tags": [
+        "redmine",
+        "issue-tracker",
+        "tickets",
+        "project-management"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9N5ZH1H98NV2"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/dbsgg/redmine/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/dbsgg/redmine/screenshots/01-main-page.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/dbsgg/redmine/screenshots/02-saved-queries.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/dbsgg/redmine/screenshots/03-query-results-detail-pane.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/dbsgg/redmine/screenshots/04-description-and-comments.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/dbsgg/redmine/screenshots/05-japanese-ui.jpg"
+      ],
+      "addedAt": "2026-07-16"
     },
     {
       "id": "denniezorg.game-library-dock",
