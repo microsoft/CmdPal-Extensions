@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "jantezner.audio-status",
+  "title": "Audio Status",
+  "shortDescription": "View and switch Windows audio input and output devices from Command Palette.",
+  "description": "Audio Status adds quick access to Windows audio input and output device status and switching directly inside Command Palette. It shows the current output and input devices, lists active playback and recording endpoints, and lets you switch defaults without opening Windows sound settings.",
+  "author": {
+    "name": "Jan Tezner",
+    "url": "https://github.com/hansek"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/hansek/AudioStatusExtension",
+  "tags": ["audio", "sound", "devices", "windows"],
+  "categories": ["utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NRHJDKHMQQS"
+    }
+  ]
+}

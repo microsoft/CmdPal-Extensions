@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "n0i0c0k.powertranslator",
+  "title": "PowerTranslator",
+  "shortDescription": "Translate text quickly from Command Palette.",
+  "description": "PowerTranslator is a translation extension for PowerToys Command Palette. It supports quick text translation, clipboard translation, selectable target languages, search suggestions, translation history, Chinese and English text-to-speech, and optional second-language results.",
+  "author": {
+    "name": "N0I0C0K",
+    "url": "https://github.com/N0I0C0K"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/N0I0C0K/PowerTranslator",
+  "tags": ["translation", "language", "cmdpal", "powertoys", "productivity"],
+  "categories": ["productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NWN01SZ6KNK"
+    }
+  ]
+}

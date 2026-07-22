@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "tonythethompson.quickshell",
+  "title": "Quick Shell",
+  "shortDescription": "Save project folders, discover local git repos, and open them in any terminal from Command Palette.",
+  "description": "Quick Shell saves folders you open often and launches them from Command Palette in the terminal you already use.\n\n- Discover local git repositories and add them as workspaces\n- Save workspaces with optional home keywords for root-palette search\n- Every Windows Terminal and Intelligent Terminal profile on your PC, plus WSL and classic shells\n- Optional companion app and dev-server command on open\n- Create, edit, favorite, duplicate, import, and export workspaces inside Command Palette\n- Undo and redo edits; open elevated when needed\n\nAfter installing from the Microsoft Store or WinGet, open Command Palette and run \"Reload Command Palette Extension\", then search for Quick Shell.",
+  "author": {
+    "name": "Tony Thompson",
+    "url": "https://github.com/tonythethompson"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/tonythethompson/QuickShell",
+  "tags": [
+    "terminal",
+    "developer-tools",
+    "productivity",
+    "workspace",
+    "powershell",
+    "git"
+  ],
+  "categories": [
+    "developer-tools",
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9PC8S6LNRT3R"
+    },
+    {
+      "type": "winget",
+      "id": "tonythethompson.QuickShell"
+    }
+  ]
+}
