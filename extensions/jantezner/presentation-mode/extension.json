@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "jantezner.presentation-mode",
+  "title": "Presentation Mode",
+  "shortDescription": "Control Windows presentation mode and pin a live On/Off toggle to the Command Palette Dock.",
+  "description": "Presentation Mode adds quick controls for Windows presentation mode to Command Palette. Turn presentation mode on or off directly from search, or pin a compact toggle to the Command Palette Dock. The Dock item shows the current state and updates automatically when the state changes. When enabled, Windows applies the presentation settings configured on the device, such as keeping the computer awake and reducing interruptions during a presentation.",
+  "author": {
+    "name": "Jan Tezner",
+    "url": "https://github.com/hansek"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/hansek/PresentationExtension",
+  "tags": ["presentation", "presentations", "dock", "focus", "keep-awake"],
+  "categories": ["productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P7M9NW5VKQ9"
+    }
+  ]
+}
