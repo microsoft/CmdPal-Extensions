@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "costafotiadis.markets-extension",
+  "title": "Markets Extension",
+  "shortDescription": "Stocks, crypto, and currencies inside PowerToys Command Palette — watchlist, favorites, and portfolio, using your own market-data key.",
+  "description": "Track market data right inside Command Palette.\n\n• Search symbols and view quotes and price charts\n• Build a watchlist and mark favorites\n• Track a portfolio you enter yourself, with multi-currency totals and daily change\n• Read the latest market news headlines\n• Pin favorites, your portfolio, and a news ticker to the Command Palette dock\n• Demo mode lets you explore with sample data, fully offline\n• No accounts, no tracking, no data collection\n\nTo view market data you'll need your own API key from Twelve Data or Finnhub, used under your own agreement with that provider (demo mode and currency reference rates need no key). Your keys and data stay on your device — the extension has no servers of its own and sends each key only to the provider it belongs to.\n\nThis is an open-source, independent extension. Source code is available at https://github.com/CostaFot/MarketExtension.\n\nIt is not affiliated with, endorsed by, or sponsored by Microsoft, Finnhub, Twelve Data, or any exchange or data provider. Company names, ticker symbols, and logos are the property of their respective owners.\n\nDisclaimer: Market data is supplied by third parties and may be delayed or inaccurate. Data provided by Finnhub and Twelve Data; currency reference rates by Frankfurter (attribution shown in-app). This extension is for informational purposes only and is not financial, investment, tax, or trading advice, and is not a recommendation to buy or sell any asset. You are solely responsible for your own decisions; always do your own research.\n\nRequirements\n• PowerToys 0.98.1 or later, with Command Palette enabled",
+  "author": {
+    "name": "Costa Fotiadis",
+    "url": "https://github.com/CostaFot"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/CostaFot/MarketExtension",
+  "tags": ["stocks", "crypto", "forex", "markets", "finance"],
+  "categories": ["productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9MV7M639533Q"
+    },
+    {
+      "type": "winget",
+      "id": "CostaFotiadis.MarketsExtensionForCmdPalette"
+    }
+  ]
+}
