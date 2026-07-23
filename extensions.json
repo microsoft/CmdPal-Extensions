@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-07-16T07:02:43Z",
-  "extensionCount": 70,
+  "generatedAt": "2026-07-23T05:37:29Z",
+  "extensionCount": 72,
   "extensions": [
     {
       "id": "8lwxpg.process-killer",
@@ -286,6 +286,47 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/costafotiadis/adb-extension/screenshots/04-settings.jpg"
       ],
       "addedAt": "2026-04-21"
+    },
+    {
+      "id": "costafotiadis.markets-extension",
+      "title": "Markets Extension",
+      "shortDescription": "Stocks, crypto, and currencies inside PowerToys Command Palette — watchlist, favorites, and portfolio, using your own market-data key.",
+      "description": "Track market data right inside Command Palette.\n\n• Search symbols and view quotes and price charts\n• Build a watchlist and mark favorites\n• Track a portfolio you enter yourself, with multi-currency totals and daily change\n• Read the latest market news headlines\n• Pin favorites, your portfolio, and a news ticker to the Command Palette dock\n• Demo mode lets you explore with sample data, fully offline\n• No accounts, no tracking, no data collection\n\nTo view market data you'll need your own API key from Twelve Data or Finnhub, used under your own agreement with that provider (demo mode and currency reference rates need no key). Your keys and data stay on your device — the extension has no servers of its own and sends each key only to the provider it belongs to.\n\nThis is an open-source, independent extension. Source code is available at https://github.com/CostaFot/MarketExtension.\n\nIt is not affiliated with, endorsed by, or sponsored by Microsoft, Finnhub, Twelve Data, or any exchange or data provider. Company names, ticker symbols, and logos are the property of their respective owners.\n\nDisclaimer: Market data is supplied by third parties and may be delayed or inaccurate. Data provided by Finnhub and Twelve Data; currency reference rates by Frankfurter (attribution shown in-app). This extension is for informational purposes only and is not financial, investment, tax, or trading advice, and is not a recommendation to buy or sell any asset. You are solely responsible for your own decisions; always do your own research.\n\nRequirements\n• PowerToys 0.98.1 or later, with Command Palette enabled",
+      "author": {
+        "name": "Costa Fotiadis",
+        "url": "https://github.com/CostaFot"
+      },
+      "homepage": "https://github.com/CostaFot/MarketExtension",
+      "tags": [
+        "stocks",
+        "crypto",
+        "forex",
+        "markets",
+        "finance"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9MV7M639533Q"
+        },
+        {
+          "type": "winget",
+          "id": "CostaFotiadis.MarketsExtensionForCmdPalette"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/costafotiadis/markets-extension/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/costafotiadis/markets-extension/screenshots/01-hub.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/costafotiadis/markets-extension/screenshots/02-details.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/costafotiadis/markets-extension/screenshots/03-watchlist.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/costafotiadis/markets-extension/screenshots/04-portfolio.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/costafotiadis/markets-extension/screenshots/05-dock.png"
+      ],
+      "addedAt": "2026-07-23"
     },
     {
       "id": "davidegiacometti.edge-favorites",
@@ -729,6 +770,41 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/02-device-picker.png"
       ],
       "addedAt": "2026-07-03"
+    },
+    {
+      "id": "jantezner.presentation-mode",
+      "title": "Presentation Mode",
+      "shortDescription": "Control Windows presentation mode and pin a live On/Off toggle to the Command Palette Dock.",
+      "description": "Presentation Mode adds quick controls for Windows presentation mode to Command Palette. Turn presentation mode on or off directly from search, or pin a compact toggle to the Command Palette Dock. The Dock item shows the current state and updates automatically when the state changes. When enabled, Windows applies the presentation settings configured on the device, such as keeping the computer awake and reducing interruptions during a presentation.",
+      "author": {
+        "name": "Jan Tezner",
+        "url": "https://github.com/hansek"
+      },
+      "homepage": "https://github.com/hansek/PresentationExtension",
+      "tags": [
+        "presentation",
+        "presentations",
+        "dock",
+        "focus",
+        "keep-awake"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P7M9NW5VKQ9"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/presentation-mode/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/presentation-mode/screenshots/01-command-palette-search.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/presentation-mode/screenshots/02-dock-toggle-off.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/presentation-mode/screenshots/03-live-status-on.jpg"
+      ],
+      "addedAt": "2026-07-23"
     },
     {
       "id": "jdalley.toggle-hdr",
