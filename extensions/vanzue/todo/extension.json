@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "vanzue.todo",
+  "title": "Todo",
+  "shortDescription": "Manage local and Microsoft To Do tasks directly from Command Palette.",
+  "description": "A keyboard-first task manager for Command Palette that brings local tasks and Microsoft To Do into one place. Create, edit, complete, and delete tasks; manage priority, due dates, reminders, and checklists; and quickly find work with provider and source filters. Local tasks remain available offline without requiring a Microsoft account.",
+  "author": {
+    "name": "Vanzue",
+    "url": "https://github.com/vanzue"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/vanzue/CommandPalette-Todo",
+  "tags": [
+    "todo",
+    "tasks",
+    "reminders",
+    "microsoft-todo",
+    "productivity"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9PD41GJ51FR1"
+    }
+  ]
+}
