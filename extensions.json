@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-07-23T05:37:29Z",
-  "extensionCount": 72,
+  "generatedAt": "2026-07-24T14:35:16Z",
+  "extensionCount": 74,
   "extensions": [
     {
       "id": "8lwxpg.process-killer",
@@ -766,8 +766,10 @@
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/icon.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/01-dock-status.png",
-        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/02-device-picker.png"
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/01-switch-commands.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/02-output-devices.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/03-input-devices.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/04-dock-status.png"
       ],
       "addedAt": "2026-07-03"
     },
@@ -1180,6 +1182,36 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/joadoumie/nba-command-palette/screenshots/02-team-roster.png"
       ],
       "addedAt": "2026-04-27"
+    },
+    {
+      "id": "jrscott812.power",
+      "title": "Power",
+      "shortDescription": "Switch Windows power modes and power plans from Command Palette.",
+      "description": "A Command Palette extension for switching Windows power modes (Best efficiency, Balanced, Best performance) and power plans (Power saver, Balanced, High performance, Ultimate performance, and custom plans). Includes dock bands for quick changes and fallback search for power, mode, and plan terms.",
+      "author": {
+        "name": "jrscott812",
+        "url": "https://github.com/JRScott812"
+      },
+      "homepage": "https://github.com/JRScott812/CmdPal.Ext.Power",
+      "tags": [
+        "power",
+        "power plan",
+        "power mode",
+        "power management",
+        "power settings"
+      ],
+      "categories": [
+        "utilities-and-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P5805PFVS3G"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jrscott812/power/icon.png",
+      "addedAt": "2026-07-24"
     },
     {
       "id": "kawaiizapic.totp",
@@ -2074,7 +2106,7 @@
       "id": "tonythethompson.quickshell",
       "title": "Quick Shell",
       "shortDescription": "Save project folders, discover local git repos, and open them in any terminal from Command Palette.",
-      "description": "Quick Shell saves folders you open often and launches them from Command Palette in the terminal you already use.\n\n- Discover local git repositories and add them as workspaces\n- Save workspaces with optional home keywords for root-palette search\n- Every Windows Terminal and Intelligent Terminal profile on your PC, plus WSL and classic shells\n- Optional companion app and dev-server command on open\n- Create, edit, favorite, duplicate, import, and export workspaces inside Command Palette\n- Undo and redo edits; open elevated when needed\n\nAfter installing from the Microsoft Store or WinGet, open Command Palette and run \"Reload Command Palette Extension\", then search for Quick Shell.",
+      "description": "Quick Shell saves folders you open often and launches them from Command Palette in the terminal you already use.\n\n- Discover local git repositories and add them as workspaces\n- Save workspaces with optional home keywords for root-palette search\n- Suggested launch commands from project analysis (npm, dotnet, agent CLIs, and more)\n- Every Windows Terminal and Intelligent Terminal profile on your PC, plus WSL and classic shells\n- Optional companion app and dev-server URL on open\n- Create, edit, favorite, duplicate, import, and export workspaces inside Command Palette\n- Undo and redo edits; open elevated when needed\n\nAfter installing from the Microsoft Store or WinGet, open Command Palette and run \"Reload Command Palette Extension\", then search for Quick Shell.",
       "author": {
         "name": "Tony Thompson",
         "url": "https://github.com/tonythethompson"
@@ -2085,7 +2117,6 @@
         "developer-tools",
         "productivity",
         "workspace",
-        "powershell",
         "git"
       ],
       "categories": [
@@ -2105,9 +2136,10 @@
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tonythethompson/quickshell/icon.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tonythethompson/quickshell/screenshots/01-list-context-menu.png",
-        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tonythethompson/quickshell/screenshots/02-edit-shortcut.png",
-        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tonythethompson/quickshell/screenshots/03-settings.png"
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tonythethompson/quickshell/screenshots/01-workspace-list.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tonythethompson/quickshell/screenshots/02-new-workspace.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tonythethompson/quickshell/screenshots/03-settings.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tonythethompson/quickshell/screenshots/04-workspace-detail.png"
       ],
       "addedAt": "2026-07-13"
     },
@@ -2144,6 +2176,36 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/valleysoft/diskanalyzer/screenshots/02-cmdpal.png"
       ],
       "addedAt": "2026-06-23"
+    },
+    {
+      "id": "vanzue.todo",
+      "title": "Todo",
+      "shortDescription": "Manage local and Microsoft To Do tasks directly from Command Palette.",
+      "description": "A keyboard-first task manager for Command Palette that brings local tasks and Microsoft To Do into one place. Create, edit, complete, and delete tasks; manage priority, due dates, reminders, and checklists; and quickly find work with provider and source filters. Local tasks remain available offline without requiring a Microsoft account.",
+      "author": {
+        "name": "Vanzue",
+        "url": "https://github.com/vanzue"
+      },
+      "homepage": "https://github.com/vanzue/CommandPalette-Todo",
+      "tags": [
+        "todo",
+        "tasks",
+        "reminders",
+        "microsoft-todo",
+        "productivity"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9PD41GJ51FR1"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/vanzue/todo/icon.png",
+      "addedAt": "2026-07-24"
     },
     {
       "id": "xisage.godot-engine",
