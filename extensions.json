@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-07-24T14:35:16Z",
+  "generatedAt": "2026-07-27T10:00:44Z",
   "extensionCount": 74,
   "extensions": [
     {
@@ -766,10 +766,10 @@
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/icon.png",
       "screenshotUrls": [
-        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/01-switch-commands.png",
-        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/02-output-devices.png",
-        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/03-input-devices.png",
-        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/04-dock-status.png"
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/01-switch-commands.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/02-output-devices.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/03-input-devices.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jantezner/audio-status/screenshots/04-dock-status.jpg"
       ],
       "addedAt": "2026-07-03"
     },
