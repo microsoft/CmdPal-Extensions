@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "jestermeijin.power-mode",
+  "title": "Power Mode",
+  "shortDescription": "Conveniently switch between available power modes from Command Palette.",
+  "description": "This extension lets you conveniently switch between power modes without opening Windows Settings.",
+  "author": {
+    "name": "JesterMeijin",
+    "url": "https://github.com/JesterMeijin"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/JesterMeijin/Power-Mode-for-Command-Palette",
+  "tags": ["power", "power mode", "power plan", "performance"],
+  "categories": ["utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9mw8ztkxcc5h"
+    }
+  ]
+}
