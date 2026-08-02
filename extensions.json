@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-07-30T14:30:28Z",
-  "extensionCount": 74,
+  "generatedAt": "2026-08-02T15:37:04Z",
+  "extensionCount": 75,
   "extensions": [
     {
       "id": "8lwxpg.process-killer",
@@ -841,6 +841,39 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jdalley/toggle-hdr/screenshots/01-example.png"
       ],
       "addedAt": "2026-04-21"
+    },
+    {
+      "id": "jestermeijin.power-mode",
+      "title": "Power Mode",
+      "shortDescription": "Conveniently switch between available power modes from Command Palette.",
+      "description": "This extension lets you conveniently switch between power modes without opening Windows Settings.",
+      "author": {
+        "name": "JesterMeijin",
+        "url": "https://github.com/JesterMeijin"
+      },
+      "homepage": "https://github.com/JesterMeijin/Power-Mode-for-Command-Palette",
+      "tags": [
+        "power",
+        "power mode",
+        "power plan",
+        "performance"
+      ],
+      "categories": [
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9mw8ztkxcc5h"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jestermeijin/power-mode/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jestermeijin/power-mode/screenshots/01-desktop-view.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jestermeijin/power-mode/screenshots/02-main-view.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jestermeijin/power-mode/screenshots/03-fallback-view.png"
+      ],
+      "addedAt": "2026-08-02"
     },
     {
       "id": "jiripolasek.change-case",
