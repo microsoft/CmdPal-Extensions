@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "paradigmshift.ip-display",
+  "title": "IP Display",
+  "shortDescription": "Show local source and public egress IPv4 addresses in the Command Palette Dock.",
+  "description": "IP Display is a PowerToys Command Palette extension that provides a lightweight Dock band for the IPv4 addresses used by the current internet connection.\n\nFeatures:\n- Local source IPv4 and public egress IPv4 in the Dock\n- Click either address to copy it\n- Manual refresh and automatic refresh after network-address changes\n- Configurable periodic refresh interval\n- Local change history with timestamps, per-address copy actions, and full-history text export\n\nThe public address is the egress address observed by the configured HTTPS provider (ipify). It may belong to a router, VPN, proxy, carrier-grade NAT, or another upstream gateway. History is stored only on the local device. Requires Windows 11 and PowerToys with Command Palette.",
+  "author": {
+    "name": "ParadigmShift",
+    "url": "https://github.com/poundonu"
+  },
+  "icon": "icon.png",
+  "homepage": "https://apps.microsoft.com/detail/9MZ79X37BLD5",
+  "tags": [
+    "ip",
+    "network",
+    "dock",
+    "utilities",
+    "ipv4"
+  ],
+  "categories": [
+    "utilities-and-tools",
+    "productivity"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9MZ79X37BLD5"
+    }
+  ]
+}
