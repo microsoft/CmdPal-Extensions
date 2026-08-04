@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "nicholasbrantley.bin-meter",
+  "title": "Bin Meter",
+  "shortDescription": "Recycle Bin manager for Command Palette.",
+  "description": "A Recycle Bin manager for Command Palette.\n\nFeatures:\n- View files in the Recycle Bin.\n- Restore or permanently delete files from the list.\n- Sort files by date or size.\n- Open or empty the Recycle Bin with quick actions.\n- Add dock bands that show the current Recycle Bin size, file count, or percentage full.\n- Customize what size is considered full in the settings.",
+  "author": {
+    "name": "Nicholas Brantley",
+    "url": "https://github.com/nicholasbrantley"
+  },
+  "icon": "icon.png",
+  "tags": ["recycle bin", "delete", "restore","files","dock"],
+  "categories": ["utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9n097htwc83m"
+    }
+  ]
+}
