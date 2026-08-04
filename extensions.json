@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-08-02T15:37:04Z",
-  "extensionCount": 75,
+  "generatedAt": "2026-08-04T05:37:22Z",
+  "extensionCount": 76,
   "extensions": [
     {
       "id": "8lwxpg.process-killer",
@@ -1685,6 +1685,39 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/neilsawhney/powerqalc/screenshots/01-main-view.png"
       ],
       "addedAt": "2026-07-03"
+    },
+    {
+      "id": "nicholasbrantley.bin-meter",
+      "title": "Bin Meter",
+      "shortDescription": "Recycle Bin manager for Command Palette.",
+      "description": "A Recycle Bin manager for Command Palette.\n\nFeatures:\n- View files in the Recycle Bin.\n- Restore or permanently delete files from the list.\n- Sort files by date or size.\n- Open or empty the Recycle Bin with quick actions.\n- Add dock bands that show the current Recycle Bin size, file count, or percentage full.\n- Customize what size is considered full in the settings.",
+      "author": {
+        "name": "Nicholas Brantley",
+        "url": "https://github.com/nicholasbrantley"
+      },
+      "tags": [
+        "recycle bin",
+        "delete",
+        "restore",
+        "files",
+        "dock"
+      ],
+      "categories": [
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9n097htwc83m"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nicholasbrantley/bin-meter/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nicholasbrantley/bin-meter/screenshots/01-palette-and-dock.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nicholasbrantley/bin-meter/screenshots/02-main-view.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nicholasbrantley/bin-meter/screenshots/03-file-list.png"
+      ],
+      "addedAt": "2026-08-04"
     },
     {
       "id": "nickknissen.tableplus-command-palette",
