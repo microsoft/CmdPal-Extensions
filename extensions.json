@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-08-04T10:01:08Z",
-  "extensionCount": 76,
+  "generatedAt": "2026-08-04T18:01:12Z",
+  "extensionCount": 77,
   "extensions": [
     {
       "id": "8lwxpg.process-killer",
@@ -1917,6 +1917,43 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/othmanamor/xrate/screenshots/03-settings.png"
       ],
       "addedAt": "2026-05-10"
+    },
+    {
+      "id": "paradigmshift.ip-display",
+      "title": "IP Display",
+      "shortDescription": "Show local source and public egress IPv4 addresses in the Command Palette Dock.",
+      "description": "IP Display is a PowerToys Command Palette extension that provides a lightweight Dock band for the IPv4 addresses used by the current internet connection.\n\nFeatures:\n- Local source IPv4 and public egress IPv4 in the Dock\n- Click either address to copy it\n- Manual refresh and automatic refresh after network-address changes\n- Configurable periodic refresh interval\n- Local change history with timestamps, per-address copy actions, and full-history text export\n\nThe public address is the egress address observed by the configured HTTPS provider (ipify). It may belong to a router, VPN, proxy, carrier-grade NAT, or another upstream gateway. History is stored only on the local device. Requires Windows 11 and PowerToys with Command Palette.",
+      "author": {
+        "name": "ParadigmShift",
+        "url": "https://github.com/poundonu"
+      },
+      "homepage": "https://apps.microsoft.com/detail/9MZ79X37BLD5",
+      "tags": [
+        "ip",
+        "network",
+        "dock",
+        "utilities",
+        "ipv4"
+      ],
+      "categories": [
+        "utilities-and-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9MZ79X37BLD5"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/paradigmshift/ip-display/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/paradigmshift/ip-display/screenshots/01-dock-ui.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/paradigmshift/ip-display/screenshots/02-copy-menu.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/paradigmshift/ip-display/screenshots/03-history.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/paradigmshift/ip-display/screenshots/04-settings.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/paradigmshift/ip-display/screenshots/05-dock-extensions.png"
+      ],
+      "addedAt": "2026-08-04"
     },
     {
       "id": "phireforge.paletteshell",
