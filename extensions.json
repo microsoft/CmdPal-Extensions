@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-08-04T18:01:12Z",
+  "generatedAt": "2026-08-06T18:01:41Z",
   "extensionCount": 77,
   "extensions": [
     {
@@ -1241,6 +1241,10 @@
         {
           "type": "msstore",
           "id": "9P5805PFVS3G"
+        },
+        {
+          "type": "winget",
+          "id": "JakeScott.PowerControlforCommandPalette"
         }
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/jrscott812/power/icon.png",
