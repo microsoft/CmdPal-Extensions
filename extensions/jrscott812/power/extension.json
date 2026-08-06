@@ -25,6 +25,10 @@
 		{
 			"type": "msstore",
 			"id": "9P5805PFVS3G"
+		},
+		{
+			"type": "winget",
+			"id": "JakeScott.PowerControlforCommandPalette"
 		}
 	]
 }
