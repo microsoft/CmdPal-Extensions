@@ -57,7 +57,7 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
             <div class="palette-beam"></div>
             <div class="command-palette">
               <div class="palette-search">
-                <img src={withBase('/favicon.svg')} alt="" width="28" height="28" />
+                <img src={withBase('/favicon.svg')} alt="" width="20" height="20" />
                 <span>Search for apps, files, and more...</span>
               </div>
               <div class="palette-results">
@@ -423,6 +423,7 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
     --cmdpal-layer-primary: rgba(32, 32, 32, 0.314);
     --cmdpal-layer-secondary: transparent;
     --cmdpal-divider: #45454b;
+    --cmdpal-font-size: 13px;
     position: absolute;
     z-index: 3;
     top: 50%;
@@ -430,12 +431,19 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
     width: min(100%, 610px);
     overflow: hidden;
     color: rgba(246, 249, 255, 0.9);
+    font-size: var(--cmdpal-font-size);
     border: 1px solid var(--cmdpal-divider);
     border-radius: 8px;
     background: var(--command-palette-background);
     box-shadow: 0 28px 70px rgba(1, 7, 25, 0.42), inset 0 1px rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(34px) saturate(1.32);
     transform: translate(-50%, -50%);
+  }
+
+  .palette-search,
+  .palette-row-copy,
+  .palette-footer {
+    font-size: var(--cmdpal-font-size);
   }
 
   .palette-search {
@@ -449,8 +457,8 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
   }
 
   .palette-search > img {
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
     flex: none;
     object-fit: contain;
   }
@@ -459,7 +467,7 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
     margin-right: auto;
     overflow: hidden;
     color: rgba(245, 248, 255, 0.78);
-    font-size: 15px;
+    font-size: inherit;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
@@ -471,7 +479,7 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
     display: inline-grid;
     place-items: center;
     color: rgba(255,255,255,.67);
-    font: 10px "Segoe UI", sans-serif;
+    font: inherit;
     border: 1px solid rgba(255,255,255,.14);
     border-radius: 4px;
     background: rgba(255,255,255,.07);
@@ -533,14 +541,14 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
 
   .palette-row-copy strong {
     flex: none;
-    font-size: 13px;
+    font-size: inherit;
     font-weight: 600;
   }
 
   .palette-row-copy small {
     min-width: 0;
     color: rgba(231, 240, 250, 0.54);
-    font-size: 13px;
+    font-size: inherit;
     line-height: 1;
   }
 
@@ -551,7 +559,6 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
     align-items: center;
     justify-content: space-between;
     color: rgba(236, 243, 252, 0.48);
-    font-size: 10px;
     border-top: 1px solid var(--cmdpal-divider);
     background: var(--cmdpal-layer-primary);
   }
@@ -568,7 +575,7 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
   }
 
   .palette-footer kbd :global(.fluent-glyph) {
-    font-size: 12px;
+    font-size: inherit;
   }
 
   .hero-glow {
@@ -1012,8 +1019,10 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
   }
 
   :global(html[data-palette='legacy']) .command-palette {
+    --cmdpal-font-size: 12px;
     overflow: hidden;
     color: var(--ink);
+    font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
     border: 2px outset var(--classic-face);
     border-radius: 0;
     background: var(--classic-face);
@@ -1029,7 +1038,7 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
     align-items: center;
     content: 'Command Palette — Extensions';
     color: #ffffff;
-    font: 700 12px Tahoma, "MS Sans Serif", Arial, sans-serif;
+    font-weight: 700;
     background: linear-gradient(90deg, var(--classic-title), var(--classic-title-end));
   }
 
@@ -1049,7 +1058,7 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
 
   :global(html[data-palette='legacy']) .palette-search > span {
     color: var(--ink);
-    font: 12px Tahoma, "MS Sans Serif", Arial, sans-serif;
+    font: inherit;
   }
 
   :global(html[data-palette='legacy']) .palette-results {
@@ -1065,7 +1074,6 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
     padding: 5px 7px;
     color: var(--ink);
     border-radius: 0;
-    font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
     transition: none;
   }
 
@@ -1078,7 +1086,7 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
   :global(html[data-palette='legacy']) .palette-row-copy strong,
   :global(html[data-palette='legacy']) .palette-row-copy small {
     color: inherit;
-    font-size: 12px;
+    font-size: inherit;
   }
 
   :global(html[data-palette='legacy']) .palette-row-copy small {
@@ -1091,7 +1099,6 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
     color: var(--ink);
     border-top: 0;
     background: var(--classic-face);
-    font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
   }
 
   :global(html[data-palette='legacy']) .palette-footer kbd {
