@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+import { withBase } from '../data/catalog';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Command Palette Extensions',
+  description = 'Discover community-built extensions for Microsoft PowerToys Command Palette.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-palette="aero">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f4f3f6" />
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+        let preference = 'auto';
+        let style = 'aero';
+        try {
+          const saved = localStorage.getItem('cmdpal-gallery-theme');
+          if (saved === 'light' || saved === 'dark' || saved === 'auto') preference = saved;
+          const savedStyle = localStorage.getItem('cmdpal-gallery-style');
+          if (savedStyle === 'aero' || savedStyle === 'teal' || savedStyle === 'legacy') style = savedStyle;
+        } catch { /* Storage may be unavailable. */ }
+        const resolved = preference === 'auto'
+          ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+          : preference;
+        root.dataset.themePreference = preference;
+        root.dataset.theme = resolved;
+        root.dataset.palette = style;
+        root.style.colorScheme = resolved;
+        const themeColor = style === 'legacy'
+          ? (resolved === 'dark' ? '#000000' : '#008080')
+          : style === 'teal'
+            ? (resolved === 'dark' ? '#0e1820' : '#f3f7fa')
+            : (resolved === 'dark' ? '#171821' : '#f4f3f6');
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', themeColor);
+      })();
+    </script>
+    <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <slot />
+  </body>
+</html>

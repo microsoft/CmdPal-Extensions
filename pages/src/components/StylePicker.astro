@@ -1,0 +1,140 @@
+---
+import FluentGlyph from './FluentGlyph.astro';
+---
+
+<label class="style-picker" data-style-picker>
+  <span class="sr-only">Visual style</span>
+  <FluentGlyph code={0xE790} class="style-picker-glyph" />
+  <select data-style-select aria-label="Visual style" title="Visual style">
+    <option value="aero">Aero</option>
+    <option value="teal">Teal</option>
+    <option value="legacy">Legacy</option>
+  </select>
+</label>
+
+<script>
+  const styleStorageKey = 'cmdpal-gallery-style';
+
+  const getThemeColor = (style: 'aero' | 'teal' | 'legacy', theme: string) => {
+    if (style === 'legacy') return theme === 'dark' ? '#000000' : '#008080';
+    if (style === 'teal') return theme === 'dark' ? '#0e1820' : '#f3f7fa';
+    return theme === 'dark' ? '#171821' : '#f4f3f6';
+  };
+
+  const applyStyle = (style: 'aero' | 'teal' | 'legacy', persist = true) => {
+    const root = document.documentElement;
+    root.dataset.palette = style;
+    document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')
+      ?.setAttribute('content', getThemeColor(style, root.dataset.theme ?? 'light'));
+
+    document.querySelectorAll<HTMLSelectElement>('[data-style-select]').forEach((select) => {
+      select.value = style;
+    });
+
+    if (persist) {
+      try { localStorage.setItem(styleStorageKey, style); } catch { /* Storage may be unavailable. */ }
+    }
+  };
+
+  document.querySelectorAll<HTMLSelectElement>('[data-style-select]').forEach((select) => {
+    const savedStyle = document.documentElement.dataset.palette;
+    applyStyle(savedStyle === 'teal' || savedStyle === 'legacy' ? savedStyle : 'aero', false);
+    select.addEventListener('change', () => applyStyle(select.value as 'aero' | 'teal' | 'legacy'));
+  });
+</script>
+
+<style>
+  .style-picker {
+    position: relative;
+    height: var(--compact-action-height);
+    padding: 0 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: inherit;
+    border: 0;
+    border-radius: var(--action-radius);
+    opacity: .62;
+    background: transparent;
+    transition: opacity 150ms ease, background 150ms ease, box-shadow 150ms ease;
+  }
+
+  .style-picker:hover {
+    opacity: 1;
+    background: color-mix(in srgb, currentColor 8%, transparent);
+  }
+
+  .style-picker:focus-within {
+    opacity: 1;
+    background: color-mix(in srgb, currentColor 8%, transparent);
+    box-shadow: inset 0 0 0 2px color-mix(in srgb, currentColor 72%, transparent);
+  }
+
+  .style-picker :global(.style-picker-glyph) {
+    font-size: 15px;
+    pointer-events: none;
+  }
+
+  select {
+    width: 54px;
+    height: 100%;
+    padding: 0;
+    color: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  select option {
+    color: var(--ink);
+    background: var(--surface-strong);
+  }
+
+  :global(html[data-palette='legacy']) .style-picker {
+    height: 26px;
+    padding: 0 5px;
+    gap: 4px;
+    color: var(--ink);
+    border: 2px outset var(--classic-face);
+    border-radius: 0;
+    opacity: 1;
+    background: var(--classic-face);
+    box-shadow: none;
+  }
+
+  :global(html[data-palette='legacy']) .style-picker:active,
+  :global(html[data-palette='legacy']) .style-picker:focus-within {
+    border-style: inset;
+    background: var(--classic-face);
+    box-shadow: none;
+  }
+
+  :global(html[data-palette='legacy']) .style-picker select {
+    font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+  }
+
+  @media (max-width: 720px) {
+    .style-picker {
+      width: var(--compact-action-height);
+      padding: 0;
+      justify-content: center;
+    }
+
+    select {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      opacity: 0;
+    }
+
+    :global(html[data-palette='legacy']) .style-picker {
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      justify-content: center;
+    }
+  }
+</style>

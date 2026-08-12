@@ -1,0 +1,1380 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import ExtensionCard from '../components/ExtensionCard.astro';
+import FluentGlyph from '../components/FluentGlyph.astro';
+import { catalog, categoryEntries, categoryLabels, toCmdPalGalleryUrl, toExtensionPageUrl, toLocalAsset, withBase } from '../data/catalog';
+
+const extensions = [...catalog.extensions].sort((left, right) =>
+  right.addedAt.localeCompare(left.addedAt) || left.title.localeCompare(right.title),
+);
+
+const heroIds = [
+  'baldbeardedbuilder.weather',
+  'jiripolasek.media-controls',
+  'zadjii.virtual-desktops',
+  'nielslaute.git-repositories',
+  'jiripolasek.recent-files',
+];
+const heroExtensions = heroIds
+  .map((id) => catalog.extensions.find((extension) => extension.id === id))
+  .filter((extension) => extension !== undefined);
+const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
+---
+
+<BaseLayout>
+  <div class="hero-shell" style={`--hero-wallpaper: url('${wallpaperUrl}')`}>
+    <Header dark />
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-glow hero-glow-one"></div>
+        <div class="hero-glow hero-glow-two"></div>
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="hero-kicker"><span></span> Community-built for Windows</p>
+            <h1 id="hero-title">
+              <span class="modern-hero-title">Make Command Palette yours.</span>
+              <span class="legacy-hero-title">Command Palette</span>
+            </h1>
+            <p class="hero-lede">
+              <span class="modern-hero-lede">Add the tools you use every day. Discover, install, and launch community extensions without breaking your flow.</span>
+              <span class="legacy-hero-lede">Where do you want to launch today?</span>
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#gallery">Explore extensions</a>
+              <a class="button button-quiet" href={toCmdPalGalleryUrl()}>
+                Open app gallery <FluentGlyph code={0xE8A7} class="inline-glyph" />
+              </a>
+            </div>
+            <div class="hero-meta" aria-label="Gallery statistics">
+              <span><strong>{catalog.extensionCount}</strong> extensions</span>
+              <span><strong>{categoryEntries.length}</strong> categories</span>
+              <span>Updated {new Date(catalog.generatedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Community extensions shown in Command Palette">
+            <div class="palette-beam"></div>
+            <div class="command-palette">
+              <div class="palette-search">
+                <img src={withBase('/favicon.svg')} alt="" width="28" height="28" />
+                <span>Search for apps, files, and more...</span>
+              </div>
+              <div class="palette-results">
+                {heroExtensions.map((extension, index) => (
+                  <a
+                    class:list={['palette-row', { selected: index === 0 }]}
+                    href={toExtensionPageUrl(extension.id)}
+                    style={`--row-index: ${index}`}
+                  >
+                    <img src={toLocalAsset(extension.iconUrl)} alt="" width="20" height="20" />
+                    <span class="palette-row-copy">
+                      <strong>{extension.title}</strong>
+                      <small>{extension.shortDescription}</small>
+                    </span>
+                  </a>
+                ))}
+              </div>
+              <div class="palette-footer">
+                <span>Extensions</span>
+                <span>Open <kbd><FluentGlyph code={0xE751} /></kbd></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+        <div class="gallery-inner">
+          <div class="gallery-heading">
+            <div>
+              <p class="section-kicker">The community catalog</p>
+              <h2 id="gallery-title">Find your next shortcut</h2>
+              <p>Browse tools for development, productivity, media, and more.</p>
+            </div>
+            <div class="result-summary" aria-live="polite"><strong data-result-count>{catalog.extensionCount}</strong> extensions</div>
+          </div>
+
+          <div class="search-panel" role="search">
+            <label class="search-field">
+              <span class="sr-only">Search extensions</span>
+              <FluentGlyph code={0xE721} class="search-glyph" />
+              <input id="extension-search" type="search" placeholder="Search by name, category, or creator" autocomplete="off" />
+              <span class="search-shortcut" aria-hidden="true">Ctrl K</span>
+            </label>
+            <label class="sort-field">
+              <span>Sort</span>
+              <select id="extension-sort" aria-label="Sort extensions">
+                <option value="newest">Newest</option>
+                <option value="name">Name</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="category-row" aria-label="Filter by category">
+            <button class="category-button selected" type="button" data-category="all" aria-pressed="true">All</button>
+            {categoryEntries.map(([category, count]) => (
+              <button class="category-button" type="button" data-category={category} aria-pressed="false">
+                {categoryLabels[category] ?? category}<span>{count}</span>
+              </button>
+            ))}
+          </div>
+
+          <div class="extension-grid" data-extension-grid>
+            {extensions.map((extension, index) => <ExtensionCard extension={extension} index={index} />)}
+          </div>
+
+          <div class="empty-state" data-empty-state hidden>
+            <div class="empty-glyph"><FluentGlyph code={0xE721} /></div>
+            <h3>No extensions found</h3>
+            <p>Try a broader search or choose another category.</p>
+            <button type="button" data-clear-filters>Clear filters</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="contribute-section" aria-labelledby="contribute-title">
+        <div class="contribute-inner">
+          <div class="contribute-copy">
+            <p class="section-kicker">Built by you</p>
+            <h2 id="contribute-title">Have an idea worth launching?</h2>
+            <p>Build an extension, publish it your way, and share it with the Command Palette community.</p>
+          </div>
+          <div class="contribute-actions">
+            <a class="button button-primary" href="https://github.com/microsoft/CmdPal-Extensions/blob/main/docs/CONTRIBUTING.md">Submit an extension</a>
+            <a class="text-link" href="https://learn.microsoft.com/windows/powertoys/command-palette/extension-development">Read the developer guide <FluentGlyph code={0xE72A} class="inline-glyph" /></a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p>Command Palette Extensions</p>
+      <div>
+        <a href={toCmdPalGalleryUrl()}>Open app gallery</a>
+        <a href="https://github.com/microsoft/CmdPal-Extensions">GitHub</a>
+        <a href="https://learn.microsoft.com/en-us/windows/powertoys/command-palette/overview">About Command Palette</a>
+        <a href="https://learn.microsoft.com/en-us/windows/powertoys/install?tabs=gh%2Cextract-094">Install PowerToys</a>
+        <a href="https://opensource.microsoft.com/codeofconduct/">Code of Conduct</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const searchInput = document.querySelector<HTMLInputElement>('#extension-search');
+    const sortSelect = document.querySelector<HTMLSelectElement>('#extension-sort');
+    const grid = document.querySelector<HTMLElement>('[data-extension-grid]');
+    const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-extension-card]'));
+    const categoryButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-category]'));
+    const resultCount = document.querySelector<HTMLElement>('[data-result-count]');
+    const emptyState = document.querySelector<HTMLElement>('[data-empty-state]');
+    const clearButton = document.querySelector<HTMLButtonElement>('[data-clear-filters]');
+    let activeCategory = 'all';
+
+    const filterExtensions = () => {
+      const query = searchInput?.value.trim().toLocaleLowerCase() ?? '';
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const matchesQuery = !query || card.dataset.search?.includes(query);
+        const matchesCategory = activeCategory === 'all' || card.dataset.categories?.split(' ').includes(activeCategory);
+        const visible = Boolean(matchesQuery && matchesCategory);
+        card.hidden = !visible;
+        if (visible) visibleCount += 1;
+      });
+
+      if (resultCount) resultCount.textContent = visibleCount.toString();
+      if (emptyState) emptyState.hidden = visibleCount !== 0;
+    };
+
+    categoryButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        activeCategory = button.dataset.category ?? 'all';
+        categoryButtons.forEach((candidate) => {
+          const selected = candidate === button;
+          candidate.classList.toggle('selected', selected);
+          candidate.setAttribute('aria-pressed', selected.toString());
+        });
+        filterExtensions();
+      });
+    });
+
+    searchInput?.addEventListener('input', filterExtensions);
+
+    sortSelect?.addEventListener('change', () => {
+      const sortedCards = [...cards].sort((left, right) => {
+        if (sortSelect.value === 'name') {
+          return (left.dataset.search ?? '').localeCompare(right.dataset.search ?? '');
+        }
+        return (right.dataset.added ?? '').localeCompare(left.dataset.added ?? '');
+      });
+      sortedCards.forEach((card) => grid?.append(card));
+    });
+
+    clearButton?.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      categoryButtons[0]?.click();
+      searchInput?.focus();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLocaleLowerCase() === 'k') {
+        event.preventDefault();
+        searchInput?.focus();
+        searchInput?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .hero-shell {
+    overflow: hidden;
+  }
+
+  .hero {
+    position: relative;
+    min-height: 665px;
+    overflow: hidden;
+    color: white;
+    /* Windows 11 Sunrise — Dunes, Microsoft via WallpaperHub. */
+    background:
+      linear-gradient(180deg, rgba(24, 25, 35, .1) 0%, rgba(30, 29, 38, .2) 62%, rgba(35, 31, 40, .66) 100%),
+      linear-gradient(92deg, rgba(24, 25, 35, .93) 0%, rgba(31, 31, 42, .78) 44%, rgba(44, 39, 47, .5) 100%),
+      var(--hero-wallpaper) center 48% / cover no-repeat,
+      var(--hero);
+  }
+
+  .hero::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    opacity: .22;
+    background: radial-gradient(circle at 73% 44%, rgba(203, 220, 234, .22), transparent 36%);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    width: min(calc(100% - 48px), 1320px);
+    min-height: 597px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(420px, 0.95fr) minmax(540px, 1.05fr);
+    align-items: center;
+    gap: 56px;
+  }
+
+  .hero-copy {
+    padding: 70px 0 100px;
+    animation: hero-copy-in 700ms cubic-bezier(.18,.75,.25,1) both;
+  }
+
+  .hero-kicker,
+  .section-kicker {
+    margin: 0;
+    color: #60cdff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .hero-kicker {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .hero-kicker span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #60cdff;
+    box-shadow: 0 0 18px rgba(96, 205, 255, 0.8);
+  }
+
+  h1 {
+    max-width: 650px;
+    margin: 22px 0 22px;
+    font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+    font-size: clamp(54px, 5.5vw, 82px);
+    font-weight: 650;
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  .legacy-hero-title,
+  .legacy-hero-lede {
+    display: none;
+  }
+
+  .hero-lede {
+    max-width: 600px;
+    margin: 0;
+    color: rgba(239, 244, 255, 0.73);
+    font-size: 19px;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    margin-top: 34px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .button {
+    min-height: var(--action-height);
+    padding: 0 var(--action-padding-inline);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: inherit;
+    font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+    font-size: var(--action-font-size);
+    font-weight: var(--action-font-weight);
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: var(--action-radius);
+    transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
+  }
+
+  .button :global(.inline-glyph) {
+    font-size: 16px;
+  }
+
+  .button:hover {
+    transform: translateY(-1px);
+  }
+
+  .button:focus-visible,
+  .text-link:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  .button-primary {
+    color: #062334;
+    background: #60cdff;
+  }
+
+  .button-primary:hover {
+    background: #8cddff;
+  }
+
+  .button-quiet {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .button-quiet:hover {
+    border-color: rgba(255, 255, 255, 0.32);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-meta {
+    margin-top: 46px;
+    display: flex;
+    gap: 0;
+    color: rgba(236, 242, 255, 0.55);
+    font-size: 12px;
+  }
+
+  .hero-meta span {
+    padding: 0 18px;
+    border-left: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .hero-meta span:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .hero-meta strong {
+    color: white;
+    font-weight: 650;
+  }
+
+  .hero-visual {
+    position: relative;
+    height: 520px;
+    animation: hero-visual-in 850ms 120ms cubic-bezier(.18,.75,.25,1) both;
+  }
+
+  .palette-beam {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 420px;
+    border-radius: 44%;
+    filter: blur(45px);
+    opacity: 0.2;
+    background: var(--palette-beam);
+    transform: translate(-48%, -50%) rotate(-7deg);
+  }
+
+  .command-palette {
+    --cmdpal-layer-primary: rgba(32, 32, 32, 0.314);
+    --cmdpal-layer-secondary: transparent;
+    --cmdpal-divider: #45454b;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    width: min(100%, 610px);
+    overflow: hidden;
+    color: rgba(246, 249, 255, 0.9);
+    border: 1px solid var(--cmdpal-divider);
+    border-radius: 8px;
+    background: var(--command-palette-background);
+    box-shadow: 0 28px 70px rgba(1, 7, 25, 0.42), inset 0 1px rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(34px) saturate(1.32);
+    transform: translate(-50%, -50%);
+  }
+
+  .palette-search {
+    height: 66px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    border-bottom: 1px solid var(--cmdpal-divider);
+    background: var(--cmdpal-layer-primary);
+  }
+
+  .palette-search > img {
+    width: 28px;
+    height: 28px;
+    flex: none;
+    object-fit: contain;
+  }
+
+  .palette-search > span {
+    margin-right: auto;
+    overflow: hidden;
+    color: rgba(245, 248, 255, 0.78);
+    font-size: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .palette-footer kbd {
+    min-width: 25px;
+    height: 24px;
+    padding: 0 5px;
+    display: inline-grid;
+    place-items: center;
+    color: rgba(255,255,255,.67);
+    font: 10px "Segoe UI", sans-serif;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 4px;
+    background: rgba(255,255,255,.07);
+    box-shadow: inset 0 -1px rgba(0,0,0,.2);
+  }
+
+  .palette-results {
+    padding: 4px;
+    background: var(--cmdpal-layer-secondary);
+  }
+
+  .palette-row {
+    min-height: 44px;
+    padding: 6px 12px;
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 4px;
+    opacity: 0;
+    animation: palette-row-in 420ms cubic-bezier(.2,.75,.25,1) forwards;
+    animation-delay: calc(360ms + var(--row-index) * 55ms);
+    transition: background 150ms ease;
+  }
+
+  .palette-row:hover,
+  .palette-row.selected {
+    background: var(--palette-row-selection);
+  }
+
+  .palette-row:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: -2px;
+  }
+
+  .palette-row > img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  .palette-row-copy {
+    min-width: 0;
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .palette-row-copy strong,
+  .palette-row-copy small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .palette-row-copy strong {
+    flex: none;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .palette-row-copy small {
+    min-width: 0;
+    color: rgba(231, 240, 250, 0.54);
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  .palette-footer {
+    height: 38px;
+    padding: 0 14px 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgba(236, 243, 252, 0.48);
+    font-size: 10px;
+    border-top: 1px solid var(--cmdpal-divider);
+    background: var(--cmdpal-layer-primary);
+  }
+
+  .palette-footer span:last-child {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .palette-footer kbd {
+    min-width: 22px;
+    height: 21px;
+  }
+
+  .palette-footer kbd :global(.fluent-glyph) {
+    font-size: 12px;
+  }
+
+  .hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.12;
+  }
+
+  .hero-glow-one {
+    width: 380px;
+    height: 380px;
+    top: 30px;
+    right: 12%;
+    background: var(--hero-glow-one);
+  }
+
+  .hero-glow-two {
+    width: 260px;
+    height: 260px;
+    right: 3%;
+    bottom: -80px;
+    background: var(--hero-glow-two);
+  }
+
+  .gallery-section {
+    position: relative;
+    padding: 92px 0 112px;
+    background:
+      radial-gradient(circle at 8% 12%, var(--gallery-glow), transparent 22%),
+      var(--canvas);
+  }
+
+  .gallery-inner,
+  .contribute-inner,
+  .footer-inner {
+    width: min(calc(100% - 48px), 1320px);
+    margin: 0 auto;
+  }
+
+  .gallery-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .section-kicker {
+    color: var(--accent);
+  }
+
+  .gallery-heading h2,
+  .contribute-copy h2 {
+    margin: 10px 0 0;
+    font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+  }
+
+  .gallery-heading > div > p:last-child {
+    margin: 12px 0 0;
+    color: var(--ink-muted);
+    font-size: 16px;
+  }
+
+  .result-summary {
+    padding-bottom: 5px;
+    color: var(--ink-muted);
+    font-size: 13px;
+  }
+
+  .result-summary strong {
+    color: var(--ink);
+    font-size: 22px;
+    font-weight: 650;
+  }
+
+  .search-panel {
+    margin-top: 40px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 400px) minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .search-field {
+    grid-column: 2;
+    width: 100%;
+    min-width: 0;
+    height: 48px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--stroke);
+    border-radius: 999px;
+    background: var(--surface-strong);
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .search-field:focus-within {
+    border-color: var(--accent);
+    box-shadow: inset 0 -2px var(--accent), 0 0 0 1px rgba(0,103,184,.06);
+  }
+
+  .search-field :global(.search-glyph) {
+    color: var(--ink-muted);
+    font-size: 20px;
+  }
+
+  .search-field input {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    color: var(--ink);
+    border: 0;
+    outline: 0;
+    background: transparent;
+  }
+
+  .search-field input::placeholder {
+    color: var(--ink-faint);
+  }
+
+  .search-shortcut {
+    flex: none;
+    padding: 4px 7px;
+    color: var(--ink-faint);
+    font-size: 10px;
+    border: 1px solid var(--stroke-subtle);
+    border-radius: 4px;
+    background: var(--surface-subtle);
+  }
+
+  .sort-field {
+    grid-column: 3;
+    justify-self: end;
+    height: 48px;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    color: var(--ink-faint);
+    font-size: 12px;
+    border-left: 0;
+  }
+
+  .sort-field select {
+    min-width: 105px;
+    height: 100%;
+    padding: 0 30px 0 8px;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 600;
+    border: 0;
+    outline: 0;
+    background: transparent;
+  }
+
+  .category-row {
+    margin-top: 18px;
+    padding: 2px 0 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .category-button {
+    min-height: 34px;
+    padding: 0 13px;
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink-muted);
+    font-size: 12px;
+    font-weight: 560;
+    border: 1px solid var(--stroke-subtle);
+    border-radius: 999px;
+    background: var(--surface-translucent);
+    cursor: pointer;
+    transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
+  }
+
+  .category-button span {
+    color: var(--ink-faint);
+    font-size: 10px;
+  }
+
+  .category-button:hover {
+    color: var(--ink);
+    border-color: var(--stroke);
+    background: var(--surface-hover);
+  }
+
+  .category-button.selected {
+    color: white;
+    border-color: #0c3b55;
+    background: #0c3b55;
+  }
+
+  .category-button.selected span {
+    color: rgba(255,255,255,.65);
+  }
+
+  .category-button:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  .extension-grid {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .empty-state {
+    margin: 70px auto 0;
+    text-align: center;
+  }
+
+  .empty-state[hidden] {
+    display: none;
+  }
+
+  .empty-glyph {
+    color: var(--ink-faint);
+    font-size: 52px;
+  }
+
+  .empty-state h3 {
+    margin: 8px 0 0;
+    font-size: 20px;
+  }
+
+  .empty-state p {
+    margin: 8px 0 18px;
+    color: var(--ink-muted);
+  }
+
+  .empty-state button {
+    min-height: var(--compact-action-height);
+    padding: 0 var(--compact-action-padding-inline);
+    color: white;
+    border: 0;
+    border-radius: var(--action-radius);
+    background: var(--accent);
+    cursor: pointer;
+  }
+
+  .contribute-section {
+    padding: 86px 0;
+    color: white;
+    background: var(--dark-section);
+  }
+
+  .contribute-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+  }
+
+  .contribute-copy {
+    max-width: 700px;
+  }
+
+  .contribute-copy .section-kicker {
+    color: #60cdff;
+  }
+
+  .contribute-copy p:last-child {
+    max-width: 640px;
+    margin: 16px 0 0;
+    color: rgba(255,255,255,.65);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .contribute-actions {
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .text-link {
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .text-link :global(.inline-glyph) {
+    margin-left: 4px;
+    color: #60cdff;
+    font-size: 12px;
+  }
+
+  footer {
+    padding: 28px 0;
+    color: #8c96a8;
+    background: var(--footer-background);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    font-size: 12px;
+  }
+
+  .footer-inner p {
+    margin: 0;
+    color: #d9deea;
+    font-weight: 600;
+  }
+
+  .footer-inner div {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-inner a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .footer-inner a:hover {
+    color: white;
+  }
+
+  :global(html[data-palette='teal']) .hero {
+    background:
+      linear-gradient(180deg, rgba(2, 30, 43, .08) 0%, rgba(3, 42, 57, .22) 62%, rgba(3, 38, 51, .7) 100%),
+      linear-gradient(92deg, rgba(4, 34, 49, .95) 0%, rgba(5, 54, 71, .8) 44%, rgba(4, 77, 91, .5) 100%),
+      var(--hero-wallpaper) center 48% / cover no-repeat,
+      var(--hero);
+  }
+
+  :global(html[data-palette='legacy']) .hero-shell {
+    background: var(--classic-desktop);
+  }
+
+  :global(html[data-palette='legacy']) .hero {
+    color: #ffffff;
+    border-bottom: 2px outset var(--classic-face);
+    background: var(--classic-desktop);
+  }
+
+  :global(html[data-palette='legacy']) .hero::before,
+  :global(html[data-palette='legacy']) .hero-glow,
+  :global(html[data-palette='legacy']) .palette-beam {
+    display: none;
+  }
+
+  :global(html[data-palette='legacy']) .hero-kicker {
+    color: #ffffff;
+    font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  :global(html[data-palette='legacy']) .hero-kicker span {
+    width: 12px;
+    height: 12px;
+    border: 2px outset var(--classic-face);
+    border-radius: 0;
+    background: var(--classic-face);
+    box-shadow: none;
+  }
+
+  :global(html[data-palette='legacy']) .modern-hero-title,
+  :global(html[data-palette='legacy']) .modern-hero-lede {
+    display: none;
+  }
+
+  :global(html[data-palette='legacy']) .legacy-hero-title,
+  :global(html[data-palette='legacy']) .legacy-hero-lede {
+    display: inline;
+  }
+
+  :global(html[data-palette='legacy']) h1 {
+    max-width: 720px;
+    margin: 18px 0;
+    color: #ffffff;
+    font-family: "Arial Black", Arial, Helvetica, sans-serif !important;
+    font-size: clamp(54px, 6vw, 82px);
+    font-weight: 900;
+    line-height: .98;
+    letter-spacing: -0.055em !important;
+    text-shadow: 3px 3px 0 #000000;
+  }
+
+  :global(html[data-palette='legacy']) .hero-lede {
+    color: #ffffff;
+    font: 700 22px/1.35 Tahoma, "MS Sans Serif", Arial, sans-serif;
+    text-shadow: 1px 1px 0 #000000;
+  }
+
+  :global(html[data-palette='legacy']) .button {
+    min-height: 36px;
+    color: var(--ink);
+    font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    border: 2px outset var(--classic-face);
+    border-radius: 0;
+    background: var(--classic-face);
+    transition: none;
+  }
+
+  :global(html[data-palette='legacy']) .button:hover {
+    color: var(--ink);
+    border-color: var(--classic-face);
+    background: var(--classic-face);
+    transform: none;
+  }
+
+  :global(html[data-palette='legacy']) .button:active {
+    border-style: inset;
+    padding-top: 2px;
+    padding-left: calc(var(--action-padding-inline) + 2px);
+  }
+
+  :global(html[data-palette='legacy']) .hero-meta {
+    color: #ffffff;
+    font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+  }
+
+  :global(html[data-palette='legacy']) .hero-meta span {
+    border-left-color: rgba(255, 255, 255, .7);
+  }
+
+  :global(html[data-palette='legacy']) .command-palette {
+    overflow: hidden;
+    color: var(--ink);
+    border: 2px outset var(--classic-face);
+    border-radius: 0;
+    background: var(--classic-face);
+    box-shadow: 4px 4px 0 var(--classic-dark-shadow);
+    backdrop-filter: none;
+  }
+
+  :global(html[data-palette='legacy']) .command-palette::before {
+    height: 24px;
+    margin: 2px 2px 0;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    content: 'Command Palette — Extensions';
+    color: #ffffff;
+    font: 700 12px Tahoma, "MS Sans Serif", Arial, sans-serif;
+    background: linear-gradient(90deg, var(--classic-title), var(--classic-title-end));
+  }
+
+  :global(html[data-palette='legacy']) .palette-search {
+    height: 46px;
+    margin: 7px 8px;
+    padding: 0 8px;
+    color: var(--ink);
+    border: 2px inset var(--classic-face);
+    background: var(--surface-strong);
+  }
+
+  :global(html[data-palette='legacy']) .palette-search > img,
+  :global(html[data-palette='legacy']) .palette-row > img {
+    image-rendering: pixelated;
+  }
+
+  :global(html[data-palette='legacy']) .palette-search > span {
+    color: var(--ink);
+    font: 12px Tahoma, "MS Sans Serif", Arial, sans-serif;
+  }
+
+  :global(html[data-palette='legacy']) .palette-results {
+    margin: 0 8px;
+    padding: 2px;
+    color: var(--ink);
+    border: 2px inset var(--classic-face);
+    background: var(--surface-strong);
+  }
+
+  :global(html[data-palette='legacy']) .palette-row {
+    min-height: 40px;
+    padding: 5px 7px;
+    color: var(--ink);
+    border-radius: 0;
+    font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+    transition: none;
+  }
+
+  :global(html[data-palette='legacy']) .palette-row:hover,
+  :global(html[data-palette='legacy']) .palette-row.selected {
+    color: #ffffff;
+    background: var(--classic-title);
+  }
+
+  :global(html[data-palette='legacy']) .palette-row-copy strong,
+  :global(html[data-palette='legacy']) .palette-row-copy small {
+    color: inherit;
+    font-size: 12px;
+  }
+
+  :global(html[data-palette='legacy']) .palette-row-copy small {
+    opacity: .72;
+  }
+
+  :global(html[data-palette='legacy']) .palette-footer {
+    height: 34px;
+    padding: 0 8px;
+    color: var(--ink);
+    border-top: 0;
+    background: var(--classic-face);
+    font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+  }
+
+  :global(html[data-palette='legacy']) .palette-footer kbd {
+    color: var(--ink);
+    border: 2px outset var(--classic-face);
+    border-radius: 0;
+    background: var(--classic-face);
+    box-shadow: none;
+  }
+
+  :global(html[data-palette='legacy']) .gallery-section {
+    color: var(--ink);
+    border-top: 2px outset var(--classic-face);
+    background: var(--classic-face);
+  }
+
+  :global(html[data-palette='legacy']) .gallery-heading h2,
+  :global(html[data-palette='legacy']) .contribute-copy h2 {
+    font-family: Tahoma, "MS Sans Serif", Arial, sans-serif !important;
+    font-size: clamp(30px, 4vw, 42px);
+    letter-spacing: 0 !important;
+  }
+
+  :global(html[data-palette='legacy']) .section-kicker {
+    color: var(--accent);
+    font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  :global(html[data-palette='legacy']) .search-field {
+    border: 2px inset var(--classic-face);
+    border-radius: 0;
+    background: var(--surface-strong);
+    box-shadow: none;
+  }
+
+  :global(html[data-palette='legacy']) .search-field:focus-within {
+    border-color: var(--classic-face);
+    box-shadow: none;
+  }
+
+  :global(html[data-palette='legacy']) .search-shortcut {
+    color: var(--ink);
+    border: 1px solid var(--classic-shadow);
+    border-radius: 0;
+    background: var(--classic-face);
+  }
+
+  :global(html[data-palette='legacy']) .sort-field {
+    color: var(--ink);
+  }
+
+  :global(html[data-palette='legacy']) .sort-field select {
+    height: 28px;
+    margin-left: 6px;
+    padding: 0 24px 0 5px;
+    color: var(--ink);
+    border: 2px inset var(--classic-face);
+    border-radius: 0;
+    background: var(--surface-strong);
+  }
+
+  :global(html[data-palette='legacy']) .category-button {
+    color: var(--ink);
+    border: 2px outset var(--classic-face);
+    border-radius: 0;
+    background: var(--classic-face);
+    transition: none;
+  }
+
+  :global(html[data-palette='legacy']) .category-button:hover {
+    color: var(--ink);
+    border-color: var(--classic-face);
+    background: var(--classic-face);
+  }
+
+  :global(html[data-palette='legacy']) .category-button.selected {
+    color: #ffffff;
+    border-style: inset;
+    border-color: var(--classic-face);
+    background: var(--classic-title);
+  }
+
+  :global(html[data-palette='legacy']) .category-button.selected span {
+    color: #ffffff;
+  }
+
+  :global(html[data-palette='legacy']) .contribute-section {
+    color: #ffffff;
+    border-top: 2px outset var(--classic-face);
+    border-bottom: 2px outset var(--classic-face);
+    background: var(--classic-title);
+  }
+
+  :global(html[data-palette='legacy']) footer {
+    color: var(--ink);
+    border-top: 2px outset var(--classic-face);
+    background: var(--classic-face);
+  }
+
+  :global(html[data-palette='legacy']) .footer-inner p,
+  :global(html[data-palette='legacy']) .footer-inner a {
+    color: var(--ink);
+  }
+
+  @keyframes hero-copy-in {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes hero-visual-in {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes palette-row-in {
+    from { opacity: 0; transform: translateY(7px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 1120px) {
+    .hero-inner {
+      grid-template-columns: minmax(390px, .9fr) minmax(440px, 1.1fr);
+      gap: 24px;
+    }
+
+    .extension-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .contribute-inner {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 34px;
+    }
+  }
+
+  @media (max-width: 840px) {
+    .hero {
+      min-height: 920px;
+    }
+
+    .hero-inner {
+      min-height: auto;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .hero-copy {
+      padding: 72px 0 18px;
+    }
+
+    .hero-visual {
+      width: min(100%, 620px);
+      height: 440px;
+      margin: 0 auto;
+    }
+
+    .extension-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery-heading {
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-inner,
+    .gallery-inner,
+    .contribute-inner,
+    .footer-inner {
+      width: min(calc(100% - 32px), 1320px);
+    }
+
+    .hero {
+      min-height: 760px;
+    }
+
+    .hero-copy {
+      padding-top: 60px;
+    }
+
+    h1 {
+      font-size: 50px;
+    }
+
+    .hero-lede {
+      font-size: 17px;
+    }
+
+    .hero-actions,
+    .contribute-actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .hero-meta span:last-child {
+      display: none;
+    }
+
+    .hero-meta {
+      display: none;
+    }
+
+    .hero-visual {
+      width: min(138%, 620px);
+      height: 300px;
+      transform: scale(.72);
+      transform-origin: top center;
+    }
+
+    .command-palette {
+      top: 70%;
+    }
+
+    .gallery-section {
+      padding: 72px 0 80px;
+    }
+
+    .gallery-heading {
+      display: block;
+    }
+
+    .result-summary {
+      margin-top: 18px;
+    }
+
+    .search-panel {
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+    }
+
+    .search-field {
+      grid-column: 1;
+    }
+
+    .search-shortcut {
+      display: none;
+    }
+
+    .sort-field {
+      grid-column: 2;
+      height: 38px;
+      padding-left: 6px;
+      border-left: 0;
+    }
+
+    .sort-field > span {
+      display: none;
+    }
+
+    .sort-field select {
+      min-width: 80px;
+      padding-left: 4px;
+    }
+
+    :global(html[data-palette='legacy']) h1 {
+      font-size: 48px;
+    }
+
+    .extension-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .footer-inner div {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-copy,
+    .hero-visual,
+    .palette-row {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>

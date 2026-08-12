@@ -418,6 +418,14 @@ venv/
 .venv/
 *.egg-info/
 
+# Astro extension gallery
+pages/node_modules/
+pages/dist/
+pages/.astro/
+pages/public/catalog/
+pages/.playwright-cli/
+pages/output/
+
 # Windows Installer files from build outputs
 *.cab
 *.msi

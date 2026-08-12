@@ -1,0 +1,278 @@
+---
+import type { Extension } from '../data/catalog';
+import { categoryLabels, toAuthorPageUrl, toExtensionPageUrl, toLocalAsset } from '../data/catalog';
+import FluentGlyph from './FluentGlyph.astro';
+import AuthorAvatar from './AuthorAvatar.astro';
+
+interface Props {
+  extension: Extension;
+  index: number;
+}
+
+const { extension, index } = Astro.props;
+const primaryCategory = extension.categories[0];
+const searchableText = [
+  extension.title,
+  extension.shortDescription,
+  extension.author.name,
+  ...extension.tags,
+  ...extension.categories,
+].join(' ').toLocaleLowerCase();
+---
+
+<article
+  class="extension-card"
+  data-extension-card
+  data-search={searchableText}
+  data-categories={extension.categories.join(' ')}
+  data-added={extension.addedAt}
+  style={`--card-index: ${Math.min(index, 12)}`}
+>
+  <a class="card-link" href={toExtensionPageUrl(extension.id)} aria-label={`View ${extension.title}`}>
+    <div class="card-topline">
+      <img class="extension-icon" src={toLocalAsset(extension.iconUrl)} alt="" width="56" height="56" loading="lazy" />
+      <FluentGlyph code={0xE8A7} class="open-glyph" />
+    </div>
+    <div class="card-copy">
+      <p class="eyebrow">{categoryLabels[primaryCategory] ?? primaryCategory}</p>
+      <h3>{extension.title}</h3>
+      <p class="description">{extension.shortDescription}</p>
+    </div>
+  </a>
+  <div class="card-footer">
+    <a class="author-link" href={toAuthorPageUrl(extension.author)}>
+      <AuthorAvatar author={extension.author} size={18} />
+      <span>by {extension.author.name}</span>
+    </a>
+    <span class="install-source">{extension.installSources.some((source) => source.type === 'msstore') ? 'Microsoft Store' : 'WinGet'}</span>
+  </div>
+</article>
+
+<style>
+  .extension-card {
+    position: relative;
+    min-width: 0;
+    opacity: 0;
+    animation: card-in 520ms cubic-bezier(.2,.75,.25,1) forwards;
+    animation-delay: calc(var(--card-index) * 35ms);
+  }
+
+  .card-link {
+    position: relative;
+    height: 100%;
+    min-height: 286px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    color: var(--ink);
+    text-decoration: none;
+    border: 1px solid var(--stroke-subtle);
+    border-radius: 14px;
+    background: var(--surface-translucent);
+    box-shadow: var(--card-shadow);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  }
+
+  .extension-card:hover .card-link,
+  .extension-card:focus-within .card-link {
+    transform: translateY(-3px);
+    border-color: rgba(0, 120, 212, 0.3);
+    background: var(--surface-hover);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .card-link:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  .card-topline {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .extension-icon {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    border-radius: 12px;
+    filter: drop-shadow(0 4px 8px rgba(8, 20, 38, 0.12));
+  }
+
+  .card-link :global(.open-glyph) {
+    font-size: 18px;
+    color: var(--ink-muted);
+    opacity: 0;
+    transform: translate(-3px, 3px);
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  .extension-card:hover .card-link :global(.open-glyph),
+  .extension-card:focus-within .card-link :global(.open-glyph) {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  .card-copy {
+    margin-top: 30px;
+    margin-bottom: 42px;
+  }
+
+  .eyebrow {
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 19px;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+  }
+
+  .description {
+    display: -webkit-box;
+    margin: 10px 0 0;
+    overflow: hidden;
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.55;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .card-footer {
+    position: absolute;
+    z-index: 2;
+    right: 24px;
+    bottom: 21px;
+    left: 24px;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--ink-faint);
+    font-size: 11px;
+    pointer-events: none;
+    transition: transform 180ms ease;
+  }
+
+  .install-source {
+    flex: 0 0 auto;
+    margin-left: auto;
+    color: var(--ink-faint);
+    font-size: 11px;
+    line-height: 18px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .author-link {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: inherit;
+    font-size: 11px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    pointer-events: auto;
+    transition: color 150ms ease;
+  }
+
+  .author-link > span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .extension-card:hover .card-footer,
+  .extension-card:focus-within .card-footer {
+    transform: translateY(-3px);
+  }
+
+  .author-link:hover {
+    color: var(--accent);
+  }
+
+  .author-link:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  :global(html[data-palette='legacy']) .card-link {
+    min-height: 286px;
+    color: var(--ink);
+    border: 2px outset var(--classic-face);
+    border-radius: 0;
+    background: var(--classic-face);
+    box-shadow: 2px 2px 0 var(--classic-dark-shadow);
+    transition: none;
+  }
+
+  :global(html[data-palette='legacy']) .extension-card:hover .card-link,
+  :global(html[data-palette='legacy']) .extension-card:focus-within .card-link {
+    color: var(--ink);
+    border-color: var(--classic-face);
+    background: var(--classic-face);
+    box-shadow: 3px 3px 0 var(--classic-dark-shadow);
+    transform: translate(-1px, -1px);
+  }
+
+  :global(html[data-palette='legacy']) .extension-card:hover .card-footer,
+  :global(html[data-palette='legacy']) .extension-card:focus-within .card-footer {
+    transform: translate(-1px, -1px);
+  }
+
+  :global(html[data-palette='legacy']) .extension-icon {
+    border-radius: 0;
+    filter: none;
+  }
+
+  :global(html[data-palette='legacy']) .card-link :global(.open-glyph) {
+    opacity: 1;
+    transform: none;
+  }
+
+  :global(html[data-palette='legacy']) .eyebrow {
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+
+  :global(html[data-palette='legacy']) h3 {
+    font-family: Tahoma, "MS Sans Serif", Arial, sans-serif !important;
+    font-size: 18px;
+    letter-spacing: 0 !important;
+  }
+
+  :global(html[data-palette='legacy']) .description,
+  :global(html[data-palette='legacy']) .card-footer {
+    font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+  }
+
+  @keyframes card-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .extension-card {
+      opacity: 1;
+      animation: none;
+    }
+
+    .card-link {
+      transition: none;
+    }
+  }
+</style>

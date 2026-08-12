@@ -1,0 +1,29 @@
+---
+interface Props {
+  code: number;
+  label?: string;
+  class?: string;
+}
+
+const { code, label, class: className } = Astro.props;
+const glyph = String.fromCodePoint(code);
+---
+
+<span
+  class:list={['fluent-glyph', className]}
+  role={label ? 'img' : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : 'true'}
+>{glyph}</span>
+
+<style>
+  .fluent-glyph {
+    display: inline-grid;
+    flex: none;
+    place-items: center;
+    font-family: 'Segoe Fluent Icons', 'Segoe MDL2 Assets', 'Segoe UI Symbol', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+  }
+</style>

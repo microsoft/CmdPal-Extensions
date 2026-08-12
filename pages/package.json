@@ -1,0 +1,19 @@
+{
+  "name": "cmdpal-web-gallery",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync:catalog": "node scripts/sync-catalog.mjs",
+    "predev": "npm run sync:catalog",
+    "dev": "node scripts/astro.mjs dev",
+    "prebuild": "npm run sync:catalog",
+    "build": "node scripts/astro.mjs check && node scripts/astro.mjs build",
+    "preview": "node scripts/astro.mjs preview"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "astro": "^7.2.1",
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,0 +1,46 @@
+name: Deploy extension gallery to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - pages/**
+      - extensions.json
+      - extensions/**
+      - .github/workflows/deploy-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Build and upload Astro site
+        uses: withastro/action@v6
+        with:
+          path: ./pages
+        env:
+          ASTRO_SITE: "https://${{ github.repository_owner }}.github.io"
+          ASTRO_BASE: "/${{ github.event.repository.name }}"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

@@ -1,0 +1,23 @@
+---
+import { withBase } from '../data/catalog';
+---
+
+<span class="brand-mark" aria-hidden="true">
+  <img src={withBase('/favicon.svg')} alt="" width="28" height="28" />
+</span>
+
+<style>
+  .brand-mark {
+    display: inline-grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    flex: none;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+</style>

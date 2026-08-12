@@ -1,0 +1,382 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import ExtensionCard from '../../components/ExtensionCard.astro';
+import FluentGlyph from '../../components/FluentGlyph.astro';
+import AuthorAvatar from '../../components/AuthorAvatar.astro';
+import { authors, toCmdPalGalleryUrl, toLocalAsset, withBase, type CatalogAuthor } from '../../data/catalog';
+
+export function getStaticPaths() {
+  return authors.map((author) => ({
+    params: { slug: author.slug },
+    props: { author },
+  }));
+}
+
+interface Props {
+  author: CatalogAuthor;
+}
+
+const { author } = Astro.props;
+const extensionWord = author.extensions.length === 1 ? 'extension' : 'extensions';
+const profileLabel = author.url.includes('github.com') ? 'View GitHub profile' : 'Visit publisher website';
+const featuredIcons = author.extensions.slice(0, 4);
+---
+
+<BaseLayout
+  title={`${author.name} extensions — Command Palette Extensions`}
+  description={`Browse ${author.extensions.length} Command Palette ${extensionWord} published by ${author.name}.`}
+>
+  <Header />
+  <main id="main-content">
+    <section class="author-hero" aria-labelledby="author-title">
+      <div class="hero-haze"></div>
+      <div class="page-inner">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href={withBase('/')}>Extensions</a><span aria-hidden="true">/</span><span>{author.name}</span>
+        </nav>
+
+        <div class="author-heading">
+          <AuthorAvatar author={author} size={112} class="author-mark" />
+          <div class="author-copy">
+            <p class="section-kicker">Extension publisher</p>
+            <h1 id="author-title">{author.name}</h1>
+            <p>{author.extensions.length} community {extensionWord} in the Command Palette catalog.</p>
+            <a class="profile-link" href={author.url}>
+              {profileLabel} <FluentGlyph code={0xE8A7} class="inline-glyph" />
+            </a>
+          </div>
+          <div class="icon-plane" aria-hidden="true">
+            {featuredIcons.map((extension, index) => (
+              <div class="featured-icon" style={`--icon-index: ${index}`}>
+                <img src={toLocalAsset(extension.iconUrl)} alt="" width="56" height="56" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="extensions-section" aria-labelledby="extensions-title">
+      <div class="page-inner">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Published extensions</p>
+            <h2 id="extensions-title">Extensions by {author.name}</h2>
+          </div>
+          <span><strong>{author.extensions.length}</strong> {extensionWord}</span>
+        </div>
+        <div class="extension-grid">
+          {author.extensions.map((extension, index) => <ExtensionCard extension={extension} index={index} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="page-inner footer-inner">
+      <p>Command Palette Extensions</p>
+      <div class="footer-links">
+        <a href={toCmdPalGalleryUrl()}>Open app gallery</a>
+        <a href="https://learn.microsoft.com/en-us/windows/powertoys/command-palette/overview">About Command Palette</a>
+        <a href="https://github.com/microsoft/CmdPal-Extensions">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .page-inner {
+    position: relative;
+    z-index: 2;
+    width: min(calc(100% - 48px), 1180px);
+    margin: 0 auto;
+  }
+
+  .author-hero {
+    position: relative;
+    min-height: 420px;
+    padding: 32px 0 72px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--stroke-subtle);
+    background: var(--detail-hero-layer), var(--canvas);
+  }
+
+  .author-hero::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    opacity: .32;
+    background-image:
+      linear-gradient(rgba(0, 120, 212, .05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 120, 212, .05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(90deg, transparent, black 70%, transparent);
+  }
+
+  .hero-haze {
+    position: absolute;
+    top: -240px;
+    right: 5%;
+    width: 620px;
+    height: 620px;
+    border-radius: 50%;
+    filter: blur(25px);
+    opacity: .23;
+    background: var(--detail-haze);
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--ink-faint);
+    font-size: 12px;
+  }
+
+  .breadcrumbs a,
+  .profile-link {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .author-heading {
+    margin-top: 58px;
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 34px;
+    animation: heading-in 600ms cubic-bezier(.18, .75, .25, 1) both;
+  }
+
+  :global(.author-mark) {
+    box-shadow: var(--glass-shadow);
+  }
+
+  .section-kicker {
+    margin: 0;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 9px 0 0;
+    font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-feature-settings: "init";
+    font-size: 32px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .author-copy > p:not(.section-kicker) {
+    margin: 12px 0 0;
+    color: var(--ink-muted);
+    font-size: 16px;
+  }
+
+  .profile-link {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 650;
+  }
+
+  .profile-link :global(.inline-glyph) {
+    font-size: 12px;
+  }
+
+  .profile-link:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  .icon-plane {
+    min-width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .featured-icon {
+    width: 76px;
+    height: 76px;
+    margin-left: -18px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    background: var(--surface-translucent);
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(16px);
+    transform: translateY(calc((var(--icon-index) - 1.5) * 6px));
+  }
+
+  .featured-icon img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    border-radius: 11px;
+    filter: drop-shadow(0 5px 8px rgba(8, 20, 38, .16));
+  }
+
+  .extensions-section {
+    min-height: 420px;
+    padding: 86px 0 112px;
+    background:
+      radial-gradient(circle at 8% 12%, var(--gallery-glow), transparent 22%),
+      var(--canvas);
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .section-heading h2 {
+    margin: 10px 0 0;
+    font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -.045em;
+  }
+
+  .section-heading > span {
+    padding-bottom: 5px;
+    color: var(--ink-muted);
+    font-size: 13px;
+  }
+
+  .section-heading strong {
+    color: var(--ink);
+    font-size: 21px;
+  }
+
+  .extension-grid {
+    margin-top: 34px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  footer {
+    padding: 28px 0;
+    color: #8c96a8;
+    background: var(--footer-background);
+  }
+
+  .footer-inner,
+  .footer-links {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-inner {
+    justify-content: space-between;
+    gap: 24px;
+    font-size: 12px;
+  }
+
+  .footer-inner p {
+    margin: 0;
+    color: #d9deea;
+    font-weight: 600;
+  }
+
+  .footer-links {
+    gap: 20px;
+  }
+
+  .footer-links a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .footer-links a:hover {
+    color: white;
+  }
+
+  @keyframes heading-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 900px) {
+    .author-heading {
+      grid-template-columns: 96px minmax(0, 1fr);
+    }
+
+    :global(.author-mark) {
+      width: 96px;
+      height: 96px;
+    }
+
+    .icon-plane {
+      display: none;
+    }
+
+    .extension-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 600px) {
+    .page-inner {
+      width: min(calc(100% - 32px), 1180px);
+    }
+
+    .author-hero {
+      min-height: 470px;
+      padding-top: 26px;
+    }
+
+    .author-heading {
+      margin-top: 42px;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    :global(.author-mark) {
+      width: 82px;
+      height: 82px;
+      font-size: 38px;
+      border-radius: 22px;
+    }
+
+    .extensions-section {
+      padding: 68px 0 82px;
+    }
+
+    .section-heading {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .extension-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-inner,
+    .footer-links {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .footer-links {
+      gap: 12px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .author-heading {
+      animation: none;
+    }
+  }
+</style>

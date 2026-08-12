@@ -1,0 +1,53 @@
+---
+import type { ExtensionAuthor } from '../data/catalog';
+import { toAuthorAvatarUrl } from '../data/catalog';
+import FluentGlyph from './FluentGlyph.astro';
+
+interface Props {
+  author: ExtensionAuthor;
+  size?: number;
+  class?: string;
+}
+
+const { author, size = 20, class: className } = Astro.props;
+const avatarUrl = toAuthorAvatarUrl(author);
+---
+
+<span
+  class:list={['author-avatar', className]}
+  style={`--author-avatar-size: ${size}px`}
+  aria-hidden="true"
+>
+  <FluentGlyph code={0xE77B} class="author-avatar-glyph" />
+  {avatarUrl && (
+    <img src={avatarUrl} alt="" width={size} height={size} loading="lazy" onerror="this.remove()" />
+  )}
+</span>
+
+<style>
+  .author-avatar {
+    position: relative;
+    width: var(--author-avatar-size);
+    height: var(--author-avatar-size);
+    flex: none;
+    display: inline-grid;
+    place-items: center;
+    overflow: hidden;
+    color: var(--accent);
+    border: 1px solid var(--stroke-subtle);
+    border-radius: 50%;
+    background: var(--surface-subtle);
+  }
+
+  .author-avatar :global(.author-avatar-glyph) {
+    font-size: calc(var(--author-avatar-size) * .48);
+  }
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

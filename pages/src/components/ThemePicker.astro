@@ -1,0 +1,149 @@
+---
+import FluentGlyph from './FluentGlyph.astro';
+---
+
+<label class="theme-picker" data-theme-picker>
+  <span class="sr-only">Color theme</span>
+  <FluentGlyph code={0xE770} class="theme-picker-glyph" />
+  <select data-theme-select aria-label="Color theme" title="Color theme">
+    <option value="auto">Auto</option>
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+</label>
+
+<script>
+  const storageKey = 'cmdpal-gallery-theme';
+  const media = window.matchMedia('(prefers-color-scheme: dark)');
+  const glyphs = { auto: 0xE770, light: 0xE706, dark: 0xE708 };
+
+  const applyTheme = (preference: 'auto' | 'light' | 'dark', persist = true) => {
+    const resolved = preference === 'auto' ? (media.matches ? 'dark' : 'light') : preference;
+    const root = document.documentElement;
+    root.dataset.themePreference = preference;
+    root.dataset.theme = resolved;
+    root.style.colorScheme = resolved;
+    const style = root.dataset.palette ?? 'aero';
+    const themeColor = style === 'legacy'
+      ? (resolved === 'dark' ? '#000000' : '#008080')
+      : style === 'teal'
+        ? (resolved === 'dark' ? '#0e1820' : '#f3f7fa')
+        : (resolved === 'dark' ? '#171821' : '#f4f3f6');
+    document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')?.setAttribute('content', themeColor);
+
+    document.querySelectorAll<HTMLSelectElement>('[data-theme-select]').forEach((select) => {
+      select.value = preference;
+      const glyph = select.closest('[data-theme-picker]')?.querySelector<HTMLElement>('.theme-picker-glyph');
+      if (glyph) glyph.textContent = String.fromCodePoint(glyphs[preference]);
+    });
+
+    if (persist) {
+      try { localStorage.setItem(storageKey, preference); } catch { /* Storage may be unavailable. */ }
+    }
+  };
+
+  document.querySelectorAll<HTMLSelectElement>('[data-theme-select]').forEach((select) => {
+    const preference = document.documentElement.dataset.themePreference;
+    applyTheme(preference === 'light' || preference === 'dark' ? preference : 'auto', false);
+    select.addEventListener('change', () => applyTheme(select.value as 'auto' | 'light' | 'dark'));
+  });
+
+  media.addEventListener('change', () => {
+    if (document.documentElement.dataset.themePreference === 'auto') applyTheme('auto', false);
+  });
+</script>
+
+<style>
+  .theme-picker {
+    position: relative;
+    height: var(--compact-action-height);
+    padding: 0 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: inherit;
+    border: 0;
+    border-radius: var(--action-radius);
+    opacity: .62;
+    background: transparent;
+    transition: opacity 150ms ease, background 150ms ease, box-shadow 150ms ease;
+  }
+
+  .theme-picker:hover {
+    opacity: 1;
+    background: color-mix(in srgb, currentColor 8%, transparent);
+  }
+
+  .theme-picker:focus-within {
+    opacity: 1;
+    background: color-mix(in srgb, currentColor 8%, transparent);
+    box-shadow: inset 0 0 0 2px color-mix(in srgb, currentColor 72%, transparent);
+  }
+
+  .theme-picker :global(.theme-picker-glyph) {
+    font-size: 15px;
+    pointer-events: none;
+  }
+
+  select {
+    width: 48px;
+    height: 100%;
+    padding: 0;
+    color: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  select option {
+    color: var(--ink);
+    background: var(--surface-strong);
+  }
+
+  :global(html[data-palette='legacy']) .theme-picker {
+    height: 26px;
+    padding: 0 5px;
+    gap: 4px;
+    color: var(--ink);
+    border: 2px outset var(--classic-face);
+    border-radius: 0;
+    opacity: 1;
+    background: var(--classic-face);
+    box-shadow: none;
+  }
+
+  :global(html[data-palette='legacy']) .theme-picker:active,
+  :global(html[data-palette='legacy']) .theme-picker:focus-within {
+    border-style: inset;
+    background: var(--classic-face);
+    box-shadow: none;
+  }
+
+  :global(html[data-palette='legacy']) .theme-picker select {
+    font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+  }
+
+  @media (max-width: 720px) {
+    .theme-picker {
+      width: var(--compact-action-height);
+      padding: 0;
+      justify-content: center;
+    }
+
+    select {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      opacity: 0;
+    }
+
+    :global(html[data-palette='legacy']) .theme-picker {
+      width: 28px;
+      height: 28px;
+      padding: 0;
+    }
+  }
+</style>

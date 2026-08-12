@@ -1,0 +1,796 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import ExtensionCard from '../../components/ExtensionCard.astro';
+import FluentGlyph from '../../components/FluentGlyph.astro';
+import { catalog, categoryLabels, toAuthorPageUrl, toCmdPalGalleryUrl, toLocalAsset, toStoreUrl, withBase, type Extension } from '../../data/catalog';
+
+export function getStaticPaths() {
+  return catalog.extensions.map((extension) => ({
+    params: { id: extension.id },
+    props: { extension },
+  }));
+}
+
+interface Props {
+  extension: Extension;
+}
+
+const { extension } = Astro.props;
+const screenshots = extension.screenshotUrls ?? [];
+const descriptionParagraphs = extension.description.split(/\n\n+/).filter(Boolean);
+const related = catalog.extensions
+  .filter((candidate) =>
+    candidate.id !== extension.id &&
+    candidate.categories.some((category) => extension.categories.includes(category)),
+  )
+  .sort((left, right) => right.addedAt.localeCompare(left.addedAt))
+  .slice(0, 3);
+---
+
+<BaseLayout title={`${extension.title} — Command Palette Extensions`} description={extension.shortDescription}>
+  <Header />
+  <main id="main-content">
+    <section class="detail-hero">
+      <div class="hero-haze"></div>
+      <div class="detail-inner">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href={withBase('/')}>Extensions</a><span aria-hidden="true">/</span><span>{extension.title}</span>
+        </nav>
+        <div class="detail-heading">
+          <div class="icon-wrap">
+            <img src={toLocalAsset(extension.iconUrl)} alt="" width="112" height="112" />
+          </div>
+          <div class="title-block">
+            <div class="category-list">
+              {extension.categories.map((category) => <span>{categoryLabels[category] ?? category}</span>)}
+            </div>
+            <h1>{extension.title}</h1>
+            <p class="short-description">{extension.shortDescription}</p>
+            <p class="author-line">By <a href={toAuthorPageUrl(extension.author)}>{extension.author.name}</a></p>
+          </div>
+          <div class="install-panel">
+            <p>Get this extension</p>
+            <div class="install-actions">
+              <a class="install-button primary" href={toCmdPalGalleryUrl(extension.id)}>
+                <img src={withBase('/favicon.svg')} alt="" width="18" height="18" />
+                Open in Command Palette
+              </a>
+              {extension.installSources.map((source) => source.type === 'msstore' ? (
+                <a class="install-button secondary" href={toStoreUrl(source.id)}>
+                  <FluentGlyph code={0xE719} class="install-glyph" />
+                  Microsoft Store
+                </a>
+              ) : source.type === 'winget' ? (
+                <button class="install-button secondary" type="button" data-copy={`winget install --id ${source.id}`}>
+                  <FluentGlyph code={0xE8C8} class="install-glyph" />
+                  <span data-copy-label>Copy WinGet command</span>
+                </button>
+              ) : null)}
+            </div>
+            <span class="source-note">App links require a compatible version of Command Palette.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {screenshots.length > 0 && (
+      <section class="screenshots-section" aria-labelledby="screenshots-title">
+        <div class="detail-inner">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">In action</p>
+              <h2 id="screenshots-title">See how it works</h2>
+            </div>
+            <span>{screenshots.length} {screenshots.length === 1 ? 'screenshot' : 'screenshots'}</span>
+          </div>
+          <div class:list={['screenshot-grid', { single: screenshots.length === 1 }]}>
+            {screenshots.map((url, index) => (
+              <a class:list={['screenshot-link', { featured: index === 0 }]} href={toLocalAsset(url)} target="_blank">
+                <img src={toLocalAsset(url)} alt={`${extension.title} screenshot ${index + 1}`} loading={index === 0 ? 'eager' : 'lazy'} />
+                <span>Expand <FluentGlyph code={0xE8A7} class="inline-glyph" /></span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <section class="about-section" aria-labelledby="about-title">
+      <div class="detail-inner about-grid">
+        <article>
+          <p class="section-kicker">About</p>
+          <h2 id="about-title">What {extension.title} does</h2>
+          <div class="description-copy">
+            {descriptionParagraphs.map((paragraph) => <p>{paragraph}</p>)}
+          </div>
+          <a class="homepage-link" href={extension.homepage}>Visit the project homepage <FluentGlyph code={0xE8A7} class="inline-glyph" /></a>
+        </article>
+        <aside aria-label="Extension details">
+          <dl>
+            <div>
+              <dt>Publisher</dt>
+              <dd><a href={toAuthorPageUrl(extension.author)}>{extension.author.name}</a></dd>
+            </div>
+            <div>
+              <dt>Added to gallery</dt>
+              <dd>{new Date(`${extension.addedAt}T00:00:00`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</dd>
+            </div>
+            <div>
+              <dt>Install options</dt>
+              <dd>{extension.installSources.map((source) => source.type === 'msstore' ? 'Microsoft Store' : source.type === 'winget' ? 'WinGet' : source.type).join(', ')}</dd>
+            </div>
+          </dl>
+          <div class="tag-list" aria-label="Tags">
+            {extension.tags.map((tag) => <span>{tag}</span>)}
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    {related.length > 0 && (
+      <section class="related-section" aria-labelledby="related-title">
+        <div class="detail-inner">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Keep exploring</p>
+              <h2 id="related-title">You might also like</h2>
+            </div>
+            <a href={withBase('/#gallery')}>Browse all extensions <FluentGlyph code={0xE72A} class="inline-glyph" /></a>
+          </div>
+          <div class="related-grid">
+            {related.map((candidate, index) => <ExtensionCard extension={candidate} index={index} />)}
+          </div>
+        </div>
+      </section>
+    )}
+  </main>
+
+  <footer>
+    <div class="detail-inner footer-inner">
+      <p>Command Palette Extensions</p>
+      <div class="footer-links">
+        <a href="https://learn.microsoft.com/en-us/windows/powertoys/command-palette/overview">About Command Palette</a>
+        <a href="https://learn.microsoft.com/en-us/windows/powertoys/install?tabs=gh%2Cextract-094">Install PowerToys</a>
+        <a href="https://github.com/microsoft/CmdPal-Extensions">View the catalog on GitHub <FluentGlyph code={0xE8A7} class="inline-glyph" /></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const command = button.dataset.copy;
+        const label = button.querySelector<HTMLElement>('[data-copy-label]');
+        if (!command || !label) return;
+        try {
+          await navigator.clipboard.writeText(command);
+          const original = label.textContent;
+          label.textContent = 'Copied to clipboard';
+          window.setTimeout(() => { label.textContent = original; }, 1800);
+        } catch {
+          label.textContent = command;
+        }
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .detail-inner {
+    position: relative;
+    z-index: 2;
+    width: min(calc(100% - 48px), 1180px);
+    margin: 0 auto;
+  }
+
+  .detail-hero {
+    position: relative;
+    min-height: 470px;
+    padding: 32px 0 74px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--stroke-subtle);
+    background:
+      var(--detail-hero-layer),
+      var(--canvas);
+  }
+
+  .detail-hero::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    opacity: .36;
+    background-image:
+      linear-gradient(rgba(0,120,212,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,120,212,.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(90deg, transparent, black 70%, transparent);
+  }
+
+  .hero-haze {
+    position: absolute;
+    top: -220px;
+    right: 2%;
+    width: 620px;
+    height: 620px;
+    border-radius: 50%;
+    filter: blur(20px);
+    opacity: .25;
+    background: var(--detail-haze);
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--ink-faint);
+    font-size: 12px;
+  }
+
+  .breadcrumbs a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .detail-heading {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) 320px;
+    align-items: center;
+    gap: 32px;
+    animation: heading-in 600ms cubic-bezier(.18,.75,.25,1) both;
+  }
+
+  .icon-wrap {
+    width: 136px;
+    height: 136px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    background: var(--surface-translucent);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(20px);
+  }
+
+  .icon-wrap img {
+    width: 88px;
+    height: 88px;
+    object-fit: contain;
+    border-radius: 16px;
+    filter: drop-shadow(0 8px 12px rgba(17, 28, 50, .18));
+  }
+
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .category-list span {
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .065em;
+    text-transform: uppercase;
+  }
+
+  .category-list span + span::before {
+    margin-right: 8px;
+    content: '·';
+    color: var(--ink-faint);
+  }
+
+  h1 {
+    margin: 10px 0 0;
+    font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-feature-settings: "init";
+    font-size: 32px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .short-description {
+    max-width: 650px;
+    margin: 13px 0 0;
+    color: var(--ink-muted);
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .author-line {
+    margin: 14px 0 0;
+    color: var(--ink-faint);
+    font-size: 12px;
+  }
+
+  .author-line a {
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .install-panel {
+    padding: 20px;
+    border: 1px solid var(--stroke-subtle);
+    border-radius: 12px;
+    background: var(--surface-translucent);
+    box-shadow: var(--panel-shadow);
+    backdrop-filter: blur(18px);
+  }
+
+  .install-panel > p {
+    margin: 0 0 12px;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 650;
+  }
+
+  .install-actions {
+    display: grid;
+    gap: 8px;
+  }
+
+  .install-button {
+    width: 100%;
+    min-height: var(--action-height);
+    padding: 0 var(--action-padding-inline);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+    font-size: var(--action-font-size);
+    font-weight: var(--action-font-weight);
+    text-decoration: none;
+    border-radius: var(--action-radius);
+    cursor: pointer;
+    transition: background 150ms ease, transform 150ms ease;
+  }
+
+  .install-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .install-button :global(.install-glyph) {
+    font-size: 18px;
+  }
+
+  .install-button > img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+  }
+
+  .install-button.primary {
+    color: var(--on-accent);
+    border: 1px solid var(--accent);
+    background: var(--accent);
+  }
+
+  .install-button.primary:hover {
+    background: var(--accent-hover);
+  }
+
+  .install-button.secondary {
+    color: var(--ink);
+    border: 1px solid var(--stroke);
+    background: var(--surface-strong);
+  }
+
+  .install-button.secondary:hover {
+    background: var(--surface-subtle);
+  }
+
+  .install-button:focus-visible,
+  .homepage-link:focus-visible,
+  .section-heading a:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  .source-note {
+    margin-top: 11px;
+    display: block;
+    color: var(--ink-faint);
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .screenshots-section,
+  .about-section,
+  .related-section {
+    padding: 88px 0;
+  }
+
+  .screenshots-section {
+    background: var(--screenshots-section);
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .section-kicker {
+    margin: 0;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  .screenshots-section .section-kicker {
+    color: #60cdff;
+  }
+
+  .section-heading h2,
+  .about-section h2 {
+    margin: 9px 0 0;
+    font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.1;
+    letter-spacing: -.04em;
+  }
+
+  .screenshots-section .section-heading h2 {
+    color: white;
+  }
+
+  .section-heading > span {
+    color: rgba(255,255,255,.48);
+    font-size: 12px;
+  }
+
+  .screenshot-grid {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    grid-auto-rows: 220px;
+    gap: 14px;
+  }
+
+  .screenshot-grid.single {
+    grid-template-columns: minmax(0, 920px);
+    grid-auto-rows: auto;
+  }
+
+  .screenshot-link {
+    position: relative;
+    min-height: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 12px;
+    background: #061f2f;
+  }
+
+  .screenshot-link.featured {
+    grid-row: span 2;
+  }
+
+  .screenshot-grid.single .screenshot-link.featured {
+    grid-row: auto;
+  }
+
+  .screenshot-link img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    transition: transform 260ms ease, opacity 260ms ease;
+  }
+
+  .screenshot-grid.single .screenshot-link img {
+    max-height: 620px;
+  }
+
+  .screenshot-link span {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 6px 9px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    font-size: 10px;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 5px;
+    opacity: 0;
+    background: rgba(4, 24, 35, .76);
+    backdrop-filter: blur(12px);
+    transition: opacity 180ms ease;
+  }
+
+  .screenshot-link:hover img {
+    transform: scale(1.015);
+    opacity: .88;
+  }
+
+  .screenshot-link:hover span {
+    opacity: 1;
+  }
+
+  .about-section {
+    background: var(--surface-strong);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 310px;
+    gap: 100px;
+  }
+
+  .description-copy {
+    max-width: 720px;
+    margin-top: 30px;
+    color: var(--ink-muted);
+    font-size: 16px;
+    line-height: 1.75;
+    white-space: pre-line;
+  }
+
+  .description-copy p {
+    margin: 0 0 20px;
+  }
+
+  .homepage-link {
+    margin-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  aside {
+    align-self: start;
+    padding: 24px;
+    border-left: 1px solid var(--stroke-subtle);
+  }
+
+  dl {
+    margin: 0;
+  }
+
+  dl div + div {
+    margin-top: 22px;
+  }
+
+  dt {
+    color: var(--ink-faint);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 7px 0 0;
+    color: var(--ink);
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  dd a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .tag-list {
+    margin-top: 30px;
+    padding-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    border-top: 1px solid var(--stroke-subtle);
+  }
+
+  .tag-list span {
+    padding: 5px 8px;
+    color: var(--ink-muted);
+    font-size: 10px;
+    border-radius: 4px;
+    background: var(--surface-subtle);
+  }
+
+  .related-section {
+    background: var(--canvas);
+  }
+
+  .related-section .section-heading > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .related-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  footer {
+    padding: 28px 0;
+    color: #8c96a8;
+    background: var(--footer-background);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    font-size: 12px;
+  }
+
+  .footer-inner p {
+    margin: 0;
+    color: #d9deea;
+    font-weight: 600;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 18px;
+  }
+
+  .footer-inner a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .footer-inner a:hover {
+    color: white;
+  }
+
+  :global(.inline-glyph) {
+    font-size: 12px;
+  }
+
+  @keyframes heading-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 960px) {
+    .detail-heading {
+      grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .install-panel {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .install-panel > p,
+    .source-note {
+      display: none;
+    }
+
+    .install-actions {
+      grid-template-columns: repeat(2, minmax(0, 220px));
+    }
+
+    .about-grid {
+      gap: 48px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .detail-inner {
+      width: min(calc(100% - 32px), 1180px);
+    }
+
+    .detail-hero {
+      padding-top: 24px;
+    }
+
+    .detail-heading {
+      margin-top: 44px;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    .icon-wrap {
+      width: 96px;
+      height: 96px;
+      border-radius: 16px;
+    }
+
+    .icon-wrap img {
+      width: 65px;
+      height: 65px;
+    }
+
+    .install-panel {
+      display: block;
+    }
+
+    .install-panel > p,
+    .source-note {
+      display: block;
+    }
+
+    .install-actions {
+      grid-template-columns: 1fr;
+    }
+
+    .screenshots-section,
+    .about-section,
+    .related-section {
+      padding: 66px 0;
+    }
+
+    .screenshot-grid {
+      grid-template-columns: 1fr;
+      grid-auto-rows: auto;
+    }
+
+    .screenshot-link,
+    .screenshot-link.featured {
+      min-height: 180px;
+      grid-row: auto;
+    }
+
+    .screenshot-link img {
+      max-height: 420px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 46px;
+    }
+
+    aside {
+      padding: 24px 0 0;
+      border-top: 1px solid var(--stroke-subtle);
+      border-left: 0;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer-inner {
+      flex-direction: column;
+    }
+
+    .footer-links {
+      justify-content: flex-start;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .detail-heading {
+      animation: none;
+    }
+
+    .screenshot-link img {
+      transition: none;
+    }
+  }
+</style>
