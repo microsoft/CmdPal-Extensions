@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import FluentGlyph from '../components/FluentGlyph.astro';
+import { withBase } from '../data/catalog';
+
+const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
+---
+
+<BaseLayout
+  title="Page not found — Command Palette Extensions"
+  description="The requested Command Palette Extension Gallery page could not be found."
+  noindex
+>
+  <div class="not-found-shell" style={`--not-found-wallpaper: url('${wallpaperUrl}')`}>
+    <Header dark />
+    <main id="main-content">
+      <section class="not-found" aria-labelledby="not-found-title">
+        <div class="not-found-copy">
+          <p class="error-code">404</p>
+          <h1 id="not-found-title">This page isn’t in the palette.</h1>
+          <p class="lede">The link may be out of date, or the extension may have moved.</p>
+          <a class="return-link" href={withBase('/')}>
+            <FluentGlyph code={0xE72B} class="return-glyph" />
+            Return to the Extension Gallery
+          </a>
+          <p class="squirrel-note">The squirrels checked the cache, too.</p>
+        </div>
+
+        <div class="empty-palette" aria-hidden="true">
+          <div class="palette-search">
+            <img src={withBase('/favicon.svg')} alt="" width="20" height="20" />
+            <span>Search extensions...</span>
+          </div>
+          <div class="palette-result">
+            <FluentGlyph code={0xE711} class="result-glyph" />
+            <span>No matching page found</span>
+          </div>
+          <div class="palette-footer">Extension Gallery</div>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .not-found-shell {
+    min-height: 100svh;
+    color: #f8f8fb;
+    background:
+      linear-gradient(112deg, rgba(22, 22, 30, .93), rgba(38, 35, 47, .78) 52%, rgba(72, 55, 64, .48)),
+      var(--not-found-wallpaper) center 38% / cover fixed;
+  }
+
+  main {
+    min-height: calc(100svh - 68px);
+    display: grid;
+    align-items: center;
+  }
+
+  .not-found {
+    width: min(calc(100% - 48px), 1120px);
+    margin: 0 auto;
+    padding: 76px 0 104px;
+    display: grid;
+    grid-template-columns: minmax(0, .82fr) minmax(420px, 1.18fr);
+    align-items: center;
+    gap: clamp(48px, 8vw, 108px);
+  }
+
+  .error-code {
+    margin: 0 0 12px;
+    color: #a9def7;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .16em;
+  }
+
+  h1 {
+    max-width: 580px;
+    margin: 0;
+    font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+    font-size: clamp(42px, 6vw, 68px);
+    font-weight: 650;
+    letter-spacing: -.035em;
+    line-height: 1.04;
+  }
+
+  .lede {
+    max-width: 500px;
+    margin: 22px 0 30px;
+    color: rgba(248, 248, 251, .76);
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+  .return-link {
+    min-height: var(--action-height);
+    padding: 0 var(--action-padding-inline);
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #062334;
+    border-radius: var(--action-radius);
+    background: #60cdff;
+    font-size: 15px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: background 150ms ease, transform 150ms ease;
+  }
+
+  .return-link:hover {
+    background: #8cddff;
+    transform: translateY(-1px);
+  }
+
+  .return-link:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+  }
+
+  .return-link :global(.return-glyph) {
+    font-size: 15px;
+  }
+
+  .squirrel-note {
+    margin: 18px 0 0;
+    color: rgba(248, 248, 251, .42);
+    font-size: 12px;
+  }
+
+  .empty-palette {
+    overflow: hidden;
+    min-height: 258px;
+    border: 1px solid #45454b;
+    border-radius: 8px;
+    background: rgba(25, 25, 31, .64);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, .38);
+    backdrop-filter: blur(34px) saturate(1.15);
+  }
+
+  .palette-search,
+  .palette-result,
+  .palette-footer {
+    font-size: 14px;
+  }
+
+  .palette-search {
+    height: 58px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: rgba(255, 255, 255, .72);
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+  }
+
+  .palette-search img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .palette-result {
+    height: 44px;
+    margin: 6px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, .76);
+    background: rgba(255, 255, 255, .08);
+  }
+
+  .palette-result :global(.result-glyph) {
+    width: 20px;
+    color: rgba(255, 255, 255, .54);
+    font-size: 20px;
+  }
+
+  .palette-footer {
+    min-height: 44px;
+    margin-top: 98px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: rgba(255, 255, 255, .42);
+    border-top: 1px solid rgba(255, 255, 255, .08);
+  }
+
+  :global(html[data-palette='legacy']) .not-found-shell {
+    color: var(--ink);
+    background: var(--classic-desktop);
+  }
+
+  :global(html[data-palette='legacy']) .error-code,
+  :global(html[data-palette='legacy']) .lede,
+  :global(html[data-palette='legacy']) .squirrel-note {
+    color: #ffffff;
+  }
+
+  :global(html[data-palette='legacy']) .return-link,
+  :global(html[data-palette='legacy']) .empty-palette {
+    color: var(--ink);
+    border: 2px outset var(--classic-face);
+    border-radius: 0;
+    background: var(--classic-face);
+    box-shadow: 3px 3px 0 var(--classic-dark-shadow);
+    backdrop-filter: none;
+  }
+
+  :global(html[data-palette='legacy']) .return-link:active {
+    border-style: inset;
+  }
+
+  :global(html[data-palette='legacy']) :is(.palette-search, .palette-result, .palette-footer) {
+    color: var(--ink);
+    border-color: var(--classic-shadow);
+  }
+
+  :global(html[data-palette='legacy']) .palette-result {
+    background: var(--classic-highlight);
+  }
+
+  @media (max-width: 820px) {
+    .not-found {
+      grid-template-columns: 1fr;
+      padding-top: 56px;
+    }
+
+    .empty-palette {
+      min-height: 226px;
+    }
+
+    .palette-footer {
+      margin-top: 66px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .not-found {
+      width: min(calc(100% - 32px), 1120px);
+      padding: 44px 0 72px;
+      gap: 44px;
+    }
+
+    h1 {
+      font-size: 42px;
+    }
+
+    .lede {
+      font-size: 16px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .return-link {
+      transition: none;
+    }
+
+    .return-link:hover {
+      transform: none;
+    }
+  }
+</style>

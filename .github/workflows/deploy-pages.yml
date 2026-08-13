@@ -31,8 +31,8 @@ jobs:
         with:
           path: ./pages
         env:
-          ASTRO_SITE: "https://${{ github.repository_owner }}.github.io"
-          ASTRO_BASE: "/${{ github.event.repository.name }}"
+          ASTRO_SITE: "${{ vars.CMDPAL_GALLERY_SITE || format('https://{0}.github.io', github.repository_owner) }}"
+          ASTRO_BASE: "${{ vars.CMDPAL_GALLERY_BASE || format('/{0}', github.event.repository.name) }}"
 
   deploy:
     needs: build

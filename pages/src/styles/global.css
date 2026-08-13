@@ -5,12 +5,12 @@
   --surface-subtle: #ece9f0;
   --ink: #292733;
   --ink-muted: #625d6c;
-  --ink-faint: #85808f;
+  --ink-faint: #686271;
   --stroke: #cbc7d1;
   --stroke-subtle: #dfdbe3;
   --accent: #0067c0;
   --accent-hover: #005a9e;
-  --focus: #60cdff;
+  --focus: #005a9e;
   --hero: #2c2a36;
   --hero-secondary: #514754;
   --hero-gradient: linear-gradient(122deg, rgba(35, 35, 46, .99) 0%, rgba(52, 48, 60, .97) 50%, rgba(72, 58, 66, .95) 100%);
@@ -55,11 +55,12 @@ html[data-theme='dark'] {
   --surface-subtle: #292a35;
   --ink: #f5f3f7;
   --ink-muted: #c2bec9;
-  --ink-faint: #928d9b;
+  --ink-faint: #9994a2;
   --stroke: #4b4855;
   --stroke-subtle: #34323e;
   --accent: #60cdff;
   --accent-hover: #8cddff;
+  --focus: #60cdff;
   --on-accent: #062334;
   --surface-strong: #21222c;
   --surface-translucent: rgba(35, 34, 45, .78);
@@ -97,10 +98,10 @@ html[data-theme='light'][data-palette='teal'] {
   --surface-subtle: #e9f1f6;
   --ink: #1b2733;
   --ink-muted: #526574;
-  --ink-faint: #748695;
+  --ink-faint: #596b79;
   --stroke: #c5d2dc;
   --stroke-subtle: #d9e3ea;
-  --accent: #0078d4;
+  --accent: #0067b8;
   --accent-hover: #0067b8;
   --detail-hero-layer: linear-gradient(125deg, rgba(253, 255, 255, .96), rgba(231, 246, 252, .9));
 }
@@ -138,7 +139,7 @@ html[data-palette='legacy'] {
   --surface-hover: #d4d0c8;
   --ink: #000000;
   --ink-muted: #333333;
-  --ink-faint: #666666;
+  --ink-faint: #3d3d3d;
   --stroke: var(--classic-shadow);
   --stroke-subtle: var(--classic-shadow);
   --accent: #000080;
@@ -281,6 +282,11 @@ html[data-palette='legacy'] footer {
   border-top: 2px outset var(--classic-face);
 }
 
+html[data-palette='legacy'] footer,
+html[data-palette='legacy'] footer :is(p, a) {
+  color: var(--ink) !important;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -306,6 +312,32 @@ select {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration-thickness: .08em;
+  text-underline-offset: .16em;
+}
+
+html a:is(:hover, :focus-visible):not(:where(
+  .brand,
+  .button,
+  .install-link,
+  .github-link,
+  .card-link,
+  .install-button,
+  .screenshot-link,
+  .profile-link,
+  .homepage-link,
+  .return-link
+)) {
+  /* Keep this accessibility affordance above component-level decoration resets. */
+  text-decoration-line: underline !important;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
 }
 
 img {

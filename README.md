@@ -7,6 +7,8 @@
   The official community gallery for <a href="https://github.com/microsoft/PowerToys">Command Palette</a> extensions.
 </p>
 <h3 align="center">
+  <a href="https://microsoft.github.io/CmdPal-Extensions/">Browse the web gallery</a>
+  <span> · </span>
   <a href="https://learn.microsoft.com/windows/powertoys/command-palette/extension-development">Create your own extension</a>
   <span> · </span>
   <a href="#-submit-your-extension">Submit an extension</a>

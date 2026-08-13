@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+---
+
+<BaseLayout
+  title="Privacy — Command Palette Extensions"
+  description="What the Command Palette Extension Gallery stores in your browser."
+>
+  <div class="privacy-shell">
+    <Header />
+    <main id="main-content">
+      <header class="privacy-hero">
+        <div class="page-inner">
+          <p class="section-kicker">Privacy</p>
+          <h1>Your display preferences stay in this browser</h1>
+          <p class="lede">The gallery does not use cookies. It stores only the appearance choices you make on this device.</p>
+        </div>
+      </header>
+
+      <article class="privacy-content page-inner">
+        <section aria-labelledby="stored-preferences">
+          <h2 id="stored-preferences">Stored on this device</h2>
+          <p>
+            The gallery saves two appearance preferences in your browser’s local storage. The gallery reads them only to
+            restore the look you selected.
+          </p>
+          <dl class="storage-list">
+            <div>
+              <dt><code>cmdpal-gallery-theme</code></dt>
+              <dd>Your light, dark, or automatic theme preference.</dd>
+            </div>
+            <div>
+              <dt><code>cmdpal-gallery-style</code></dt>
+              <dd>Your Aero, teal, or legacy visual style preference.</dd>
+            </div>
+          </dl>
+          <p>These preferences do not contain your name, account details, searches, or extension activity.</p>
+        </section>
+
+        <section aria-labelledby="remove-preferences">
+          <h2 id="remove-preferences">Remove your preferences</h2>
+          <p>
+            You can remove both values at any time by clearing this site’s stored data in your browser. The gallery will
+            return to the automatic color theme and Aero visual style on your next visit.
+          </p>
+        </section>
+      </article>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .privacy-shell {
+    min-height: 100svh;
+    background: var(--canvas);
+  }
+
+  .page-inner {
+    width: min(calc(100% - 48px), 900px);
+    margin: 0 auto;
+  }
+
+  .privacy-hero {
+    padding: 86px 0 64px;
+    border-top: 1px solid var(--stroke-subtle);
+    border-bottom: 1px solid var(--stroke-subtle);
+    background:
+      radial-gradient(circle at 78% 16%, var(--gallery-glow), transparent 32%),
+      var(--surface-subtle);
+  }
+
+  .section-kicker {
+    margin: 0 0 12px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0;
+    font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-feature-settings: "init";
+    font-size: 32px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .lede {
+    max-width: 680px;
+    margin: 16px 0 0;
+    color: var(--ink-muted);
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+  .privacy-content {
+    padding: 22px 0 96px;
+  }
+
+  section {
+    padding: 42px 0;
+    border-bottom: 1px solid var(--stroke-subtle);
+  }
+
+  section:last-child {
+    border-bottom: 0;
+  }
+
+  h2 {
+    margin: 0 0 15px;
+    font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  p {
+    max-width: 780px;
+    margin: 0 0 16px;
+    color: var(--ink-muted);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .storage-list {
+    margin: 26px 0;
+    overflow: hidden;
+    border: 1px solid var(--stroke-subtle);
+    border-radius: 8px;
+    background: var(--surface-strong);
+  }
+
+  .storage-list div {
+    padding: 20px 22px;
+    display: grid;
+    grid-template-columns: minmax(210px, .72fr) minmax(0, 1.28fr);
+    gap: 24px;
+  }
+
+  .storage-list div + div {
+    border-top: 1px solid var(--stroke-subtle);
+  }
+
+  dt,
+  dd {
+    margin: 0;
+  }
+
+  dt {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  dd {
+    color: var(--ink-muted);
+    line-height: 1.55;
+  }
+
+  code {
+    font-family: "Cascadia Mono", Consolas, monospace;
+    font-size: .9em;
+  }
+
+  :global(html[data-palette='legacy']) .privacy-hero {
+    border: 0;
+    border-bottom: 2px outset var(--classic-face);
+    background: var(--classic-title);
+  }
+
+  :global(html[data-palette='legacy']) .privacy-hero :is(h1, .section-kicker, .lede) {
+    color: #ffffff;
+  }
+
+  :global(html[data-palette='legacy']) .section-kicker {
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  :global(html[data-palette='legacy']) .storage-list {
+    border: 2px inset var(--classic-face);
+    border-radius: 0;
+    background: var(--surface-strong);
+  }
+
+  @media (max-width: 620px) {
+    .page-inner {
+      width: min(calc(100% - 32px), 900px);
+    }
+
+    .privacy-hero {
+      padding: 58px 0 48px;
+    }
+
+    .privacy-content {
+      padding-bottom: 64px;
+    }
+
+    .storage-list div {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+  }
+</style>

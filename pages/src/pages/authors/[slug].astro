@@ -4,7 +4,7 @@ import Header from '../../components/Header.astro';
 import ExtensionCard from '../../components/ExtensionCard.astro';
 import FluentGlyph from '../../components/FluentGlyph.astro';
 import AuthorAvatar from '../../components/AuthorAvatar.astro';
-import { authors, toCmdPalGalleryUrl, toLocalAsset, withBase, type CatalogAuthor } from '../../data/catalog';
+import { authors, toLocalAsset, withBase, type CatalogAuthor } from '../../data/catalog';
 
 export function getStaticPaths() {
   return authors.map((author) => ({
@@ -75,16 +75,6 @@ const featuredIcons = author.extensions.slice(0, 4);
     </section>
   </main>
 
-  <footer>
-    <div class="page-inner footer-inner">
-      <p>Command Palette Extensions</p>
-      <div class="footer-links">
-        <a href={toCmdPalGalleryUrl()}>Open app gallery</a>
-        <a href="https://learn.microsoft.com/en-us/windows/powertoys/command-palette/overview">About Command Palette</a>
-        <a href="https://github.com/microsoft/CmdPal-Extensions">GitHub</a>
-      </div>
-    </div>
-  </footer>
 </BaseLayout>
 
 <style>
@@ -267,43 +257,6 @@ const featuredIcons = author.extensions.slice(0, 4);
     gap: 16px;
   }
 
-  footer {
-    padding: 28px 0;
-    color: #8c96a8;
-    background: var(--footer-background);
-  }
-
-  .footer-inner,
-  .footer-links {
-    display: flex;
-    align-items: center;
-  }
-
-  .footer-inner {
-    justify-content: space-between;
-    gap: 24px;
-    font-size: 12px;
-  }
-
-  .footer-inner p {
-    margin: 0;
-    color: #d9deea;
-    font-weight: 600;
-  }
-
-  .footer-links {
-    gap: 20px;
-  }
-
-  .footer-links a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .footer-links a:hover {
-    color: white;
-  }
-
   @keyframes heading-in {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
@@ -365,15 +318,6 @@ const featuredIcons = author.extensions.slice(0, 4);
       grid-template-columns: 1fr;
     }
 
-    .footer-inner,
-    .footer-links {
-      align-items: flex-start;
-      flex-direction: column;
-    }
-
-    .footer-links {
-      gap: 12px;
-    }
   }
 
   @media (prefers-reduced-motion: reduce) {

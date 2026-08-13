@@ -77,7 +77,7 @@ export const toAuthorSlug = (author: ExtensionAuthor) => {
   return slugify(author.name);
 };
 
-export const toAuthorPageUrl = (author: ExtensionAuthor) => withBase(`/authors/${toAuthorSlug(author)}`);
+export const toAuthorPageUrl = (author: ExtensionAuthor) => withBase(`/authors/${toAuthorSlug(author)}/`);
 
 export const toAuthorAvatarUrl = (author: ExtensionAuthor) => {
   if (author.url) {
@@ -85,7 +85,9 @@ export const toAuthorAvatarUrl = (author: ExtensionAuthor) => {
       const url = new URL(author.url);
       if (url.hostname.toLocaleLowerCase() === 'github.com') {
         const owner = url.pathname.split('/').filter(Boolean)[0];
-        if (owner) return `https://github.com/${encodeURIComponent(owner)}.png?size=160`;
+        // Use the avatar CDN directly. The github.com avatar shortcut redirects
+        // and can emit GitHub cookies before serving the same image.
+        if (owner) return `https://avatars.githubusercontent.com/${encodeURIComponent(owner)}?s=160`;
       }
     } catch { /* Non-URL publisher values use the glyph fallback. */ }
   }
@@ -137,7 +139,7 @@ export const toLocalAsset = (url: string) => {
     .join('/')}`);
 };
 
-export const toExtensionPageUrl = (extensionId: string) => withBase(`/extensions/${extensionId}`);
+export const toExtensionPageUrl = (extensionId: string) => withBase(`/extensions/${extensionId}/`);
 
 export const toStoreUrl = (id: string) => `https://apps.microsoft.com/detail/${id}`;
 

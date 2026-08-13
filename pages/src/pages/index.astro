@@ -43,7 +43,7 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
             <div class="hero-actions">
               <a class="button button-primary" href="#gallery">Explore extensions</a>
               <a class="button button-quiet" href={toCmdPalGalleryUrl()}>
-                Open app gallery <FluentGlyph code={0xE8A7} class="inline-glyph" />
+                Open Extension Gallery <FluentGlyph code={0xE8A7} class="inline-glyph" />
               </a>
             </div>
             <div class="hero-meta" aria-label="Gallery statistics">
@@ -112,10 +112,10 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
           </div>
 
           <div class="category-row" aria-label="Filter by category">
-            <button class="category-button selected" type="button" data-category="all" aria-pressed="true">All</button>
+            <button class="category-button selected" type="button" data-category="all" aria-pressed="true" aria-label={`All, ${catalog.extensionCount} extensions`}>All</button>
             {categoryEntries.map(([category, count]) => (
-              <button class="category-button" type="button" data-category={category} aria-pressed="false">
-                {categoryLabels[category] ?? category}<span>{count}</span>
+              <button class="category-button" type="button" data-category={category} aria-pressed="false" aria-label={`${categoryLabels[category] ?? category}, ${count} extensions`}>
+                {categoryLabels[category] ?? category}<span aria-hidden="true">{count}</span>
               </button>
             ))}
           </div>
@@ -148,19 +148,6 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
       </section>
     </main>
   </div>
-
-  <footer>
-    <div class="footer-inner">
-      <p>Command Palette Extensions</p>
-      <div>
-        <a href={toCmdPalGalleryUrl()}>Open app gallery</a>
-        <a href="https://github.com/microsoft/CmdPal-Extensions">GitHub</a>
-        <a href="https://learn.microsoft.com/en-us/windows/powertoys/command-palette/overview">About Command Palette</a>
-        <a href="https://learn.microsoft.com/en-us/windows/powertoys/install?tabs=gh%2Cextract-094">Install PowerToys</a>
-        <a href="https://opensource.microsoft.com/codeofconduct/">Code of Conduct</a>
-      </div>
-    </div>
-  </footer>
 
   <script>
     const searchInput = document.querySelector<HTMLInputElement>('#extension-search');
@@ -611,8 +598,7 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
   }
 
   .gallery-inner,
-  .contribute-inner,
-  .footer-inner {
+  .contribute-inner {
     width: min(calc(100% - 48px), 1320px);
     margin: 0 auto;
   }
@@ -709,7 +695,7 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
   .search-shortcut {
     flex: none;
     padding: 4px 7px;
-    color: var(--ink-faint);
+    color: var(--ink-muted);
     font-size: 10px;
     border: 1px solid var(--stroke-subtle);
     border-radius: 4px;
@@ -718,7 +704,7 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
 
   .sort-field {
     grid-column: 3;
-    justify-self: end;
+    justify-self: start;
     height: 48px;
     padding-left: 0;
     display: flex;
@@ -738,6 +724,17 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
     border: 0;
     outline: 0;
     background: transparent;
+  }
+
+  .sort-field select option {
+    color: var(--ink);
+    background: var(--surface-strong);
+  }
+
+  .sort-field select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+    border-radius: 4px;
   }
 
   .category-row {
@@ -880,40 +877,6 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
     margin-left: 4px;
     color: #60cdff;
     font-size: 12px;
-  }
-
-  footer {
-    padding: 28px 0;
-    color: #8c96a8;
-    background: var(--footer-background);
-  }
-
-  .footer-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    font-size: 12px;
-  }
-
-  .footer-inner p {
-    margin: 0;
-    color: #d9deea;
-    font-weight: 600;
-  }
-
-  .footer-inner div {
-    display: flex;
-    gap: 24px;
-  }
-
-  .footer-inner a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .footer-inner a:hover {
-    color: white;
   }
 
   :global(html[data-palette='teal']) .hero {
@@ -1163,6 +1126,12 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
     background: var(--surface-strong);
   }
 
+  :global(html[data-palette='legacy']) .sort-field select:focus-visible {
+    outline: 1px dotted var(--ink);
+    outline-offset: -5px;
+    border-radius: 0;
+  }
+
   :global(html[data-palette='legacy']) .category-button {
     color: var(--ink);
     border: 2px outset var(--classic-face);
@@ -1193,17 +1162,6 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
     border-top: 2px outset var(--classic-face);
     border-bottom: 2px outset var(--classic-face);
     background: var(--classic-title);
-  }
-
-  :global(html[data-palette='legacy']) footer {
-    color: var(--ink);
-    border-top: 2px outset var(--classic-face);
-    background: var(--classic-face);
-  }
-
-  :global(html[data-palette='legacy']) .footer-inner p,
-  :global(html[data-palette='legacy']) .footer-inner a {
-    color: var(--ink);
   }
 
   @keyframes hero-copy-in {
@@ -1271,8 +1229,7 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
   @media (max-width: 600px) {
     .hero-inner,
     .gallery-inner,
-    .contribute-inner,
-    .footer-inner {
+    .contribute-inner {
       width: min(calc(100% - 32px), 1320px);
     }
 
@@ -1366,15 +1323,6 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
       grid-template-columns: 1fr;
     }
 
-    .footer-inner {
-      align-items: flex-start;
-      flex-direction: column;
-    }
-
-    .footer-inner div {
-      flex-direction: column;
-      gap: 12px;
-    }
   }
 
   @media (prefers-reduced-motion: reduce) {

@@ -1,0 +1,82 @@
+---
+import { toCmdPalGalleryUrl, withBase } from '../data/catalog';
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Command Palette Extensions</p>
+    <nav aria-label="Footer navigation">
+      <a href={toCmdPalGalleryUrl()}>Open Extension Gallery in Command Palette</a>
+      <a href="https://github.com/microsoft/CmdPal-Extensions">GitHub</a>
+      <a href="https://learn.microsoft.com/en-us/windows/powertoys/command-palette/overview">About Command Palette</a>
+      <a href="https://learn.microsoft.com/en-us/windows/powertoys/install?tabs=gh%2Cextract-094">Install PowerToys</a>
+      <a href="https://opensource.microsoft.com/codeofconduct/">Code of Conduct</a>
+      <a href={withBase('/privacy/')}>Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 28px 0;
+    color: #8c96a8;
+    border-top: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+    background: var(--footer-background);
+  }
+
+  .footer-inner {
+    width: min(calc(100% - 48px), 1320px);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    font-size: 12px;
+  }
+
+  p {
+    margin: 0;
+    color: #d9deea;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px 22px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:is(:hover, :focus-visible) {
+    color: #ffffff;
+  }
+
+  :global(html[data-palette='legacy']) .site-footer {
+    border-top: 2px outset var(--classic-face);
+    background: var(--classic-face);
+  }
+
+  :global(html[data-palette='legacy']) .site-footer,
+  :global(html[data-palette='legacy']) .site-footer p,
+  :global(html[data-palette='legacy']) .site-footer a {
+    color: var(--ink);
+  }
+
+  @media (max-width: 720px) {
+    .footer-inner {
+      width: min(calc(100% - 32px), 1320px);
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    nav {
+      justify-content: flex-start;
+    }
+  }
+</style>
