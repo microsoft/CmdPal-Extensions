@@ -80,8 +80,9 @@ export const toAuthorPageUrl = (author: ExtensionAuthor) => withBase(`/authors/$
 export const toAuthorAvatarUrl = (author: ExtensionAuthor) => {
   try {
     const url = new URL(author.url);
-    if (url.hostname.toLocaleLowerCase() === 'github.com' && url.pathname.split('/').filter(Boolean)[0]) {
-      return withBase(`/authors/${toAuthorSlug(author)}.png`);
+    if (url.hostname.toLocaleLowerCase() === 'github.com') {
+      const owner = url.pathname.split('/').filter(Boolean)[0];
+      if (owner) return `https://github.com/${encodeURIComponent(owner)}.png?size=160`;
     }
   } catch { /* Non-URL publisher values use the glyph fallback. */ }
 
