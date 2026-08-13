@@ -223,7 +223,8 @@ const wallpaperUrl = withBase('/assets/windows-11-sunrise-dunes.jpg');
       if ((event.ctrlKey || event.metaKey) && event.key.toLocaleLowerCase() === 'k') {
         event.preventDefault();
         searchInput?.focus();
-        searchInput?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+        searchInput?.scrollIntoView({ block: 'center', behavior });
       }
     });
   </script>

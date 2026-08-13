@@ -7,7 +7,7 @@ export interface InstallSource {
 
 export interface ExtensionAuthor {
   name: string;
-  url: string;
+  url?: string;
 }
 
 export interface Extension {
@@ -16,7 +16,7 @@ export interface Extension {
   shortDescription: string;
   description: string;
   author: ExtensionAuthor;
-  homepage: string;
+  homepage?: string;
   tags: string[];
   categories: string[];
   installSources: InstallSource[];
@@ -64,13 +64,15 @@ const basePath = import.meta.env.BASE_URL === '/'
 export const withBase = (path: string) => `${basePath}${path}` || '/';
 
 export const toAuthorSlug = (author: ExtensionAuthor) => {
-  try {
-    const url = new URL(author.url);
-    if (url.hostname.toLocaleLowerCase() === 'github.com') {
-      const owner = url.pathname.split('/').filter(Boolean)[0];
-      if (owner) return slugify(owner);
-    }
-  } catch { /* Fall back to the publisher name for non-URL values. */ }
+  if (author.url) {
+    try {
+      const url = new URL(author.url);
+      if (url.hostname.toLocaleLowerCase() === 'github.com') {
+        const owner = url.pathname.split('/').filter(Boolean)[0];
+        if (owner) return slugify(owner);
+      }
+    } catch { /* Fall back to the publisher name for non-URL values. */ }
+  }
 
   return slugify(author.name);
 };
@@ -78,13 +80,15 @@ export const toAuthorSlug = (author: ExtensionAuthor) => {
 export const toAuthorPageUrl = (author: ExtensionAuthor) => withBase(`/authors/${toAuthorSlug(author)}`);
 
 export const toAuthorAvatarUrl = (author: ExtensionAuthor) => {
-  try {
-    const url = new URL(author.url);
-    if (url.hostname.toLocaleLowerCase() === 'github.com') {
-      const owner = url.pathname.split('/').filter(Boolean)[0];
-      if (owner) return `https://github.com/${encodeURIComponent(owner)}.png?size=160`;
-    }
-  } catch { /* Non-URL publisher values use the glyph fallback. */ }
+  if (author.url) {
+    try {
+      const url = new URL(author.url);
+      if (url.hostname.toLocaleLowerCase() === 'github.com') {
+        const owner = url.pathname.split('/').filter(Boolean)[0];
+        if (owner) return `https://github.com/${encodeURIComponent(owner)}.png?size=160`;
+      }
+    } catch { /* Non-URL publisher values use the glyph fallback. */ }
+  }
 
   return undefined;
 };

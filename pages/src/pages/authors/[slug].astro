@@ -19,7 +19,7 @@ interface Props {
 
 const { author } = Astro.props;
 const extensionWord = author.extensions.length === 1 ? 'extension' : 'extensions';
-const profileLabel = author.url.includes('github.com') ? 'View GitHub profile' : 'Visit publisher website';
+const profileLabel = author.url?.includes('github.com') ? 'View GitHub profile' : 'Visit publisher website';
 const featuredIcons = author.extensions.slice(0, 4);
 ---
 
@@ -42,9 +42,11 @@ const featuredIcons = author.extensions.slice(0, 4);
             <p class="section-kicker">Extension publisher</p>
             <h1 id="author-title">{author.name}</h1>
             <p>{author.extensions.length} community {extensionWord} in the Command Palette catalog.</p>
-            <a class="profile-link" href={author.url}>
-              {profileLabel} <FluentGlyph code={0xE8A7} class="inline-glyph" />
-            </a>
+            {author.url && (
+              <a class="profile-link" href={author.url}>
+                {profileLabel} <FluentGlyph code={0xE8A7} class="inline-glyph" />
+              </a>
+            )}
           </div>
           <div class="icon-plane" aria-hidden="true">
             {featuredIcons.map((extension, index) => (

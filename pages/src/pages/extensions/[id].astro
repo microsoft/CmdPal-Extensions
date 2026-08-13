@@ -104,7 +104,9 @@ const related = catalog.extensions
           <div class="description-copy">
             {descriptionParagraphs.map((paragraph) => <p>{paragraph}</p>)}
           </div>
-          <a class="homepage-link" href={extension.homepage}>Visit the project homepage <FluentGlyph code={0xE8A7} class="inline-glyph" /></a>
+          {extension.homepage && (
+            <a class="homepage-link" href={extension.homepage}>Visit the project homepage <FluentGlyph code={0xE8A7} class="inline-glyph" /></a>
+          )}
         </article>
         <aside aria-label="Extension details">
           <dl>
