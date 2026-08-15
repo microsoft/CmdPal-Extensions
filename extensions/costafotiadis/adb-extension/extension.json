@@ -16,6 +16,10 @@
     {
       "type": "msstore",
       "id": "9NHDX4XWCNGS"
+    },
+    {
+      "type": "winget",
+      "id": "CostaFotiadis.ADBExtensionforCommandPalette"
     }
   ]
 }
