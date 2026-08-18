@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-08-16T18:00:49Z",
-  "extensionCount": 77,
+  "generatedAt": "2026-08-18T18:01:22Z",
+  "extensionCount": 78,
   "extensions": [
     {
       "id": "8lwxpg.process-killer",
@@ -1726,6 +1726,39 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nicholasbrantley/bin-meter/screenshots/03-file-list.png"
       ],
       "addedAt": "2026-08-04"
+    },
+    {
+      "id": "nickknissen.home-assistant-command-palette",
+      "title": "Home Assistant",
+      "shortDescription": "Search and control your Home Assistant entities, run scripts and scenes, and ask Assist, without leaving Command Palette.",
+      "description": "Control your Home Assistant instance from Command Palette. The extension exposes per-domain pages for lights, switches, scenes, scripts, climate, cameras, sensors and helpers, plus pages for your calendars, Assist, and any Home Assistant action.\n\nPress Enter on an entity to toggle, turn on, run or press it; entities without a direct service action open in your Home Assistant dashboard. Lights offer brightness and colour presets, covers and fans expose position and speed, and media players get transport controls, all from the context menu.\n\nAll Entities covers everything on the instance. It opens on whatever changed most recently, loads more entities as you scroll, and search matches the friendly name, the entity ID, or the area a device sits in.\n\nYou provide the URL of your instance and a long-lived access token in settings, plus optional custom HTTP headers for proxies such as Cloudflare Access. Requests go directly from your machine to your Home Assistant. Nothing is sent to the developer or any third party, and there is no telemetry.\n\nRequires Windows 10 2004 or later, Microsoft PowerToys with Command Palette support, and a reachable Home Assistant instance (2024.04 or newer).",
+      "author": {
+        "name": "Nick Nissen",
+        "url": "https://github.com/nickknissen"
+      },
+      "homepage": "https://github.com/nickknissen/HomeAssistantCommandPalette",
+      "tags": [
+        "home-assistant",
+        "smart-home",
+        "automation",
+        "iot",
+        "lights"
+      ],
+      "categories": [
+        "utilities-and-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9PLX81TTCZ6H"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nickknissen/home-assistant-command-palette/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/nickknissen/home-assistant-command-palette/screenshots/01-all-entities.png"
+      ],
+      "addedAt": "2026-08-18"
     },
     {
       "id": "nickknissen.tableplus-command-palette",
