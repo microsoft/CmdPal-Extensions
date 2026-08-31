@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-08-18T18:01:22Z",
-  "extensionCount": 78,
+  "generatedAt": "2026-08-31T14:00:56Z",
+  "extensionCount": 80,
   "extensions": [
     {
       "id": "8lwxpg.process-killer",
@@ -78,8 +78,8 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/01-conversion.png",
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/02-conversion-crypto.png",
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/03-conversion-math.png",
-        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/04-todays-rates.png",
-        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/05-home.png"
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/04-pinned-conversions.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/05-aliases.png"
       ],
       "addedAt": "2026-04-15"
     },
@@ -185,6 +185,66 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/bdbai/base64-converter/screenshots/02-decode-view.png"
       ],
       "addedAt": "2026-05-10"
+    },
+    {
+      "id": "brunnobb.change-audio-device",
+      "title": "Change Audio Device",
+      "shortDescription": "Quickly switch default Windows audio input and output devices directly from Command Palette.",
+      "description": "A native Windows PowerToys Command Palette extension that allows users to quickly view, select, and switch default audio input (microphones) and output (speakers, headphones) devices directly from the Command Palette interface.\n\nFeatures:\n- Quick Audio Switching: Change the default Windows input or output audio device with a single keystroke or click.\n- Console, Multimedia & Communications Routing: Programmatically switches devices for all roles (Console, Multimedia, and Communications) to ensure apps like Discord, Teams, and games update correctly.\n- Dynamic Device List: Queries active audio endpoints dynamically using low-level Windows Core Audio APIs (WASAPI).\n- Active Device Highlighting: Displays the currently active/default device with an (Active) indicator.",
+      "author": {
+        "name": "Brunno Bettini",
+        "url": "https://github.com/brunnobb"
+      },
+      "homepage": "https://github.com/brunnobb/ChangeAudioDeviceCommandPalleteExtension",
+      "tags": [
+        "audio",
+        "sound",
+        "microphone",
+        "speaker",
+        "device"
+      ],
+      "categories": [
+        "utilities-and-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NWJJ3N6K675"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/brunnobb/change-audio-device/icon.png",
+      "addedAt": "2026-08-31"
+    },
+    {
+      "id": "brunnobb.hyperkey",
+      "title": "HyperKey",
+      "shortDescription": "Transform Caps Lock into a powerful HyperKey modifier (Ctrl+Shift+Alt+Win) with quick tap detection.",
+      "description": "A PowerToys Command Palette extension that adds HyperKey functionality to Windows. It allows you to use your CapsLock key as a powerful modifier key that simulates holding down Ctrl + Shift + Alt + Win.\n\nFeatures:\n- HyperKey Modifier: Hold the configured modifier key and press any other key to trigger shortcuts bound to the remapped chord.\n- Customizable Modifier Key: Choose the activation key from standard options like Caps Lock, Left/Right Ctrl, Left/Right Shift, Left/Right Alt, Left/Right Win, function keys F1 through F12, or None.\n- Include Shift Key Option: Toggle whether the simulated modifier chord includes the Shift key.\n- Quick Press (Original Function): Press and release the modifier key quickly (within 300 ms) to toggle or trigger its original function.\n- Dynamic Command Palette Toggle: A single 'Activate/Deactivate HyperKey' command within the PowerToys Command Palette manages the hook.",
+      "author": {
+        "name": "Brunno Bettini",
+        "url": "https://github.com/brunnobb"
+      },
+      "homepage": "https://github.com/brunnobb/HyperKeyCommandPalleteExtension",
+      "tags": [
+        "hyperkey",
+        "keyboard",
+        "shortcuts",
+        "capslock",
+        "productivity"
+      ],
+      "categories": [
+        "utilities-and-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P83L6R3B73T"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/brunnobb/hyperkey/icon.png",
+      "addedAt": "2026-08-31"
     },
     {
       "id": "caolib.project-opener",
