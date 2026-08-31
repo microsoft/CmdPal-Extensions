@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "brunnobb.hyperkey",
+  "title": "HyperKey",
+  "shortDescription": "Transform Caps Lock into a powerful HyperKey modifier (Ctrl+Shift+Alt+Win) with quick tap detection.",
+  "description": "A PowerToys Command Palette extension that adds HyperKey functionality to Windows. It allows you to use your CapsLock key as a powerful modifier key that simulates holding down Ctrl + Shift + Alt + Win.\n\nFeatures:\n- HyperKey Modifier: Hold the configured modifier key and press any other key to trigger shortcuts bound to the remapped chord.\n- Customizable Modifier Key: Choose the activation key from standard options like Caps Lock, Left/Right Ctrl, Left/Right Shift, Left/Right Alt, Left/Right Win, function keys F1 through F12, or None.\n- Include Shift Key Option: Toggle whether the simulated modifier chord includes the Shift key.\n- Quick Press (Original Function): Press and release the modifier key quickly (within 300 ms) to toggle or trigger its original function.\n- Dynamic Command Palette Toggle: A single 'Activate/Deactivate HyperKey' command within the PowerToys Command Palette manages the hook.",
+  "author": {
+    "name": "Brunno Bettini",
+    "url": "https://github.com/brunnobb"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/brunnobb/HyperKeyCommandPalleteExtension",
+  "tags": [
+    "hyperkey",
+    "keyboard",
+    "shortcuts",
+    "capslock",
+    "productivity"
+  ],
+  "categories": [
+    "utilities-and-tools",
+    "productivity"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P83L6R3B73T"
+    }
+  ]
+}
