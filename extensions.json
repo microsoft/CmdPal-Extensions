@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-08-18T18:01:22Z",
+  "generatedAt": "2026-08-31T05:34:16Z",
   "extensionCount": 78,
   "extensions": [
     {
@@ -78,8 +78,8 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/01-conversion.png",
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/02-conversion-crypto.png",
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/03-conversion-math.png",
-        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/04-todays-rates.png",
-        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/05-home.png"
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/04-pinned-conversions.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/advaith/currency-converter/screenshots/05-aliases.png"
       ],
       "addedAt": "2026-04-15"
     },
