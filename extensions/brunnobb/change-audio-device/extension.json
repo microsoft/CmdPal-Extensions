@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "brunnobb.change-audio-device",
+  "title": "Change Audio Device",
+  "shortDescription": "Quickly switch default Windows audio input and output devices directly from Command Palette.",
+  "description": "A native Windows PowerToys Command Palette extension that allows users to quickly view, select, and switch default audio input (microphones) and output (speakers, headphones) devices directly from the Command Palette interface.\n\nFeatures:\n- Quick Audio Switching: Change the default Windows input or output audio device with a single keystroke or click.\n- Console, Multimedia & Communications Routing: Programmatically switches devices for all roles (Console, Multimedia, and Communications) to ensure apps like Discord, Teams, and games update correctly.\n- Dynamic Device List: Queries active audio endpoints dynamically using low-level Windows Core Audio APIs (WASAPI).\n- Active Device Highlighting: Displays the currently active/default device with an (Active) indicator.",
+  "author": {
+    "name": "Brunno Bettini",
+    "url": "https://github.com/brunnobb"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/brunnobb/ChangeAudioDeviceCommandPalleteExtension",
+  "tags": [
+    "audio",
+    "sound",
+    "microphone",
+    "speaker",
+    "device"
+  ],
+  "categories": [
+    "utilities-and-tools",
+    "productivity"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NWJJ3N6K675"
+    }
+  ]
+}
