@@ -27,5 +27,8 @@
       "type": "msstore",
       "id": "9P3JPCRFR1BZ"
     }
-  ]
+  ],
+  "detection": {
+    "packageFamilyName": "AdamDuda.TexSnippetsforCmdPal_7dx36b0m6zgj4"
+  }
 }
