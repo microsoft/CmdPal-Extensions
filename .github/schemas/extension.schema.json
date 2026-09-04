@@ -136,6 +136,15 @@
           }
         ]
       }
+    },
+    "detection": {
+      "type": "object",
+      "description": "Optional hints that let Command Palette recognise an already-installed copy of this extension.",
+      "properties": {
+        "packageFamilyName": { "type": "string", "description": "Package family name of the MSIX package. Lets the gallery show install status for extensions distributed through the Microsoft Store.", "minLength": 1, "examples": ["JiriPolasek.MediaControlsforCommandPalette_h8x1b2c3d4e5f"] }
+      },
+      "required": ["packageFamilyName"],
+      "additionalProperties": false
     }
   }
 }
