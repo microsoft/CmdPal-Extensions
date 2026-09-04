@@ -1,9 +1,43 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-08-31T14:00:56Z",
-  "extensionCount": 80,
+  "generatedAt": "2026-09-04T10:00:46Z",
+  "extensionCount": 81,
   "extensions": [
+    {
+      "id": "1morr.inkling",
+      "title": "Inkling Notes",
+      "shortDescription": "Take notes without leaving Command Palette. They are plain Markdown files in a folder you choose.",
+      "description": "Inkling lets you take notes inside PowerToys Command Palette. Summon the palette, type Inkling, and pick Quick capture. Type your thought, press Enter, and the note is saved.\n\nYour notes are ordinary Markdown files in a folder you pick. Open them in any editor, sync them with OneDrive or any other cloud drive, or drop your existing .md files into the folder and they show up in the list right away.\n\n- Quick capture: type a title and press Enter. Add ;; after the title to write the body in the same line.\n- Notes list: search, preview, edit, copy the body, open a note in your editor, show it in File Explorer, or delete it to the Recycle Bin.\n- Scratchpad: a single note that is always there, for anything that needs no title. It opens with whatever you left in it last time.\n- Plain Markdown: front matter fields Inkling does not know are left untouched, so it coexists with Obsidian, VS Code, and anything else that reads .md.\n- Keyboard-first: the common actions have shortcuts, and Ctrl+K shows the rest.\n- Optional: assign an alias or a global hotkey to Quick capture to jump straight in.\n\nYour notes stay on your PC. Inkling collects nothing and sends nothing.",
+      "author": {
+        "name": "1morr",
+        "url": "https://github.com/1morr"
+      },
+      "homepage": "https://github.com/1morr/Inkling",
+      "tags": [
+        "notes",
+        "markdown",
+        "quick-capture",
+        "note-taking",
+        "scratchpad"
+      ],
+      "categories": [
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NDGWN4JTXHH"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/1morr/inkling/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/1morr/inkling/screenshots/01-top-level-commands.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/1morr/inkling/screenshots/02-quick-capture.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/1morr/inkling/screenshots/03-note-list.png"
+      ],
+      "addedAt": "2026-09-04"
+    },
     {
       "id": "8lwxpg.process-killer",
       "title": "Process Killer",
