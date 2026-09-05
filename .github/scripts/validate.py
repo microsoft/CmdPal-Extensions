@@ -29,6 +29,7 @@ import re
 import subprocess
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from typing import List, Set
 
@@ -82,6 +83,9 @@ WINGET_PKGS_API_URL = (
 )
 WINGET_PKGS_RAW_URL = (
     "https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests"
+)
+NPM_PKGS_URL = (
+    "https://registry.npmjs.org/"
 )
 NETWORK_TIMEOUT = 15
 
@@ -380,6 +384,59 @@ def validate_winget_source(
     return errors, warnings
 
 
+def validate_npm_source(
+    package_id: str, extension_title: str, display_path: str
+) -> tuple[List[str], List[str]]:
+    """Validate an npm install source package name against the npm registry.
+
+    Returns (errors, warnings).
+    """
+    errors: List[str] = []
+    warnings: List[str] = []
+
+    # Scoped packages (e.g. "@scope/name") must have the slash percent-encoded
+    # in the URL, but the leading "@" must remain unencoded.
+    encoded_id = urllib.parse.quote(package_id, safe="@")
+    url = f"{NPM_PKGS_URL}{encoded_id}"
+    req = urllib.request.Request(
+        url, headers={"User-Agent": "CmdPal-Extensions-Validator/1.0"}
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=NETWORK_TIMEOUT) as resp:
+            data = json.loads(resp.read())
+    except urllib.error.HTTPError as exc:
+        if exc.code == 404:
+            errors.append(
+                f"{display_path}: npm package \"{package_id}\" was not found. "
+                f"Verify the package name is correct at "
+                f"https://www.npmjs.com/package/{package_id}"
+            )
+        else:
+            warnings.append(
+                f"{display_path}: Could not reach npm registry to validate "
+                f"\"{package_id}\" (HTTP {exc.code}). Skipping online validation."
+            )
+        return errors, warnings
+    except (urllib.error.URLError, OSError):
+        warnings.append(
+            f"{display_path}: Could not reach npm registry to validate "
+            f"\"{package_id}\". Skipping online validation."
+        )
+        return errors, warnings
+
+    # The registry "name" field is the canonical package name; compare it to
+    # the extension title as a loose sanity check.
+    registry_name = data.get("name", "")
+    if registry_name and registry_name.strip().lower() != extension_title.strip().lower():
+        warnings.append(
+            f"{display_path}: npm package name mismatch — "
+            f"npm has \"{registry_name}\" but extension.json title is "
+            f"\"{extension_title}\""
+        )
+
+    return errors, warnings
+
+
 # ---------------------------------------------------------------------------
 # Validation
 # ---------------------------------------------------------------------------
@@ -550,6 +607,12 @@ def validate_extension(folder: pathlib.Path, schema: dict, id_index: dict[str, p
                 warnings.extend(src_warnings)
             elif source_type == "winget" and source_id:
                 src_errors, src_warnings = validate_winget_source(
+                    source_id, extension_title, display_path
+                )
+                errors.extend(src_errors)
+                warnings.extend(src_warnings)
+            elif source_type == "npm" and source_id:
+                src_errors, src_warnings = validate_npm_source(
                     source_id, extension_title, display_path
                 )
                 errors.extend(src_errors)
