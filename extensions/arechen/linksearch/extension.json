@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "arechen.linksearch",
+  "title": "LinkSearch",
+  "shortDescription": "Search your Linkwarden bookmarks and open saved pages, with optional semantic reranking.",
+  "description": "Search links saved in Linkwarden directly from Command Palette and open results in your browser. Configure your Linkwarden server, access token, and maximum result count. Optionally connect a compatible Rerank API to sort results by semantic relevance. Supports English and Simplified Chinese, with automatic interface language selection. Requires a Linkwarden instance and access token; semantic reranking requires a separately configured service.",
+  "author": {
+    "name": "ARECHEN",
+    "url": "https://github.com/AreChen"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/AreChen/CmdPal-LinkSearch",
+  "tags": ["linkwarden", "bookmarks", "search", "links", "rerank"],
+  "categories": ["productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9MZ9Q4CFP2N9"
+    }
+  ],
+  "detection": {
+    "packageFamilyName": "ARECHEN.LinkSearch_z9y7p1t2w11pe"
+  }
+}
