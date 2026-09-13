@@ -1,0 +1,33 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "manuelcontrera.text-snippets",
+  "title": "Text Snippets",
+  "shortDescription": "Raycast-style text snippets with automatic inline expansion and visual WinUI 3 editor.",
+  "description": "Text Snippets brings the beloved, frictionless Raycast-style snippet expansion to Microsoft PowerToys Command Palette. It supports instant inline expansion across any Windows application, interactive multiple-choice pickers, dynamic variables ({date}, {time}, {clipboard}, {uuid}), and a modern visual WinUI 3 editor with Mica backdrop. 100% offline, private, and local.",
+  "author": {
+    "name": "manuelcontrera",
+    "url": "https://github.com/manuelcontrera"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/manuelcontrera/TextSnippets-CommandPalette",
+  "tags": [
+    "snippets",
+    "text-expansion",
+    "raycast",
+    "productivity",
+    "templates"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "manuelcontrera.TextSnippets"
+    }
+  ],
+  "detection": {
+    "packageFamilyName": "SnippetsCmdPal.Extension_h8tt3yhg29vee"
+  }
+}
