@@ -1,0 +1,33 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "manuelcontrera.clipboard-history",
+  "title": "Clipboard History Pro",
+  "shortDescription": "Raycast-style 30-day clipboard history with Pantone color cards, source app logos, and instant pasting.",
+  "description": "Clipboard History Pro brings seamless, privacy-first clipboard management into Microsoft PowerToys Command Palette. It features 30-day local history with zero CPU overhead using SQLite WAL, Raycast-style Pantone color card previews with CMYK/RGB/HSL values, source application tracking with official 16x16 app logo badges, context menu actions to open copied images in the default photo viewer, favicon resolution for links, and instantaneous pasting into any active window. 100% offline, private, and secure.",
+  "author": {
+    "name": "manuelcontrera",
+    "url": "https://github.com/manuelcontrera"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/manuelcontrera/ClipboardHistory-CommandPalette",
+  "tags": [
+    "clipboard",
+    "clipboard-history",
+    "productivity",
+    "pantone",
+    "colors"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "manuelcontrera.ClipboardHistoryPro"
+    }
+  ],
+  "detection": {
+    "packageFamilyName": "ClipboardHistoryCmdPal.Extension_kxa16vr8d89fp"
+  }
+}
