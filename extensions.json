@@ -1,13 +1,13 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-09-04T18:00:44Z",
-  "extensionCount": 82,
+  "generatedAt": "2026-09-25T16:37:47Z",
+  "extensionCount": 87,
   "extensions": [
     {
       "id": "1morr.inkling",
       "title": "Inkling Notes",
-      "shortDescription": "Take notes without leaving Command Palette. They are plain Markdown files in a folder you choose.",
+      "shortDescription": "Take notes without leaving Command Palette. Type your thought, press Enter, and it is saved as a Markdown file in a folder you choose.",
       "description": "Inkling lets you take notes inside PowerToys Command Palette. Summon the palette, type Inkling, and pick Quick capture. Type your thought, press Enter, and the note is saved.\n\nYour notes are ordinary Markdown files in a folder you pick. Open them in any editor, sync them with OneDrive or any other cloud drive, or drop your existing .md files into the folder and they show up in the list right away.\n\n- Quick capture: type a title and press Enter. Add ;; after the title to write the body in the same line.\n- Notes list: search, preview, edit, copy the body, open a note in your editor, show it in File Explorer, or delete it to the Recycle Bin.\n- Scratchpad: a single note that is always there, for anything that needs no title. It opens with whatever you left in it last time.\n- Plain Markdown: front matter fields Inkling does not know are left untouched, so it coexists with Obsidian, VS Code, and anything else that reads .md.\n- Keyboard-first: the common actions have shortcuts, and Ctrl+K shows the rest.\n- Optional: assign an alias or a global hotkey to Quick capture to jump straight in.\n\nYour notes stay on your PC. Inkling collects nothing and sends nothing.",
       "author": {
         "name": "1morr",
@@ -78,6 +78,41 @@
       "addedAt": "2026-05-10"
     },
     {
+      "id": "8lwxpg.ssh",
+      "title": "SSH",
+      "shortDescription": "Connecting to SSH clients",
+      "description": "Connect to SSH clients that configured at ~/.ssh/config file.",
+      "author": {
+        "name": "8LWXpg",
+        "url": "https://github.com/8LWXpg"
+      },
+      "homepage": "https://github.com/8LWXpg/CmdPal-SSH",
+      "tags": [
+        "ssh",
+        "remote"
+      ],
+      "categories": [
+        "developer-tools",
+        "utilities-and-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9PBWRSPJ5W92"
+        },
+        {
+          "type": "winget",
+          "id": "8LWXpg.SSHforCommandPalette"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/8lwxpg/ssh/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/8lwxpg/ssh/screenshots/01-main.png"
+      ],
+      "addedAt": "2026-09-25"
+    },
+    {
       "id": "adamduda.tex-snippets",
       "title": "Tex Snippets",
       "shortDescription": "Write LaTeX math formulas without leaving the launcher. Type a snippet, see it rendered. Copy it as Unicode, source, or a typeset image.",
@@ -105,6 +140,9 @@
           "id": "9P3JPCRFR1BZ"
         }
       ],
+      "detection": {
+        "packageFamilyName": "AdamDuda.TexSnippetsforCmdPal_7dx36b0m6zgj4"
+      },
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/adamduda/tex-snippets/icon.png",
       "screenshotUrls": [
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/adamduda/tex-snippets/screenshots/01-main.png",
@@ -185,6 +223,39 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/alexdresko/browser-tabs/screenshots/02-activating.png"
       ],
       "addedAt": "2026-06-04"
+    },
+    {
+      "id": "arechen.linksearch",
+      "title": "LinkSearch",
+      "shortDescription": "Search your Linkwarden bookmarks and open saved pages, with optional semantic reranking.",
+      "description": "Search links saved in Linkwarden directly from Command Palette and open results in your browser. Configure your Linkwarden server, access token, and maximum result count. Optionally connect a compatible Rerank API to sort results by semantic relevance. Supports English and Simplified Chinese, with automatic interface language selection. Requires a Linkwarden instance and access token; semantic reranking requires a separately configured service.",
+      "author": {
+        "name": "ARECHEN",
+        "url": "https://github.com/AreChen"
+      },
+      "homepage": "https://github.com/AreChen/CmdPal-LinkSearch",
+      "tags": [
+        "linkwarden",
+        "bookmarks",
+        "search",
+        "links",
+        "rerank"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9MZ9Q4CFP2N9"
+        }
+      ],
+      "detection": {
+        "packageFamilyName": "ARECHEN.LinkSearch_z9y7p1t2w11pe"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arechen/linksearch/icon.png",
+      "addedAt": "2026-09-25"
     },
     {
       "id": "baldbeardedbuilder.weather",
@@ -1412,6 +1483,39 @@
       "addedAt": "2026-05-10"
     },
     {
+      "id": "koichi-kobayashi.services-search",
+      "title": "Services Search",
+      "shortDescription": "Search installed Windows services by display name, service name, or description.",
+      "description": "Search installed Windows services from Command Palette by display name, service name, or description. View each service's description, current status, and startup type, and open the selected service's standard properties dialog in services.msc. The extension does not start, stop, restart, delete, or change the configuration of any service.",
+      "author": {
+        "name": "Koichi Kobayashi",
+        "url": "https://github.com/Koichi-Kobayashi"
+      },
+      "homepage": "https://github.com/Koichi-Kobayashi/WindowsServicesSearch",
+      "tags": [
+        "service",
+        "services",
+        "search"
+      ],
+      "categories": [
+        "utilities-and-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NSDXBJF48KV"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/koichi-kobayashi/services-search/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/koichi-kobayashi/services-search/screenshots/01-command-palette-service-search.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/koichi-kobayashi/services-search/screenshots/02-windows-services-search-open.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/koichi-kobayashi/services-search/screenshots/03-filter-services-power.png"
+      ],
+      "addedAt": "2026-09-25"
+    },
+    {
       "id": "lamteteeow.powertranslate",
       "title": "Power Translate",
       "shortDescription": "Translate text instantly using DeepL in Command Palette",
@@ -1612,6 +1716,42 @@
       "addedAt": "2026-04-21"
     },
     {
+      "id": "manuelcontrera.text-snippets",
+      "title": "Text Snippets",
+      "shortDescription": "Raycast-style text snippets with automatic inline expansion and visual WinUI 3 editor.",
+      "description": "Text Snippets brings the beloved, frictionless Raycast-style snippet expansion to Microsoft PowerToys Command Palette. It supports instant inline expansion across any Windows application, interactive multiple-choice pickers, dynamic variables ({date}, {time}, {clipboard}, {uuid}), and a modern visual WinUI 3 editor with Mica backdrop. 100% offline, private, and local.",
+      "author": {
+        "name": "manuelcontrera",
+        "url": "https://github.com/manuelcontrera"
+      },
+      "homepage": "https://github.com/manuelcontrera/TextSnippets-CommandPalette",
+      "tags": [
+        "snippets",
+        "text-expansion",
+        "raycast",
+        "productivity",
+        "templates"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "manuelcontrera.TextSnippets"
+        }
+      ],
+      "detection": {
+        "packageFamilyName": "SnippetsCmdPal.Extension_h8tt3yhg29vee"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/manuelcontrera/text-snippets/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/manuelcontrera/text-snippets/screenshots/01-main.png"
+      ],
+      "addedAt": "2026-09-25"
+    },
+    {
       "id": "maoyeedy.cmdpal-unity-extension",
       "title": "Unity Project Launcher",
       "shortDescription": "Open and launch Unity Hub recent projects from Command Palette.",
@@ -1642,6 +1782,46 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/maoyeedy/cmdpal-unity-extension/screenshots/01-main.png"
       ],
       "addedAt": "2026-06-04"
+    },
+    {
+      "id": "maxnevans.command-palette-llm",
+      "title": "Command Palette LLM",
+      "shortDescription": "Turn local or hosted OpenAI-compatible models into reusable, prompt-driven Command Palette tools.",
+      "description": "Command Palette LLM turns OpenAI-compatible language models into fast, reusable productivity commands inside Microsoft PowerToys Command Palette. Connect a local endpoint such as llama.cpp or a hosted compatible service, then create focused tools for tasks like summarizing, rewriting, generating alternatives, or classifying text.\n\nBuild commands from a single prompt or an ordered multi-step pipeline. Choose a provider and request settings for each step, reuse saved step and JSON request templates, and control the prompt, delay, result count, icon, and where each command appears. Structured JSON responses can become native Command Palette titles, subtitles, details, sections, and tags.\n\nProvider credentials are encrypted for your Windows account. The extension has no publisher-operated backend, advertising, analytics, or telemetry; prompts go directly to the endpoint you configure. Microsoft PowerToys with Command Palette enabled is required and is not installed by this package. This is an independent third-party extension and is not affiliated with or endorsed by Microsoft or OpenAI.",
+      "author": {
+        "name": "maxnevans",
+        "url": "https://github.com/maxnevans"
+      },
+      "homepage": "https://github.com/maxnevans/CommandPaletteLLM",
+      "tags": [
+        "llm",
+        "ai",
+        "openai-compatible",
+        "local-models",
+        "prompt-automation"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools",
+        "developer-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9PK5TNWKQ00Q"
+        }
+      ],
+      "detection": {
+        "packageFamilyName": "maxnevans.CommandPaletteLLM_9aav5gzbpx8nj"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/maxnevans/command-palette-llm/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/maxnevans/command-palette-llm/screenshots/01-store-screenshot.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/maxnevans/command-palette-llm/screenshots/02-store-screenshot.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/maxnevans/command-palette-llm/screenshots/03-store-screenshot.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/maxnevans/command-palette-llm/screenshots/04-store-screenshot.png"
+      ],
+      "addedAt": "2026-09-25"
     },
     {
       "id": "michaeljolley.random-dad-jokes",
