@@ -16,6 +16,10 @@
     {
       "type": "msstore",
       "id": "9PBWRSPJ5W92"
+    },
+    {
+      "type": "winget",
+      "id": "8LWXpg.SSHforCommandPalette"
     }
   ],
   "listed": true

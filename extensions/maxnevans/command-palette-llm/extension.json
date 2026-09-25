@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "maxnevans.command-palette-llm",
+  "title": "Command Palette LLM",
+  "shortDescription": "Turn local or hosted OpenAI-compatible models into reusable, prompt-driven Command Palette tools.",
+  "description": "Command Palette LLM turns OpenAI-compatible language models into fast, reusable productivity commands inside Microsoft PowerToys Command Palette. Connect a local endpoint such as llama.cpp or a hosted compatible service, then create focused tools for tasks like summarizing, rewriting, generating alternatives, or classifying text.\n\nBuild commands from a single prompt or an ordered multi-step pipeline. Choose a provider and request settings for each step, reuse saved step and JSON request templates, and control the prompt, delay, result count, icon, and where each command appears. Structured JSON responses can become native Command Palette titles, subtitles, details, sections, and tags.\n\nProvider credentials are encrypted for your Windows account. The extension has no publisher-operated backend, advertising, analytics, or telemetry; prompts go directly to the endpoint you configure. Microsoft PowerToys with Command Palette enabled is required and is not installed by this package. This is an independent third-party extension and is not affiliated with or endorsed by Microsoft or OpenAI.",
+  "author": {
+    "name": "maxnevans",
+    "url": "https://github.com/maxnevans"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/maxnevans/CommandPaletteLLM",
+  "tags": ["llm", "ai", "openai-compatible", "local-models", "prompt-automation"],
+  "categories": ["productivity", "utilities-and-tools", "developer-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9PK5TNWKQ00Q"
+    }
+  ],
+  "detection": {
+    "packageFamilyName": "maxnevans.CommandPaletteLLM_9aav5gzbpx8nj"
+  }
+}
