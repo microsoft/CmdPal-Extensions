@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "koichi-kobayashi.services-search",
+  "title": "Services Search",
+  "shortDescription": "Search installed Windows services by display name, service name, or description.",
+  "description": "Search installed Windows services from Command Palette by display name, service name, or description. View each service's description, current status, and startup type, and open the selected service's standard properties dialog in services.msc. The extension does not start, stop, restart, delete, or change the configuration of any service.",
+  "author": {
+    "name": "Koichi Kobayashi",
+    "url": "https://github.com/Koichi-Kobayashi"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/Koichi-Kobayashi/WindowsServicesSearch",
+  "tags": [
+    "service",
+    "services",
+    "search"
+  ],
+  "categories": [
+    "utilities-and-tools",
+    "productivity"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NSDXBJF48KV"
+    }
+  ]
+}

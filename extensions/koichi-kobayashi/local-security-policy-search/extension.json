@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "koichi-kobayashi.local-security-policy-search",
+  "title": "Local Security Policy Search",
+  "shortDescription": "Search Local Security Policy and open the selected policy directly.",
+  "description": "Search Local Security Policy from Command Palette by policy name or description. Open the selected policy's standard properties dialog in secpol.msc. The extension does not change the configuration of any policy.",
+  "author": {
+    "name": "Koichi Kobayashi",
+    "url": "https://github.com/Koichi-Kobayashi"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/Koichi-Kobayashi/LocalSecurityPolicySearch",
+  "tags": [
+    "local-security-policy",
+    "security-policy",
+    "secpol.msc",
+    "search"
+  ],
+  "categories": [
+    "utilities-and-tools",
+    "productivity"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9MT2VFR3PSGR"
+    }
+  ]
+}
