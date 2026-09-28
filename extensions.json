@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-09-25T18:01:27Z",
-  "extensionCount": 88,
+  "generatedAt": "2026-09-28T18:00:50Z",
+  "extensionCount": 89,
   "extensions": [
     {
       "id": "1morr.inkling",
@@ -1481,6 +1481,40 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/kawaiizapic/totp/screenshots/1.jpg"
       ],
       "addedAt": "2026-05-10"
+    },
+    {
+      "id": "koichi-kobayashi.certificate-search",
+      "title": "Certificate Search",
+      "shortDescription": "Search certificates in Windows certificate stores and open the selected certificate directly.",
+      "description": "Search certificates in Windows certificate stores from Command Palette by subject, issuer, friendly name, thumbprint, serial number, or store name. View certificate details and open the selected certificate in certmgr.msc or certlm.msc. The extension accesses certificate stores for reading only and does not add, delete, modify, import, or export certificates.",
+      "author": {
+        "name": "Koichi Kobayashi",
+        "url": "https://github.com/Koichi-Kobayashi"
+      },
+      "homepage": "https://github.com/Koichi-Kobayashi/CertificateSearch",
+      "tags": [
+        "certificate",
+        "certificates",
+        "certificate-store",
+        "search"
+      ],
+      "categories": [
+        "utilities-and-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NBHHRZ7DRVN"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/koichi-kobayashi/certificate-search/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/koichi-kobayashi/certificate-search/screenshots/01-find-extension.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/koichi-kobayashi/certificate-search/screenshots/02-certificate-list.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/koichi-kobayashi/certificate-search/screenshots/03-filter-certificates.png"
+      ],
+      "addedAt": "2026-09-28"
     },
     {
       "id": "koichi-kobayashi.local-security-policy-search",
