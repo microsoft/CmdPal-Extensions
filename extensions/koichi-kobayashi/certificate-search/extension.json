@@ -3,7 +3,7 @@
   "id": "koichi-kobayashi.certificate-search",
   "title": "Certificate Search",
   "shortDescription": "Search certificates in Windows certificate stores and open the selected certificate directly.",
-  "description": "Search certificates in Windows certificate stores from Command Palette by subject, issuer, friendly name, thumbprint, serial number, or store name. View certificate details and open the selected certificate in Windows Certificate Manager. The extension accesses certificate stores for reading only and does not add, delete, modify, import, or export certificates.",
+  "description": "Search certificates in Windows certificate stores from Command Palette by subject, issuer, friendly name, thumbprint, serial number, or store name. View certificate details and open the selected certificate in certmgr.msc or certlm.msc. The extension accesses certificate stores for reading only and does not add, delete, modify, import, or export certificates.",
   "author": {
     "name": "Koichi Kobayashi",
     "url": "https://github.com/Koichi-Kobayashi"
