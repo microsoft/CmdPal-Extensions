@@ -146,6 +146,14 @@
                 },
                 "required": ["type", "id"],
                 "additionalProperties": false
+              },
+              {
+                "properties": {
+                  "type": { "const": "npm" },
+                  "id": { "type": "string", "description": "NPM package identifier", "minLength": 1 }
+                },
+                "required": ["type", "id"],
+                "additionalProperties": false
               }
             ]
           }
