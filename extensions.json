@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-09-28T18:00:50Z",
-  "extensionCount": 89,
+  "generatedAt": "2026-10-01T14:00:49Z",
+  "extensionCount": 90,
   "extensions": [
     {
       "id": "1morr.inkling",
@@ -1419,6 +1419,38 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/joadoumie/nba-command-palette/screenshots/02-team-roster.png"
       ],
       "addedAt": "2026-04-27"
+    },
+    {
+      "id": "joshgoolnik.clipboard-data-inspector",
+      "title": "Clipboard Data Inspector",
+      "shortDescription": "When you open Clipboard Data Inspector, it asks Windows for a list of the formats currently held on your clipboard and shows that list to you, plus the hex dump.",
+      "description": "When you open Clipboard Data Inspector, it asks Windows for a list of the formats currently held on your clipboard and shows that list to you. When you select one of those formats, it reads the raw bytes for that format and displays them on screen as a hex dump.",
+      "author": {
+        "name": "Josh Goolnik",
+        "url": "https://github.com/joshgoolnik"
+      },
+      "homepage": "https://github.com/joshgoolnik/clipboardinspector",
+      "tags": [
+        "clipboard",
+        "clipboard viewer",
+        "clipboard data",
+        "view clipboard"
+      ],
+      "categories": [
+        "developer-tools",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9N5WPNFM4JFH"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/joshgoolnik/clipboard-data-inspector/CBDI_Icon256.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/joshgoolnik/clipboard-data-inspector/screenshots/01-clipboardInspector.png"
+      ],
+      "addedAt": "2026-10-01"
     },
     {
       "id": "jrscott812.power",
