@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "joshgoolnik.clipboard-data-inspector",
+  "title": "Clipboard Data Inspector",
+  "shortDescription": "When you open Clipboard Data Inspector, it asks Windows for a list of the formats currently held on your clipboard and shows that list to you, plus the hex dump.",
+  "description": "When you open Clipboard Data Inspector, it asks Windows for a list of the formats currently held on your clipboard and shows that list to you. When you select one of those formats, it reads the raw bytes for that format and displays them on screen as a hex dump.",
+  "author": {
+    "name": "Josh Goolnik",
+    "url": "https://github.com/joshgoolnik"
+  },
+  "icon": "CBDI_Icon256.png",
+  "homepage": "https://github.com/joshgoolnik/clipboardinspector",
+  "tags": ["clipboard", "clipboard viewer", "clipboard data","view clipboard"],
+  "categories": ["developer-tools", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9N5WPNFM4JFH"
+    }
+  ]
+}
