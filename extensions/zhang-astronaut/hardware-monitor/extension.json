@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "zhang-astronaut.hardware-monitor",
+  "title": "Hardware Monitor",
+  "shortDescription": "Read CPU, GPU, disk temperatures and usage via PawnIO/LibreHardwareMonitor; pin any reading to the Command Palette Dock.",
+  "description": "Hardware Monitor is a PowerToys Command Palette extension that samples real hardware sensors using PawnIO and LibreHardwareMonitor.\n\nFeatures:\n- Live CPU / GPU / storage temperatures, load, power, fans and more\n- Pin any reading to the Dock (Compact and Default sizes)\n- Sticky expand-only Y-axis trend charts (ASCII, not bitmap)\n- Open a local offline HTML dashboard with Canvas charts\n- Threshold highlighting for warm / hot / critical temperatures\n\nRequires PowerToys Command Palette. Works best when PawnIO is installed.",
+  "author": {
+    "name": "zhang-astronaut",
+    "url": "https://github.com/zhang-astronaut"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/zhang-astronaut/HardwareMonitorCmdPal",
+  "tags": ["hardware", "temperature", "pawnio", "monitor", "dock"],
+  "categories": ["utilities-and-tools", "productivity"],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "zhang-astronaut.HardwareMonitorCmdPal"
+    }
+  ]
+}
