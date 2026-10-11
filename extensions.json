@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-10-01T14:00:49Z",
-  "extensionCount": 90,
+  "generatedAt": "2026-10-11T18:03:52Z",
+  "extensionCount": 91,
   "extensions": [
     {
       "id": "1morr.inkling",
@@ -2992,6 +2992,36 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/zadjii/virtual-desktops/screenshots/02-dock.png"
       ],
       "addedAt": "2026-04-21"
+    },
+    {
+      "id": "zhang-astronaut.hardware-monitor",
+      "title": "Hardware Monitor",
+      "shortDescription": "Read CPU, GPU, disk temperatures and usage via PawnIO/LibreHardwareMonitor; pin any reading to the Command Palette Dock.",
+      "description": "Hardware Monitor is a PowerToys Command Palette extension that samples real hardware sensors using PawnIO and LibreHardwareMonitor.\n\nFeatures:\n- Live CPU / GPU / storage temperatures, load, power, fans and more\n- Pin any reading to the Dock (Compact and Default sizes)\n- Sticky expand-only Y-axis trend charts (ASCII, not bitmap)\n- Open a local offline HTML dashboard with Canvas charts\n- Threshold highlighting for warm / hot / critical temperatures\n\nRequires PowerToys Command Palette. Works best when PawnIO is installed.",
+      "author": {
+        "name": "zhang-astronaut",
+        "url": "https://github.com/zhang-astronaut"
+      },
+      "homepage": "https://github.com/zhang-astronaut/HardwareMonitorCmdPal",
+      "tags": [
+        "hardware",
+        "temperature",
+        "pawnio",
+        "monitor",
+        "dock"
+      ],
+      "categories": [
+        "utilities-and-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "zhang-astronaut.HardwareMonitorCmdPal"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/zhang-astronaut/hardware-monitor/icon.png",
+      "addedAt": "2026-10-11"
     }
   ]
 }
