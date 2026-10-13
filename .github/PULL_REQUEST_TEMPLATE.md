@@ -10,7 +10,7 @@ Please fill out the checklist below to help us review your PR quickly.
 - [ ] The `id` field in my `extension.json` matches my folder path (`author.extension-name`)
 - [ ] I have added an icon file (PNG or JPG, under 100 KB)
 - [ ] The `icon` field in `extension.json` matches my icon filename
-- [ ] My extension is available at the install source I specified (winget/MS Store)
+- [ ] My extension is available at the install source I specified (winget/MS Store/npm)
 - [ ] I have read the [Contributing Guide](../docs/CONTRIBUTING.md)
 
 ### Additional context
