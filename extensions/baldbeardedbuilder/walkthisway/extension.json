@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "baldbeardedbuilder.walkthisway",
+  "title": "Walk This Way",
+  "shortDescription": "Find and switch between open windows with PowerToys Command Palette.",
+  "description": "Too many open windows? Get back to the one you need without hunting through the taskbar.\n\nWalk This Way brings searchable window switching to PowerToys Command Palette. Type part of a window title or app name, find your match, and switch straight to it. Prefer clicking? Pin its dock band for quick access to your open apps.\n\nClose windows or end an unresponsive task right from Command Palette. If you use virtual desktops, keep the dock focused on your current desktop or show windows from all of them.\n\nYour window searches stay on your device. No account, ads, or tracking.\n\nRequires Microsoft PowerToys with Command Palette enabled. Walk This Way is an extension, not a standalone app.",
+  "author": {
+    "name": "Bald Bearded Builder",
+    "url": "https://github.com/baldbeardedbuilder"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/baldbeardedbuilder/WalkThisWay",
+  "tags": [
+    "windows",
+    "taskbar"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9PJT7RPQK7CM"
+    }
+  ]
+}
