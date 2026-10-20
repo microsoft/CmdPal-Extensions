@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-10-12T05:34:51Z",
-  "extensionCount": 91,
+  "generatedAt": "2026-10-20T05:37:10Z",
+  "extensionCount": 92,
   "extensions": [
     {
       "id": "1morr.inkling",
@@ -256,6 +256,38 @@
       },
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arechen/linksearch/icon.png",
       "addedAt": "2026-09-25"
+    },
+    {
+      "id": "baldbeardedbuilder.walkthisway",
+      "title": "Walk This Way",
+      "shortDescription": "Find and switch between open windows with PowerToys Command Palette.",
+      "description": "Too many open windows? Get back to the one you need without hunting through the taskbar.\n\nWalk This Way brings searchable window switching to PowerToys Command Palette. Type part of a window title or app name, find your match, and switch straight to it. Prefer clicking? Pin its dock band for quick access to your open apps.\n\nClose windows or end an unresponsive task right from Command Palette. If you use virtual desktops, keep the dock focused on your current desktop or show windows from all of them.\n\nYour window searches stay on your device. No account, ads, or tracking.\n\nRequires Microsoft PowerToys with Command Palette enabled. Walk This Way is an extension, not a standalone app.",
+      "author": {
+        "name": "Bald Bearded Builder",
+        "url": "https://github.com/baldbeardedbuilder"
+      },
+      "homepage": "https://github.com/baldbeardedbuilder/WalkThisWay",
+      "tags": [
+        "windows",
+        "taskbar"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9PJT7RPQK7CM"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/baldbeardedbuilder/walkthisway/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/baldbeardedbuilder/walkthisway/screenshots/screen1.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/baldbeardedbuilder/walkthisway/screenshots/screen2.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/baldbeardedbuilder/walkthisway/screenshots/screen3.png"
+      ],
+      "addedAt": "2026-10-20"
     },
     {
       "id": "baldbeardedbuilder.weather",
