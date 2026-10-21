@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "everythingpal.everythingpal",
+  "title": "EverythingPal",
+  "shortDescription": "Search local files and folders from PowerToys Command Palette with smart case/whitespace matching (term1 finds Term 1), powered by Everything.",
+  "description": "EverythingPal brings the Everything search index into PowerToys Command Palette. Type part of a file name on the Command Palette home screen for an inline result (pressing Enter opens the full result list), or open the EverythingPal command page for a live ranked list with real shell icons, file size, modified time and full paths. Single-word searches ignore case and spaces (term1 finds Term 1); Everything's advanced syntax (ext:, folder:, wildcards, paths) is passed through unchanged. Requires Everything 1.4/1.5a installed and running; the required es.exe CLI is bundled and no network access is used. Free, open source (MIT), bilingual Chinese/English UI.",
+  "author": {
+    "name": "EverythingPal",
+    "url": "https://github.com/czz404/EverythingPal"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/czz404/EverythingPal",
+  "tags": [
+    "search",
+    "files",
+    "everything",
+    "productivity"
+  ],
+  "categories": [
+    "utilities-and-tools",
+    "productivity"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NFD76MCDRJZ"
+    }
+  ],
+  "detection": {
+    "packageFamilyName": "EverythingPal.EverythingPal_33w78pmn50ga4"
+  }
+}
