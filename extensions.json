@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-10-12T05:34:51Z",
-  "extensionCount": 91,
+  "generatedAt": "2026-10-23T06:01:22Z",
+  "extensionCount": 94,
   "extensions": [
     {
       "id": "1morr.inkling",
@@ -256,6 +256,38 @@
       },
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arechen/linksearch/icon.png",
       "addedAt": "2026-09-25"
+    },
+    {
+      "id": "baldbeardedbuilder.walkthisway",
+      "title": "Walk This Way",
+      "shortDescription": "Find and switch between open windows with PowerToys Command Palette.",
+      "description": "Too many open windows? Get back to the one you need without hunting through the taskbar.\n\nWalk This Way brings searchable window switching to PowerToys Command Palette. Type part of a window title or app name, find your match, and switch straight to it. Prefer clicking? Pin its dock band for quick access to your open apps.\n\nClose windows or end an unresponsive task right from Command Palette. If you use virtual desktops, keep the dock focused on your current desktop or show windows from all of them.\n\nYour window searches stay on your device. No account, ads, or tracking.\n\nRequires Microsoft PowerToys with Command Palette enabled. Walk This Way is an extension, not a standalone app.",
+      "author": {
+        "name": "Bald Bearded Builder",
+        "url": "https://github.com/baldbeardedbuilder"
+      },
+      "homepage": "https://github.com/baldbeardedbuilder/WalkThisWay",
+      "tags": [
+        "windows",
+        "taskbar"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9PJT7RPQK7CM"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/baldbeardedbuilder/walkthisway/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/baldbeardedbuilder/walkthisway/screenshots/screen1.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/baldbeardedbuilder/walkthisway/screenshots/screen2.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/baldbeardedbuilder/walkthisway/screenshots/screen3.png"
+      ],
+      "addedAt": "2026-10-23"
     },
     {
       "id": "baldbeardedbuilder.weather",
@@ -785,6 +817,45 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/determ1ne/scripter/screenshots/01-main-view.png"
       ],
       "addedAt": "2026-04-27"
+    },
+    {
+      "id": "everythingpal.everythingpal",
+      "title": "EverythingPal",
+      "shortDescription": "Search local files and folders from PowerToys Command Palette with smart case/whitespace matching (term1 finds Term 1), powered by Everything.",
+      "description": "EverythingPal brings the Everything search index into PowerToys Command Palette. Type part of a file name on the Command Palette home screen for an inline result (pressing Enter opens the full result list), or open the EverythingPal command page for a live ranked list with real shell icons, file size, modified time and full paths. Single-word searches ignore case and spaces (term1 finds Term 1); Everything's advanced syntax (ext:, folder:, wildcards, paths) is passed through unchanged. Requires Everything 1.4/1.5a installed and running; the required es.exe CLI is bundled and no network access is used. Free, open source (MIT), bilingual Chinese/English UI.",
+      "author": {
+        "name": "EverythingPal",
+        "url": "https://github.com/czz404/EverythingPal"
+      },
+      "homepage": "https://github.com/czz404/EverythingPal",
+      "tags": [
+        "search",
+        "files",
+        "everything",
+        "productivity"
+      ],
+      "categories": [
+        "utilities-and-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NFD76MCDRJZ"
+        }
+      ],
+      "detection": {
+        "packageFamilyName": "EverythingPal.EverythingPal_33w78pmn50ga4"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/everythingpal/everythingpal/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/everythingpal/everythingpal/screenshots/01-search-page.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/everythingpal/everythingpal/screenshots/02-home-inline-result.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/everythingpal/everythingpal/screenshots/03-context-menu.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/everythingpal/everythingpal/screenshots/04-zero-result.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/everythingpal/everythingpal/screenshots/05-program-files.png"
+      ],
+      "addedAt": "2026-10-23"
     },
     {
       "id": "fefedu973.universal-search-suggestions",
@@ -1513,6 +1584,42 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/kawaiizapic/totp/screenshots/1.jpg"
       ],
       "addedAt": "2026-05-10"
+    },
+    {
+      "id": "kobylev.cur-conve",
+      "title": "Currency Converter",
+      "shortDescription": "Real-time currency conversion directly from your Command Palette.",
+      "description": "Currency Converter is a fast, lightweight extension for the Windows Command Palette that lets you seamlessly translate between global fiat currencies. Simply pull up your command palette, type in your amount, and get instant, accurate exchange rates with daily updates.",
+      "author": {
+        "name": "Koby Lev",
+        "url": "https://github.com/kobylev"
+      },
+      "homepage": "https://github.com/kobylev/CmdPal-Extensions",
+      "tags": [
+        "currency",
+        "converter",
+        "exchange-rate",
+        "finance"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9MW233B09D9D"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/kobylev/cur-conve/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/kobylev/cur-conve/screenshots/01-light-conversion.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/kobylev/cur-conve/screenshots/02-dark-conversion.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/kobylev/cur-conve/screenshots/03-fiat-coins-support.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/kobylev/cur-conve/screenshots/04-settings.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/kobylev/cur-conve/screenshots/05-fiat-coins-support.png"
+      ],
+      "addedAt": "2026-10-23"
     },
     {
       "id": "koichi-kobayashi.certificate-search",
