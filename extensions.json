@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-10-23T06:01:22Z",
-  "extensionCount": 94,
+  "generatedAt": "2026-10-30T07:03:14Z",
+  "extensionCount": 95,
   "extensions": [
     {
       "id": "1morr.inkling",
@@ -601,6 +601,44 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/edge-favorites/screenshots/03-light.png"
       ],
       "addedAt": "2026-04-15"
+    },
+    {
+      "id": "davidegiacometti.snippets",
+      "title": "Snippets",
+      "shortDescription": "Quickly type saved text snippets into any active window.",
+      "description": "Create, organize, and manage reusable text snippets for fast typing.\nAutomatically type them into an active window, saving time and reducing repetitive typing.",
+      "author": {
+        "name": "davidegiacometti",
+        "url": "https://github.com/davidegiacometti"
+      },
+      "homepage": "https://github.com/davidegiacometti/CmdPal-Extensions",
+      "tags": [
+        "text snippets",
+        "snippets",
+        "auto-type"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "davidegiacometti.SnippetsForCmdPal"
+        },
+        {
+          "type": "msstore",
+          "id": "9P643KL240CB"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/snippets/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/snippets/screenshots/01-add.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/snippets/screenshots/02-dark.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/snippets/screenshots/03-light.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/snippets/screenshots/03-type.png"
+      ],
+      "addedAt": "2026-10-30"
     },
     {
       "id": "davidegiacometti.visual-studio",
