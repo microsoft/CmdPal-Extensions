@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "tanchekwei.turn-off-monitor",
+  "title": "Turn Off Monitor",
+  "shortDescription": "Instantly turn off your monitors and put them into low-power standby mode.",
+  "description": "Instantly turn off your monitors and put them into low-power standby mode",
+  "author": {
+    "name": "Chek Wei Tan",
+    "url": "https://github.com/tanchekwei"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/tanchekwei/TurnOffMonitorForCommandPalette",
+  "tags": [
+    "monitor"
+  ],
+  "categories": [
+    "developer-tools",
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9MW3D92J577B"
+    }
+  ]
+}
