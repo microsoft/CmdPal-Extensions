@@ -2,8 +2,8 @@
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "tanchekwei.turn-off-monitor",
   "title": "Turn Off Monitor",
-  "shortDescription": "Instantly turn off your monitors and put them into low-power standby mode.",
-  "description": "Instantly turn off your monitors and put them into low-power standby mode",
+  "shortDescription": "Turn off monitors and put them into low-power standby mode.",
+  "description": "Turn off monitors and put them into low-power standby mode",
   "author": {
     "name": "Chek Wei Tan",
     "url": "https://github.com/tanchekwei"
