@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "tanchekwei.scrcpy-launcher",
+  "title": "scrcpy Launcher",
+  "shortDescription": "Mirror Android devices, customize settings, save presets, and automate launches with autoadb.",
+  "description": "Quickly mirror a plugged-in phone, configure advanced video/audio/camera parameters, save reusable command presets, or automate execution when devices are plugged in via `autoadb`",
+  "author": {
+    "name": "Chek Wei Tan",
+    "url": "https://github.com/tanchekwei"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/tanchekwei/ScrcpyLauncherForCommandPalette",
+  "tags": [
+    "scrcpy"
+  ],
+  "categories": [
+    "developer-tools",
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9pjln6dbcdlp"
+    }
+  ]
+}
