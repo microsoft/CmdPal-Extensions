@@ -2,8 +2,8 @@
   "$schema": "../../../.github/schemas/extension.schema.json",
   "id": "arechen.linksearch",
   "title": "LinkSearch",
-  "shortDescription": "Search your Linkwarden bookmarks and open saved pages, with optional semantic reranking.",
-  "description": "Search links saved in Linkwarden directly from Command Palette and open results in your browser. Configure your Linkwarden server, access token, and maximum result count. Optionally connect a compatible Rerank API to sort results by semantic relevance. Supports English and Simplified Chinese, with automatic interface language selection. Requires a Linkwarden instance and access token; semantic reranking requires a separately configured service.",
+  "shortDescription": "Search Linkwarden bookmarks with optional rerank or decision-model sorting.",
+  "description": "Search links saved in Linkwarden directly from Command Palette and open results in your browser. Configure your Linkwarden server, access token, and maximum result count. Optionally reorder results using a compatible Rerank API or a decision model through System One, OpenAI Decisions, OpenRouter Decisions, or compatible gateways. OpenAI uses relevance scoring; OpenRouter and System One support per-item relevance and candidate choice. Supports English and Simplified Chinese, with automatic interface language selection. Requires a Linkwarden instance and access token; optional ranking requires a separately configured service.",
   "author": {
     "name": "ARECHEN",
     "url": "https://github.com/AreChen"
