@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-10-23T06:01:22Z",
-  "extensionCount": 94,
+  "generatedAt": "2026-11-03T19:03:43Z",
+  "extensionCount": 97,
   "extensions": [
     {
       "id": "1morr.inkling",
@@ -227,8 +227,8 @@
     {
       "id": "arechen.linksearch",
       "title": "LinkSearch",
-      "shortDescription": "Search your Linkwarden bookmarks and open saved pages, with optional semantic reranking.",
-      "description": "Search links saved in Linkwarden directly from Command Palette and open results in your browser. Configure your Linkwarden server, access token, and maximum result count. Optionally connect a compatible Rerank API to sort results by semantic relevance. Supports English and Simplified Chinese, with automatic interface language selection. Requires a Linkwarden instance and access token; semantic reranking requires a separately configured service.",
+      "shortDescription": "Search Linkwarden bookmarks with optional rerank or decision-model sorting.",
+      "description": "Search links saved in Linkwarden directly from Command Palette and open results in your browser. Configure your Linkwarden server, access token, and maximum result count. Optionally reorder results using a compatible Rerank API or a decision model through System One, OpenAI Decisions, OpenRouter Decisions, or compatible gateways. OpenAI uses relevance scoring; OpenRouter and System One support per-item relevance and candidate choice. Supports English and Simplified Chinese, with automatic interface language selection. Requires a Linkwarden instance and access token; optional ranking requires a separately configured service.",
       "author": {
         "name": "ARECHEN",
         "url": "https://github.com/AreChen"
@@ -601,6 +601,44 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/edge-favorites/screenshots/03-light.png"
       ],
       "addedAt": "2026-04-15"
+    },
+    {
+      "id": "davidegiacometti.snippets",
+      "title": "Snippets",
+      "shortDescription": "Quickly type saved text snippets into any active window.",
+      "description": "Create, organize, and manage reusable text snippets for fast typing.\nAutomatically type them into an active window, saving time and reducing repetitive typing.",
+      "author": {
+        "name": "davidegiacometti",
+        "url": "https://github.com/davidegiacometti"
+      },
+      "homepage": "https://github.com/davidegiacometti/CmdPal-Extensions",
+      "tags": [
+        "text snippets",
+        "snippets",
+        "auto-type"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "winget",
+          "id": "davidegiacometti.SnippetsForCmdPal"
+        },
+        {
+          "type": "msstore",
+          "id": "9P643KL240CB"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/snippets/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/snippets/screenshots/01-add.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/snippets/screenshots/02-dark.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/snippets/screenshots/03-light.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/davidegiacometti/snippets/screenshots/03-type.png"
+      ],
+      "addedAt": "2026-11-03"
     },
     {
       "id": "davidegiacometti.visual-studio",
@@ -2685,6 +2723,67 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/port/screenshots/02-screenshot2.png"
       ],
       "addedAt": "2026-04-27"
+    },
+    {
+      "id": "tanchekwei.scrcpy-launcher",
+      "title": "scrcpy Launcher",
+      "shortDescription": "Mirror Android devices, customize settings, save presets, and automate launches with autoadb.",
+      "description": "Quickly mirror a plugged-in phone, configure advanced video/audio/camera parameters, save reusable command presets, or automate execution when devices are plugged in via `autoadb`",
+      "author": {
+        "name": "Chek Wei Tan",
+        "url": "https://github.com/tanchekwei"
+      },
+      "homepage": "https://github.com/tanchekwei/ScrcpyLauncherForCommandPalette",
+      "tags": [
+        "scrcpy"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9pjln6dbcdlp"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/scrcpy-launcher/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/scrcpy-launcher/screenshots/1.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/scrcpy-launcher/screenshots/2.png"
+      ],
+      "addedAt": "2026-11-03"
+    },
+    {
+      "id": "tanchekwei.turn-off-monitor",
+      "title": "Turn Off Monitor",
+      "shortDescription": "Turn off monitors and put them into low-power standby mode.",
+      "description": "Turn off monitors and put them into low-power standby mode",
+      "author": {
+        "name": "Chek Wei Tan",
+        "url": "https://github.com/tanchekwei"
+      },
+      "homepage": "https://github.com/tanchekwei/TurnOffMonitorForCommandPalette",
+      "tags": [
+        "monitor"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9MW3D92J577B"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/turn-off-monitor/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/tanchekwei/turn-off-monitor/screenshots/1.png"
+      ],
+      "addedAt": "2026-11-03"
     },
     {
       "id": "tanchekwei.visual-studio-code",
