@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "arihant25.custom-dock-text",
+  "title": "Custom Dock Text",
+  "shortDescription": "Put your own text on the Dock: a reminder, a goal, a quote, anything. Shown in full, with an optional icon.",
+  "description": "Custom Dock Text puts your own text on the Command Palette Dock: a reminder for the day, a goal, a quote, anything you want to keep in view.\n\n- Any text up to 80 characters, shown in full. The Dock normally cuts labels off after a few words, so this band asks for room to fit the whole text.\n- An optional icon from 43 Windows Fluent icons, in the same style as the Dock's built-in widgets, picked from a list that shows each icon.\n- Click the text on the Dock, or run \"Set Dock text\" from Command Palette, to change it.\n- The text is saved and comes back after restarts.\n- No network access, no accounts, no telemetry.\n\nAfter installing, right-click the Dock, choose Edit and add the Custom Dock Text band.",
+  "author": {
+    "name": "Arihant Tripathy",
+    "url": "https://github.com/Arihant25"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/Arihant25/custom-dock-text",
+  "tags": [
+    "dock",
+    "text",
+    "reminder",
+    "notes",
+    "customization"
+  ],
+  "categories": [
+    "productivity",
+    "personalization"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P4DH4N33GLQ"
+    }
+  ]
+}
