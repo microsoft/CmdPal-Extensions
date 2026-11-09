@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-11-03T19:03:43Z",
-  "extensionCount": 97,
+  "generatedAt": "2026-11-09T15:05:18Z",
+  "extensionCount": 98,
   "extensions": [
     {
       "id": "1morr.inkling",
@@ -256,6 +256,41 @@
       },
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arechen/linksearch/icon.png",
       "addedAt": "2026-09-25"
+    },
+    {
+      "id": "arihant25.usage-dock",
+      "title": "Usage Dock for Claude Code",
+      "shortDescription": "See your Claude Code 5-hour and weekly usage limits in the Dock, with reset times and color warnings as you get close.",
+      "description": "Usage Dock shows your Claude Code usage limits in the Command Palette Dock: how much of the current 5-hour session and the weekly limit you've used, and when each one resets.\n\nEach limit appears as a ring gauge that fills as you use it. It turns amber at 80% and red at 95%. Click it to see both limits with progress bars, exact reset times and when the numbers were last updated.\n\nThe numbers come from the rate_limits data that Claude Code sends to your status line. Usage Dock adds a small bridge in front of your existing status line command, so your status line keeps working. It never reads your login or credentials and makes no network requests.\n\nRequires Claude Code on a Claude Pro or Max plan. After installing, run \"Connect Usage Dock to Claude Code\" from Command Palette, then add the Usage Dock band to your Dock. Run \"Disconnect Usage Dock from Claude Code\" before uninstalling.\n\nUsage Dock is an independent open-source project and isn't affiliated with Anthropic.",
+      "author": {
+        "name": "Arihant Tripathy",
+        "url": "https://github.com/Arihant25"
+      },
+      "homepage": "https://github.com/Arihant25/claude-usage-dock",
+      "tags": [
+        "claude-code",
+        "usage",
+        "rate-limits",
+        "dock",
+        "ai"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NR3VBPN0XNM"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/usage-dock/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/usage-dock/screenshots/01-overview.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/usage-dock/screenshots/02-details.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/usage-dock/screenshots/03-dock.jpg"
+      ],
+      "addedAt": "2026-11-09"
     },
     {
       "id": "baldbeardedbuilder.walkthisway",
