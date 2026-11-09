@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "darkace.market-pulse",
+  "title": "Market Pulse",
+  "shortDescription": "Live stock, index, FX, commodity and crypto prices on your Dock. Pick single markets, whole groups or a rotating ticker. No API key needed.",
+  "description": "Market Pulse puts live market prices on the Command Palette Dock.\n\n• Stocks, ETFs, indices, FX pairs and futures from Yahoo Finance, refreshed every 5 to 60 seconds.\n• Crypto streamed live from Binance, updating about once a second. Use any coin or pair, such as BTC, ETH, SOL or ETH/BTC.\n• Choose what to show: a single market, a whole group (Indices, Tech, Crypto, FX, Commodities or your own), every market in one strip, or a rotating ticker that cycles through them in one button.\n• Search markets from Command Palette and add them to any group in one keystroke, or edit your watchlists as plain text in settings.\n• Two-line, one-line or price-only layouts, with optional 📈/📉 trend icons.\n• Click a price to open its chart; right-click to copy it.\n\nFeeds only run for bands you can see, so unpinned markets cost nothing. No account or API key required.\n\nPrices come from public third-party endpoints and may be delayed for some exchanges. Not investment advice.",
+  "author": {
+    "name": "DarkAce",
+    "url": "https://github.com/Darkace01"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/Darkace01/market-pulse",
+  "tags": [
+    "stocks",
+    "crypto",
+    "forex",
+    "markets",
+    "dock"
+  ],
+  "categories": [
+    "productivity",
+    "news-and-weather",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9N4SZPL54SGK"
+    }
+  ]
+}
