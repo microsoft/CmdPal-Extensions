@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "mikegsaunders.marcfinder",
+  "title": "marcfinder",
+  "shortDescription": "Look up MARC 21 fields, subfields, indicators and character positions from Command Palette.",
+  "description": "marcfinder brings the MARC 21 Bibliographic and Holdings formats into Command Palette, for cataloguers and library systems staff.\n\nType a tag (245), a subfield (245a), a character position (008/23), a pattern (5xx) or a keyword (isbn) to see the field's definition, repeatability, indicators, subfields and examples. Prefix a query with h to search the Holdings format (h 852).\n\nTags, subfields and positions also show up straight from the main Command Palette search box, and \"marc <keyword>\" works there too. Press Enter to open the Library of Congress documentation, or copy the tag or title from the context menu.\n\nAll data is built into the extension, so it works offline and collects nothing.",
+  "author": {
+    "name": "mikegsaunders",
+    "url": "https://github.com/mikegsaunders"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/mikegsaunders/marcfinder",
+  "tags": ["marc", "marc21", "library", "cataloguing", "metadata"],
+  "categories": ["utilities-and-tools", "productivity"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NMT02CNPVDJ"
+    }
+  ]
+}
