@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "bambinosk.cards",
+  "title": "Cards",
+  "shortDescription": "Browse, search and update your Trello boards, lists and cards from Command Palette. Create, edit, move, complete and comment on cards without a browser.",
+  "description": "Cards For Command Palette puts your Trello boards inside PowerToys Command Palette. Open Command Palette with your activation shortcut, type \"Cards\", and find, open and update cards without switching to a browser.\n\nBROWSE AND SEARCH\n- Boards, lists and cards in one place, with live search on every page\n- Filter cards by All, Completed, Incomplete or Overdue\n- Search every card on a board, including archived cards\n- Pin the boards and lists you use most\n\nREAD AND UPDATE CARDS\n- See a card's description, labels and due date in a side panel\n- Optionally load checklists, members and attachments\n- Create a card by typing its name in the search box\n- Edit a card's title and description\n- Mark cards complete or incomplete\n- Move cards within a list, move a card to another list, or copy it\n- Read, add, edit, delete and copy comments\n- Archive cards, open them in Trello, or copy their link\n\nKEYBOARD SHORTCUTS\nEnter opens the selected item, Ctrl+Enter marks a card complete, Ctrl+K shows every action, Ctrl+Up/Down reorder cards, Ctrl+R refreshes.\n\nSIGN IN AND PRIVACY\nSign in with your own Trello account through Trello's OAuth 2.0 page. Your password is entered only on Trello's site. Access tokens are stored in Windows Credential Locker. There is no analytics or telemetry; the extension contacts only Trello and Atlassian's sign-in service.\n\nREQUIREMENTS\nWindows 10 version 2004 or later, or Windows 11 (x64 or ARM64); PowerToys with Command Palette enabled; a Trello account.\n\nThis is an unofficial extension made by an independent developer. It is not affiliated with, endorsed by, or sponsored by Atlassian or Trello. Trello is a trademark of Atlassian.",
+  "author": {
+    "name": "BambinoSK",
+    "url": "https://github.com/BambinoSK"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/BambinoSK/cards-ext-command-palette",
+  "tags": [
+    "trello",
+    "boards",
+    "cards",
+    "tasks",
+    "kanban"
+  ],
+  "categories": [
+    "productivity"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NPG5G5QJFTC"
+    }
+  ],
+  "detection": {
+    "packageFamilyName": "BambinoSK.CardsForCommandPalette_svbsbjkmektz6"
+  }
+}
