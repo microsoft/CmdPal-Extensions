@@ -1,0 +1,32 @@
+{
+  "id": "azadkshitij.nanonotes",
+  "title": "NanoNotes",
+  "shortDescription": "Quick notes and clipboard history, saved as plain files on your own PC.",
+  "description": "NanoNotes adds two things to the Command Palette: a place to type a thought and keep it, and a searchable history of what you copy.\n\nType anything in the palette and press Enter to save it as a note. Search your notes and your clipboard history in one list, newest match first, with each row saying where it came from. Open an entry to read it, copy it again, or delete it.\n\nClipboard history is pruned after 7 to 30 days (14 by default, capped at 500 entries) and image capture can be turned off. Everything is stored as plain JSON and PNG files under Documents\\Notes, so you can read or edit it with any text editor.\n\nNo network, no accounts, no telemetry. Nothing leaves your machine.",
+  "author": {
+    "name": "Azad Kshitij",
+    "url": "https://github.com/AzadKshitij"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/AzadKshitij/NanoNotes",
+  "tags": [
+    "notes",
+    "clipboard",
+    "productivity",
+    "quick-capture"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NW3G5PQWF51"
+    }
+  ],
+  "detection": {
+    "packageFamilyName": "AzadKshitij.NanoNotes_h69k4pemdhf3w"
+  },
+  "$schema": "../../../.github/schemas/extension.schema.json"
+}
