@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "wedsel2.quick-vault-search",
+  "title": "Quick Vault Search",
+  "shortDescription": "Search your Bitwarden vault and copy a username, password or TOTP code without leaving the keyboard.",
+  "description": "Type \"bitwarden\", unlock with your master password, and search your logins by name, website or username. Copied secrets are kept out of clipboard history and cleared after a few seconds. The vault locks after inactivity and when Windows locks or sleeps.\n\nRequires the official Bitwarden CLI (winget install Bitwarden.CLI), logged in once with bw login.\n\nOpen source and not affiliated with Bitwarden Inc. Bitwarden is a trademark of Bitwarden Inc.",
+  "author": {
+    "name": "wedsel2",
+    "url": "https://github.com/wedsel2"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/wedsel2/Bitwarden-Command-Palette",
+  "tags": ["bitwarden", "password-manager", "passwords", "totp", "2fa"],
+  "categories": ["productivity", "utilities-and-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P4X8Z459N7R"
+    }
+  ],
+  "detection": {
+    "packageFamilyName": "wedsel2.BitwardenforCommandPalette_yqx4ftaw44z2p"
+  }
+}
