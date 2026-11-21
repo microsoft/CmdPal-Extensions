@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "hamidrezaashkiyan.cmdpal-pomodoro",
+  "title": "Pomodoro",
+  "shortDescription": "Live Dock Pomodoro timer with configurable focus and break reminders.",
+  "description": "Pomodoro adds a focus timer to the Command Palette Dock. The band shows a live countdown. You can set the focus length, short break, long break, and how many focus sessions happen before a long break. When a session ends, the timer stops and a reminder asks you to start the break or the next focus. Nothing starts automatically.",
+  "author": {
+    "name": "HamidRezaAshkiyan",
+    "url": "https://github.com/HamidRezaAshkiyan"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/HamidRezaAshkiyan/CmdPalPomodoro",
+  "tags": ["pomodoro", "timer", "focus", "dock"],
+  "categories": ["productivity"],
+  "installSources": [
+    {
+      "type": "winget",
+      "id": "HamidRezaAshkiyan.CmdPalPomodoro"
+    }
+  ]
+}
