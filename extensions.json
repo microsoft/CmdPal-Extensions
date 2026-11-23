@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-11-03T19:03:43Z",
-  "extensionCount": 97,
+  "generatedAt": "2026-11-23T06:34:00Z",
+  "extensionCount": 104,
   "extensions": [
     {
       "id": "1morr.inkling",
@@ -258,6 +258,115 @@
       "addedAt": "2026-09-25"
     },
     {
+      "id": "arihant25.custom-dock-text",
+      "title": "Custom Dock Text",
+      "shortDescription": "Put your own text on the Dock: a reminder, a goal, a quote, anything. Shown in full, with an optional icon.",
+      "description": "Custom Dock Text puts your own text on the Command Palette Dock: a reminder for the day, a goal, a quote, anything you want to keep in view.\n\n- Any text up to 80 characters, shown in full. The Dock normally cuts labels off after a few words, so this band asks for room to fit the whole text.\n- An optional icon from 43 Windows Fluent icons, in the same style as the Dock's built-in widgets, picked from a list that shows each icon.\n- Click the text on the Dock, or run \"Set Dock text\" from Command Palette, to change it.\n- The text is saved and comes back after restarts.\n- No network access, no accounts, no telemetry.\n\nAfter installing, right-click the Dock, choose Edit and add the Custom Dock Text band.",
+      "author": {
+        "name": "Arihant Tripathy",
+        "url": "https://github.com/Arihant25"
+      },
+      "homepage": "https://github.com/Arihant25/custom-dock-text",
+      "tags": [
+        "dock",
+        "text",
+        "reminder",
+        "notes",
+        "customization"
+      ],
+      "categories": [
+        "productivity",
+        "personalization"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P4DH4N33GLQ"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/custom-dock-text/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/custom-dock-text/screenshots/01-overview.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/custom-dock-text/screenshots/02-dock.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/custom-dock-text/screenshots/03-edit.png"
+      ],
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "arihant25.usage-dock",
+      "title": "Usage Dock",
+      "shortDescription": "See your Claude Code 5-hour and weekly usage limits in the Dock, with reset times and color warnings as you get close.",
+      "description": "Usage Dock shows your Claude Code usage limits in the Command Palette Dock: how much of the current 5-hour session and the weekly limit you've used, and when each one resets.\n\nEach limit appears as a ring gauge that fills as you use it. It turns amber at 80% and red at 95%. Click it to see both limits with progress bars, exact reset times and when the numbers were last updated.\n\nThe numbers come from the rate_limits data that Claude Code sends to your status line. Usage Dock adds a small bridge in front of your existing status line command, so your status line keeps working. It never reads your login or credentials and makes no network requests.\n\nRequires Claude Code on a Claude Pro or Max plan. After installing, run \"Connect Usage Dock to Claude Code\" from Command Palette, then add the Usage Dock band to your Dock. Run \"Disconnect Usage Dock from Claude Code\" before uninstalling.\n\nUsage Dock is an independent open-source project and isn't affiliated with Anthropic.",
+      "author": {
+        "name": "Arihant Tripathy",
+        "url": "https://github.com/Arihant25"
+      },
+      "homepage": "https://github.com/Arihant25/usage-dock",
+      "tags": [
+        "claude-code",
+        "usage",
+        "rate-limits",
+        "dock",
+        "ai"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NR3VBPN0XNM"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/usage-dock/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/usage-dock/screenshots/01-overview.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/usage-dock/screenshots/02-details.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/usage-dock/screenshots/03-dock.jpg"
+      ],
+      "addedAt": "2026-11-23"
+    },
+    {
+      "id": "azadkshitij.nanonotes",
+      "title": "NanoNotes",
+      "shortDescription": "Quick notes and clipboard history, saved as plain files on your own PC.",
+      "description": "NanoNotes adds two things to the Command Palette: a place to type a thought and keep it, and a searchable history of what you copy.\n\nType anything in the palette and press Enter to save it as a note. Search your notes and your clipboard history in one list, newest match first, with each row saying where it came from. Open an entry to read it, copy it again, or delete it.\n\nClipboard history is pruned after 7 to 30 days (14 by default, capped at 500 entries) and image capture can be turned off. Everything is stored as plain JSON and PNG files under Documents\\Notes, so you can read or edit it with any text editor.\n\nNo network, no accounts, no telemetry. Nothing leaves your machine.",
+      "author": {
+        "name": "Azad Kshitij",
+        "url": "https://github.com/AzadKshitij"
+      },
+      "homepage": "https://github.com/AzadKshitij/NanoNotes",
+      "tags": [
+        "notes",
+        "clipboard",
+        "productivity",
+        "quick-capture"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NW3G5PQWF51"
+        }
+      ],
+      "detection": {
+        "packageFamilyName": "AzadKshitij.NanoNotes_h69k4pemdhf3w"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/azadkshitij/nanonotes/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/azadkshitij/nanonotes/screenshots/01-search.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/azadkshitij/nanonotes/screenshots/02-notes.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/azadkshitij/nanonotes/screenshots/03-clipboard.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/azadkshitij/nanonotes/screenshots/04-actions.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/azadkshitij/nanonotes/screenshots/05-palette.png"
+      ],
+      "addedAt": "2026-11-23"
+    },
+    {
       "id": "baldbeardedbuilder.walkthisway",
       "title": "Walk This Way",
       "shortDescription": "Find and switch between open windows with PowerToys Command Palette.",
@@ -326,6 +435,43 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/baldbeardedbuilder/weather/screenshots/screen3.png"
       ],
       "addedAt": "2026-04-12"
+    },
+    {
+      "id": "bambinosk.cards",
+      "title": "Cards",
+      "shortDescription": "Browse, search and update your Trello boards, lists and cards from Command Palette. Create, edit, move, complete and comment on cards without a browser.",
+      "description": "Cards For Command Palette puts your Trello boards inside PowerToys Command Palette. Open Command Palette with your activation shortcut, type \"Cards\", and find, open and update cards without switching to a browser.\n\nBROWSE AND SEARCH\n- Boards, lists and cards in one place, with live search on every page\n- Filter cards by All, Completed, Incomplete or Overdue\n- Search every card on a board, including archived cards\n- Pin the boards and lists you use most\n\nREAD AND UPDATE CARDS\n- See a card's description, labels and due date in a side panel\n- Optionally load checklists, members and attachments\n- Create a card by typing its name in the search box\n- Edit a card's title and description\n- Mark cards complete or incomplete\n- Move cards within a list, move a card to another list, or copy it\n- Read, add, edit, delete and copy comments\n- Archive cards, open them in Trello, or copy their link\n\nKEYBOARD SHORTCUTS\nEnter opens the selected item, Ctrl+Enter marks a card complete, Ctrl+K shows every action, Ctrl+Up/Down reorder cards, Ctrl+R refreshes.\n\nSIGN IN AND PRIVACY\nSign in with your own Trello account through Trello's OAuth 2.0 page. Your password is entered only on Trello's site. Access tokens are stored in Windows Credential Locker. There is no analytics or telemetry; the extension contacts only Trello and Atlassian's sign-in service.\n\nREQUIREMENTS\nWindows 10 version 2004 or later, or Windows 11 (x64 or ARM64); PowerToys with Command Palette enabled; a Trello account.\n\nThis is an unofficial extension made by an independent developer. It is not affiliated with, endorsed by, or sponsored by Atlassian or Trello. Trello is a trademark of Atlassian.",
+      "author": {
+        "name": "BambinoSK",
+        "url": "https://github.com/BambinoSK"
+      },
+      "homepage": "https://github.com/BambinoSK/cards-ext-command-palette",
+      "tags": [
+        "trello",
+        "boards",
+        "cards",
+        "tasks",
+        "kanban"
+      ],
+      "categories": [
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NPG5G5QJFTC"
+        }
+      ],
+      "detection": {
+        "packageFamilyName": "BambinoSK.CardsForCommandPalette_svbsbjkmektz6"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/bambinosk/cards/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/bambinosk/cards/screenshots/01-card-actions.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/bambinosk/cards/screenshots/02-cards.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/bambinosk/cards/screenshots/03-lists.png"
+      ],
+      "addedAt": "2026-11-23"
     },
     {
       "id": "bdbai.base64-converter",
@@ -563,6 +709,37 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/costafotiadis/markets-extension/screenshots/05-dock.png"
       ],
       "addedAt": "2026-07-23"
+    },
+    {
+      "id": "darkace.market-pulse",
+      "title": "Market Pulse",
+      "shortDescription": "Live stock, index, FX, commodity and crypto prices on your Dock. Pick single markets, whole groups or a rotating ticker. No API key needed.",
+      "description": "Market Pulse puts live market prices on the Command Palette Dock.\n\n• Stocks, ETFs, indices, FX pairs and futures from Yahoo Finance, refreshed every 5 to 60 seconds.\n• Crypto streamed live from Binance, updating about once a second. Use any coin or pair, such as BTC, ETH, SOL or ETH/BTC.\n• Choose what to show: a single market, a whole group (Indices, Tech, Crypto, FX, Commodities or your own), every market in one strip, or a rotating ticker that cycles through them in one button.\n• Search markets from Command Palette and add them to any group in one keystroke, or edit your watchlists as plain text in settings.\n• Two-line, one-line or price-only layouts, with optional 📈/📉 trend icons.\n• Click a price to open its chart; right-click to copy it.\n\nFeeds only run for bands you can see, so unpinned markets cost nothing. No account or API key required.\n\nPrices come from public third-party endpoints and may be delayed for some exchanges. Not investment advice.",
+      "author": {
+        "name": "DarkAce",
+        "url": "https://github.com/Darkace01"
+      },
+      "homepage": "https://github.com/Darkace01/market-pulse",
+      "tags": [
+        "stocks",
+        "crypto",
+        "forex",
+        "markets",
+        "dock"
+      ],
+      "categories": [
+        "productivity",
+        "news-and-weather",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9N4SZPL54SGK"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/darkace/market-pulse/icon.png",
+      "addedAt": "2026-11-23"
     },
     {
       "id": "davidegiacometti.edge-favorites",
@@ -2184,6 +2361,39 @@
       "addedAt": "2026-04-12"
     },
     {
+      "id": "mikegsaunders.marcfinder",
+      "title": "marcfinder",
+      "shortDescription": "Look up MARC 21 fields, subfields, indicators and character positions from Command Palette.",
+      "description": "marcfinder brings the MARC 21 Bibliographic and Holdings formats into Command Palette, for cataloguers and library systems staff.\n\nType a tag (245), a subfield (245a), a character position (008/23), a pattern (5xx) or a keyword (isbn) to see the field's definition, repeatability, indicators, subfields and examples. Prefix a query with h to search the Holdings format (h 852).\n\nTags, subfields and positions also show up straight from the main Command Palette search box, and \"marc <keyword>\" works there too. Press Enter to open the Library of Congress documentation, or copy the tag or title from the context menu.\n\nAll data is built into the extension, so it works offline and collects nothing.",
+      "author": {
+        "name": "mikegsaunders",
+        "url": "https://github.com/mikegsaunders"
+      },
+      "homepage": "https://github.com/mikegsaunders/marcfinder",
+      "tags": [
+        "marc",
+        "marc21",
+        "library",
+        "cataloguing",
+        "metadata"
+      ],
+      "categories": [
+        "utilities-and-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NMT02CNPVDJ"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/mikegsaunders/marcfinder/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/mikegsaunders/marcfinder/screenshots/01-field-details.png"
+      ],
+      "addedAt": "2026-11-23"
+    },
+    {
       "id": "n0i0c0k.powertranslator",
       "title": "PowerTranslator",
       "shortDescription": "Translate text quickly from Command Palette.",
@@ -2965,6 +3175,44 @@
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/vanzue/todo/icon.png",
       "addedAt": "2026-07-24"
+    },
+    {
+      "id": "wedsel2.quick-vault-search",
+      "title": "Quick Vault Search",
+      "shortDescription": "Search your Bitwarden vault and copy a username, password or TOTP code without leaving the keyboard.",
+      "description": "Type \"bitwarden\", unlock with your master password, and search your logins by name, website or username. Copied secrets are kept out of clipboard history and cleared after a few seconds. The vault locks after inactivity and when Windows locks or sleeps.\n\nRequires the official Bitwarden CLI (winget install Bitwarden.CLI), logged in once with bw login.\n\nOpen source and not affiliated with Bitwarden Inc. Bitwarden is a trademark of Bitwarden Inc.",
+      "author": {
+        "name": "wedsel2",
+        "url": "https://github.com/wedsel2"
+      },
+      "homepage": "https://github.com/wedsel2/Bitwarden-Command-Palette",
+      "tags": [
+        "bitwarden",
+        "password-manager",
+        "passwords",
+        "totp",
+        "2fa"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P4X8Z459N7R"
+        }
+      ],
+      "detection": {
+        "packageFamilyName": "wedsel2.BitwardenforCommandPalette_yqx4ftaw44z2p"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/wedsel2/quick-vault-search/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/wedsel2/quick-vault-search/screenshots/01-open-from-command-palette.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/wedsel2/quick-vault-search/screenshots/02-unlock-vault.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/wedsel2/quick-vault-search/screenshots/03-search-logins.png"
+      ],
+      "addedAt": "2026-11-23"
     },
     {
       "id": "xisage.godot-engine",
