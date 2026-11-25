@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "arihant25.timer-dock",
+  "title": "Timer Dock",
+  "shortDescription": "A timer and stopwatch on the Dock. Type any length, record laps, and get a notification when time's up.",
+  "description": "Timer Dock puts a timer and stopwatch on the Command Palette Dock, so the time stays in view without a clock window covering your work.\n\n- Type any length to start a countdown: 25 (minutes), 90s, 1h30m or 1:30, optionally with a label such as \"10m tea\". Or pick a preset from 1 to 90 minutes.\n- A stopwatch with laps, shown at the top of the page with their splits.\n- The Dock counts down for a timer and up for the stopwatch. When idle it's just a small stopwatch icon.\n- A Windows notification when time's up, and \"Time's up\" on the Dock.\n- Pause, resume, add time or reset from the same page. It keeps time across restarts.\n- No network access, no accounts, no telemetry.\n\nAfter installing, right-click the Dock, choose Edit and add the Timer & Stopwatch band, then click it.",
+  "author": {
+    "name": "Arihant Tripathy",
+    "url": "https://github.com/Arihant25"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/Arihant25/timer-dock",
+  "tags": [
+    "dock",
+    "timer",
+    "stopwatch",
+    "countdown",
+    "pomodoro"
+  ],
+  "categories": [
+    "productivity",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9P396CLBTXWM"
+    }
+  ]
+}
