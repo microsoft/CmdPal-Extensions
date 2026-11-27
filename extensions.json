@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-11-23T06:34:00Z",
-  "extensionCount": 104,
+  "generatedAt": "2026-11-27T06:24:39Z",
+  "extensionCount": 105,
   "extensions": [
     {
       "id": "1morr.inkling",
@@ -740,6 +740,39 @@
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/darkace/market-pulse/icon.png",
       "addedAt": "2026-11-23"
+    },
+    {
+      "id": "darkneoss.raindrop",
+      "title": "Raindrop Bookmarks",
+      "shortDescription": "Search your Raindrop.io bookmarks and open, copy or edit them without leaving Command Palette.",
+      "description": "Search your Raindrop.io bookmarks from PowerToys Command Palette. Type to search titles, excerpts and links, or use #tag to filter by tag. Press Enter to open a bookmark in your browser; the context menu lets you copy the link or open the bookmark in Raindrop. Results are cached in memory for a lifetime you choose, and a Clear cache command is included.\n\nSetup: create a test token at https://app.raindrop.io/settings/integrations and paste it in the extension settings. The token is stored locally and the extension talks only to api.raindrop.io. No telemetry.\n\nUnofficial and open source. Not affiliated with or endorsed by Raindrop.io. Based on the Flow Launcher plugin Garulf/flow-raindrop.",
+      "author": {
+        "name": "darkneoss",
+        "url": "https://github.com/darkneoss"
+      },
+      "homepage": "https://github.com/darkneoss/RaindropCmdPal",
+      "tags": [
+        "raindrop",
+        "bookmarks",
+        "search",
+        "links"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9PP82HR3HD8T"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/darkneoss/raindrop/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/darkneoss/raindrop/screenshots/01-tag-search.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/darkneoss/raindrop/screenshots/02-context-menu.png"
+      ],
+      "addedAt": "2026-11-27"
     },
     {
       "id": "davidegiacometti.edge-favorites",
