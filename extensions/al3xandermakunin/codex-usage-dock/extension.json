@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "al3xandermakunin.codex-usage-dock",
+  "title": "Codex Usage Dock",
+  "shortDescription": "Track your Codex 5-hour and weekly subscription limits in the PowerToys Dock.",
+  "description": "See your Codex 5-hour and weekly usage at a glance. The ring gauges turn amber at 80% and red at 95%. Click a gauge to see when the limit resets and how recent the reading is.\n\nRequires PowerToys with Command Palette and its Dock enabled, plus a local Codex installation that records subscription limits. After installing, reload Command Palette, right-click the Dock, choose Edit, and add Codex Usage Dock.\n\nThe extension reads usage data from local Codex session logs. It is an independent open-source project.",
+  "author": {
+    "name": "Aleksandr Makunin",
+    "url": "https://github.com/Al3xanderMakunin"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/Al3xanderMakunin/codex-usage-dock",
+  "tags": ["codex", "dock", "usage", "rate-limits"],
+  "categories": ["developer-tools", "productivity"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9PDTDWGJ6141"
+    }
+  ]
+}
