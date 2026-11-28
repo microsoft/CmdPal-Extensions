@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/.github/schemas/gallery.schema.json",
   "version": "1.0",
-  "generatedAt": "2026-11-23T06:34:00Z",
-  "extensionCount": 104,
+  "generatedAt": "2026-11-28T10:53:38Z",
+  "extensionCount": 108,
   "extensions": [
     {
       "id": "1morr.inkling",
@@ -191,6 +191,38 @@
       "addedAt": "2026-04-15"
     },
     {
+      "id": "al3xandermakunin.codex-usage-dock",
+      "title": "Codex Usage Dock",
+      "shortDescription": "Track your Codex 5-hour and weekly subscription limits in the PowerToys Dock.",
+      "description": "See your Codex 5-hour and weekly usage at a glance. The ring gauges turn amber at 80% and red at 95%. Click a gauge to see when the limit resets and how recent the reading is.\n\nRequires PowerToys with Command Palette and its Dock enabled, plus a local Codex installation that records subscription limits. After installing, reload Command Palette, right-click the Dock, choose Edit, and add Codex Usage Dock.\n\nThe extension reads usage data from local Codex session logs. It is an independent open-source project.",
+      "author": {
+        "name": "Aleksandr Makunin",
+        "url": "https://github.com/Al3xanderMakunin"
+      },
+      "homepage": "https://github.com/Al3xanderMakunin/codex-usage-dock",
+      "tags": [
+        "codex",
+        "dock",
+        "usage",
+        "rate-limits"
+      ],
+      "categories": [
+        "developer-tools",
+        "productivity"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9PDTDWGJ6141"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/al3xandermakunin/codex-usage-dock/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/al3xandermakunin/codex-usage-dock/screenshots/01-overview.png"
+      ],
+      "addedAt": "2026-11-28"
+    },
+    {
       "id": "alexdresko.browser-tabs",
       "title": "Browser Tabs",
       "shortDescription": "Search and switch to open Chrome and Edge tabs from Windows Command Palette.",
@@ -291,6 +323,42 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/custom-dock-text/screenshots/03-edit.png"
       ],
       "addedAt": "2026-11-23"
+    },
+    {
+      "id": "arihant25.timer-dock",
+      "title": "Timer Dock",
+      "shortDescription": "A timer and stopwatch on the Dock. Type any length, record laps, and get a notification when time's up.",
+      "description": "Timer Dock puts a timer and stopwatch on the Command Palette Dock, so the time stays in view without a clock window covering your work.\n\n- Type any length to start a countdown: 25 (minutes), 90s, 1h30m or 1:30, optionally with a label such as \"10m tea\". Or pick a preset from 1 to 90 minutes.\n- A stopwatch with laps, shown at the top of the page with their splits.\n- The Dock counts down for a timer and up for the stopwatch. When idle it's just a small stopwatch icon.\n- A Windows notification when time's up, and \"Time's up\" on the Dock.\n- Pause, resume, add time or reset from the same page. It keeps time across restarts.\n- No network access, no accounts, no telemetry.\n\nAfter installing, right-click the Dock, choose Edit and add the Timer & Stopwatch band, then click it.",
+      "author": {
+        "name": "Arihant Tripathy",
+        "url": "https://github.com/Arihant25"
+      },
+      "homepage": "https://github.com/Arihant25/timer-dock",
+      "tags": [
+        "dock",
+        "timer",
+        "stopwatch",
+        "countdown",
+        "pomodoro"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9P396CLBTXWM"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/timer-dock/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/timer-dock/screenshots/01-overview.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/timer-dock/screenshots/02-dock.jpg",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/timer-dock/screenshots/03-timer.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/arihant25/timer-dock/screenshots/04-stopwatch.png"
+      ],
+      "addedAt": "2026-11-28"
     },
     {
       "id": "arihant25.usage-dock",
@@ -472,6 +540,45 @@
         "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/bambinosk/cards/screenshots/03-lists.png"
       ],
       "addedAt": "2026-11-23"
+    },
+    {
+      "id": "bambinosk.containers",
+      "title": "Containers",
+      "shortDescription": "Manage Docker containers, Compose projects, images, volumes and networks without opening Docker Desktop or a terminal.",
+      "description": "Manage your Docker containers, Compose projects, images, volumes and networks from Command Palette, without opening Docker Desktop or a terminal.\n\n- Containers: start, stop, restart, pause, resume, kill and remove, with live updates and All/Running/Stopped filters.\n- Open a shell in a running container or follow its logs in your terminal.\n- Open published ports in your browser, and copy a container's name, ID or IP address.\n- Inspect a container: state, image, command, networks, mounts, environment and labels.\n- Compose projects: up, start, stop, restart, pull, logs and down; open the project folder, editor or a terminal there.\n- Images: run, pull latest, remove, and clean up dangling or unused images.\n- Volumes and networks: browse, remove and clean up unused ones.\n- System: engine version, disk usage, cleanup, and docker context switching.\n- Find containers by name from the main Command Palette search.\n- Start Docker Desktop from the extension when the engine isn't running.\n\nRequires Docker Desktop or another Docker engine reachable over a named pipe or TCP. Unofficial: not affiliated with, endorsed by, or sponsored by Docker, Inc. Docker is a trademark of Docker, Inc.",
+      "author": {
+        "name": "BambinoSK",
+        "url": "https://github.com/BambinoSK"
+      },
+      "homepage": "https://github.com/BambinoSK/containers-ext-command-palette",
+      "tags": [
+        "docker",
+        "containers",
+        "compose",
+        "devops"
+      ],
+      "categories": [
+        "developer-tools",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9NKNFNMS8LDT"
+        }
+      ],
+      "detection": {
+        "packageFamilyName": "BambinoSK.ContainersForCommandPalette_svbsbjkmektz6"
+      },
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/bambinosk/containers/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/bambinosk/containers/screenshots/01-main-page.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/bambinosk/containers/screenshots/02-containers.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/bambinosk/containers/screenshots/03-container-actions.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/bambinosk/containers/screenshots/04-compose-project.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/bambinosk/containers/screenshots/05-settings.png"
+      ],
+      "addedAt": "2026-11-28"
     },
     {
       "id": "bdbai.base64-converter",
@@ -740,6 +847,39 @@
       ],
       "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/darkace/market-pulse/icon.png",
       "addedAt": "2026-11-23"
+    },
+    {
+      "id": "darkneoss.raindrop",
+      "title": "Raindrop Bookmarks",
+      "shortDescription": "Search your Raindrop.io bookmarks and open, copy or edit them without leaving Command Palette.",
+      "description": "Search your Raindrop.io bookmarks from PowerToys Command Palette. Type to search titles, excerpts and links, or use #tag to filter by tag. Press Enter to open a bookmark in your browser; the context menu lets you copy the link or open the bookmark in Raindrop. Results are cached in memory for a lifetime you choose, and a Clear cache command is included.\n\nSetup: create a test token at https://app.raindrop.io/settings/integrations and paste it in the extension settings. The token is stored locally and the extension talks only to api.raindrop.io. No telemetry.\n\nUnofficial and open source. Not affiliated with or endorsed by Raindrop.io. Based on the Flow Launcher plugin Garulf/flow-raindrop.",
+      "author": {
+        "name": "darkneoss",
+        "url": "https://github.com/darkneoss"
+      },
+      "homepage": "https://github.com/darkneoss/RaindropCmdPal",
+      "tags": [
+        "raindrop",
+        "bookmarks",
+        "search",
+        "links"
+      ],
+      "categories": [
+        "productivity",
+        "utilities-and-tools"
+      ],
+      "installSources": [
+        {
+          "type": "msstore",
+          "id": "9PP82HR3HD8T"
+        }
+      ],
+      "iconUrl": "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/darkneoss/raindrop/icon.png",
+      "screenshotUrls": [
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/darkneoss/raindrop/screenshots/01-tag-search.png",
+        "https://raw.githubusercontent.com/microsoft/CmdPal-Extensions/main/extensions/darkneoss/raindrop/screenshots/02-context-menu.png"
+      ],
+      "addedAt": "2026-11-28"
     },
     {
       "id": "davidegiacometti.edge-favorites",
