@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "getaktar.aktar",
+  "title": "Aktar",
+  "shortDescription": "Upload files to your own S3, R2 or B2 bucket with Aktar and copy the link, search your uploads, and pause or resume watched folders.",
+  "description": "Aktar uploads files to storage you own: Amazon S3, Cloudflare R2, Backblaze B2, MinIO and other S3-compatible services. This extension brings it to Command Palette: upload the clipboard (a copied file, a screenshot, a link or text) or files you pick, and the link is copied. Search your upload history to copy a link in any format, open it, make a short link or delete the upload, and pause or resume Aktar's watched folders.\n\nIt needs the Aktar app for Windows (0.11.0 or later) with Settings > Integrations > Allow local connections turned on. The extension only talks to Aktar on 127.0.0.1, holds no storage keys, keeps its token in Windows Credential Manager, and checks that Aktar holds the same token before sending it.",
+  "author": {
+    "name": "Mert Topuz",
+    "url": "https://getaktar.com"
+  },
+  "icon": "icon.png",
+  "homepage": "https://getaktar.com",
+  "tags": ["upload", "s3", "cloudflare-r2", "backblaze-b2", "screenshot"],
+  "categories": ["productivity", "utilities-and-tools", "developer-tools"],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NLGHZSJMPH8"
+    }
+  ]
+}
