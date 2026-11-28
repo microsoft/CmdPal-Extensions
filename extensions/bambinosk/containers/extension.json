@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../.github/schemas/extension.schema.json",
+  "id": "bambinosk.containers",
+  "title": "Containers",
+  "shortDescription": "Manage Docker containers, Compose projects, images, volumes and networks without opening Docker Desktop or a terminal.",
+  "description": "Manage your Docker containers, Compose projects, images, volumes and networks from Command Palette, without opening Docker Desktop or a terminal.\n\n- Containers: start, stop, restart, pause, resume, kill and remove, with live updates and All/Running/Stopped filters.\n- Open a shell in a running container or follow its logs in your terminal.\n- Open published ports in your browser, and copy a container's name, ID or IP address.\n- Inspect a container: state, image, command, networks, mounts, environment and labels.\n- Compose projects: up, start, stop, restart, pull, logs and down; open the project folder, editor or a terminal there.\n- Images: run, pull latest, remove, and clean up dangling or unused images.\n- Volumes and networks: browse, remove and clean up unused ones.\n- System: engine version, disk usage, cleanup, and docker context switching.\n- Find containers by name from the main Command Palette search.\n- Start Docker Desktop from the extension when the engine isn't running.\n\nRequires Docker Desktop or another Docker engine reachable over a named pipe or TCP. Unofficial: not affiliated with, endorsed by, or sponsored by Docker, Inc. Docker is a trademark of Docker, Inc.",
+  "author": {
+    "name": "BambinoSK",
+    "url": "https://github.com/BambinoSK"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/BambinoSK/containers-ext-command-palette",
+  "tags": [
+    "docker",
+    "containers",
+    "compose",
+    "devops"
+  ],
+  "categories": [
+    "developer-tools",
+    "utilities-and-tools"
+  ],
+  "installSources": [
+    {
+      "type": "msstore",
+      "id": "9NKNFNMS8LDT"
+    }
+  ],
+  "detection": {
+    "packageFamilyName": "BambinoSK.ContainersForCommandPalette_svbsbjkmektz6"
+  }
+}
